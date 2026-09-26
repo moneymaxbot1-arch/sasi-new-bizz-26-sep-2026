@@ -41,7 +41,7 @@ export const AutomationPlaybook: React.FC<AutomationPlaybookProps> = ({ onClaimC
     },
     {
       num: '05',
-      tool: 'Wati',
+      tool: 'WATi',
       role: 'Instant WhatsApp Conversion',
       desc: 'Connect with leads on WhatsApp where open rates hit 98%. Automate customer support inquiries and send targeted broadcast deals.',
       icon: <MessageSquare className="w-5 h-5 text-emerald-400" />,

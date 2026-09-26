@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sparkles, ArrowRight } from 'lucide-react';
+import { Sparkles, ArrowRight, Mail } from 'lucide-react';
 import { LanguageTranslator } from './LanguageTranslator';
 
 interface NavbarProps {
@@ -12,7 +12,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onClaimClick }) => {
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-2 sm:gap-4">
         {/* Zone 1: Single text element wordmark */}
         <a href="#" className="text-xl font-extrabold tracking-tight text-white flex items-center gap-1.5 shrink-0">
-          <span>StackScale</span>
+          <span>Bizz2u</span>
           <span className="w-2 h-2 rounded-full bg-emerald-400 inline-block"></span>
         </a>
 
@@ -42,10 +42,26 @@ export const Navbar: React.FC<NavbarProps> = ({ onClaimClick }) => {
           <a href="#faq" className="hover:text-emerald-400 transition-colors">
             FAQ
           </a>
+          <a
+            href="mailto:Bizzsoft2u@gmail.com"
+            className="hover:text-emerald-400 transition-colors flex items-center gap-1 text-emerald-400/90 font-medium"
+            title="Official Contact Email: Bizzsoft2u@gmail.com"
+          >
+            <Mail className="w-3.5 h-3.5 text-emerald-400" />
+            <span>Contact</span>
+          </a>
         </nav>
 
         {/* Language Translator: In between Navigation and CTA Button */}
-        <div className="flex items-center">
+        <div className="flex items-center gap-2">
+          <a
+            href="mailto:Bizzsoft2u@gmail.com"
+            className="hidden lg:flex xl:hidden items-center gap-1 text-xs text-slate-300 hover:text-emerald-400 transition-colors font-mono"
+            title="Official Email: Bizzsoft2u@gmail.com"
+          >
+            <Mail className="w-3.5 h-3.5 text-emerald-400" />
+            <span>Contact Support</span>
+          </a>
           <LanguageTranslator />
         </div>
 

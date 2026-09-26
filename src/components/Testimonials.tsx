@@ -30,7 +30,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onClaimClick }) => {
     }
     if (filterCategory === 'tools') {
       return t.toolsUsed.some(
-        tool => tool === 'Wati' || tool === 'Mailchimp' || tool === 'Fomo'
+        tool => tool === 'WATi' || tool === 'Wati' || tool === 'Mailchimp' || tool === 'Fomo'
       );
     }
     return true;

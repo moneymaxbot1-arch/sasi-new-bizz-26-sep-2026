@@ -5,8 +5,8 @@ interface UrgencyHeaderProps {
   onClaimClick: () => void;
 }
 
-const TOTAL_SECONDS_8_HOURS = 8 * 60 * 60;
-const STORAGE_KEY = 'stackscale_8h_countdown_start';
+const TOTAL_SECONDS_1_HOUR = 1 * 60 * 60; // 3,600 seconds (1 hour)
+const STORAGE_KEY = 'bizz2u_1h_countdown_start';
 
 export const UrgencyHeader: React.FC<UrgencyHeaderProps> = ({ onClaimClick }) => {
   const [secondsRemaining, setSecondsRemaining] = useState<number>(() => {
@@ -15,20 +15,20 @@ export const UrgencyHeader: React.FC<UrgencyHeaderProps> = ({ onClaimClick }) =>
       const now = Math.floor(Date.now() / 1000);
       if (storedStart) {
         const elapsed = now - parseInt(storedStart, 10);
-        if (elapsed >= 0 && elapsed < TOTAL_SECONDS_8_HOURS) {
-          return TOTAL_SECONDS_8_HOURS - elapsed;
+        if (elapsed >= 0 && elapsed < TOTAL_SECONDS_1_HOUR) {
+          return TOTAL_SECONDS_1_HOUR - elapsed;
         }
       }
       localStorage.setItem(STORAGE_KEY, now.toString());
-      return TOTAL_SECONDS_8_HOURS;
+      return TOTAL_SECONDS_1_HOUR;
     } catch {
-      return TOTAL_SECONDS_8_HOURS;
+      return TOTAL_SECONDS_1_HOUR;
     }
   });
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setSecondsRemaining(prev => (prev <= 1 ? TOTAL_SECONDS_8_HOURS : prev - 1));
+      setSecondsRemaining(prev => (prev <= 1 ? TOTAL_SECONDS_1_HOUR : prev - 1));
     }, 1000);
 
     return () => clearInterval(timer);
@@ -49,7 +49,7 @@ export const UrgencyHeader: React.FC<UrgencyHeaderProps> = ({ onClaimClick }) =>
             <span>97.7% OFF FLASH SALE</span>
           </span>
           <span className="hidden md:inline text-rose-100">
-            6-in-1 Business Automation Suite: Mailchimp, Hostinger, Fomo, Wati, UptimeRobot, Bitly
+            6-in-1 Business Automation Suite: Mailchimp, Hostinger, Fomo, WATi, UptimeRobot, Bitly
           </span>
         </div>
 

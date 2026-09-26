@@ -80,14 +80,14 @@ const TOOLS: ToolNode[] = [
   },
   {
     id: 'wati',
-    name: 'Wati',
+    name: 'WATi',
     category: 'WhatsApp Marketing',
     monthlyPrice: 314,
     color: '#22C55E',
     glowColor: 'rgba(34, 197, 94, 0.4)',
     bgGradient: 'from-emerald-500/20 to-green-500/10',
     badge: 'WhatsApp CRM Bot',
-    iconText: 'WATI',
+    iconText: 'WATi',
     roleDescription: 'WhatsApp Broadcasts & 24/7 Automated Sales Chatbot',
     benefit: '98% open rates',
     angle: 180
@@ -454,7 +454,7 @@ export const AutomationVortexHero: React.FC<AutomationVortexHeroProps> = ({ onCl
                   <span>Why Founders & Business Owners Love This Combination:</span>
                 </div>
                 <p className="leading-relaxed text-slate-300">
-                  "Before combining these 6 tools, I wasted hours updating lists manually and paid over $600/month. Combining Mailchimp, Hostinger, Fomo, Wati, UptimeRobot, and Bitly turned our customer acquisition into an automatic flywheel that converts while we sleep!"
+                  "Before combining these 6 tools, I wasted hours updating lists manually and paid over $600/month. Combining Mailchimp, Hostinger, Fomo, WATi, UptimeRobot, and Bitly turned our customer acquisition into an automatic flywheel that converts while we sleep!"
                 </p>
                 <div className="pt-1 flex items-center justify-between text-[11px] text-slate-400 font-mono">
                   <span>Owner: Alex M., Retail Founder</span>

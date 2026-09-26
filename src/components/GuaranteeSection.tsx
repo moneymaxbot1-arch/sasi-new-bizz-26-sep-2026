@@ -34,7 +34,7 @@ export const GuaranteeSection: React.FC<GuaranteeSectionProps> = ({ onClaimClick
               </h3>
 
               <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-                All 6 software licenses provided in this package are <strong className="text-white">100% legitimate and authentic</strong>, sourced directly from the original vendor companies (Mailchimp, Hostinger, Fomo, Wati, UptimeRobot, and Bitly). <strong className="text-emerald-300">Strictly zero piracy, no cracks, and 100% straight from the official companies.</strong>
+                All 6 software licenses provided in this package are <strong className="text-white">100% legitimate and authentic</strong>, sourced directly from the original vendor companies (Mailchimp, Hostinger, Fomo, WATi, UptimeRobot, and Bitly). <strong className="text-emerald-300">Strictly zero piracy, no cracks, and 100% straight from the official companies.</strong>
               </p>
 
               {/* The 2-minute replacement promise */}
@@ -44,7 +44,14 @@ export const GuaranteeSection: React.FC<GuaranteeSectionProps> = ({ onClaimClick
                   <span>Immediate 2-Minute Replacement Policy:</span>
                 </div>
                 <p className="text-slate-300 leading-relaxed">
-                  If you experience any difficulties operating any of the tools or if a software license is not working as expected, our dedicated priority support will <strong className="text-white">replace it immediately within 2 minutes</strong>. No delays, and <strong className="text-emerald-300">no questions will be asked</strong>.
+                  If you experience any difficulties operating any of the tools or if a software license is not working as expected, our dedicated priority support will <strong className="text-white">replace it immediately within 2 minutes</strong>. Contact us anytime at{' '}
+                  <a
+                    href="mailto:Bizzsoft2u@gmail.com"
+                    className="text-emerald-400 hover:text-emerald-300 font-bold underline font-mono"
+                  >
+                    Bizzsoft2u@gmail.com
+                  </a>
+                  . No delays, and <strong className="text-emerald-300">no questions will be asked</strong>.
                 </p>
               </div>
 

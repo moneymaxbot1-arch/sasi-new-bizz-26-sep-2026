@@ -61,7 +61,7 @@ export default function App() {
       <main className="flex-1">
         <Hero onClaimClick={() => handleOpenCheckout()} />
 
-        {/* Prominent Real-Time 8-Hour Countdown Timer Section */}
+        {/* Prominent Real-Time 1-Hour Countdown Timer Section */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 sm:-mt-10 mb-14 relative z-20">
           <CountdownTimer onClaimClick={() => handleOpenCheckout()} />
         </div>

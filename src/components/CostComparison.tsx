@@ -147,7 +147,7 @@ export const CostComparison: React.FC<CostComparisonProps> = ({ onClaimClick }) 
 
           </div>
 
-          {/* Column 2: The StackScale Bundle (Starting at $15) */}
+          {/* Column 2: The Bizz2u Bundle (Starting at $15) */}
           <div className="lg:col-span-5 bg-gradient-to-b from-slate-900 to-[#0e1726] border-2 border-emerald-500/60 rounded-2xl p-6 sm:p-8 shadow-2xl relative">
             <div className="absolute -top-3.5 right-6 px-3 py-1 bg-gradient-to-r from-emerald-400 to-teal-300 text-slate-950 font-extrabold text-xs rounded-full shadow-lg">
               97.7% DISCOUNT
@@ -158,7 +158,7 @@ export const CostComparison: React.FC<CostComparisonProps> = ({ onClaimClick }) 
                 <Check className="w-5 h-5 stroke-[2.5]" />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-white">The StackScale Bundle</h3>
+                <h3 className="text-lg font-bold text-white">The Bizz2u Bundle</h3>
                 <p className="text-xs text-emerald-400">All 6 tools unified · Lifetime starting tier</p>
               </div>
             </div>
@@ -179,7 +179,7 @@ export const CostComparison: React.FC<CostComparisonProps> = ({ onClaimClick }) 
               </div>
               <div className="flex items-start gap-2.5">
                 <Check className="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" />
-                <span><strong>Wati</strong> high-converting WhatsApp broadcasts & CRM bot</span>
+                <span><strong>WATi</strong> high-converting WhatsApp broadcasts & CRM bot</span>
               </div>
               <div className="flex items-start gap-2.5">
                 <Check className="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" />

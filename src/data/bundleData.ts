@@ -114,7 +114,7 @@ export const SOFTWARE_TOOLS: SoftwareTool[] = [
   },
   {
     id: 'wati',
-    name: 'Wati',
+    name: 'WATi',
     category: 'WhatsApp & Omnichannel Marketing CRM',
     monthlyRetail: 314,
     tagline: 'WhatsApp & Telegram Chatbot CRM with no 24-hr rule restriction & OpenAI tech',
@@ -128,7 +128,7 @@ export const SOFTWARE_TOOLS: SoftwareTool[] = [
     ],
     inDepthFeatures: [
       'Effortlessly build Chatbots for Telegram, Instagram, Facebook, and WhatsApp Business accounts',
-      'Connect WATI in just a few simple steps for a hassle-free, no-code omnichannel setup',
+      'Connect WATi in just a few simple steps for a hassle-free, no-code omnichannel setup',
       'Send promotional broadcasts, alerts, and transactional notifications whenever you want',
       'Benefit from sky-high 98% open rates with no 24-hour window restrictions across connected channels',
       'Set up automated sequence drip messages triggered across minutes, hours, or days',
@@ -260,7 +260,7 @@ export const PRICING_TIERS: PricingTier[] = [
       'FOMO: 3,000 Monthly Unique Visitors',
       'UptimeRobot: 1 WebPage / Real-time Tracking',
       'Mailchimp: 3,000 Active Email Subscribers',
-      'Wati: 2,000 WhatsApp Marketing Subscribers',
+      'WATi: 2,000 WhatsApp Marketing Subscribers',
       'Bitly: 1 Branded Project & Custom Links',
       'Complete Beginner Video Tutorial Academy',
       '100% Satisfaction Guarantee · 2-Min Replacement'
@@ -294,7 +294,7 @@ export const PRICING_TIERS: PricingTier[] = [
       'FOMO: 10,000 Monthly Unique Visitors',
       'UptimeRobot: 10 WebPages / Live Tracking',
       'Mailchimp: 10,000 Active Email Subscribers',
-      'Wati: 10,000 WhatsApp Marketing Subscribers',
+      'WATi: 10,000 WhatsApp Marketing Subscribers',
       'Bitly: 20 Branded Campaign Projects',
       '50+ Pre-built Copy Swipe Files & Cart Recovery',
       'Priority VIP Support Desk Access'
@@ -328,7 +328,7 @@ export const PRICING_TIERS: PricingTier[] = [
       'FOMO: 100,000 Monthly Unique Visitors',
       'UptimeRobot: 1,000 WebPages / Live Tracking',
       'Mailchimp: 300,000 Active Email Subscribers',
-      'Wati: 85,000 WhatsApp Marketing Subscribers',
+      'WATi: 85,000 WhatsApp Marketing Subscribers',
       'Bitly: 500 Branded Campaign Projects',
       'Unlimited Commercial Client Deploy Rights',
       'Done-For-You Agency Pitch Deck & Retainer Calculator'
@@ -347,10 +347,10 @@ export const TESTIMONIALS: Testimonial[] = [
     avatarText: 'DC',
     rating: 5,
     headline: 'Automated $8,400 in recovered carts in 30 days',
-    content: 'We were paying over $500 every single month for individual tool subscriptions. Grabbing this bundle for $15 seemed too good to be true, but it gave us the exact same automation horsepower. Our WhatsApp broadcasts through Wati and abandoned cart email flows in Mailchimp alone recovered $8,400 in lost orders in month one.',
+    content: 'We were paying over $500 every single month for individual tool subscriptions. Grabbing this bundle for $15 seemed too good to be true, but it gave us the exact same automation horsepower. Our WhatsApp broadcasts through WATi and abandoned cart email flows in Mailchimp alone recovered $8,400 in lost orders in month one.',
     metricLabel: 'Recovered Sales',
     metricValue: '+$8,400.00',
-    toolsUsed: ['Wati', 'Mailchimp', 'Fomo'],
+    toolsUsed: ['WATi', 'Mailchimp', 'Fomo'],
     planTier: 'Starter Pack ($15/mo)'
   },
   {
@@ -378,7 +378,7 @@ export const TESTIMONIALS: Testimonial[] = [
     content: 'UptimeRobot notified us via SMS within 20 seconds when a third-party checkout gateway had a brief hiccup. We rerouted traffic immediately, preventing an estimated $12,000 in lost holiday sales. Every single online founder needs this running in the background 24/7.',
     metricLabel: 'Downtime Prevented',
     metricValue: '100% Zero-Loss',
-    toolsUsed: ['UptimeRobot', 'Hostinger', 'Wati'],
+    toolsUsed: ['UptimeRobot', 'Hostinger', 'WATi'],
     planTier: 'Starter Pack ($15/mo)'
   },
   {
@@ -389,10 +389,10 @@ export const TESTIMONIALS: Testimonial[] = [
     avatarText: 'JR',
     rating: 5,
     headline: 'Cut our manual customer follow-up time by 18 hours/week',
-    content: 'Before StackScale, our small team spent 3-4 hours every single day answering standard order queries and following up on pending quotes. Setting up Wati automated interactive flows and Mailchimp welcome journeys automated 85% of customer inquiries without hiring extra staff.',
+    content: 'Before Bizz2u, our small team spent 3-4 hours every single day answering standard order queries and following up on pending quotes. Setting up WATi automated interactive flows and Mailchimp welcome journeys automated 85% of customer inquiries without hiring extra staff.',
     metricLabel: 'Hours Saved Weekly',
     metricValue: '18 hrs/week',
-    toolsUsed: ['Wati', 'Mailchimp'],
+    toolsUsed: ['WATi', 'Mailchimp'],
     planTier: 'Growth Pack ($35/mo)'
   },
   {
@@ -417,10 +417,10 @@ export const TESTIMONIALS: Testimonial[] = [
     avatarText: 'PS',
     rating: 5,
     headline: 'WhatsApp broadcasts converted 4.2x higher than cold email',
-    content: 'Our open rates exploded from 19% on email to 97% on Wati WhatsApp broadcasts. We ran a 48-hour flash sale for our product release and generated 214 orders in under 3 hours. The automation templates included in this bundle made the entire setup take less than 20 minutes.',
+    content: 'Our open rates exploded from 19% on email to 97% on WATi WhatsApp broadcasts. We ran a 48-hour flash sale for our product release and generated 214 orders in under 3 hours. The automation templates included in this bundle made the entire setup take less than 20 minutes.',
     metricLabel: 'WhatsApp Open Rate',
     metricValue: '97.4%',
-    toolsUsed: ['Wati', 'Bitly'],
+    toolsUsed: ['WATi', 'Bitly'],
     planTier: 'Growth Pack ($35/mo)'
   },
   {
@@ -459,10 +459,10 @@ export const TESTIMONIALS: Testimonial[] = [
     avatarText: 'TA',
     rating: 5,
     headline: 'Replaced 4 full-time support tasks with automated workflows',
-    content: 'The $15 starting price was the most asymmetric investment we made all year. Between the Mailchimp automated onboarding series and Wati 24/7 instant chat routing, our prospective buyers get instant answers at 2 AM on weekends, booking demos automatically on autopilot.',
+    content: 'The $15 starting price was the most asymmetric investment we made all year. Between the Mailchimp automated onboarding series and WATi 24/7 instant chat routing, our prospective buyers get instant answers at 2 AM on weekends, booking demos automatically on autopilot.',
     metricLabel: 'Demo Booking Surge',
     metricValue: '+89%',
-    toolsUsed: ['Mailchimp', 'Wati', 'Fomo'],
+    toolsUsed: ['Mailchimp', 'WATi', 'Fomo'],
     planTier: 'Starter Pack ($15/mo)'
   },
   {
@@ -487,10 +487,10 @@ export const TESTIMONIALS: Testimonial[] = [
     avatarText: 'JW',
     rating: 5,
     headline: 'The setup templates alone are worth 100x the $15 price',
-    content: 'Most bundles give you software licenses with zero context. What makes this special is the step-by-step automation blueprint. We plugged in the pre-configured Mailchimp sequences and Wati broadcast rules and had our entire sales pipeline live before lunch.',
+    content: 'Most bundles give you software licenses with zero context. What makes this special is the step-by-step automation blueprint. We plugged in the pre-configured Mailchimp sequences and WATi broadcast rules and had our entire sales pipeline live before lunch.',
     metricLabel: 'Setup Time',
     metricValue: '< 45 Mins',
-    toolsUsed: ['Mailchimp', 'Wati', 'Bitly'],
+    toolsUsed: ['Mailchimp', 'WATi', 'Bitly'],
     planTier: 'Starter Pack ($15/mo)'
   },
   {
@@ -513,13 +513,13 @@ export const FAQS: FaqItem[] = [
   {
     id: 'f1',
     question: 'Why does the bundle subscription start from as low as $15/month when retail is $650/month?',
-    answer: 'This is a limited-time promotional volume partnership. Instead of paying each software company separately ($162 for Mailchimp, $314 for Wati, $80 for UptimeRobot, etc.), our enterprise volume license allows us to offer this complete 6-software package starting at just $15 per month, slashing your software overhead by 97.7%.',
+    answer: 'This is a limited-time promotional volume partnership. Instead of paying each software company separately ($162 for Mailchimp, $314 for WATi, $80 for UptimeRobot, etc.), our enterprise volume license allows us to offer this complete 6-software package starting at just $15 per month, slashing your software overhead by 97.7%.',
     category: 'Pricing'
   },
   {
     id: 'f2',
     question: 'How do I access and activate the 6 software tools after payment?',
-    answer: 'Immediately upon completing your order, you receive instant access to your private customer portal with license keys, 1-click activation links, pre-configured automation templates, and step-by-step video setup guides for Mailchimp, Hostinger, Fomo, Wati, UptimeRobot, and Bitly.',
+    answer: 'Immediately upon completing your order, you receive instant access to your private customer portal with license keys, 1-click activation links, pre-configured automation templates, and step-by-step video setup guides for Mailchimp, Hostinger, Fomo, WATi, UptimeRobot, and Bitly.',
     category: 'Access'
   },
   {
@@ -537,7 +537,7 @@ export const FAQS: FaqItem[] = [
   {
     id: 'f5',
     question: 'Are all 6 software licenses official, and what is the guarantee policy?',
-    answer: 'All 6 software licenses are 100% legitimate and authentic, provided directly by the original vendor companies (Mailchimp, Hostinger, Fomo, Wati, UptimeRobot, and Bitly)—strictly zero piracy and no cracked tools. We provide a 100% Satisfaction Guarantee: if you encounter any difficulties operating any tool or if any software is not working, we will replace it immediately within 2 minutes—no questions asked.',
+    answer: 'All 6 software licenses are 100% legitimate and authentic, provided directly by the original vendor companies (Mailchimp, Hostinger, Fomo, WATi, UptimeRobot, and Bitly)—strictly zero piracy and no cracked tools. We provide a 100% Satisfaction Guarantee: if you encounter any difficulties operating any tool or if any software is not working, we will replace it immediately within 2 minutes—no questions asked. Contact us directly at Bizzsoft2u@gmail.com.',
     category: 'Guarantee'
   },
   {
@@ -545,6 +545,12 @@ export const FAQS: FaqItem[] = [
     question: 'Can I use these tools for client work or agency projects?',
     answer: 'Yes! If you choose the Growth or Agency tiers, you receive expanded commercial licenses allowing you to deploy these high-converting workflows directly for your clients, charge retainer fees, and keep 100% of the profits.',
     category: 'Licensing'
+  },
+  {
+    id: 'f7',
+    question: 'How do I contact official customer support if I have questions or need assistance?',
+    answer: 'You can email our official customer support desk directly anytime at Bizzsoft2u@gmail.com. Whether you need activation guidance, custom tier recommendations, or technical assistance, our support team replies promptly.',
+    category: 'Support'
   }
 ];
 

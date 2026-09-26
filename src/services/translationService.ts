@@ -60,7 +60,7 @@ export const setAppLanguage = (langCode: string) => {
       document.documentElement.dir = 'ltr';
     }
 
-    localStorage.setItem('stackscale_lang', langCode);
+    localStorage.setItem('bizz2u_lang', langCode);
 
     // If English, clear translation cookie to return to native state
     if (langCode === 'en') {
@@ -98,7 +98,7 @@ export const setAppLanguage = (langCode: string) => {
 
 export const getSavedLanguage = (): string => {
   try {
-    return localStorage.getItem('stackscale_lang') || 'en';
+    return localStorage.getItem('bizz2u_lang') || 'en';
   } catch {
     return 'en';
   }

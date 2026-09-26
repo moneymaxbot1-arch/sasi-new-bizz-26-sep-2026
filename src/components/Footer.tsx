@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShieldCheck, Lock } from 'lucide-react';
+import { ShieldCheck, Lock, Award, Mail } from 'lucide-react';
 
 interface FooterProps {
   onClaimClick: () => void;
@@ -12,15 +12,15 @@ export const Footer: React.FC<FooterProps> = ({ onClaimClick }) => {
         
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 pb-10 border-b border-slate-800">
           
-          <div className="md:col-span-5 space-y-3">
+          <div className="md:col-span-5 space-y-3.5">
             <div className="text-lg font-bold text-white flex items-center gap-1.5">
-              <span>StackScale</span>
+              <span>Bizz2u</span>
               <span className="w-2 h-2 rounded-full bg-emerald-400 inline-block" />
             </div>
             <p className="text-slate-400 max-w-sm leading-relaxed">
               The premier business productivity & sales automation software suite. Giving entrepreneurs enterprise-tier tools starting at just $15/month.
             </p>
-            <div className="flex items-center gap-3 pt-2 text-slate-400 text-[11px]">
+            <div className="flex items-center gap-3 pt-1 text-slate-400 text-[11px]">
               <span className="flex items-center gap-1">
                 <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
                 <span>Verified Vendor</span>
@@ -29,6 +29,48 @@ export const Footer: React.FC<FooterProps> = ({ onClaimClick }) => {
                 <Lock className="w-3.5 h-3.5 text-emerald-400" />
                 <span>256-Bit SSL Encryption</span>
               </span>
+            </div>
+
+            {/* Founder Note: Dr. Sasi */}
+            <div className="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 shadow-sm space-y-2">
+              <div className="flex items-center gap-2.5">
+                <div className="w-8 h-8 rounded-lg bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 font-extrabold text-xs">
+                  DS
+                </div>
+                <div>
+                  <div className="text-xs font-bold text-white flex items-center gap-2">
+                    <span>Dr. Sasi</span>
+                    <span className="px-2 py-0.5 rounded text-[10px] bg-emerald-950 text-emerald-300 border border-emerald-500/30 font-semibold font-mono">
+                      Founder & CEO
+                    </span>
+                  </div>
+                  <div className="text-[10px] text-slate-400 flex items-center gap-1 mt-0.5">
+                    <Award className="w-3 h-3 text-amber-400" />
+                    <span>25+ Years Silicon Valley Experience</span>
+                  </div>
+                </div>
+              </div>
+              <p className="text-[11px] text-slate-300 leading-relaxed">
+                The founder of Bizz2u is <strong className="text-white">Dr. Sasi</strong>, an accomplished entrepreneur and CEO in the software development industry, with <strong className="text-emerald-400 font-semibold">25+ years of experience</strong> deploying strategic software development for the Silicon Valley industry.
+              </p>
+            </div>
+
+            {/* Official Support & Contact Details */}
+            <div className="p-3.5 rounded-xl bg-slate-950/80 border border-emerald-500/20 space-y-1.5">
+              <div className="flex items-center gap-2 text-white font-bold text-xs">
+                <Mail className="w-4 h-4 text-emerald-400" />
+                <span>Official Customer Contact Email:</span>
+              </div>
+              <p className="text-[11px] text-slate-300">
+                Have questions or need assistance? Reach out directly anytime:
+              </p>
+              <a
+                href="mailto:Bizzsoft2u@gmail.com"
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 hover:text-emerald-300 font-mono font-bold text-xs transition-colors"
+              >
+                <span>Bizzsoft2u@gmail.com</span>
+                <span className="text-[10px] font-sans font-normal text-slate-400">· Click to email</span>
+              </a>
             </div>
           </div>
 
@@ -40,7 +82,7 @@ export const Footer: React.FC<FooterProps> = ({ onClaimClick }) => {
               <li>Mailchimp (Email Marketing)</li>
               <li>Hostinger (Web Hosting & SSL)</li>
               <li>Fomo (Social Proof Platform)</li>
-              <li>Wati (WhatsApp Automation)</li>
+              <li>WATi (WhatsApp Automation)</li>
               <li>UptimeRobot (Website Monitoring)</li>
               <li>Bitly (URL Shortener & QR)</li>
             </ul>
@@ -59,15 +101,24 @@ export const Footer: React.FC<FooterProps> = ({ onClaimClick }) => {
             >
               Start $15/mo Subscription
             </button>
+            <div className="pt-2 text-[11px] text-slate-400 flex items-center gap-1.5">
+              <Mail className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+              <span>Official Support: <a href="mailto:Bizzsoft2u@gmail.com" className="text-emerald-400 hover:underline font-mono font-semibold">Bizzsoft2u@gmail.com</a></span>
+            </div>
           </div>
 
         </div>
 
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
           <div>
-            &copy; {new Date().getFullYear()} StackScale Inc. All rights reserved. Trademarks are property of their respective owners.
+            &copy; {new Date().getFullYear()} Bizz2u Inc. Founded by Dr. Sasi. All rights reserved. Trademarks are property of their respective owners.
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+            <a href="mailto:Bizzsoft2u@gmail.com" className="text-emerald-400 hover:text-emerald-300 font-semibold font-mono flex items-center gap-1 transition-colors">
+              <Mail className="w-3 h-3 text-emerald-400" />
+              <span>Contact: Bizzsoft2u@gmail.com</span>
+            </a>
+            <span>·</span>
             <a href="#faq" className="hover:text-slate-300 transition-colors">Privacy Policy</a>
             <span>·</span>
             <a href="#faq" className="hover:text-slate-300 transition-colors">Terms of Service</a>

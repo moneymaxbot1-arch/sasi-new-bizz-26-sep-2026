@@ -197,10 +197,10 @@ export const Hero: React.FC<HeroProps> = ({ onClaimClick }) => {
                 <div className="py-2.5 flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 rounded-lg bg-[#25D366]/20 border border-[#25D366]/40 flex items-center justify-center font-bold text-emerald-300 text-xs">
-                      WATI
+                      WATi
                     </div>
                     <div>
-                      <div className="text-sm font-bold text-white">Wati</div>
+                      <div className="text-sm font-bold text-white">WATi</div>
                       <div className="text-xs text-slate-400">WhatsApp Marketing & Broadcasts</div>
                     </div>
                   </div>

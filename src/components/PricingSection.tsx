@@ -79,7 +79,7 @@ const STARTER_SOFTWARE_SPECS: Record<string, ToolSpecDetail> = {
   },
   wati: {
     id: 'wati',
-    name: 'WATI',
+    name: 'WATi',
     category: 'WhatsApp Business API',
     tagline: 'Broadcast marketing, automated chatbots & customer support',
     features: [
@@ -180,20 +180,24 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
   return (
     <section id="pricing" className="py-24 bg-[#0B101D] border-t border-slate-800/80 relative">
       
-      {/* Background radial ambient lights - gold glow concentrated on center */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[450px] bg-amber-500/15 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-10 left-10 w-[400px] h-[300px] bg-emerald-500/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-10 right-10 w-[400px] h-[300px] bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none" />
+      {/* Background radial ambient lights - dedicated ambient colour per pack */}
+      {/* Center: Exclusive Radiant Gold Glow */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[450px] bg-amber-500/20 rounded-full blur-[140px] pointer-events-none" />
+      {/* Left: Distinct Radiant Emerald Glow for Starter $15 Pack */}
+      <div className="absolute top-1/3 left-1/6 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[450px] bg-emerald-500/20 rounded-full blur-[140px] pointer-events-none" />
+      {/* Right: Distinct Radiant Cyan / Sapphire Glow for Big Agency $150 Pack */}
+      <div className="absolute top-1/3 right-1/6 translate-x-1/2 -translate-y-1/2 w-[550px] h-[450px] bg-cyan-500/20 rounded-full blur-[140px] pointer-events-none" />
 
-      {/* Gold Border Animation Keyframes & Ambient Glow Styles */}
+      {/* Ambient Glow Styles: Gold ONLY for Center; Emerald for Starter; Cyan for Big Agency */}
       <style>{`
+        /* Center Pack: Exclusive Radiant Gold Glow & Flow */
         @keyframes goldCenterGlowPulse {
           0%, 100% {
-            box-shadow: 0 0 35px rgba(245, 158, 11, 0.55), 0 0 70px rgba(217, 119, 6, 0.35), inset 0 0 15px rgba(254, 240, 138, 0.2);
+            box-shadow: 0 0 35px rgba(245, 158, 11, 0.55), 0 0 75px rgba(217, 119, 6, 0.35), inset 0 0 15px rgba(254, 240, 138, 0.2);
             border-color: #F59E0B;
           }
           50% {
-            box-shadow: 0 0 60px rgba(253, 224, 71, 0.95), 0 0 100px rgba(245, 158, 11, 0.7), inset 0 0 25px rgba(254, 240, 138, 0.45);
+            box-shadow: 0 0 65px rgba(253, 224, 71, 0.95), 0 0 110px rgba(245, 158, 11, 0.7), inset 0 0 25px rgba(254, 240, 138, 0.45);
             border-color: #FEF08A;
           }
         }
@@ -210,12 +214,62 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
           50% { background-position: 100% 50%; }
           100% { background-position: 0% 50%; }
         }
+
+        /* Starter Pack ($15): Dedicated Emerald / Mint Ambient Glow & Flow */
+        @keyframes emeraldStarterGlowPulse {
+          0%, 100% {
+            box-shadow: 0 0 35px rgba(16, 185, 129, 0.5), 0 0 75px rgba(5, 150, 105, 0.3), inset 0 0 15px rgba(110, 231, 183, 0.25);
+            border-color: #10B981;
+          }
+          50% {
+            box-shadow: 0 0 65px rgba(52, 211, 153, 0.9), 0 0 110px rgba(16, 185, 129, 0.6), inset 0 0 25px rgba(167, 243, 208, 0.45);
+            border-color: #6EE7B7;
+          }
+        }
+        .starter-emerald-animated-card {
+          animation: emeraldStarterGlowPulse 3.2s ease-in-out infinite;
+        }
+        .starter-emerald-border-gradient {
+          background: linear-gradient(135deg, #ECFDF5, #6EE7B7, #10B981, #059669, #34D399, #10B981);
+          background-size: 300% 300%;
+          animation: emeraldGradientFlow 3.5s ease infinite;
+        }
+        @keyframes emeraldGradientFlow {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+
+        /* Big Agency Pack ($150): Dedicated Electric Cyan / Sapphire Ambient Glow & Flow */
+        @keyframes cyanAgencyGlowPulse {
+          0%, 100% {
+            box-shadow: 0 0 35px rgba(6, 182, 212, 0.5), 0 0 75px rgba(14, 165, 233, 0.3), inset 0 0 15px rgba(125, 211, 252, 0.25);
+            border-color: #06B6D4;
+          }
+          50% {
+            box-shadow: 0 0 65px rgba(56, 189, 248, 0.9), 0 0 110px rgba(6, 182, 212, 0.6), inset 0 0 25px rgba(186, 230, 253, 0.45);
+            border-color: #7DD3FC;
+          }
+        }
+        .agency-cyan-animated-card {
+          animation: cyanAgencyGlowPulse 3.2s ease-in-out infinite;
+        }
+        .agency-cyan-border-gradient {
+          background: linear-gradient(135deg, #F0F9FF, #7DD3FC, #06B6D4, #0284C7, #38BDF8, #06B6D4);
+          background-size: 300% 300%;
+          animation: cyanGradientFlow 3.5s ease infinite;
+        }
+        @keyframes cyanGradientFlow {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
       `}</style>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-10">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-slate-900 border border-slate-700/80 rounded-full text-xs font-bold text-slate-300 mb-4 shadow-md">
             <Flame className="w-4 h-4 text-amber-400 animate-pulse" />
             <span>SPECIAL INTRODUCTORY SUITE PROMOTION · ALL 6 TOOLS UNIFIED</span>
@@ -231,7 +285,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
           </h2>
 
           <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
-            All 6 software licenses provided directly from original companies. Select <span className="text-white font-semibold">1-Year or 2-Year</span> on top of any table below. In the $15 Starter Pack, <span className="text-emerald-400 font-semibold underline decoration-emerald-500/50 underline-offset-4">hover or tap any software</span> to reveal its full feature list!
+            All 6 software licenses provided directly from original companies. Select 1-Year or 2-Year on top of each table to lock in immediate savings.
           </p>
         </div>
 
@@ -256,14 +310,12 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                         hoveredGrowthHostinger || hoveredGrowthFomo || hoveredGrowthUptimeRobot || hoveredGrowthMailchimp || hoveredGrowthWati || hoveredGrowthBitly ? 'z-40' : 'z-20'
                       }`
                     : isStarter
-                    ? `p-[3.5px] rounded-3xl bg-gradient-to-b from-emerald-300 via-emerald-400 to-teal-500 shadow-[0_0_35px_rgba(52,211,153,0.35)] hover:shadow-[0_0_55px_rgba(52,211,153,0.55)] hover:scale-[1.01] ${
+                    ? `p-[4px] starter-emerald-border-gradient rounded-3xl starter-emerald-animated-card shadow-2xl hover:scale-[1.01] ${
                         hoveredHostinger || hoveredFomo || hoveredUptimeRobot || hoveredMailchimp || hoveredWati || hoveredBitly ? 'z-40' : 'z-25'
                       }`
-                    : isAgency
-                    ? `p-[3.5px] rounded-3xl bg-gradient-to-b from-cyan-300 via-sky-400 to-blue-500 shadow-[0_0_35px_rgba(56,189,248,0.35)] hover:shadow-[0_0_55px_rgba(56,189,248,0.55)] hover:scale-[1.01] ${
+                    : `p-[4px] agency-cyan-border-gradient rounded-3xl agency-cyan-animated-card shadow-2xl hover:scale-[1.01] ${
                         hoveredAgencyHostinger || hoveredAgencyFomo || hoveredAgencyUptimeRobot || hoveredAgencyMailchimp || hoveredAgencyWati || hoveredAgencyBitly ? 'z-40' : 'z-10'
                       }`
-                    : 'p-[3.5px] rounded-3xl bg-gradient-to-b from-cyan-300 via-sky-400 to-blue-500 shadow-[0_0_35px_rgba(56,189,248,0.35)] hover:shadow-[0_0_55px_rgba(56,189,248,0.55)] hover:scale-[1.01] z-10'
                 }`}
               >
                 {/* Gold Highlight Badge ONLY for Center Table */}
@@ -276,7 +328,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
 
                 {/* Card Inner Content Container */}
                 <div className={`h-full w-full rounded-[21px] p-6 sm:p-8 flex flex-col justify-between ${
-                  isCenter ? 'bg-[#0b101c]' : 'bg-[#0B101D]'
+                  isCenter ? 'bg-[#0b101c]' : isStarter ? 'bg-[#081216]' : 'bg-[#08101e]'
                 }`}>
                   
                   <div>
@@ -284,29 +336,39 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                     <div className="mb-5">
                       <div className="flex items-center justify-between text-[11px] font-mono font-bold text-slate-400 mb-1.5 px-0.5">
                         <span>SELECT DURATION:</span>
-                        <span className={is2Year ? (isCenter ? 'text-amber-400' : 'text-emerald-400') : 'text-slate-400'}>
-                          {is2Year ? 'Save ~40% (Best Value)' : 'Standard 1-Year'}
+                        <span className={
+                          isCenter
+                            ? 'text-amber-400 font-extrabold flex items-center gap-1'
+                            : isStarter
+                            ? 'text-emerald-400 font-extrabold flex items-center gap-1'
+                            : 'text-cyan-400 font-extrabold flex items-center gap-1'
+                        }>
+                          {is2Year ? '★ 2-Year (Save 40%)' : '⚡ 1-Year (Standard)'}
                         </span>
                       </div>
 
-                      <div className="grid grid-cols-2 gap-1.5 p-1 rounded-xl bg-slate-950/80 border border-slate-800/90 shadow-inner">
-                        {/* 2-Year Button Option */}
+                      <div className="grid grid-cols-2 gap-2 p-1.5 rounded-xl bg-slate-950/90 border border-slate-800 shadow-inner">
+                        {/* 2-Year Button Option: Gold ONLY for Center; Emerald for Starter; Cyan for Agency */}
                         <button
                           type="button"
                           onClick={() => handleToggleCycle(tier.id, '2year')}
-                          className={`py-2 px-2.5 rounded-lg text-xs font-bold transition-all duration-150 cursor-pointer flex flex-col items-center justify-center ${
+                          className={`py-2 px-2.5 rounded-lg text-xs font-bold transition-all duration-200 cursor-pointer flex flex-col items-center justify-center ${
                             is2Year
                               ? isCenter
-                                ? 'bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-400 text-slate-950 shadow-md font-black'
-                                : 'bg-emerald-400 text-slate-950 shadow-md font-black'
-                              : 'text-slate-400 hover:text-white hover:bg-slate-850'
+                                ? 'bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 text-slate-950 shadow-lg shadow-amber-500/40 ring-2 ring-amber-300 font-black scale-[1.02]'
+                                : isStarter
+                                ? 'bg-gradient-to-r from-emerald-400 via-emerald-300 to-teal-400 text-slate-950 shadow-lg shadow-emerald-500/40 ring-2 ring-emerald-300 font-black scale-[1.02]'
+                                : 'bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-400 text-slate-950 shadow-lg shadow-cyan-500/40 ring-2 ring-cyan-300 font-black scale-[1.02]'
+                              : 'bg-slate-900/60 border border-slate-800/80 text-slate-400 hover:text-white hover:bg-slate-850'
                           }`}
                         >
                           <span className="flex items-center gap-1">
-                            {is2Year && <Check className="w-3 h-3 stroke-[3]" />}
+                            {is2Year && <Check className="w-3.5 h-3.5 stroke-[3] text-slate-950" />}
                             <span>2 Years</span>
                           </span>
-                          <span className={`text-[10px] font-mono leading-tight ${is2Year ? 'text-slate-950 font-bold' : 'text-emerald-400 font-medium'}`}>
+                          <span className={`text-[10px] font-mono leading-tight ${
+                            is2Year ? 'text-slate-950 font-black' : isCenter ? 'text-amber-400 font-bold' : isStarter ? 'text-emerald-400 font-bold' : 'text-cyan-400 font-bold'
+                          }`}>
                             Save 40%
                           </span>
                         </button>
@@ -315,19 +377,23 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                         <button
                           type="button"
                           onClick={() => handleToggleCycle(tier.id, '1year')}
-                          className={`py-2 px-2.5 rounded-lg text-xs font-bold transition-all duration-150 cursor-pointer flex flex-col items-center justify-center ${
+                          className={`py-2 px-2.5 rounded-lg text-xs font-bold transition-all duration-200 cursor-pointer flex flex-col items-center justify-center ${
                             !is2Year
                               ? isCenter
-                                ? 'bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-400 text-slate-950 shadow-md font-black'
-                                : 'bg-emerald-400 text-slate-950 shadow-md font-black'
-                              : 'text-slate-400 hover:text-white hover:bg-slate-850'
+                                ? 'bg-gradient-to-r from-yellow-500 via-amber-400 to-amber-300 text-slate-950 shadow-lg shadow-amber-500/40 ring-2 ring-amber-300 font-black scale-[1.02]'
+                                : isStarter
+                                ? 'bg-gradient-to-r from-teal-400 via-emerald-300 to-cyan-400 text-slate-950 shadow-lg shadow-teal-500/40 ring-2 ring-teal-300 font-black scale-[1.02]'
+                                : 'bg-gradient-to-r from-sky-400 via-blue-300 to-indigo-300 text-slate-950 shadow-lg shadow-sky-500/40 ring-2 ring-sky-300 font-black scale-[1.02]'
+                              : 'bg-slate-900/60 border border-slate-800/80 text-slate-400 hover:text-white hover:bg-slate-850'
                           }`}
                         >
                           <span className="flex items-center gap-1">
-                            {!is2Year && <Check className="w-3 h-3 stroke-[3]" />}
+                            {!is2Year && <Check className="w-3.5 h-3.5 stroke-[3] text-slate-950" />}
                             <span>1 Year</span>
                           </span>
-                          <span className={`text-[10px] font-mono leading-tight ${!is2Year ? 'text-slate-950 font-bold' : 'text-slate-500'}`}>
+                          <span className={`text-[10px] font-mono leading-tight ${
+                            !is2Year ? 'text-slate-950 font-black' : isCenter ? 'text-amber-400/80 font-medium' : isStarter ? 'text-emerald-400/80 font-medium' : 'text-cyan-400/80 font-medium'
+                          }`}>
                             Standard
                           </span>
                         </button>
@@ -336,13 +402,23 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
 
                     {/* Top Header Badge & Subtitle */}
                     <div className="text-center mb-5">
-                      <div className="inline-block px-4 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-white font-extrabold text-sm sm:text-base tracking-wide shadow-inner">
+                      <div className={`inline-block px-4 py-1.5 rounded-lg bg-slate-950 border text-sm sm:text-base tracking-wide shadow-inner font-extrabold ${
+                        isCenter
+                          ? 'border-amber-500/40 text-amber-200'
+                          : isStarter
+                          ? 'border-emerald-500/40 text-emerald-300'
+                          : 'border-cyan-500/40 text-cyan-300'
+                      }`}>
                         {tier.name}
                       </div>
 
                       {/* Sub-badge if Premium */}
                       {tier.premiumBadge && (
-                        <div className="mt-2 inline-block px-3 py-0.5 rounded-md bg-rose-200/90 text-rose-950 font-black text-xs uppercase tracking-wider shadow-xs">
+                        <div className={`mt-2 inline-block px-3 py-0.5 rounded-md font-black text-xs uppercase tracking-wider shadow-xs ${
+                          isAgency
+                            ? 'bg-cyan-500/20 text-cyan-200 border border-cyan-400/40'
+                            : 'bg-rose-200/90 text-rose-950'
+                        }`}>
                           {tier.premiumBadge}
                         </div>
                       )}
@@ -352,14 +428,16 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                       </p>
                     </div>
 
-                    {/* Pricing Display: GOLD COLOUR PRICING ONLY FOR CENTRE PRICE TABLE */}
+                    {/* Pricing Display: Gold ONLY for Center; Emerald for Starter; Cyan for Big Agency */}
                     <div className="text-center py-5 border-y border-slate-800/80 my-3">
                       <div className="flex items-baseline justify-center gap-1.5">
                         <span
                           className={`text-4xl sm:text-5xl font-black font-mono tracking-tight ${
                             isCenter
-                              ? 'text-amber-400 drop-shadow-[0_0_20px_rgba(245,158,11,0.5)]'
-                              : 'text-white'
+                              ? 'text-amber-400 drop-shadow-[0_0_20px_rgba(245,158,11,0.7)]'
+                              : isStarter
+                              ? 'text-emerald-400 drop-shadow-[0_0_20px_rgba(52,211,153,0.7)]'
+                              : 'text-cyan-400 drop-shadow-[0_0_20px_rgba(56,189,248,0.7)]'
                           }`}
                         >
                           ${activePrice}
@@ -372,25 +450,37 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                       {/* Secondary display showing alternate pricing option */}
                       <div className="mt-2 text-xs text-slate-400 flex items-center justify-center gap-2">
                         <span>Or select {altTerm}:</span>
-                        <span className={`font-mono font-semibold ${isCenter ? 'text-amber-300/90' : 'text-slate-300'}`}>
+                        <span className={`font-mono font-semibold ${
+                          isCenter
+                            ? 'text-amber-300/90'
+                            : isStarter
+                            ? 'text-emerald-300/90'
+                            : 'text-cyan-300/90'
+                        }`}>
                           ${altPrice}/mo
                         </span>
                       </div>
                     </div>
 
-                    {/* Buy Now CTA Button */}
+                    {/* Buy Now CTA Button - Dedicated Distinct Color Per Pack */}
                     <div className="my-6">
                       <button
                         onClick={() => handleSelectWithCycle(tier)}
                         className={`w-full py-4 rounded-xl font-black text-base transition-all duration-200 cursor-pointer flex items-center justify-center gap-2 active:scale-98 ${
                           isCenter
-                            ? 'bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-400 hover:from-amber-300 hover:to-yellow-300 text-slate-950 shadow-xl shadow-amber-500/30 hover:shadow-amber-500/50'
-                            : tier.id === 'agency'
-                            ? 'bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 text-slate-950 shadow-lg shadow-cyan-500/20'
-                            : 'bg-gradient-to-r from-emerald-400 to-teal-400 hover:from-emerald-300 hover:to-teal-300 text-slate-950 shadow-lg shadow-emerald-500/20'
+                            ? 'bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-400 hover:from-amber-300 hover:to-yellow-200 text-slate-950 shadow-xl shadow-amber-500/40 hover:shadow-amber-500/65 ring-2 ring-amber-300/80'
+                            : isStarter
+                            ? is2Year
+                              ? 'bg-gradient-to-r from-emerald-400 via-teal-300 to-emerald-500 hover:from-emerald-300 hover:to-teal-200 text-slate-950 shadow-xl shadow-emerald-500/40 hover:shadow-emerald-500/60 ring-2 ring-emerald-300/80'
+                              : 'bg-gradient-to-r from-teal-400 via-emerald-300 to-cyan-400 hover:from-teal-300 hover:to-emerald-200 text-slate-950 shadow-xl shadow-teal-500/40 hover:shadow-teal-500/60 ring-2 ring-teal-300/80'
+                            : is2Year
+                            ? 'bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-500 hover:from-cyan-300 hover:to-blue-400 text-slate-950 shadow-xl shadow-cyan-500/40 hover:shadow-cyan-500/60 ring-2 ring-cyan-300/80'
+                            : 'bg-gradient-to-r from-sky-400 via-blue-300 to-indigo-400 hover:from-sky-300 hover:to-indigo-300 text-slate-950 shadow-xl shadow-blue-500/40 hover:shadow-blue-500/60 ring-2 ring-sky-300/80'
                         }`}
                       >
-                        <span>Buy Now</span>
+                        <span>
+                          {is2Year ? `Buy 2-Year Plan · $${activePrice}/mo` : `Buy 1-Year Plan · $${activePrice}/mo`}
+                        </span>
                         <ArrowRight className="w-4 h-4 stroke-[2.5]" />
                       </button>
                     </div>
@@ -1413,7 +1503,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                               💬
                             </div>
                             <span className="font-black text-sm text-white tracking-wide">
-                              wati
+                              WATi
                             </span>
                           </div>
                           <span className="w-2 h-2 rounded-full bg-cyan-400" />
@@ -1452,7 +1542,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                               <div className="flex items-center gap-2">
                                 <div className="flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#00E785] text-slate-950 font-black text-xs uppercase shadow-xs">
                                   <span>💬</span>
-                                  <span>WATI</span>
+                                  <span>WATi</span>
                                 </div>
                                 <span className="px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-500/40 text-[10px] font-mono font-bold uppercase">
                                   $15 Plan Included
@@ -1522,7 +1612,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                               <div className="flex items-center gap-2">
                                 <div className="flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#00E785] text-slate-950 font-black text-xs uppercase shadow-xs">
                                   <span>💬</span>
-                                  <span>WATI</span>
+                                  <span>WATi</span>
                                 </div>
                                 <span className="px-2 py-0.5 rounded bg-emerald-950 text-[#00E785] border border-[#00E785]/40 text-[10px] font-mono font-bold uppercase">
                                   $35 Plan Included
@@ -1592,7 +1682,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                               <div className="flex items-center gap-2">
                                 <div className="flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#00E785] text-slate-950 font-black text-xs uppercase shadow-xs">
                                   <span>💬</span>
-                                  <span>WATI</span>
+                                  <span>WATi</span>
                                 </div>
                                 <span className="px-2 py-0.5 rounded bg-emerald-950 text-[#00E785] border border-[#00E785]/40 text-[10px] font-mono font-bold uppercase">
                                   $150 Plan Included

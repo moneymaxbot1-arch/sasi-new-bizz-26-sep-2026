@@ -88,7 +88,7 @@ const PILLARS: CorePillar[] = [
     keyBenefit: 'Acts as your 24/7 virtual sales team, proving to visitors that real people are actively buying right now.',
     metric: '+34%',
     metricLabel: 'Lift in Checkout Completion',
-    toolsResponsible: ['Fomo', 'Wati'],
+    toolsResponsible: ['Fomo', 'WATi'],
     illustrationTheme: {
       gradient: 'from-rose-500/15 via-pink-500/10 to-slate-900',
       border: 'border-rose-500/40',
@@ -103,11 +103,11 @@ const PILLARS: CorePillar[] = [
     badge: 'Omnichannel Conversion',
     tagline: 'Reconnect with interested prospects on channels they actually open',
     problem: 'Reaching out to potential customers who have shown interest in your content or offerings is challenging. Traditional emails get lost in spam, and finding a cost-effective way to reconnect is key.',
-    solution: 'Combine Mailchimp automated email drip sequences with WATI 98% open-rate WhatsApp broadcasts, Telegram catalog checkout, and automated abandoned cart recovery sequences.',
+    solution: 'Combine Mailchimp automated email drip sequences with WATi 98% open-rate WhatsApp broadcasts, Telegram catalog checkout, and automated abandoned cart recovery sequences.',
     keyBenefit: 'Recover up to 40% of abandoned carts with instant WhatsApp follow-ups that bypass saturated inboxes with zero 24-hour rule restrictions.',
     metric: '98%',
     metricLabel: 'WhatsApp Open Rates',
-    toolsResponsible: ['Wati', 'Mailchimp'],
+    toolsResponsible: ['WATi', 'Mailchimp'],
     illustrationTheme: {
       gradient: 'from-emerald-500/15 via-teal-500/10 to-slate-900',
       border: 'border-emerald-500/40',
@@ -144,9 +144,9 @@ const TARGET_AUDIENCES: TargetAudience[] = [
     badge: 'DTC & Retail',
     headline: 'Stop losing checkouts to cart abandonment and silent outages',
     painPoint: 'Paying separate $200+/mo bills for email, WhatsApp apps, hosting, and social proof plugins that don\'t talk to each other.',
-    howWeSolve: 'Trigger Fomo live purchase alerts on product pages, broadcast flash sales via Wati WhatsApp (98% opens), and host fast landing pages on Hostinger SSD.',
+    howWeSolve: 'Trigger Fomo live purchase alerts on product pages, broadcast flash sales via WATi WhatsApp (98% opens), and host fast landing pages on Hostinger SSD.',
     result: '+42% higher conversion rate with instant abandoned cart recovery',
-    recommendedTool: 'Wati + Fomo + Mailchimp'
+    recommendedTool: 'WATi + Fomo + Mailchimp'
   },
   {
     id: 'agencies',
@@ -174,9 +174,9 @@ const TARGET_AUDIENCES: TargetAudience[] = [
     badge: 'Local Commerce & Clinics',
     headline: 'Automate booking reminders, customer reviews, and lead capture',
     painPoint: 'Manual follow-ups over phone or email cause 30%+ appointment no-shows and lost repeat business.',
-    howWeSolve: 'Automate 2-way WhatsApp appointment confirmations with Wati, generate scan-to-pay QR codes with Bitly, and show verified local reviews with Fomo.',
+    howWeSolve: 'Automate 2-way WhatsApp appointment confirmations with WATi, generate scan-to-pay QR codes with Bitly, and show verified local reviews with Fomo.',
     result: 'Cut appointment no-shows by 75% and automate repeat bookings 24/7',
-    recommendedTool: 'Wati + Bitly + Fomo'
+    recommendedTool: 'WATi + Bitly + Fomo'
   }
 ];
 
