@@ -1,52 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Clock, Flame, Zap, ShieldCheck, ArrowRight, AlertTriangle } from 'lucide-react';
+import { useCountdownTimer } from '../utils/countdownUtils';
 
 interface CountdownTimerProps {
   onClaimClick: () => void;
 }
 
-const TOTAL_SECONDS_15_MIN = 15 * 60; // 900 seconds (15 minutes)
-const STORAGE_KEY = 'bizz2u_15m_countdown_start';
-
 export const CountdownTimer: React.FC<CountdownTimerProps> = ({ onClaimClick }) => {
-  const [secondsRemaining, setSecondsRemaining] = useState<number>(() => {
-    try {
-      const storedStart = localStorage.getItem(STORAGE_KEY);
-      const now = Math.floor(Date.now() / 1000);
-      if (storedStart) {
-        const elapsed = now - parseInt(storedStart, 10);
-        if (elapsed >= 0 && elapsed < TOTAL_SECONDS_15_MIN) {
-          return TOTAL_SECONDS_15_MIN - elapsed;
-        }
-      }
-      // Initialize or reset if expired
-      localStorage.setItem(STORAGE_KEY, now.toString());
-      return TOTAL_SECONDS_15_MIN;
-    } catch {
-      return TOTAL_SECONDS_15_MIN;
-    }
-  });
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setSecondsRemaining(prev => {
-        if (prev <= 1) {
-          // Reset loop or keep at 0
-          return TOTAL_SECONDS_15_MIN;
-        }
-        return prev - 1;
-      });
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, []);
-
-  const hours = Math.floor(secondsRemaining / 3600);
-  const minutes = Math.floor((secondsRemaining % 3600) / 60);
-  const seconds = secondsRemaining % 60;
-
+  const { hours, minutes, seconds, stockRemaining, claimedCount, percentElapsed } = useCountdownTimer();
   const pad = (n: number) => n.toString().padStart(2, '0');
-  const percentElapsed = ((TOTAL_SECONDS_15_MIN - secondsRemaining) / TOTAL_SECONDS_15_MIN) * 100;
 
   return (
     <div className="w-full relative overflow-hidden bg-gradient-to-r from-red-950/80 via-slate-900 to-amber-950/70 border-y sm:border border-red-500/40 sm:rounded-2xl p-4 sm:p-6 shadow-2xl backdrop-blur-md">
@@ -141,7 +103,7 @@ export const CountdownTimer: React.FC<CountdownTimerProps> = ({ onClaimClick }) 
       <div className="mt-4 pt-3 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-slate-400">
         <div className="flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-          <span>Batch status: <strong className="text-white">86 of 100 promotional licenses claimed</strong></span>
+          <span>Batch status: <strong className="text-white">{claimedCount} of 100 promotional licenses claimed ({stockRemaining} remaining)</strong></span>
         </div>
         <div className="w-full sm:w-64 h-2 bg-slate-950 rounded-full overflow-hidden border border-slate-800">
           <div

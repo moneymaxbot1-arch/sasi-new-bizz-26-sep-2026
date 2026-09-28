@@ -1,12 +1,15 @@
 import React from 'react';
 import { ArrowRight, CheckCircle2, ShieldCheck, Zap, Star, TrendingUp, Users } from 'lucide-react';
 import { TOTAL_MONTHLY_RETAIL, TOTAL_ANNUAL_RETAIL } from '../data/bundleData';
+import { useCountdownTimer } from '../utils/countdownUtils';
 
 interface HeroProps {
   onClaimClick: () => void;
 }
 
 export const Hero: React.FC<HeroProps> = ({ onClaimClick }) => {
+  const { stockRemaining, claimedCount } = useCountdownTimer();
+
   return (
     <section className="relative overflow-hidden pt-10 pb-16 lg:pt-16 lg:pb-24 bg-[#090D16]">
       {/* Background ambient lighting */}
@@ -49,11 +52,14 @@ export const Hero: React.FC<HeroProps> = ({ onClaimClick }) => {
                   <span>TIER 1 PRICING EXPIRES WHEN 100 SUBSCRIBERS JOIN</span>
                 </div>
                 <div className="text-xs text-slate-400">
-                  Currently <span className="text-white font-bold font-mono">86 claimed</span> · Only <span className="text-amber-300 font-bold font-mono">14 licenses remaining</span> at $15/mo
+                  Currently <span className="text-white font-bold font-mono">{claimedCount} claimed</span> · Only <span className="text-amber-300 font-bold font-mono">{stockRemaining} licenses remaining</span> at $15/mo
                 </div>
               </div>
               <div className="w-24 bg-slate-800 h-2.5 rounded-full overflow-hidden shrink-0 border border-slate-700">
-                <div className="bg-gradient-to-r from-amber-400 to-rose-500 h-full w-[86%] rounded-full" />
+                <div 
+                  className="bg-gradient-to-r from-amber-400 to-rose-500 h-full rounded-full transition-all duration-500" 
+                  style={{ width: `${claimedCount}%` }}
+                />
               </div>
             </div>
 

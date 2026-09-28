@@ -1,43 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Flame, Clock, ArrowRight } from 'lucide-react';
+import { useCountdownTimer } from '../utils/countdownUtils';
 
 interface UrgencyHeaderProps {
   onClaimClick: () => void;
 }
 
-const TOTAL_SECONDS_15_MIN = 15 * 60; // 900 seconds (15 minutes)
-const STORAGE_KEY = 'bizz2u_15m_countdown_start';
-
 export const UrgencyHeader: React.FC<UrgencyHeaderProps> = ({ onClaimClick }) => {
-  const [secondsRemaining, setSecondsRemaining] = useState<number>(() => {
-    try {
-      const storedStart = localStorage.getItem(STORAGE_KEY);
-      const now = Math.floor(Date.now() / 1000);
-      if (storedStart) {
-        const elapsed = now - parseInt(storedStart, 10);
-        if (elapsed >= 0 && elapsed < TOTAL_SECONDS_15_MIN) {
-          return TOTAL_SECONDS_15_MIN - elapsed;
-        }
-      }
-      localStorage.setItem(STORAGE_KEY, now.toString());
-      return TOTAL_SECONDS_15_MIN;
-    } catch {
-      return TOTAL_SECONDS_15_MIN;
-    }
-  });
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setSecondsRemaining(prev => (prev <= 1 ? TOTAL_SECONDS_15_MIN : prev - 1));
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, []);
-
-  const hours = Math.floor(secondsRemaining / 3600);
-  const minutes = Math.floor((secondsRemaining % 3600) / 60);
-  const seconds = secondsRemaining % 60;
-
+  const { hours, minutes, seconds, stockRemaining } = useCountdownTimer();
   const format = (num: number) => num.toString().padStart(2, '0');
 
   return (
@@ -50,6 +20,9 @@ export const UrgencyHeader: React.FC<UrgencyHeaderProps> = ({ onClaimClick }) =>
           </span>
           <span className="hidden md:inline text-rose-100">
             6-in-1 Business Automation Suite: Mailchimp, Hostinger, Fomo, WATi, UptimeRobot, Bitly
+          </span>
+          <span className="hidden lg:inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-black/30 border border-amber-300/40 text-amber-200 font-bold text-xs">
+            🔥 {stockRemaining} Licenses Left!
           </span>
         </div>
 

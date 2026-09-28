@@ -1,31 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, Sparkles, Clock, Flame } from 'lucide-react';
+import { useCountdownTimer } from '../utils/countdownUtils';
 
 interface MobileStickyBarProps {
   onClaimClick: () => void;
 }
 
-const TOTAL_SECONDS_15_MIN = 15 * 60; // 900 seconds (15 minutes)
-const STORAGE_KEY = 'bizz2u_15m_countdown_start';
-
 export const MobileStickyBar: React.FC<MobileStickyBarProps> = ({ onClaimClick }) => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
-  const [secondsRemaining, setSecondsRemaining] = useState<number>(() => {
-    try {
-      const storedStart = localStorage.getItem(STORAGE_KEY);
-      const now = Math.floor(Date.now() / 1000);
-      if (storedStart) {
-        const elapsed = now - parseInt(storedStart, 10);
-        if (elapsed >= 0 && elapsed < TOTAL_SECONDS_15_MIN) {
-          return TOTAL_SECONDS_15_MIN - elapsed;
-        }
-      }
-      localStorage.setItem(STORAGE_KEY, now.toString());
-      return TOTAL_SECONDS_15_MIN;
-    } catch {
-      return TOTAL_SECONDS_15_MIN;
-    }
-  });
+  const { minutes, seconds, stockRemaining } = useCountdownTimer();
 
   // Track scroll position to show when the user scrolls the page
   useEffect(() => {
@@ -45,17 +28,6 @@ export const MobileStickyBar: React.FC<MobileStickyBarProps> = ({ onClaimClick }
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // 15-Minute Countdown live tick
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setSecondsRemaining(prev => (prev <= 1 ? TOTAL_SECONDS_15_MIN : prev - 1));
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, []);
-
-  const minutes = Math.floor(secondsRemaining / 60);
-  const seconds = secondsRemaining % 60;
   const pad = (n: number) => n.toString().padStart(2, '0');
 
   return (
@@ -65,7 +37,7 @@ export const MobileStickyBar: React.FC<MobileStickyBarProps> = ({ onClaimClick }
       }`}
     >
       <div className="flex items-center justify-between gap-2 max-w-md mx-auto">
-        {/* Left Side: High-Intensity Urgency & FOMO Engine (Big Timer + 14 Left) */}
+        {/* Left Side: High-Intensity Urgency & FOMO Engine (Big Timer + Dynamic Stock Left) */}
         <div className="flex flex-col justify-center min-w-0 pr-1">
           {/* Urgency Kicker */}
           <div className="flex items-center gap-1.5 text-[9px] sm:text-[10px] font-black uppercase tracking-wider text-rose-400">
@@ -76,7 +48,7 @@ export const MobileStickyBar: React.FC<MobileStickyBarProps> = ({ onClaimClick }
             <span>PRICE RISES IN</span>
           </div>
 
-          {/* Big Size Real-Time Timer & 14 Left Scarcity Pill */}
+          {/* Big Size Real-Time Timer & Live Stock Scarcity Pill */}
           <div className="flex items-center gap-1.5 mt-0.5">
             {/* Big Countdown Timer Badge */}
             <div className="flex items-center gap-1 px-2 sm:px-2.5 py-0.5 rounded-lg bg-gradient-to-r from-rose-950 via-slate-900 to-rose-950 border border-rose-500/70 text-rose-200 font-mono font-black text-sm sm:text-base shadow-[0_0_15px_rgba(244,63,94,0.35)]">
@@ -84,10 +56,17 @@ export const MobileStickyBar: React.FC<MobileStickyBarProps> = ({ onClaimClick }
               <span className="tabular-nums tracking-wider">{pad(minutes)}:{pad(seconds)}</span>
             </div>
 
-            {/* Big FOMO Stock Scarcity Pill */}
-            <div className="flex items-center gap-1 px-2 py-0.5 rounded-lg bg-amber-500/20 border border-amber-500/50 text-amber-300 font-black text-xs sm:text-sm whitespace-nowrap shadow-[0_0_10px_rgba(245,158,11,0.25)]">
-              <Flame className="w-3.5 h-3.5 text-amber-400 animate-bounce shrink-0" />
-              <span>14 Left!</span>
+            {/* Big FOMO Stock Scarcity Pill - Automatically drops as timer counts down */}
+            <div 
+              key={stockRemaining}
+              className={`flex items-center gap-1 px-2 py-0.5 rounded-lg border font-black text-xs sm:text-sm whitespace-nowrap transition-all duration-300 ${
+                stockRemaining <= 5
+                  ? 'bg-rose-500/25 border-rose-500/70 text-rose-300 shadow-[0_0_15px_rgba(244,63,94,0.4)] animate-pulse'
+                  : 'bg-amber-500/20 border-amber-500/50 text-amber-300 shadow-[0_0_10px_rgba(245,158,11,0.25)]'
+              }`}
+            >
+              <Flame className={`w-3.5 h-3.5 shrink-0 ${stockRemaining <= 5 ? 'text-rose-400 animate-bounce' : 'text-amber-400 animate-bounce'}`} />
+              <span>{stockRemaining} Left!</span>
             </div>
           </div>
         </div>
