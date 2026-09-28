@@ -1,31 +1,105 @@
-import React from 'react';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { ArrowRight, Sparkles, Clock, Flame } from 'lucide-react';
 
 interface MobileStickyBarProps {
   onClaimClick: () => void;
 }
 
+const TOTAL_SECONDS_15_MIN = 15 * 60; // 900 seconds (15 minutes)
+const STORAGE_KEY = 'bizz2u_15m_countdown_start';
+
 export const MobileStickyBar: React.FC<MobileStickyBarProps> = ({ onClaimClick }) => {
+  const [isVisible, setIsVisible] = useState<boolean>(false);
+  const [secondsRemaining, setSecondsRemaining] = useState<number>(() => {
+    try {
+      const storedStart = localStorage.getItem(STORAGE_KEY);
+      const now = Math.floor(Date.now() / 1000);
+      if (storedStart) {
+        const elapsed = now - parseInt(storedStart, 10);
+        if (elapsed >= 0 && elapsed < TOTAL_SECONDS_15_MIN) {
+          return TOTAL_SECONDS_15_MIN - elapsed;
+        }
+      }
+      localStorage.setItem(STORAGE_KEY, now.toString());
+      return TOTAL_SECONDS_15_MIN;
+    } catch {
+      return TOTAL_SECONDS_15_MIN;
+    }
+  });
+
+  // Track scroll position to show when the user scrolls the page
+  useEffect(() => {
+    const handleScroll = () => {
+      // Show sticky bar once user scrolls down past 80px
+      if (window.scrollY > 80) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    // Check initial scroll position
+    handleScroll();
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // 15-Minute Countdown live tick
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setSecondsRemaining(prev => (prev <= 1 ? TOTAL_SECONDS_15_MIN : prev - 1));
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const minutes = Math.floor(secondsRemaining / 60);
+  const seconds = secondsRemaining % 60;
+  const pad = (n: number) => n.toString().padStart(2, '0');
+
   return (
-    <div className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#090D16]/95 backdrop-blur-md border-t border-slate-800 px-4 pt-2.5 pb-[calc(0.625rem+env(safe-area-inset-bottom,0px))] shadow-2xl">
-      <div className="flex items-center justify-between gap-3 max-w-md mx-auto">
-        <div className="flex flex-col">
-          <div className="flex items-baseline gap-1.5">
-            <span className="text-lg font-black text-emerald-400 font-mono">$15<span className="text-[11px] font-normal text-slate-300 font-sans">/mo</span></span>
-            <span className="text-[11px] text-slate-400 line-through font-mono">$650/mo</span>
+    <div
+      className={`lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#090D16]/95 backdrop-blur-md border-t border-slate-800 px-3.5 sm:px-4 pt-2 pb-[calc(0.625rem+env(safe-area-inset-bottom,0px))] shadow-2xl transition-all duration-300 ease-out transform ${
+        isVisible ? 'translate-y-0 opacity-100 pointer-events-auto' : 'translate-y-full opacity-0 pointer-events-none'
+      }`}
+    >
+      <div className="flex items-center justify-between gap-2 max-w-md mx-auto">
+        {/* Left Side: High-Intensity Urgency & FOMO Engine (Big Timer + 14 Left) */}
+        <div className="flex flex-col justify-center min-w-0 pr-1">
+          {/* Urgency Kicker */}
+          <div className="flex items-center gap-1.5 text-[9px] sm:text-[10px] font-black uppercase tracking-wider text-rose-400">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-rose-500"></span>
+            </span>
+            <span>PRICE RISES IN</span>
           </div>
-          <span className="text-[10px] text-amber-300 font-medium">
-            🔥 14 licenses left
-          </span>
+
+          {/* Big Size Real-Time Timer & 14 Left Scarcity Pill */}
+          <div className="flex items-center gap-1.5 mt-0.5">
+            {/* Big Countdown Timer Badge */}
+            <div className="flex items-center gap-1 px-2 sm:px-2.5 py-0.5 rounded-lg bg-gradient-to-r from-rose-950 via-slate-900 to-rose-950 border border-rose-500/70 text-rose-200 font-mono font-black text-sm sm:text-base shadow-[0_0_15px_rgba(244,63,94,0.35)]">
+              <Clock className="w-3.5 h-3.5 text-rose-400 animate-pulse shrink-0" />
+              <span className="tabular-nums tracking-wider">{pad(minutes)}:{pad(seconds)}</span>
+            </div>
+
+            {/* Big FOMO Stock Scarcity Pill */}
+            <div className="flex items-center gap-1 px-2 py-0.5 rounded-lg bg-amber-500/20 border border-amber-500/50 text-amber-300 font-black text-xs sm:text-sm whitespace-nowrap shadow-[0_0_10px_rgba(245,158,11,0.25)]">
+              <Flame className="w-3.5 h-3.5 text-amber-400 animate-bounce shrink-0" />
+              <span>14 Left!</span>
+            </div>
+          </div>
         </div>
 
+        {/* Right Side: CTA Button */}
         <button
           onClick={onClaimClick}
-          className="flex-1 max-w-[200px] py-2 px-3 bg-gradient-to-r from-emerald-400 to-teal-300 text-slate-950 font-bold text-xs rounded-lg shadow-md flex items-center justify-center gap-1.5 cursor-pointer whitespace-nowrap active:scale-98"
+          className="flex-1 max-w-[170px] sm:max-w-[190px] py-2.5 px-3 bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-300 hover:from-emerald-300 hover:to-cyan-200 text-slate-950 font-black text-xs sm:text-sm rounded-xl shadow-[0_0_20px_rgba(52,211,153,0.4)] flex items-center justify-center gap-1.5 cursor-pointer whitespace-nowrap active:scale-98 shrink-0"
         >
-          <Sparkles className="w-3.5 h-3.5" />
+          <Sparkles className="w-3.5 h-3.5 shrink-0 fill-slate-950" />
           <span>Subscribe · $15/mo</span>
-          <ArrowRight className="w-3.5 h-3.5" />
+          <ArrowRight className="w-3.5 h-3.5 shrink-0" />
         </button>
       </div>
     </div>
