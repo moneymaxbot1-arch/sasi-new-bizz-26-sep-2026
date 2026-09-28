@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ShieldCheck, Lock, Award, Mail } from 'lucide-react';
+import { TermsModal } from './TermsModal';
 
 interface FooterProps {
   onClaimClick: () => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({ onClaimClick }) => {
+  const [isTermsOpen, setIsTermsOpen] = useState(false);
+
   return (
     <footer className="bg-[#06080F] border-t border-slate-800/80 py-14 text-xs text-slate-400">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -76,15 +79,15 @@ export const Footer: React.FC<FooterProps> = ({ onClaimClick }) => {
 
           <div className="md:col-span-3 space-y-2">
             <div className="text-xs font-bold text-slate-200 uppercase tracking-wider">
-              Included Software
+              Initiated Software
             </div>
             <ul className="space-y-1.5 text-slate-400">
-              <li>Mailchimp (Email Marketing)</li>
-              <li>Hostinger (Web Hosting & SSL)</li>
-              <li>Fomo (Social Proof Platform)</li>
-              <li>WATi (WhatsApp Automation)</li>
-              <li>UptimeRobot (Website Monitoring)</li>
-              <li>Bitly (URL Shortener & QR)</li>
+              <li>Mailchimp (SendgoMail)</li>
+              <li>Hostinger (Hostverge)</li>
+              <li>Fomo (Prooflander)</li>
+              <li>WATi (WTbotBuilder)</li>
+              <li>UptimeRobot (UpDowntime)</li>
+              <li>Bitly (Taliyos)</li>
             </ul>
           </div>
 
@@ -119,15 +122,29 @@ export const Footer: React.FC<FooterProps> = ({ onClaimClick }) => {
               <span>Contact: Bizzusupport@gmail.com</span>
             </a>
             <span>·</span>
+            <button
+              onClick={() => setIsTermsOpen(true)}
+              className="text-slate-300 hover:text-emerald-400 font-bold underline underline-offset-4 decoration-emerald-500/50 transition-colors cursor-pointer"
+            >
+              T&C
+            </button>
+            <span>·</span>
             <a href="#faq" className="hover:text-slate-300 transition-colors">Privacy Policy</a>
             <span>·</span>
-            <a href="#faq" className="hover:text-slate-300 transition-colors">Terms of Service</a>
+            <button
+              onClick={() => setIsTermsOpen(true)}
+              className="hover:text-slate-300 transition-colors cursor-pointer"
+            >
+              Terms of Service
+            </button>
             <span>·</span>
             <a href="#satisfaction-guarantee" className="hover:text-slate-300 transition-colors">30-Day Money-Back Guarantee</a>
           </div>
         </div>
 
       </div>
+
+      <TermsModal isOpen={isTermsOpen} onClose={() => setIsTermsOpen(false)} />
     </footer>
   );
 };
