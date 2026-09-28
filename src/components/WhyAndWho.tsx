@@ -212,28 +212,30 @@ export const WhyAndWho: React.FC<WhyAndWhoProps> = ({ onClaimClick }) => {
           </p>
 
           {/* Interactive Switcher between "Why It's Essential" and "Who Will Benefit" */}
-          <div className="inline-flex items-center p-1.5 bg-slate-900 border border-slate-800 rounded-2xl mt-8 shadow-xl">
+          <div className="flex flex-col sm:inline-flex sm:flex-row items-stretch sm:items-center w-full sm:w-auto max-w-md mx-auto p-1.5 bg-slate-900 border border-slate-800 rounded-2xl mt-8 shadow-xl gap-1.5 sm:gap-0">
             <button
               onClick={() => setActiveTab('why')}
-              className={`px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer flex items-center gap-2 ${
+              className={`px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer flex items-center justify-center gap-2 ${
                 activeTab === 'why'
                   ? 'bg-gradient-to-r from-emerald-400 to-teal-400 text-slate-950 shadow-md'
                   : 'text-slate-400 hover:text-white'
               }`}
             >
-              <Flame className="w-4 h-4" />
-              <span>Why Everyone Needs This (4 Pillars)</span>
+              <Flame className="w-4 h-4 shrink-0" />
+              <span className="sm:hidden">4 Core Pillars</span>
+              <span className="hidden sm:inline">Why Everyone Needs This (4 Pillars)</span>
             </button>
             <button
               onClick={() => setActiveTab('who')}
-              className={`px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer flex items-center gap-2 ${
+              className={`px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer flex items-center justify-center gap-2 ${
                 activeTab === 'who'
                   ? 'bg-gradient-to-r from-emerald-400 to-teal-400 text-slate-950 shadow-md'
                   : 'text-slate-400 hover:text-white'
               }`}
             >
-              <Users className="w-4 h-4" />
-              <span>Who Will Benefit (By Business Type)</span>
+              <Users className="w-4 h-4 shrink-0" />
+              <span className="sm:hidden">Who Will Benefit</span>
+              <span className="hidden sm:inline">Who Will Benefit (By Business Type)</span>
             </button>
           </div>
         </div>

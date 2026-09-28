@@ -10,7 +10,7 @@ export const Footer: React.FC<FooterProps> = ({ onClaimClick }) => {
   const [isTermsOpen, setIsTermsOpen] = useState(false);
 
   return (
-    <footer className="bg-[#06080F] border-t border-slate-800/80 py-14 text-xs text-slate-400">
+    <footer className="bg-[#06080F] border-t border-slate-800/80 pt-14 pb-28 lg:pb-14 text-xs text-slate-400">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 pb-10 border-b border-slate-800">

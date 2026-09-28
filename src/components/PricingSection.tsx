@@ -591,7 +591,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                           <div
                             onMouseEnter={() => setHoveredHostinger(true)}
                             onMouseLeave={() => setHoveredHostinger(false)}
-                            className="absolute top-full left-1/2 -translate-x-1/2 mt-3.5 w-[310px] sm:w-[350px] bg-[#0A101D]/98 border-2 border-emerald-400 rounded-2xl p-5 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.95),0_0_35px_rgba(16,185,129,0.4)] z-50 text-left backdrop-blur-md animate-in fade-in slide-in-from-top-3 zoom-in-95 duration-200"
+                            className="absolute top-full left-1/2 -translate-x-1/2 mt-3.5 w-[310px] sm:w-[350px] max-w-[calc(100vw-32px)] bg-[#0A101D]/98 border-2 border-emerald-400 rounded-2xl p-5 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.95),0_0_35px_rgba(16,185,129,0.4)] z-50 text-left backdrop-blur-md animate-in fade-in slide-in-from-top-3 zoom-in-95 duration-200"
                           >
                             {/* Upward pointing triangle/arrow */}
                             <div className="absolute bottom-full left-1/2 -translate-x-1/2 w-0 h-0 border-x-8 border-x-transparent border-b-8 border-b-emerald-400" />
@@ -649,7 +649,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                           <div
                             onMouseEnter={() => setHoveredGrowthHostinger(true)}
                             onMouseLeave={() => setHoveredGrowthHostinger(false)}
-                            className="absolute top-full left-1/2 -translate-x-1/2 mt-3.5 w-[310px] sm:w-[350px] bg-[#0A101D]/98 border-2 border-amber-400 rounded-2xl p-5 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.95),0_0_40px_rgba(245,158,11,0.45)] z-50 text-left backdrop-blur-md animate-in fade-in slide-in-from-top-3 zoom-in-95 duration-200"
+                            className="absolute top-full left-1/2 -translate-x-1/2 mt-3.5 w-[310px] sm:w-[350px] max-w-[calc(100vw-32px)] bg-[#0A101D]/98 border-2 border-amber-400 rounded-2xl p-5 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.95),0_0_40px_rgba(245,158,11,0.45)] z-50 text-left backdrop-blur-md animate-in fade-in slide-in-from-top-3 zoom-in-95 duration-200"
                           >
                             {/* Upward pointing triangle/arrow */}
                             <div className="absolute bottom-full left-1/2 -translate-x-1/2 w-0 h-0 border-x-8 border-x-transparent border-b-8 border-b-amber-400" />
@@ -707,7 +707,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                           <div
                             onMouseEnter={() => setHoveredAgencyHostinger(true)}
                             onMouseLeave={() => setHoveredAgencyHostinger(false)}
-                            className="absolute top-full left-1/2 -translate-x-1/2 mt-3.5 w-[310px] sm:w-[360px] bg-[#0A101D]/98 border-2 border-cyan-400 rounded-2xl p-5 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.95),0_0_40px_rgba(6,182,212,0.45)] z-50 text-left backdrop-blur-md animate-in fade-in slide-in-from-top-3 zoom-in-95 duration-200"
+                            className="absolute top-full left-1/2 -translate-x-1/2 mt-3.5 w-[310px] sm:w-[360px] max-w-[calc(100vw-32px)] bg-[#0A101D]/98 border-2 border-cyan-400 rounded-2xl p-5 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.95),0_0_40px_rgba(6,182,212,0.45)] z-50 text-left backdrop-blur-md animate-in fade-in slide-in-from-top-3 zoom-in-95 duration-200"
                           >
                             {/* Upward pointing triangle/arrow */}
                             <div className="absolute bottom-full left-1/2 -translate-x-1/2 w-0 h-0 border-x-8 border-x-transparent border-b-8 border-b-cyan-400" />
@@ -826,7 +826,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                           <div
                             onMouseEnter={() => setHoveredFomo(true)}
                             onMouseLeave={() => setHoveredFomo(false)}
-                            className="absolute top-full left-1/2 -translate-x-1/2 mt-3.5 w-[310px] sm:w-[350px] bg-[#0A101D]/98 border-2 border-[#F97316] rounded-2xl p-5 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.95),0_0_35px_rgba(249,115,22,0.4)] z-50 text-left backdrop-blur-md animate-in fade-in slide-in-from-top-3 zoom-in-95 duration-200"
+                            className="absolute top-full left-1/2 -translate-x-1/2 mt-3.5 w-[310px] sm:w-[350px] max-w-[calc(100vw-32px)] bg-[#0A101D]/98 border-2 border-[#F97316] rounded-2xl p-5 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.95),0_0_35px_rgba(249,115,22,0.4)] z-50 text-left backdrop-blur-md animate-in fade-in slide-in-from-top-3 zoom-in-95 duration-200"
                           >
                             {/* Upward pointing triangle/arrow */}
                             <div className="absolute bottom-full left-1/2 -translate-x-1/2 w-0 h-0 border-x-8 border-x-transparent border-b-8 border-b-[#F97316]" />
@@ -888,7 +888,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                           <div
                             onMouseEnter={() => setHoveredGrowthFomo(true)}
                             onMouseLeave={() => setHoveredGrowthFomo(false)}
-                            className="absolute top-full left-1/2 -translate-x-1/2 mt-3.5 w-[310px] sm:w-[350px] bg-[#0A101D]/98 border-2 border-[#F97316] rounded-2xl p-5 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.95),0_0_40px_rgba(249,115,22,0.45)] z-50 text-left backdrop-blur-md animate-in fade-in slide-in-from-top-3 zoom-in-95 duration-200"
+                            className="absolute top-full left-1/2 -translate-x-1/2 mt-3.5 w-[310px] sm:w-[350px] max-w-[calc(100vw-32px)] bg-[#0A101D]/98 border-2 border-[#F97316] rounded-2xl p-5 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.95),0_0_40px_rgba(249,115,22,0.45)] z-50 text-left backdrop-blur-md animate-in fade-in slide-in-from-top-3 zoom-in-95 duration-200"
                           >
                             {/* Upward pointing triangle/arrow */}
                             <div className="absolute bottom-full left-1/2 -translate-x-1/2 w-0 h-0 border-x-8 border-x-transparent border-b-8 border-b-[#F97316]" />
@@ -952,7 +952,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                           <div
                             onMouseEnter={() => setHoveredAgencyFomo(true)}
                             onMouseLeave={() => setHoveredAgencyFomo(false)}
-                            className="absolute top-full left-1/2 -translate-x-1/2 mt-3.5 w-[320px] sm:w-[370px] bg-[#0A101D]/98 border-2 border-[#F97316] rounded-2xl p-5 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.95),0_0_40px_rgba(249,115,22,0.45)] z-50 text-left backdrop-blur-md animate-in fade-in slide-in-from-top-3 zoom-in-95 duration-200"
+                            className="absolute top-full left-1/2 -translate-x-1/2 mt-3.5 w-[320px] sm:w-[370px] max-w-[calc(100vw-32px)] bg-[#0A101D]/98 border-2 border-[#F97316] rounded-2xl p-5 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.95),0_0_40px_rgba(249,115,22,0.45)] z-50 text-left backdrop-blur-md animate-in fade-in slide-in-from-top-3 zoom-in-95 duration-200"
                           >
                             {/* Upward pointing triangle/arrow */}
                             <div className="absolute bottom-full left-1/2 -translate-x-1/2 w-0 h-0 border-x-8 border-x-transparent border-b-8 border-b-[#F97316]" />
@@ -1078,7 +1078,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                           <div
                             onMouseEnter={() => setHoveredUptimeRobot(true)}
                             onMouseLeave={() => setHoveredUptimeRobot(false)}
-                            className="absolute top-full left-1/2 -translate-x-1/2 mt-3.5 w-[310px] sm:w-[350px] bg-[#0A101D]/98 border-2 border-[#10B981] rounded-2xl p-5 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.95),0_0_35px_rgba(16,185,129,0.4)] z-50 text-left backdrop-blur-md animate-in fade-in slide-in-from-top-3 zoom-in-95 duration-200"
+                            className="absolute top-full left-1/2 -translate-x-1/2 mt-3.5 w-[310px] sm:w-[350px] max-w-[calc(100vw-32px)] bg-[#0A101D]/98 border-2 border-[#10B981] rounded-2xl p-5 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.95),0_0_35px_rgba(16,185,129,0.4)] z-50 text-left backdrop-blur-md animate-in fade-in slide-in-from-top-3 zoom-in-95 duration-200"
                           >
                             {/* Upward pointing triangle/arrow */}
                             <div className="absolute bottom-full left-1/2 -translate-x-1/2 w-0 h-0 border-x-8 border-x-transparent border-b-8 border-b-[#10B981]" />
@@ -1134,7 +1134,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                           <div
                             onMouseEnter={() => setHoveredGrowthUptimeRobot(true)}
                             onMouseLeave={() => setHoveredGrowthUptimeRobot(false)}
-                            className="absolute top-full left-1/2 -translate-x-1/2 mt-3.5 w-[310px] sm:w-[350px] bg-[#0A101D]/98 border-2 border-[#10B981] rounded-2xl p-5 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.95),0_0_40px_rgba(16,185,129,0.45)] z-50 text-left backdrop-blur-md animate-in fade-in slide-in-from-top-3 zoom-in-95 duration-200"
+                            className="absolute top-full left-1/2 -translate-x-1/2 mt-3.5 w-[310px] sm:w-[350px] max-w-[calc(100vw-32px)] bg-[#0A101D]/98 border-2 border-[#10B981] rounded-2xl p-5 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.95),0_0_40px_rgba(16,185,129,0.45)] z-50 text-left backdrop-blur-md animate-in fade-in slide-in-from-top-3 zoom-in-95 duration-200"
                           >
                             {/* Upward pointing triangle/arrow */}
                             <div className="absolute bottom-full left-1/2 -translate-x-1/2 w-0 h-0 border-x-8 border-x-transparent border-b-8 border-b-[#10B981]" />
@@ -1190,7 +1190,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                           <div
                             onMouseEnter={() => setHoveredAgencyUptimeRobot(true)}
                             onMouseLeave={() => setHoveredAgencyUptimeRobot(false)}
-                            className="absolute top-full left-1/2 -translate-x-1/2 mt-3.5 w-[320px] sm:w-[370px] bg-[#0A101D]/98 border-2 border-[#10B981] rounded-2xl p-5 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.95),0_0_40px_rgba(16,185,129,0.45)] z-50 text-left backdrop-blur-md animate-in fade-in slide-in-from-top-3 zoom-in-95 duration-200"
+                            className="absolute top-full left-1/2 -translate-x-1/2 mt-3.5 w-[320px] sm:w-[370px] max-w-[calc(100vw-32px)] bg-[#0A101D]/98 border-2 border-[#10B981] rounded-2xl p-5 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.95),0_0_40px_rgba(16,185,129,0.45)] z-50 text-left backdrop-blur-md animate-in fade-in slide-in-from-top-3 zoom-in-95 duration-200"
                           >
                             {/* Upward pointing triangle/arrow */}
                             <div className="absolute bottom-full left-1/2 -translate-x-1/2 w-0 h-0 border-x-8 border-x-transparent border-b-8 border-b-[#10B981]" />
@@ -1314,7 +1314,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                           <div
                             onMouseEnter={() => setHoveredMailchimp(true)}
                             onMouseLeave={() => setHoveredMailchimp(false)}
-                            className="absolute top-full left-1/2 -translate-x-1/2 mt-3.5 w-[310px] sm:w-[350px] bg-[#0A101D]/98 border-2 border-[#FFE01B] rounded-2xl p-5 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.95),0_0_35px_rgba(255,224,27,0.4)] z-50 text-left backdrop-blur-md animate-in fade-in slide-in-from-top-3 zoom-in-95 duration-200"
+                            className="absolute top-full left-1/2 -translate-x-1/2 mt-3.5 w-[310px] sm:w-[350px] max-w-[calc(100vw-32px)] bg-[#0A101D]/98 border-2 border-[#FFE01B] rounded-2xl p-5 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.95),0_0_35px_rgba(255,224,27,0.4)] z-50 text-left backdrop-blur-md animate-in fade-in slide-in-from-top-3 zoom-in-95 duration-200"
                           >
                             {/* Upward pointing triangle/arrow */}
                             <div className="absolute bottom-full left-1/2 -translate-x-1/2 w-0 h-0 border-x-8 border-x-transparent border-b-8 border-b-[#FFE01B]" />
@@ -1374,7 +1374,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                           <div
                             onMouseEnter={() => setHoveredGrowthMailchimp(true)}
                             onMouseLeave={() => setHoveredGrowthMailchimp(false)}
-                            className="absolute top-full left-1/2 -translate-x-1/2 mt-3.5 w-[310px] sm:w-[350px] bg-[#0A101D]/98 border-2 border-[#FFE01B] rounded-2xl p-5 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.95),0_0_40px_rgba(255,224,27,0.45)] z-50 text-left backdrop-blur-md animate-in fade-in slide-in-from-top-3 zoom-in-95 duration-200"
+                            className="absolute top-full left-1/2 -translate-x-1/2 mt-3.5 w-[310px] sm:w-[350px] max-w-[calc(100vw-32px)] bg-[#0A101D]/98 border-2 border-[#FFE01B] rounded-2xl p-5 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.95),0_0_40px_rgba(255,224,27,0.45)] z-50 text-left backdrop-blur-md animate-in fade-in slide-in-from-top-3 zoom-in-95 duration-200"
                           >
                             {/* Upward pointing triangle/arrow */}
                             <div className="absolute bottom-full left-1/2 -translate-x-1/2 w-0 h-0 border-x-8 border-x-transparent border-b-8 border-b-[#FFE01B]" />
@@ -1434,7 +1434,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                           <div
                             onMouseEnter={() => setHoveredAgencyMailchimp(true)}
                             onMouseLeave={() => setHoveredAgencyMailchimp(false)}
-                            className="absolute top-full left-1/2 -translate-x-1/2 mt-3.5 w-[310px] sm:w-[360px] bg-[#0A101D]/98 border-2 border-[#FFE01B] rounded-2xl p-5 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.95),0_0_40px_rgba(255,224,27,0.45)] z-50 text-left backdrop-blur-md animate-in fade-in slide-in-from-top-3 zoom-in-95 duration-200"
+                            className="absolute top-full left-1/2 -translate-x-1/2 mt-3.5 w-[310px] sm:w-[360px] max-w-[calc(100vw-32px)] bg-[#0A101D]/98 border-2 border-[#FFE01B] rounded-2xl p-5 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.95),0_0_40px_rgba(255,224,27,0.45)] z-50 text-left backdrop-blur-md animate-in fade-in slide-in-from-top-3 zoom-in-95 duration-200"
                           >
                             {/* Upward pointing triangle/arrow */}
                             <div className="absolute bottom-full left-1/2 -translate-x-1/2 w-0 h-0 border-x-8 border-x-transparent border-b-8 border-b-[#FFE01B]" />
@@ -1558,7 +1558,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                           <div
                             onMouseEnter={() => setHoveredWati(true)}
                             onMouseLeave={() => setHoveredWati(false)}
-                            className="absolute top-full left-1/2 -translate-x-1/2 mt-3.5 w-[320px] sm:w-[370px] bg-[#0A101D]/98 border-2 border-[#00E785] rounded-2xl p-5 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.95),0_0_35px_rgba(0,231,133,0.4)] z-50 text-left backdrop-blur-md animate-in fade-in slide-in-from-top-3 zoom-in-95 duration-200"
+                            className="absolute top-full left-1/2 -translate-x-1/2 mt-3.5 w-[320px] sm:w-[370px] max-w-[calc(100vw-32px)] bg-[#0A101D]/98 border-2 border-[#00E785] rounded-2xl p-5 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.95),0_0_35px_rgba(0,231,133,0.4)] z-50 text-left backdrop-blur-md animate-in fade-in slide-in-from-top-3 zoom-in-95 duration-200"
                           >
                             {/* Upward pointing triangle/arrow */}
                             <div className="absolute bottom-full left-1/2 -translate-x-1/2 w-0 h-0 border-x-8 border-x-transparent border-b-8 border-b-[#00E785]" />
@@ -1628,7 +1628,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                           <div
                             onMouseEnter={() => setHoveredGrowthWati(true)}
                             onMouseLeave={() => setHoveredGrowthWati(false)}
-                            className="absolute top-full left-1/2 -translate-x-1/2 mt-3.5 w-[320px] sm:w-[370px] bg-[#0A101D]/98 border-2 border-[#00E785] rounded-2xl p-5 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.95),0_0_40px_rgba(0,231,133,0.45)] z-50 text-left backdrop-blur-md animate-in fade-in slide-in-from-top-3 zoom-in-95 duration-200"
+                            className="absolute top-full left-1/2 -translate-x-1/2 mt-3.5 w-[320px] sm:w-[370px] max-w-[calc(100vw-32px)] bg-[#0A101D]/98 border-2 border-[#00E785] rounded-2xl p-5 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.95),0_0_40px_rgba(0,231,133,0.45)] z-50 text-left backdrop-blur-md animate-in fade-in slide-in-from-top-3 zoom-in-95 duration-200"
                           >
                             {/* Upward pointing triangle/arrow */}
                             <div className="absolute bottom-full left-1/2 -translate-x-1/2 w-0 h-0 border-x-8 border-x-transparent border-b-8 border-b-[#00E785]" />
@@ -1698,7 +1698,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                           <div
                             onMouseEnter={() => setHoveredAgencyWati(true)}
                             onMouseLeave={() => setHoveredAgencyWati(false)}
-                            className="absolute top-full left-1/2 -translate-x-1/2 mt-3.5 w-[320px] sm:w-[370px] bg-[#0A101D]/98 border-2 border-[#00E785] rounded-2xl p-5 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.95),0_0_40px_rgba(0,231,133,0.45)] z-50 text-left backdrop-blur-md animate-in fade-in slide-in-from-top-3 zoom-in-95 duration-200"
+                            className="absolute top-full left-1/2 -translate-x-1/2 mt-3.5 w-[320px] sm:w-[370px] max-w-[calc(100vw-32px)] bg-[#0A101D]/98 border-2 border-[#00E785] rounded-2xl p-5 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.95),0_0_40px_rgba(0,231,133,0.45)] z-50 text-left backdrop-blur-md animate-in fade-in slide-in-from-top-3 zoom-in-95 duration-200"
                           >
                             {/* Upward pointing triangle/arrow */}
                             <div className="absolute bottom-full left-1/2 -translate-x-1/2 w-0 h-0 border-x-8 border-x-transparent border-b-8 border-b-[#00E785]" />
@@ -1829,7 +1829,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                           <div
                             onMouseEnter={() => setHoveredBitly(true)}
                             onMouseLeave={() => setHoveredBitly(false)}
-                            className="absolute top-full left-1/2 -translate-x-1/2 mt-3.5 w-[310px] sm:w-[360px] bg-[#0A101D]/98 border-2 border-[#EE6123] rounded-2xl p-5 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.95),0_0_35px_rgba(238,97,35,0.4)] z-50 text-left backdrop-blur-md animate-in fade-in slide-in-from-top-3 zoom-in-95 duration-200"
+                            className="absolute top-full left-1/2 -translate-x-1/2 mt-3.5 w-[310px] sm:w-[360px] max-w-[calc(100vw-32px)] bg-[#0A101D]/98 border-2 border-[#EE6123] rounded-2xl p-5 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.95),0_0_35px_rgba(238,97,35,0.4)] z-50 text-left backdrop-blur-md animate-in fade-in slide-in-from-top-3 zoom-in-95 duration-200"
                           >
                             {/* Upward pointing triangle/arrow */}
                             <div className="absolute bottom-full left-1/2 -translate-x-1/2 w-0 h-0 border-x-8 border-x-transparent border-b-8 border-b-[#EE6123]" />
@@ -1890,7 +1890,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                           <div
                             onMouseEnter={() => setHoveredGrowthBitly(true)}
                             onMouseLeave={() => setHoveredGrowthBitly(false)}
-                            className="absolute top-full left-1/2 -translate-x-1/2 mt-3.5 w-[320px] sm:w-[370px] bg-[#0A101D]/98 border-2 border-[#EE6123] rounded-2xl p-5 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.95),0_0_40px_rgba(238,97,35,0.45)] z-50 text-left backdrop-blur-md animate-in fade-in slide-in-from-top-3 zoom-in-95 duration-200"
+                            className="absolute top-full left-1/2 -translate-x-1/2 mt-3.5 w-[320px] sm:w-[370px] max-w-[calc(100vw-32px)] bg-[#0A101D]/98 border-2 border-[#EE6123] rounded-2xl p-5 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.95),0_0_40px_rgba(238,97,35,0.45)] z-50 text-left backdrop-blur-md animate-in fade-in slide-in-from-top-3 zoom-in-95 duration-200"
                           >
                             {/* Upward pointing triangle/arrow */}
                             <div className="absolute bottom-full left-1/2 -translate-x-1/2 w-0 h-0 border-x-8 border-x-transparent border-b-8 border-b-[#EE6123]" />
@@ -1955,7 +1955,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                           <div
                             onMouseEnter={() => setHoveredAgencyBitly(true)}
                             onMouseLeave={() => setHoveredAgencyBitly(false)}
-                            className="absolute top-full left-1/2 -translate-x-1/2 mt-3.5 w-[320px] sm:w-[370px] bg-[#0A101D]/98 border-2 border-[#EE6123] rounded-2xl p-5 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.95),0_0_40px_rgba(238,97,35,0.45)] z-50 text-left backdrop-blur-md animate-in fade-in slide-in-from-top-3 zoom-in-95 duration-200"
+                            className="absolute top-full left-1/2 -translate-x-1/2 mt-3.5 w-[320px] sm:w-[370px] max-w-[calc(100vw-32px)] bg-[#0A101D]/98 border-2 border-[#EE6123] rounded-2xl p-5 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.95),0_0_40px_rgba(238,97,35,0.45)] z-50 text-left backdrop-blur-md animate-in fade-in slide-in-from-top-3 zoom-in-95 duration-200"
                           >
                             {/* Upward pointing triangle/arrow */}
                             <div className="absolute bottom-full left-1/2 -translate-x-1/2 w-0 h-0 border-x-8 border-x-transparent border-b-8 border-b-[#EE6123]" />

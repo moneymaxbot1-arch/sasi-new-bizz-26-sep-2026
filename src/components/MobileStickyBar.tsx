@@ -7,7 +7,7 @@ interface MobileStickyBarProps {
 
 export const MobileStickyBar: React.FC<MobileStickyBarProps> = ({ onClaimClick }) => {
   return (
-    <div className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#090D16]/95 backdrop-blur-md border-t border-slate-800 px-4 py-2.5 shadow-2xl">
+    <div className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#090D16]/95 backdrop-blur-md border-t border-slate-800 px-4 pt-2.5 pb-[calc(0.625rem+env(safe-area-inset-bottom,0px))] shadow-2xl">
       <div className="flex items-center justify-between gap-3 max-w-md mx-auto">
         <div className="flex flex-col">
           <div className="flex items-baseline gap-1.5">

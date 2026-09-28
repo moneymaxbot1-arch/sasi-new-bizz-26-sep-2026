@@ -38,37 +38,40 @@ export const CostComparison: React.FC<CostComparisonProps> = ({ onClaimClick }) 
         </div>
 
         {/* Timeframe Toggle Filter (Functional segmented button) */}
-        <div className="flex items-center justify-center mb-10">
-          <div className="inline-flex p-1 bg-slate-900 border border-slate-800 rounded-xl">
+        <div className="flex items-center justify-center mb-10 w-full px-2">
+          <div className="grid grid-cols-3 sm:inline-flex p-1 bg-slate-900 border border-slate-800 rounded-xl w-full sm:w-auto max-w-xl">
             <button
               onClick={() => setTimeframe('monthly')}
-              className={`px-4 py-2 text-xs sm:text-sm font-semibold rounded-lg transition-all cursor-pointer ${
+              className={`px-2 sm:px-4 py-2 text-xs sm:text-sm font-semibold rounded-lg transition-all cursor-pointer text-center ${
                 timeframe === 'monthly'
                   ? 'bg-emerald-500 text-slate-950 shadow-md'
                   : 'text-slate-400 hover:text-white'
               }`}
             >
-              1 Month ($650/mo vs $15/mo)
+              <span className="sm:hidden">1 Month</span>
+              <span className="hidden sm:inline">1 Month ($650/mo vs $15/mo)</span>
             </button>
             <button
               onClick={() => setTimeframe('annual')}
-              className={`px-4 py-2 text-xs sm:text-sm font-semibold rounded-lg transition-all cursor-pointer ${
+              className={`px-2 sm:px-4 py-2 text-xs sm:text-sm font-semibold rounded-lg transition-all cursor-pointer text-center ${
                 timeframe === 'annual'
                   ? 'bg-emerald-500 text-slate-950 shadow-md'
                   : 'text-slate-400 hover:text-white'
               }`}
             >
-              1 Year ($7,800/yr vs $180/yr)
+              <span className="sm:hidden">1 Year</span>
+              <span className="hidden sm:inline">1 Year ($7,800/yr vs $180/yr)</span>
             </button>
             <button
               onClick={() => setTimeframe('threeYear')}
-              className={`px-4 py-2 text-xs sm:text-sm font-semibold rounded-lg transition-all cursor-pointer ${
+              className={`px-2 sm:px-4 py-2 text-xs sm:text-sm font-semibold rounded-lg transition-all cursor-pointer text-center ${
                 timeframe === 'threeYear'
                   ? 'bg-emerald-500 text-slate-950 shadow-md'
                   : 'text-slate-400 hover:text-white'
               }`}
             >
-              3 Year Projection ($23,400 vs $540)
+              <span className="sm:hidden">3 Years</span>
+              <span className="hidden sm:inline">3 Year ($23,400 vs $540)</span>
             </button>
           </div>
         </div>

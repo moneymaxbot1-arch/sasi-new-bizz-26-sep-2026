@@ -127,6 +127,15 @@ export const AutomationVortexHero: React.FC<AutomationVortexHeroProps> = ({ onCl
   const [isAutoPlaying, setIsAutoPlaying] = useState<boolean>(true);
   const [rotationAngle, setRotationAngle] = useState<number>(0);
   const [hoveredTool, setHoveredTool] = useState<ToolNode | null>(null);
+  const [windowWidth, setWindowWidth] = useState<number>(() => 
+    typeof window !== 'undefined' ? window.innerWidth : 1024
+  );
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   // Smooth continuous ambient orbit rotation
   useEffect(() => {
@@ -197,18 +206,18 @@ export const AutomationVortexHero: React.FC<AutomationVortexHeroProps> = ({ onCl
           <div className="lg:col-span-7 flex flex-col items-center justify-center relative select-none">
             
             {/* Circular Orbit Canvas */}
-            <div className="relative w-[340px] h-[340px] sm:w-[480px] sm:h-[480px] flex items-center justify-center">
+            <div className="relative w-[280px] h-[280px] min-[360px]:w-[320px] min-[360px]:h-[320px] sm:w-[480px] sm:h-[480px] flex items-center justify-center">
               
               {/* Outer decorative orbit rings */}
               <div className="absolute inset-0 rounded-full border border-slate-800/80 pointer-events-none" />
-              <div className="absolute inset-8 rounded-full border border-dashed border-emerald-500/20 pointer-events-none animate-[spin_60s_linear_infinite]" />
-              <div className="absolute inset-20 rounded-full border border-slate-800/60 pointer-events-none" />
+              <div className="absolute inset-6 sm:inset-8 rounded-full border border-dashed border-emerald-500/20 pointer-events-none animate-[spin_60s_linear_infinite]" />
+              <div className="absolute inset-14 sm:inset-20 rounded-full border border-slate-800/60 pointer-events-none" />
 
               {/* Pulsing energy waves flowing toward center */}
-              <div className="absolute inset-16 rounded-full bg-emerald-500/5 animate-ping pointer-events-none opacity-40" />
+              <div className="absolute inset-12 sm:inset-16 rounded-full bg-emerald-500/5 animate-ping pointer-events-none opacity-40" />
 
               {/* SVG Connecting Flow Lines from the 6 outer nodes to the center */}
-              <svg className="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-visible">
+              <svg className="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-visible" viewBox="0 0 480 480">
                 <defs>
                   <linearGradient id="streamGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                     <stop offset="0%" stopColor="#34D399" stopOpacity="0.8" />
@@ -217,7 +226,7 @@ export const AutomationVortexHero: React.FC<AutomationVortexHeroProps> = ({ onCl
                 </defs>
                 {TOOLS.map((tool, i) => {
                   const rad = ((tool.angle + rotationAngle) * Math.PI) / 180;
-                  const radius = 175; // px from center in 480px canvas
+                  const radius = 185; // scaled via viewBox
                   const cx = 240 + Math.cos(rad) * radius;
                   const cy = 240 + Math.sin(rad) * radius;
                   const isActive = currentTool.id === tool.id;
@@ -243,53 +252,53 @@ export const AutomationVortexHero: React.FC<AutomationVortexHeroProps> = ({ onCl
               {/* CENTER CIRCLE: The Unified $15 Automated Business Growth Hub with Excited Businessman */}
               <div 
                 onClick={onClaimClick}
-                className="relative z-20 w-44 h-44 sm:w-56 sm:h-56 rounded-full bg-gradient-to-br from-slate-900 via-[#0a1420] to-[#041d15] border-4 border-emerald-400 p-2 shadow-[0_0_60px_rgba(52,211,153,0.4)] flex flex-col items-center justify-center text-center cursor-pointer transition-transform hover:scale-105 active:scale-95 group"
+                className="relative z-20 w-36 h-36 min-[360px]:w-40 min-[360px]:h-40 sm:w-56 sm:h-56 rounded-full bg-gradient-to-br from-slate-900 via-[#0a1420] to-[#041d15] border-3 sm:border-4 border-emerald-400 p-2 shadow-[0_0_60px_rgba(52,211,153,0.4)] flex flex-col items-center justify-center text-center cursor-pointer transition-transform hover:scale-105 active:scale-95 group"
               >
                 
                 {/* Glowing Aura Ring */}
                 <div className="absolute -inset-2 rounded-full bg-gradient-to-r from-emerald-500 via-teal-400 to-cyan-400 opacity-40 blur-md group-hover:opacity-75 transition-opacity" />
 
-                <div className="relative z-10 flex flex-col items-center px-3">
+                <div className="relative z-10 flex flex-col items-center px-2 sm:px-3">
                   
                   {/* Businessman Success Avatar / Badge */}
-                  <div className="relative mb-1">
-                    <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-tr from-emerald-500 to-amber-300 p-0.5 shadow-lg flex items-center justify-center">
+                  <div className="relative mb-0.5 sm:mb-1">
+                    <div className="w-10 h-10 min-[360px]:w-12 min-[360px]:h-12 sm:w-16 sm:h-16 rounded-full bg-gradient-to-tr from-emerald-500 to-amber-300 p-0.5 shadow-lg flex items-center justify-center">
                       <div className="w-full h-full rounded-full bg-slate-950 flex flex-col items-center justify-center overflow-hidden">
                         {/* Excited Smiling Business Owner Icon Illustration */}
-                        <div className="text-2xl sm:text-3xl select-none" role="img" aria-label="Happy Businessman">
+                        <div className="text-xl min-[360px]:text-2xl sm:text-3xl select-none" role="img" aria-label="Happy Businessman">
                           🚀
                         </div>
                       </div>
                     </div>
                     {/* Urgency Badge */}
-                    <span className="absolute -bottom-1 -right-1 px-1.5 py-0.5 rounded-full bg-emerald-400 text-slate-950 font-black text-[9px] uppercase shadow">
+                    <span className="absolute -bottom-1 -right-1 px-1 sm:px-1.5 py-0.2 sm:py-0.5 rounded-full bg-emerald-400 text-slate-950 font-black text-[8px] sm:text-[9px] uppercase shadow">
                       BOOSTING
                     </span>
                   </div>
 
                   {/* Core Value Text */}
-                  <div className="text-[10px] sm:text-xs font-extrabold uppercase tracking-wider text-emerald-300">
+                  <div className="text-[9px] sm:text-xs font-extrabold uppercase tracking-wider text-emerald-300">
                     6x Automation Hub
                   </div>
 
-                  <div className="flex items-baseline justify-center gap-1 my-0.5">
-                    <span className="font-mono text-2xl sm:text-3xl font-black text-white tracking-tight">
+                  <div className="flex items-baseline justify-center gap-1 my-0.2 sm:my-0.5">
+                    <span className="font-mono text-xl min-[360px]:text-2xl sm:text-3xl font-black text-white tracking-tight">
                       $15
                     </span>
-                    <span className="text-[11px] sm:text-xs text-emerald-400 font-semibold font-mono">
-                      /month
+                    <span className="text-[10px] sm:text-xs text-emerald-400 font-semibold font-mono">
+                      /mo
                     </span>
-                    <span className="text-[10px] sm:text-xs text-rose-300 line-through font-mono ml-1">
+                    <span className="text-[9px] sm:text-xs text-rose-300 line-through font-mono ml-0.5 sm:ml-1">
                       ${totalRetailMonthly}/mo
                     </span>
                   </div>
 
-                  <div className="text-[10px] text-slate-300 font-semibold line-clamp-1">
-                    Starting Monthly Subscription
+                  <div className="text-[9px] sm:text-[10px] text-slate-300 font-semibold line-clamp-1">
+                    Starting Monthly
                   </div>
 
                   {/* Click trigger hint */}
-                  <div className="mt-1.5 inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 text-[9px] font-bold group-hover:bg-emerald-400 group-hover:text-slate-950 transition-colors">
+                  <div className="mt-1 sm:mt-1.5 inline-flex items-center gap-1 px-2 sm:px-2.5 py-0.5 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 text-[8px] sm:text-[9px] font-bold group-hover:bg-emerald-400 group-hover:text-slate-950 transition-colors">
                     <span>From $15/mo</span>
                     <ArrowRight className="w-2.5 h-2.5" />
                   </div>
@@ -301,9 +310,8 @@ export const AutomationVortexHero: React.FC<AutomationVortexHeroProps> = ({ onCl
               {/* 6 ORBITING SATELLITE SOFTWARE CIRCLES (The 6 Software from the Pitcher) */}
               {TOOLS.map((tool, index) => {
                 const rad = ((tool.angle + rotationAngle) * Math.PI) / 180;
-                // Responsive orbit radius
-                const isMobile = typeof window !== 'undefined' && window.innerWidth < 640;
-                const radius = isMobile ? 125 : 185; 
+                // Responsive orbit radius calculated from windowWidth
+                const radius = windowWidth < 360 ? 104 : windowWidth < 640 ? 120 : 185; 
 
                 const x = Math.cos(rad) * radius;
                 const y = Math.sin(rad) * radius;
@@ -329,27 +337,27 @@ export const AutomationVortexHero: React.FC<AutomationVortexHeroProps> = ({ onCl
                       borderColor: isSelected ? tool.color : 'rgba(51, 65, 85, 0.8)',
                       boxShadow: isSelected ? `0 0 25px ${tool.glowColor}` : '0 10px 20px rgba(0,0,0,0.5)',
                     }}
-                    className={`absolute z-30 w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-slate-900/95 backdrop-blur-md border-2 cursor-pointer flex flex-col items-center justify-center p-1 transition-all duration-200 hover:scale-115 active:scale-95 group ${
+                    className={`absolute z-30 w-13 h-13 min-[360px]:w-15 min-[360px]:h-15 sm:w-20 sm:h-20 rounded-full bg-slate-900/95 backdrop-blur-md border-2 cursor-pointer flex flex-col items-center justify-center p-0.5 sm:p-1 transition-all duration-200 hover:scale-115 active:scale-95 group ${
                       isSelected ? 'scale-110 z-40' : 'opacity-85 hover:opacity-100'
                     }`}
                   >
                     {/* Tool Brand Avatar / Monogram */}
                     <div 
                       style={{ color: tool.color }}
-                      className="text-xs sm:text-sm font-black tracking-tight"
+                      className="text-[10px] min-[360px]:text-xs sm:text-sm font-black tracking-tight"
                     >
                       {tool.iconText}
                     </div>
 
                     {/* Software Name */}
-                    <span className="text-[9px] sm:text-[10px] font-bold text-white tracking-tight truncate max-w-[90%]">
+                    <span className="text-[8px] min-[360px]:text-[9px] sm:text-[10px] font-bold text-white tracking-tight truncate max-w-[90%]">
                       {tool.name}
                     </span>
 
                     {/* Retail Monthly Price Tag matching uploaded picture */}
                     <span 
                       style={{ backgroundColor: `${tool.color}20`, color: tool.color }}
-                      className="text-[8px] sm:text-[9px] font-mono font-bold px-1.5 py-0.2 rounded-full mt-0.5"
+                      className="text-[7px] min-[360px]:text-[8px] sm:text-[9px] font-mono font-bold px-1 sm:px-1.5 py-0.2 rounded-full mt-0.5"
                     >
                       ${tool.monthlyPrice}/mo
                     </span>

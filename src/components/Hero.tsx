@@ -42,7 +42,7 @@ export const Hero: React.FC<HeroProps> = ({ onClaimClick }) => {
             </p>
 
             {/* Urgency Stock Banner */}
-            <div className="p-3.5 bg-slate-900/90 border border-amber-500/40 rounded-xl flex items-center justify-between gap-4 max-w-xl shadow-lg">
+            <div className="p-3 sm:p-3.5 bg-slate-900/90 border border-amber-500/40 rounded-xl flex flex-col min-[480px]:flex-row items-start min-[480px]:items-center justify-between gap-3 max-w-xl shadow-lg">
               <div className="space-y-1">
                 <div className="flex items-center gap-2 text-xs font-semibold text-amber-300">
                   <span className="w-2 h-2 rounded-full bg-amber-400 animate-ping" />
