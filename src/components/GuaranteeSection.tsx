@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShieldCheck, CheckCircle2, Zap, ArrowRight, Award, Clock } from 'lucide-react';
+import { ShieldCheck, CheckCircle2, Zap, ArrowRight, Award, Clock, RefreshCw, AlertCircle } from 'lucide-react';
 
 interface GuaranteeSectionProps {
   onClaimClick: () => void;
@@ -17,61 +17,67 @@ export const GuaranteeSection: React.FC<GuaranteeSectionProps> = ({ onClaimClick
               <div className="w-24 h-24 rounded-full bg-emerald-500/10 border-2 border-emerald-400 flex items-center justify-center text-emerald-400 mb-3 shadow-[0_0_35px_rgba(52,211,153,0.25)]">
                 <Award className="w-12 h-12" />
               </div>
-              <span className="text-xs font-mono font-bold text-emerald-400 uppercase tracking-wider">
-                100% SATISFACTION
+              <span className="text-sm font-mono font-black text-emerald-400 uppercase tracking-wider">
+                30-DAY GUARANTEE
               </span>
-              <span className="text-xs text-slate-300 font-semibold mt-0.5">Guaranteed by Direct Vendors</span>
+              <span className="text-xs text-slate-300 font-semibold mt-1">1-Day Full Refund Policy</span>
             </div>
 
             <div className="md:col-span-9 space-y-4">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 text-xs font-mono font-bold uppercase tracking-wider">
                 <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                <span>100% LEGIT ORIGINAL COMPANY LICENSES · ZERO PIRACY</span>
+                <span>30-DAY MONEY-BACK GUARANTEE & AUTHENTICITY ASSURANCE</span>
               </div>
 
               <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
-                100% Satisfaction Guarantee & Immediate 2-Minute Replacement.
+                30-Day Money-Back Guarantee & No Questions Asked Policy.
               </h3>
 
-              <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-                All 6 software licenses provided in this package are <strong className="text-white">100% legitimate and authentic</strong>, sourced directly from the original vendor companies (Mailchimp, Hostinger, Fomo, WATi, UptimeRobot, and Bitly). <strong className="text-emerald-300">Strictly zero piracy, no cracks, and 100% straight from the official companies.</strong>
-              </p>
-
-              {/* The 2-minute replacement promise */}
-              <div className="p-4 rounded-2xl bg-slate-950/70 border border-emerald-500/30 text-xs sm:text-sm text-slate-200 space-y-2">
-                <div className="flex items-center gap-2 text-emerald-400 font-bold">
-                  <Clock className="w-4 h-4 shrink-0" />
-                  <span>Immediate 2-Minute Replacement Policy:</span>
+              {/* Explicit Policy Terms Card */}
+              <div className="p-4 sm:p-5 rounded-2xl bg-slate-950/80 border border-emerald-500/40 text-xs sm:text-sm text-slate-200 space-y-3">
+                <div className="flex items-center gap-2 text-emerald-300 font-bold text-sm">
+                  <AlertCircle className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <span>Guarantee Policy & Validity Terms:</span>
                 </div>
+                
                 <p className="text-slate-300 leading-relaxed">
-                  If you experience any difficulties operating any of the tools or if a software license is not working as expected, our dedicated priority support will <strong className="text-white">replace it immediately within 2 minutes</strong>. Contact us anytime at{' '}
-                  <a
-                    href="mailto:Bizzsoft2u@gmail.com"
-                    className="text-emerald-400 hover:text-emerald-300 font-bold underline font-mono"
-                  >
-                    Bizzsoft2u@gmail.com
-                  </a>
-                  . No delays, and <strong className="text-emerald-300">no questions will be asked</strong>.
+                  Our <strong className="text-white">30-day money-back guarantee & no questions asked policy</strong> is valid if the software we provided is <strong className="text-emerald-300">not working or not legit</strong>. If a customer finds that any software provided is not working, or the license code is fake or piracy, our team will <strong className="text-emerald-300 underline decoration-emerald-400/60 font-semibold">refund 100% of your money within 1 day (24 hours)</strong> — strictly no questions asked.
                 </p>
+
+                <div className="pt-2 border-t border-slate-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
+                  <div className="flex items-center gap-2 text-slate-300">
+                    <Clock className="w-4 h-4 text-amber-400 shrink-0" />
+                    <span>Instant replacement alternative: <strong className="text-white">2-minute replacement</strong> also available.</span>
+                  </div>
+                  <div className="text-slate-300">
+                    Direct Email Support:{' '}
+                    <a
+                      href="mailto:Bizzusupport@gmail.com"
+                      className="text-emerald-400 hover:text-emerald-300 font-bold underline font-mono"
+                    >
+                      Bizzusupport@gmail.com
+                    </a>
+                  </div>
+                </div>
               </div>
 
               {/* Key bullet checklist */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1 text-xs text-slate-300 font-medium">
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>100% Legit licenses from original vendors</span>
+                  <span>100% Full refund within 1 day if not working or not legit</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>Zero piracy & zero unauthorized accounts</span>
+                  <span>Zero piracy & official direct vendor license verification</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>Instant 2-minute replacement if any issue occurs</span>
+                  <span>No questions asked refund process</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>No questions asked resolution</span>
+                  <span>Immediate 2-minute license replacement upon request</span>
                 </div>
               </div>
               
@@ -81,12 +87,12 @@ export const GuaranteeSection: React.FC<GuaranteeSectionProps> = ({ onClaimClick
                   className="px-6 py-3 bg-gradient-to-r from-emerald-400 to-teal-400 hover:from-emerald-300 hover:to-teal-300 text-slate-950 font-bold rounded-xl text-sm transition-all cursor-pointer flex items-center gap-2 shadow-lg active:scale-98"
                 >
                   <Zap className="w-4 h-4 fill-slate-950" />
-                  <span>Get 100% Authentic Suite for $15</span>
+                  <span>Lock In 6-in-1 Suite Risk-Free</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
                 <span className="text-xs text-slate-400 flex items-center gap-1.5 font-mono">
                   <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                  <span>Official Direct Vendor Provisioning</span>
+                  <span>30-Day Money-Back Guarantee · Official Licenses</span>
                 </span>
               </div>
             </div>

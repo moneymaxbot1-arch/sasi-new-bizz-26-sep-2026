@@ -1,11 +1,38 @@
 import React, { useState } from 'react';
 import { PRICING_TIERS } from '../data/bundleData';
 import { PricingTier } from '../types';
-import { Sparkles, ArrowRight, ShieldCheck, Flame, Star, Check, Info, X } from 'lucide-react';
+import { Sparkles, ArrowRight, ShieldCheck, Flame, Star, Check, Info, X, Lock, ExternalLink } from 'lucide-react';
 
 interface PricingSectionProps {
-  onSelectTier: (tier: PricingTier) => void;
+  onSelectTier?: (tier: PricingTier) => void;
 }
+
+const getGatewayUrl = (tierId: string, is2Year: boolean) => {
+  if (tierId === 'starter') {
+    return is2Year ? 'https://rzp.io/rzp/BkmVOMj' : 'https://rzp.io/rzp/bdBEfNK';
+  }
+  if (tierId === 'growth') {
+    return is2Year ? 'https://rzp.io/rzp/zQOdwg0r' : 'https://rzp.io/rzp/iUtek9K';
+  }
+  // Agency
+  return is2Year ? 'https://rzp.io/rzp/QRFwZryF' : 'https://rzp.io/rzp/GO7eRrS';
+};
+
+const handleDirectRedirect = (url: string) => {
+  try {
+    const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
+    if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
+      // In case browser strictly blocks popups, fallback to window.location
+      if (window.top) {
+        window.top.location.href = url;
+      } else {
+        window.location.href = url;
+      }
+    }
+  } catch {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  }
+};
 
 interface ToolSpecDetail {
   id: string;
@@ -167,14 +194,8 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
   const handleSelectWithCycle = (tier: PricingTier) => {
     const cycle = cardCycles[tier.id] || '2year';
     const is2Year = cycle === '2year';
-    const activePrice = is2Year ? tier.price2Year : tier.price1Year;
-    const activePeriod = is2Year ? '/month (2 years)' : '/month (1 year)';
-
-    onSelectTier({
-      ...tier,
-      price: activePrice,
-      period: activePeriod,
-    });
+    const gatewayUrl = getGatewayUrl(tier.id, is2Year);
+    handleDirectRedirect(gatewayUrl);
   };
 
   return (
@@ -275,13 +296,14 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
             <span>SPECIAL INTRODUCTORY SUITE PROMOTION · ALL 6 TOOLS UNIFIED</span>
           </div>
 
-          <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight mb-4 text-balance">
+          <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight mb-4">
             Choose Your Subscription Package. <br />
-            Starting From as Low as{' '}
-            <span className="text-emerald-400 font-mono">
-              Only $15/Month
+            <span className="inline-block">
+              Starting From as Low as{' '}
+              <span className="text-emerald-400 font-mono whitespace-nowrap inline-block">
+                Only $15/Month
+              </span>
             </span>
-            .
           </h2>
 
           <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
@@ -348,51 +370,43 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                       </div>
 
                       <div className="grid grid-cols-2 gap-2 p-1.5 rounded-xl bg-slate-950/90 border border-slate-800 shadow-inner">
-                        {/* 2-Year Button Option: Gold ONLY for Center; Emerald for Starter; Cyan for Agency */}
+                        {/* 2-Year Button Option: Emerald Super-Saver Theme */}
                         <button
                           type="button"
                           onClick={() => handleToggleCycle(tier.id, '2year')}
                           className={`py-2 px-2.5 rounded-lg text-xs font-bold transition-all duration-200 cursor-pointer flex flex-col items-center justify-center ${
                             is2Year
-                              ? isCenter
-                                ? 'bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 text-slate-950 shadow-lg shadow-amber-500/40 ring-2 ring-amber-300 font-black scale-[1.02]'
-                                : isStarter
-                                ? 'bg-gradient-to-r from-emerald-400 via-emerald-300 to-teal-400 text-slate-950 shadow-lg shadow-emerald-500/40 ring-2 ring-emerald-300 font-black scale-[1.02]'
-                                : 'bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-400 text-slate-950 shadow-lg shadow-cyan-500/40 ring-2 ring-cyan-300 font-black scale-[1.02]'
-                              : 'bg-slate-900/60 border border-slate-800/80 text-slate-400 hover:text-white hover:bg-slate-850'
+                              ? 'bg-gradient-to-r from-emerald-400 via-emerald-300 to-teal-400 text-slate-950 shadow-lg shadow-emerald-500/50 ring-2 ring-emerald-300 font-black scale-[1.02]'
+                              : 'bg-emerald-950/40 border border-emerald-500/30 text-emerald-400/90 hover:text-emerald-200 hover:border-emerald-400/60 hover:bg-emerald-950/70'
                           }`}
                         >
                           <span className="flex items-center gap-1">
                             {is2Year && <Check className="w-3.5 h-3.5 stroke-[3] text-slate-950" />}
-                            <span>2 Years</span>
+                            <span className={is2Year ? 'text-slate-950 font-black' : 'text-emerald-300 font-bold'}>2 Years</span>
                           </span>
                           <span className={`text-[10px] font-mono leading-tight ${
-                            is2Year ? 'text-slate-950 font-black' : isCenter ? 'text-amber-400 font-bold' : isStarter ? 'text-emerald-400 font-bold' : 'text-cyan-400 font-bold'
+                            is2Year ? 'text-slate-950 font-black' : 'text-emerald-400 font-bold'
                           }`}>
                             Save 40%
                           </span>
                         </button>
 
-                        {/* 1-Year Button Option */}
+                        {/* 1-Year Button Option: Electric Blue / Sky Theme */}
                         <button
                           type="button"
                           onClick={() => handleToggleCycle(tier.id, '1year')}
                           className={`py-2 px-2.5 rounded-lg text-xs font-bold transition-all duration-200 cursor-pointer flex flex-col items-center justify-center ${
                             !is2Year
-                              ? isCenter
-                                ? 'bg-gradient-to-r from-yellow-500 via-amber-400 to-amber-300 text-slate-950 shadow-lg shadow-amber-500/40 ring-2 ring-amber-300 font-black scale-[1.02]'
-                                : isStarter
-                                ? 'bg-gradient-to-r from-teal-400 via-emerald-300 to-cyan-400 text-slate-950 shadow-lg shadow-teal-500/40 ring-2 ring-teal-300 font-black scale-[1.02]'
-                                : 'bg-gradient-to-r from-sky-400 via-blue-300 to-indigo-300 text-slate-950 shadow-lg shadow-sky-500/40 ring-2 ring-sky-300 font-black scale-[1.02]'
-                              : 'bg-slate-900/60 border border-slate-800/80 text-slate-400 hover:text-white hover:bg-slate-850'
+                              ? 'bg-gradient-to-r from-sky-400 via-blue-400 to-indigo-400 text-slate-950 shadow-lg shadow-blue-500/50 ring-2 ring-sky-300 font-black scale-[1.02]'
+                              : 'bg-sky-950/40 border border-sky-500/30 text-sky-400/90 hover:text-sky-200 hover:border-sky-400/60 hover:bg-sky-950/70'
                           }`}
                         >
                           <span className="flex items-center gap-1">
                             {!is2Year && <Check className="w-3.5 h-3.5 stroke-[3] text-slate-950" />}
-                            <span>1 Year</span>
+                            <span className={!is2Year ? 'text-slate-950 font-black' : 'text-sky-300 font-bold'}>1 Year</span>
                           </span>
                           <span className={`text-[10px] font-mono leading-tight ${
-                            !is2Year ? 'text-slate-950 font-black' : isCenter ? 'text-amber-400/80 font-medium' : isStarter ? 'text-emerald-400/80 font-medium' : 'text-cyan-400/80 font-medium'
+                            !is2Year ? 'text-slate-950 font-black' : 'text-sky-400/90 font-medium'
                           }`}>
                             Standard
                           </span>
@@ -429,10 +443,14 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                     </div>
 
                     {/* Pricing Display: Gold ONLY for Center; Emerald for Starter; Cyan for Big Agency */}
-                    <div className="text-center py-5 border-y border-slate-800/80 my-3">
+                    <div 
+                      onClick={() => handleDirectRedirect(getGatewayUrl(tier.id, is2Year))}
+                      title={`Click to checkout ${tier.name} ($${activePrice}/mo) in a separate window`}
+                      className="text-center py-5 border-y border-slate-800/80 my-3 cursor-pointer group/price transition-all hover:bg-slate-900/40 rounded-xl"
+                    >
                       <div className="flex items-baseline justify-center gap-1.5">
                         <span
-                          className={`text-4xl sm:text-5xl font-black font-mono tracking-tight ${
+                          className={`text-4xl sm:text-5xl font-black font-mono tracking-tight transition-transform group-hover/price:scale-105 ${
                             isCenter
                               ? 'text-amber-400 drop-shadow-[0_0_20px_rgba(245,158,11,0.7)]'
                               : isStarter
@@ -464,25 +482,33 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
 
                     {/* Buy Now CTA Button - Dedicated Distinct Color Per Pack */}
                     <div className="my-6">
-                      <button
-                        onClick={() => handleSelectWithCycle(tier)}
+                      <a
+                        href={getGatewayUrl(tier.id, is2Year)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          handleDirectRedirect(getGatewayUrl(tier.id, is2Year));
+                        }}
                         className={`w-full py-4 rounded-xl font-black text-base transition-all duration-200 cursor-pointer flex items-center justify-center gap-2 active:scale-98 ${
-                          isCenter
-                            ? 'bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-400 hover:from-amber-300 hover:to-yellow-200 text-slate-950 shadow-xl shadow-amber-500/40 hover:shadow-amber-500/65 ring-2 ring-amber-300/80'
-                            : isStarter
+                          isStarter
                             ? is2Year
                               ? 'bg-gradient-to-r from-emerald-400 via-teal-300 to-emerald-500 hover:from-emerald-300 hover:to-teal-200 text-slate-950 shadow-xl shadow-emerald-500/40 hover:shadow-emerald-500/60 ring-2 ring-emerald-300/80'
-                              : 'bg-gradient-to-r from-teal-400 via-emerald-300 to-cyan-400 hover:from-teal-300 hover:to-emerald-200 text-slate-950 shadow-xl shadow-teal-500/40 hover:shadow-teal-500/60 ring-2 ring-teal-300/80'
+                              : 'bg-gradient-to-r from-sky-400 via-blue-400 to-indigo-400 hover:from-sky-300 hover:to-indigo-300 text-slate-950 shadow-xl shadow-blue-500/40 hover:shadow-blue-500/60 ring-2 ring-sky-300/80'
+                            : isCenter
+                            ? is2Year
+                              ? 'bg-gradient-to-r from-amber-400 via-yellow-300 to-yellow-400 hover:from-amber-300 hover:to-yellow-200 text-slate-950 shadow-xl shadow-amber-500/40 hover:shadow-amber-500/65 ring-2 ring-amber-300/80'
+                              : 'bg-gradient-to-r from-orange-400 via-rose-400 to-amber-300 hover:from-orange-300 hover:to-rose-300 text-slate-950 shadow-xl shadow-orange-500/40 hover:shadow-orange-500/60 ring-2 ring-orange-300/80'
                             : is2Year
                             ? 'bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-500 hover:from-cyan-300 hover:to-blue-400 text-slate-950 shadow-xl shadow-cyan-500/40 hover:shadow-cyan-500/60 ring-2 ring-cyan-300/80'
-                            : 'bg-gradient-to-r from-sky-400 via-blue-300 to-indigo-400 hover:from-sky-300 hover:to-indigo-300 text-slate-950 shadow-xl shadow-blue-500/40 hover:shadow-blue-500/60 ring-2 ring-sky-300/80'
+                            : 'bg-gradient-to-r from-purple-500 via-fuchsia-400 to-indigo-500 hover:from-purple-400 hover:to-fuchsia-300 text-white shadow-xl shadow-purple-500/40 hover:shadow-purple-500/60 ring-2 ring-purple-300/80'
                         }`}
                       >
                         <span>
                           {is2Year ? `Buy 2-Year Plan · $${activePrice}/mo` : `Buy 1-Year Plan · $${activePrice}/mo`}
                         </span>
-                        <ArrowRight className="w-4 h-4 stroke-[2.5]" />
-                      </button>
+                        <ExternalLink className="w-4 h-4 stroke-[2.5]" />
+                      </a>
                     </div>
 
                     {/* 6 Software Allowances List: MODERATE BIG SIZE & BEAUTIFULLY MINGLED */}
@@ -2083,13 +2109,13 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
         </div>
 
         {/* Guarantee Banner below pricing */}
-        <div className="mt-14 text-center text-xs text-slate-300 max-w-3xl mx-auto space-y-1.5 p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
-          <p className="font-semibold text-emerald-400 flex items-center justify-center gap-1.5 text-sm">
+        <div className="mt-14 text-center text-xs text-slate-300 max-w-3xl mx-auto space-y-2 p-6 rounded-2xl bg-slate-900/80 border border-emerald-500/30">
+          <p className="font-bold text-emerald-400 flex items-center justify-center gap-1.5 text-sm">
             <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
-            <span>100% Satisfaction Guarantee · All 6 Software Licenses Direct From Original Companies</span>
+            <span>30-Day Money-Back Guarantee & No Questions Asked Policy</span>
           </p>
-          <p className="text-slate-400 leading-relaxed">
-            Strictly zero piracy. If you encounter any difficulties operating the tools or if any software is not working, we replace it immediately within 2 minutes — no questions asked.
+          <p className="text-slate-300 leading-relaxed">
+            Our 30-day money-back guarantee & no questions asked policy is strictly valid if the software we provided is <strong className="text-white">not working or not legit</strong>. If any customer finds the software not working or the license code fake/pirated, our team will <strong className="text-emerald-300">refund your money within 1 day (no questions asked)</strong>, or replace it within 2 minutes via <a href="mailto:Bizzusupport@gmail.com" className="text-emerald-400 underline font-mono">Bizzusupport@gmail.com</a>.
           </p>
         </div>
 

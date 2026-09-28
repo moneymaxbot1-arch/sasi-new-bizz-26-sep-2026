@@ -7,7 +7,7 @@ export const SOFTWARE_TOOLS: SoftwareTool[] = [
     category: 'Email Marketing Automation & AI Integration',
     monthlyRetail: 162,
     tagline: 'Email marketing automation with multi-LLM AI integration & custom SMTP control',
-    description: 'Email Marketing Automation that lets you continue using your favorite AI apps such as ChatGPT, Anthropic Claude 4.5, Google Gemini, Grok, Meta Llama, DeepSeek, and Qwen3 alongside Mailchimp for enhanced email marketing performance.',
+    description: 'Email Marketing Automation that lets you continue using your favorite AI apps such as ChatGPT, Claude, Google Gemini, Grok, Meta Llama, DeepSeek, and Qwen3 alongside Mailchimp for enhanced email marketing performance.',
     fullSummary: 'Send emails directly from your own SMTP servers, ensuring maximum control, privacy, and deliverability. Avail Mailchimp at a flat promotional bundle rate starting at $15 per month. Seamlessly integrate preferred SMTP services like Amazon SES, Mailgun, and SendGrid. Craft visually appealing emails quickly using the built-in drag-and-drop builder, import subscriber lists in Excel format, build automated drip campaigns, and analyze real-time open, click, and bounce rates powered by leading AI models. Connect seamlessly to Telegram, Instagram, Facebook, and WhatsApp using API keys.',
     keyFeatures: [
       'Built-in Drag-and-Drop visual email template builder',
@@ -24,10 +24,10 @@ export const SOFTWARE_TOOLS: SoftwareTool[] = [
       'Effortlessly import email lists in Excel spreadsheet format for streamlined campaign management',
       'Set up triggered automated email sequences to boost customer engagement and repeat orders',
       'Real-time analytics tracking opens, click-throughs, unsubscribes, and bounce rates',
-      'AI performance insights powered by ChatGPT, Claude 4.5, Google Gemini, Grok, DeepSeek, and Qwen3',
+      'AI performance insights powered by ChatGPT, Claude, Google Gemini, Grok, DeepSeek, and Qwen3',
       'Integrate with Telegram, Instagram, Facebook, and WhatsApp using API keys for cross-channel sync'
     ],
-    aiIntegrations: ['ChatGPT', 'Anthropic Claude 4.5', 'Google Gemini', 'Grok', 'Meta Llama', 'DeepSeek', 'Qwen3'],
+    aiIntegrations: ['ChatGPT', 'Claude', 'Google Gemini', 'Grok', 'Meta Llama', 'DeepSeek', 'Qwen3'],
     protocolsAndIntegrations: ['Amazon SES', 'Mailgun', 'Custom SMTP', 'Excel (.xlsx)', 'WhatsApp API', 'Telegram API', 'Instagram API', 'Facebook API'],
     businessImpact: '+310% higher repeat customer purchase frequency with zero per-subscriber penalties',
     badgeColor: '#FFE01B',
@@ -42,7 +42,7 @@ export const SOFTWARE_TOOLS: SoftwareTool[] = [
     monthlyRetail: 9,
     tagline: 'SSD Hosting with unlimited storage & bandwidth, free CDN, US servers & 1-click AI/CMS apps',
     description: 'Enjoy high-speed SSD Hosting with unlimited storage and bandwidth, providing ample space for your online empire to thrive. Includes complimentary Content Delivery Network (CDN) and free SSL certificates.',
-    fullSummary: 'Install your preferred open-source and AI platforms with a single click—including OpenAI, Cloak AI, WordPress, ChatGPT, Claude 4.5, Google Gemini, Grok, Meta Llama, DeepSeek, Qwen3, Joomla, OpenCart, and Drupal. Host unlimited websites under a single plan with unlimited data transfer on robust US-based cloud servers. Features custom intuitive control panels, free email accounts, automated malware scanning, 24/7 dedicated support, and over 80 free 1-click web apps.',
+    fullSummary: 'Install your preferred open-source and AI platforms with a single click—including OpenAI, Cloak AI, WordPress, ChatGPT, Claude, Google Gemini, Grok, Meta Llama, DeepSeek, Qwen3, Joomla, OpenCart, and Drupal. Host unlimited websites under a single plan with unlimited data transfer on robust US-based cloud servers. Features custom intuitive control panels, free email accounts, automated malware scanning, 24/7 dedicated support, and over 80 free 1-click web apps.',
     keyFeatures: [
       'SSD Cloud Hosting with Unlimited Storage & Unlimited Bandwidth',
       'Complimentary Global Content Delivery Network (CDN) & Free SSL',
@@ -54,7 +54,7 @@ export const SOFTWARE_TOOLS: SoftwareTool[] = [
       'Complimentary integrated Content Delivery Network (CDN) ensuring rapid sub-second global loading',
       'Free Wildcard SSL Certificates included to safeguard transactions and build buyer trust',
       '1-Click installation for open-source & AI platforms: WordPress, Joomla, Drupal, OpenCart, OpenAI, Cloak AI',
-      'Full compatibility with ChatGPT, Claude 4.5, Google Gemini, Grok, Meta Llama, DeepSeek, Qwen3',
+      'Full compatibility with ChatGPT, Claude, Google Gemini, Grok, Meta Llama, DeepSeek, Qwen3',
       'Host as many websites as you need under a single plan with flexible scalability',
       'Seamless site performance with unlimited data transfer for high-traffic campaigns',
       'Robust enterprise cloud server infrastructure located in the United States',
@@ -65,7 +65,7 @@ export const SOFTWARE_TOOLS: SoftwareTool[] = [
       'High uptime commitment guarantee ensuring your website stays online for customers 24/7',
       'Access to over 80 free website applications to extend functionality without coding'
     ],
-    aiIntegrations: ['OpenAI', 'Cloak AI', 'ChatGPT', 'Claude 4.5', 'Google Gemini', 'Grok', 'Meta Llama', 'DeepSeek', 'Qwen3'],
+    aiIntegrations: ['OpenAI', 'Cloak AI', 'ChatGPT', 'Claude', 'Google Gemini', 'Grok', 'Meta Llama', 'DeepSeek', 'Qwen3'],
     protocolsAndIntegrations: ['WordPress', 'Joomla', 'OpenCart', 'Drupal', 'LiteSpeed Cache', 'US Cloud Datacenters', 'Free CDN', '80+ 1-Click Apps'],
     businessImpact: 'Sub-second 0.8s load times keep 40% more visitors from bouncing and boost Google SEO',
     badgeColor: '#673DE6',
@@ -119,7 +119,7 @@ export const SOFTWARE_TOOLS: SoftwareTool[] = [
     monthlyRetail: 314,
     tagline: 'WhatsApp & Telegram Chatbot CRM with no 24-hr rule restriction & OpenAI tech',
     description: 'Effortlessly create and deploy AI chatbots across Telegram, Instagram, Facebook, and WhatsApp Business accounts in simple steps. Send promotional broadcasts, notifications, and automated sequence messages at any time.',
-    fullSummary: 'Benefit from industry-leading 98% open rates with no 24-hour rule restriction across Telegram, Instagram, Facebook, and WhatsApp. Centralized live-chat team inbox, WhatsApp Catalog eCommerce checkout, OpenAI conversational language technology, and rich third-party webhook integrations with ChatGPT, Claude 4.5, Google Gemini, Grok, Meta Llama, DeepSeek, Qwen3, Typeform, WooCommerce, and Shopify. Supports automated COD to Prepaid conversion, SMS/email fallback APIs, and auto-responders (Mailchimp, Sendinblue, ActiveCampaign).',
+    fullSummary: 'Benefit from industry-leading 98% open rates with no 24-hour rule restriction across Telegram, Instagram, Facebook, and WhatsApp. Centralized live-chat team inbox, WhatsApp Catalog eCommerce checkout, OpenAI conversational language technology, and rich third-party webhook integrations with ChatGPT, Claude, Google Gemini, Grok, Meta Llama, DeepSeek, Qwen3, Typeform, WooCommerce, and Shopify. Supports automated COD to Prepaid conversion, SMS/email fallback APIs, and auto-responders (Mailchimp, Sendinblue, ActiveCampaign).',
     keyFeatures: [
       'Official WhatsApp, Telegram, Instagram & Facebook Chatbot builder',
       'High open rates with NO 24-hour rule restriction on broadcasts',
@@ -137,7 +137,7 @@ export const SOFTWARE_TOOLS: SoftwareTool[] = [
       'Boost sales potential with WhatsApp & Telegram Catalog: run full eCommerce checkout inside chat',
       'Multi-agent team management with role-based activity permissions on specific modules',
       'Harness OpenAI language models for natural conversational interactions and personalized replies',
-      'Connect webhook providers: ChatGPT, Claude 4.5, Google Gemini, Grok, Meta Llama, DeepSeek, Qwen3',
+      'Connect webhook providers: ChatGPT, Claude, Google Gemini, Grok, Meta Llama, DeepSeek, Qwen3',
       'Seamless WooCommerce integration for automated order alerts and Cash-on-Delivery (COD) to Prepaid conversion',
       'Shopify, Amazon, and eCommerce webhook automation workflows for real-time fulfillment updates',
       'Configurable APIs for sending automated SMS and fallback emails when users provide details',
@@ -145,7 +145,7 @@ export const SOFTWARE_TOOLS: SoftwareTool[] = [
       'Integrate AI web forms, WP Elementor, and Google Forms with webhook support for instant WhatsApp triggers',
       'Comprehensive REST API endpoints for developers to send custom text, templates, and add subscribers'
     ],
-    aiIntegrations: ['OpenAI Language Tech', 'ChatGPT', 'Anthropic Claude 4.5', 'Google Gemini', 'Grok', 'Meta Llama', 'DeepSeek', 'Qwen3'],
+    aiIntegrations: ['OpenAI Language Tech', 'ChatGPT', 'Claude', 'Google Gemini', 'Grok', 'Meta Llama', 'DeepSeek', 'Qwen3'],
     protocolsAndIntegrations: ['WhatsApp Cloud API', 'Telegram Bot API', 'Instagram Direct API', 'Facebook Messenger', 'Shopify', 'WooCommerce', 'WP Elementor', 'Google Forms', 'Typeform', 'Amazon', 'ActiveCampaign', 'Mailchimp'],
     businessImpact: '98% open rates and 45% click-through rates that dramatically out-convert traditional SMS & email',
     badgeColor: '#25D366',
@@ -159,17 +159,17 @@ export const SOFTWARE_TOOLS: SoftwareTool[] = [
     category: 'Server, Website & API Monitoring Tool',
     monthlyRetail: 80,
     tagline: 'Ultimate Server/Website/API monitoring with AI provider integration & incident management',
-    description: 'The ultimate Server, Website, and API Monitoring Tool. Can be integrated with popular AI providers like OpenAI, Cloak AI, WordPress, ChatGPT, Claude 4.5, Google Gemini, Grok, Meta Llama, DeepSeek, and Qwen3 using API keys.',
+    description: 'The ultimate Server, Website, and API Monitoring Tool. Can be integrated with popular AI providers like OpenAI, Cloak AI, WordPress, ChatGPT, Claude, Google Gemini, Grok, Meta Llama, DeepSeek, and Qwen3 using API keys.',
     fullSummary: 'Monitor webpages, servers, and REST APIs with real-time insights: up/down status, total downtime percentage, average response time, and comprehensive weekly reports. Create public status pages with separate links, manage and report incidents with full analysis history, track status counts, and receive instant alerts via Email, SMS, Telegram, and webhooks whenever your digital infrastructure encounters an issue.',
     keyFeatures: [
       'Continuous Server, Webpage & REST API uptime and latency checks',
-      'AI integration with ChatGPT, Claude 4.5, Gemini, Grok, Llama, DeepSeek & Qwen3',
+      'AI integration with ChatGPT, Claude, Gemini, Grok, Llama, DeepSeek & Qwen3',
       'Dedicated incident management with outage analysis and root-cause reports',
       'Custom branded public status pages for servers, webpages, and APIs'
     ],
     inDepthFeatures: [
       'Ultimate Server/Website/API Monitoring tool providing continuous 30-second ping verification',
-      'Integrated with popular AI providers: OpenAI, Cloak AI, WordPress, ChatGPT, Claude 4.5, Gemini, Grok, Llama, DeepSeek, Qwen3',
+      'Integrated with popular AI providers: OpenAI, Cloak AI, WordPress, ChatGPT, Claude, Gemini, Grok, Llama, DeepSeek, Qwen3',
       'Real-time webpage monitoring: up and down status, total downtime percentage, weekly status trends',
       'Core server monitoring metrics: uptime %, downtime %, average response latency, and historical performance',
       'Seamless REST API monitoring to verify payload response codes, latency spikes, and endpoint health',
@@ -182,7 +182,7 @@ export const SOFTWARE_TOOLS: SoftwareTool[] = [
       'Comprehensive outage analysis and incident history reports to eliminate recurring technical bottlenecks',
       'Covers all aspects of your digital infrastructure: frontend pages, backend servers, databases, and APIs'
     ],
-    aiIntegrations: ['OpenAI', 'Cloak AI', 'ChatGPT', 'Claude 4.5', 'Google Gemini', 'Grok', 'Meta Llama', 'DeepSeek', 'Qwen3'],
+    aiIntegrations: ['OpenAI', 'Cloak AI', 'ChatGPT', 'Claude', 'Google Gemini', 'Grok', 'Meta Llama', 'DeepSeek', 'Qwen3'],
     protocolsAndIntegrations: ['HTTP(s) Checks', 'Ping (ICMP)', 'Port Monitoring', 'API Endpoints', 'Email Alerts', 'SMS Gateways', 'Telegram Webhooks', 'Public Branded Status Pages'],
     businessImpact: 'Prevents thousands of dollars in lost holiday sales by detecting gateway and server failures within 30 seconds',
     badgeColor: '#17C964',
@@ -197,7 +197,7 @@ export const SOFTWARE_TOOLS: SoftwareTool[] = [
     monthlyRetail: 35,
     tagline: 'Custom short URLs, dynamic QR codes, branded bio pages, GDPR compliance & 120+ web tools',
     description: 'Simplify lengthy URLs with zero effort. Create personalized bio link pages reflecting your brand identity, generate unique QR codes with custom colors and logos, and optimize links with scheduling, expiration limits, and GDPR/CCPA compliance.',
-    fullSummary: 'Includes dynamic QR codes for vCard, WiFi, Calendar events, and geolocation; downloadable dynamic files; and digital contact cards with scan tracking. Compliant with GDPR, CCPA, and PECR regulations. Integrates with leading AI providers (OpenAI, Cloak AI, WordPress, ChatGPT, Claude 4.5, Google Gemini, Grok, Meta Llama, DeepSeek, Qwen3) for intelligent attribution tracking. Includes bonus access to 120+ web utility tools and custom domain mapping.',
+    fullSummary: 'Includes dynamic QR codes for vCard, WiFi, Calendar events, and geolocation; downloadable dynamic files; and digital contact cards with scan tracking. Compliant with GDPR, CCPA, and PECR regulations. Integrates with leading AI providers (OpenAI, Cloak AI, WordPress, ChatGPT, Claude, Google Gemini, Grok, Meta Llama, DeepSeek, Qwen3) for intelligent attribution tracking. Includes bonus access to 120+ web utility tools and custom domain mapping.',
     keyFeatures: [
       'Branded URL shortener with scheduling, expiration dates & password protection',
       'Custom QR Codes for vCard, WiFi, Calendar & Location with logos and custom colors',
@@ -215,14 +215,14 @@ export const SOFTWARE_TOOLS: SoftwareTool[] = [
       'Create digital contact cards (vCards) that update dynamically without reprinting QR codes',
       'Downloadable dynamic calendar invitations with real-time RSVP and attendance tracking',
       'Detailed analytics fully compliant with global GDPR, CCPA, and PECR privacy regulations',
-      'Seamless integration with AI providers: OpenAI, Cloak AI, WordPress, ChatGPT, Claude 4.5, Gemini, Grok, Llama, DeepSeek, Qwen3',
+      'Seamless integration with AI providers: OpenAI, Cloak AI, WordPress, ChatGPT, Claude, Gemini, Grok, Llama, DeepSeek, Qwen3',
       'Zero privacy concerns with automated data protection and anonymized click metrics',
       'Categorize and manage resources easily with multi-tier project folder organization',
       'Bonus access to an extensive suite of 120+ useful web utility tools for online operations',
       'Connect custom branded domains or use high-reputation predefined ones for trusted click rates',
       'Maintain a unified, cohesive online presence with comprehensive built-in click intelligence'
     ],
-    aiIntegrations: ['OpenAI', 'Cloak AI', 'ChatGPT', 'Claude 4.5', 'Google Gemini', 'Grok', 'Meta Llama', 'DeepSeek', 'Qwen3'],
+    aiIntegrations: ['OpenAI', 'Cloak AI', 'ChatGPT', 'Claude', 'Google Gemini', 'Grok', 'Meta Llama', 'DeepSeek', 'Qwen3'],
     protocolsAndIntegrations: ['Custom Branded Domains', 'vCard 4.0', 'iCal (.ics)', 'WiFi WPA2/3 QR', 'GDPR/CCPA Engine', '120+ Web Tools Suite', 'Project Folder Manager'],
     businessImpact: '100% attribution clarity across every social channel, ad campaign, and offline packaging QR code',
     badgeColor: '#EE6123',
@@ -263,7 +263,7 @@ export const PRICING_TIERS: PricingTier[] = [
       'WATi: 2,000 WhatsApp Marketing Subscribers',
       'Bitly: 1 Branded Project & Custom Links',
       'Complete Beginner Video Tutorial Academy',
-      '100% Satisfaction Guarantee · 2-Min Replacement'
+      '30-Day Money-Back Guarantee (Authenticity/Working) · 1-Day Full Refund'
     ],
     ctaText: 'Buy Now',
     spotsLeft: 14
@@ -536,8 +536,8 @@ export const FAQS: FaqItem[] = [
   },
   {
     id: 'f5',
-    question: 'Are all 6 software licenses official, and what is the guarantee policy?',
-    answer: 'All 6 software licenses are 100% legitimate and authentic, provided directly by the original vendor companies (Mailchimp, Hostinger, Fomo, WATi, UptimeRobot, and Bitly)—strictly zero piracy and no cracked tools. We provide a 100% Satisfaction Guarantee: if you encounter any difficulties operating any tool or if any software is not working, we will replace it immediately within 2 minutes—no questions asked. Contact us directly at Bizzsoft2u@gmail.com.',
+    question: 'What is the 30-Day Money-Back Guarantee & "No Questions Asked" refund policy?',
+    answer: 'All 6 software licenses are 100% legitimate and authentic from official original vendor companies. Our 30-Day Money-Back Guarantee & No Questions Asked policy is strictly valid if the software we provided is not working or not legit: if any customer finds that any software provided is not working, or the license code is fake or piracy, our team will refund 100% of your money within 1 day (24 hours) — no questions asked. In addition, if you need an instant license replacement, we can replace it within 2 minutes. Reach our official support desk directly at Bizzusupport@gmail.com.',
     category: 'Guarantee'
   },
   {
@@ -549,7 +549,7 @@ export const FAQS: FaqItem[] = [
   {
     id: 'f7',
     question: 'How do I contact official customer support if I have questions or need assistance?',
-    answer: 'You can email our official customer support desk directly anytime at Bizzsoft2u@gmail.com. Whether you need activation guidance, custom tier recommendations, or technical assistance, our support team replies promptly.',
+    answer: 'You can email our official customer support desk directly anytime at Bizzusupport@gmail.com. Whether you need activation guidance, custom tier recommendations, or technical assistance, our support team replies promptly.',
     category: 'Support'
   }
 ];

@@ -27,10 +27,10 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onClaimClick }) => {
           <p className="text-base text-slate-300">
             Have a question? We've got transparent answers. If you need anything else, our official support team is standing by at{' '}
             <a
-              href="mailto:Bizzsoft2u@gmail.com"
+              href="mailto:Bizzusupport@gmail.com"
               className="text-emerald-400 hover:text-emerald-300 font-bold underline font-mono"
             >
-              Bizzsoft2u@gmail.com
+              Bizzusupport@gmail.com
             </a>
             .
           </p>
@@ -81,11 +81,11 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onClaimClick }) => {
             </div>
           </div>
           <a
-            href="mailto:Bizzsoft2u@gmail.com"
+            href="mailto:Bizzusupport@gmail.com"
             className="px-4 py-2 rounded-xl bg-emerald-500/20 hover:bg-emerald-500/30 border border-emerald-400/50 text-emerald-300 hover:text-emerald-200 font-mono font-bold text-xs transition-colors flex items-center gap-1.5"
           >
             <Mail className="w-3.5 h-3.5" />
-            <span>Bizzsoft2u@gmail.com</span>
+            <span>Bizzusupport@gmail.com</span>
           </a>
         </div>
 

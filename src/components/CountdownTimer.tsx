@@ -5,8 +5,8 @@ interface CountdownTimerProps {
   onClaimClick: () => void;
 }
 
-const TOTAL_SECONDS_1_HOUR = 1 * 60 * 60; // 3,600 seconds (1 hour)
-const STORAGE_KEY = 'bizz2u_1h_countdown_start';
+const TOTAL_SECONDS_15_MIN = 15 * 60; // 900 seconds (15 minutes)
+const STORAGE_KEY = 'bizz2u_15m_countdown_start';
 
 export const CountdownTimer: React.FC<CountdownTimerProps> = ({ onClaimClick }) => {
   const [secondsRemaining, setSecondsRemaining] = useState<number>(() => {
@@ -15,15 +15,15 @@ export const CountdownTimer: React.FC<CountdownTimerProps> = ({ onClaimClick }) 
       const now = Math.floor(Date.now() / 1000);
       if (storedStart) {
         const elapsed = now - parseInt(storedStart, 10);
-        if (elapsed >= 0 && elapsed < TOTAL_SECONDS_1_HOUR) {
-          return TOTAL_SECONDS_1_HOUR - elapsed;
+        if (elapsed >= 0 && elapsed < TOTAL_SECONDS_15_MIN) {
+          return TOTAL_SECONDS_15_MIN - elapsed;
         }
       }
       // Initialize or reset if expired
       localStorage.setItem(STORAGE_KEY, now.toString());
-      return TOTAL_SECONDS_1_HOUR;
+      return TOTAL_SECONDS_15_MIN;
     } catch {
-      return TOTAL_SECONDS_1_HOUR;
+      return TOTAL_SECONDS_15_MIN;
     }
   });
 
@@ -32,7 +32,7 @@ export const CountdownTimer: React.FC<CountdownTimerProps> = ({ onClaimClick }) 
       setSecondsRemaining(prev => {
         if (prev <= 1) {
           // Reset loop or keep at 0
-          return TOTAL_SECONDS_1_HOUR;
+          return TOTAL_SECONDS_15_MIN;
         }
         return prev - 1;
       });
@@ -46,7 +46,7 @@ export const CountdownTimer: React.FC<CountdownTimerProps> = ({ onClaimClick }) 
   const seconds = secondsRemaining % 60;
 
   const pad = (n: number) => n.toString().padStart(2, '0');
-  const percentElapsed = ((TOTAL_SECONDS_1_HOUR - secondsRemaining) / TOTAL_SECONDS_1_HOUR) * 100;
+  const percentElapsed = ((TOTAL_SECONDS_15_MIN - secondsRemaining) / TOTAL_SECONDS_15_MIN) * 100;
 
   return (
     <div className="w-full relative overflow-hidden bg-gradient-to-r from-red-950/80 via-slate-900 to-amber-950/70 border-y sm:border border-red-500/40 sm:rounded-2xl p-4 sm:p-6 shadow-2xl backdrop-blur-md">
@@ -59,7 +59,7 @@ export const CountdownTimer: React.FC<CountdownTimerProps> = ({ onClaimClick }) 
         <div className="space-y-2 text-center lg:text-left max-w-xl">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/20 border border-red-500/40 text-rose-300 text-xs font-bold tracking-wide">
             <Flame className="w-4 h-4 text-amber-400 animate-pulse" />
-            <span>SPECIAL 1-HOUR INTRODUCTORY WINDOW</span>
+            <span>SPECIAL 15-MINUTE INTRODUCTORY WINDOW</span>
           </div>
 
           <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight">
@@ -67,7 +67,7 @@ export const CountdownTimer: React.FC<CountdownTimerProps> = ({ onClaimClick }) 
           </h3>
 
           <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-            Separate subscriptions total <span className="line-through text-rose-400 font-semibold font-mono">$650/month ($7,800/year)</span>. When this 1-hour timer reaches zero, starter subscriptions increase to $49/mo. Cancel anytime.
+            Separate subscriptions total <span className="line-through text-rose-400 font-semibold font-mono">$650/month ($7,800/year)</span>. When this 15-minute timer reaches zero, starter subscriptions increase to $49/mo. Cancel anytime.
           </p>
         </div>
 
@@ -129,7 +129,7 @@ export const CountdownTimer: React.FC<CountdownTimerProps> = ({ onClaimClick }) 
             </button>
             <span className="text-[11px] text-slate-300 flex items-center gap-1 font-medium">
               <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-              <span>100% Satisfaction · 2-Min Replacement Guarantee</span>
+              <span>30-Day Money-Back Guarantee · 1-Day Full Refund</span>
             </span>
           </div>
 

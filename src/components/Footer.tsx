@@ -65,10 +65,10 @@ export const Footer: React.FC<FooterProps> = ({ onClaimClick }) => {
                 Have questions or need assistance? Reach out directly anytime:
               </p>
               <a
-                href="mailto:Bizzsoft2u@gmail.com"
+                href="mailto:Bizzusupport@gmail.com"
                 className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 hover:text-emerald-300 font-mono font-bold text-xs transition-colors"
               >
-                <span>Bizzsoft2u@gmail.com</span>
+                <span>Bizzusupport@gmail.com</span>
                 <span className="text-[10px] font-sans font-normal text-slate-400">· Click to email</span>
               </a>
             </div>
@@ -103,7 +103,7 @@ export const Footer: React.FC<FooterProps> = ({ onClaimClick }) => {
             </button>
             <div className="pt-2 text-[11px] text-slate-400 flex items-center gap-1.5">
               <Mail className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-              <span>Official Support: <a href="mailto:Bizzsoft2u@gmail.com" className="text-emerald-400 hover:underline font-mono font-semibold">Bizzsoft2u@gmail.com</a></span>
+              <span>Official Support: <a href="mailto:Bizzusupport@gmail.com" className="text-emerald-400 hover:underline font-mono font-semibold">Bizzusupport@gmail.com</a></span>
             </div>
           </div>
 
@@ -114,16 +114,16 @@ export const Footer: React.FC<FooterProps> = ({ onClaimClick }) => {
             &copy; {new Date().getFullYear()} Bizz2u Inc. Founded by Dr. Sasi. All rights reserved. Trademarks are property of their respective owners.
           </div>
           <div className="flex flex-wrap items-center gap-3 sm:gap-4">
-            <a href="mailto:Bizzsoft2u@gmail.com" className="text-emerald-400 hover:text-emerald-300 font-semibold font-mono flex items-center gap-1 transition-colors">
+            <a href="mailto:Bizzusupport@gmail.com" className="text-emerald-400 hover:text-emerald-300 font-semibold font-mono flex items-center gap-1 transition-colors">
               <Mail className="w-3 h-3 text-emerald-400" />
-              <span>Contact: Bizzsoft2u@gmail.com</span>
+              <span>Contact: Bizzusupport@gmail.com</span>
             </a>
             <span>·</span>
             <a href="#faq" className="hover:text-slate-300 transition-colors">Privacy Policy</a>
             <span>·</span>
             <a href="#faq" className="hover:text-slate-300 transition-colors">Terms of Service</a>
             <span>·</span>
-            <a href="#satisfaction-guarantee" className="hover:text-slate-300 transition-colors">Satisfaction Guarantee</a>
+            <a href="#satisfaction-guarantee" className="hover:text-slate-300 transition-colors">30-Day Money-Back Guarantee</a>
           </div>
         </div>
 

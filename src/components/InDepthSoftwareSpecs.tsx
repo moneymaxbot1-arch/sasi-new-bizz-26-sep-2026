@@ -250,7 +250,7 @@ export const InDepthSoftwareSpecs: React.FC<InDepthSoftwareSpecsProps> = ({ onCl
               </div>
 
               <div className="p-4 bg-slate-950 rounded-xl border border-slate-800 text-xs text-slate-300">
-                <strong className="text-white">Multi-LLM Synergy:</strong> Bring your own API keys from ChatGPT, Anthropic Claude 4.5, Google Gemini, Grok, Meta Llama, DeepSeek, or Qwen3 to supercharge performance, auto-generate high-converting copy, and trigger automated webhook workflows.
+                <strong className="text-white">Multi-LLM Synergy:</strong> Bring your own API keys from ChatGPT, Claude, Google Gemini, Grok, Meta Llama, DeepSeek, or Qwen3 to supercharge performance, auto-generate high-converting copy, and trigger automated webhook workflows.
               </div>
             </div>
           )}

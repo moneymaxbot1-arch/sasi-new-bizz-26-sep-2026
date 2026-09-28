@@ -496,7 +496,7 @@ export const AutomationVortexHero: React.FC<AutomationVortexHeroProps> = ({ onCl
               <div className="mt-2.5 flex items-center justify-center gap-3 text-[11px] text-slate-300">
                 <span className="flex items-center gap-1 font-medium text-emerald-300">
                   <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                  <span>100% Satisfaction · 2-Min Replacement Guarantee</span>
+                  <span>30-Day Money-Back Guarantee · 1-Day Full Refund</span>
                 </span>
                 <span>·</span>
                 <span className="text-amber-300 font-semibold">

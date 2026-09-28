@@ -43,9 +43,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onClaimClick }) => {
             FAQ
           </a>
           <a
-            href="mailto:Bizzsoft2u@gmail.com"
+            href="mailto:Bizzusupport@gmail.com"
             className="hover:text-emerald-400 transition-colors flex items-center gap-1 text-emerald-400/90 font-medium"
-            title="Official Contact Email: Bizzsoft2u@gmail.com"
+            title="Official Contact Email: Bizzusupport@gmail.com"
           >
             <Mail className="w-3.5 h-3.5 text-emerald-400" />
             <span>Contact</span>
@@ -55,9 +55,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onClaimClick }) => {
         {/* Language Translator: In between Navigation and CTA Button */}
         <div className="flex items-center gap-2">
           <a
-            href="mailto:Bizzsoft2u@gmail.com"
+            href="mailto:Bizzusupport@gmail.com"
             className="hidden lg:flex xl:hidden items-center gap-1 text-xs text-slate-300 hover:text-emerald-400 transition-colors font-mono"
-            title="Official Email: Bizzsoft2u@gmail.com"
+            title="Official Email: Bizzusupport@gmail.com"
           >
             <Mail className="w-3.5 h-3.5 text-emerald-400" />
             <span>Contact Support</span>

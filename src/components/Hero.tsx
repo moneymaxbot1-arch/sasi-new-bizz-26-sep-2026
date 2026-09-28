@@ -93,7 +93,7 @@ export const Hero: React.FC<HeroProps> = ({ onClaimClick }) => {
                 </span>
                 <span className="flex items-center gap-1.5 text-emerald-300 font-medium">
                   <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>100% Satisfaction · 2-Min Replacement Guarantee</span>
+                  <span>30-Day Money-Back Guarantee · 1-Day Full Refund</span>
                 </span>
               </div>
             </div>

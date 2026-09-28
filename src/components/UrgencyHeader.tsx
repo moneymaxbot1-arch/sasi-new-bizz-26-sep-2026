@@ -5,8 +5,8 @@ interface UrgencyHeaderProps {
   onClaimClick: () => void;
 }
 
-const TOTAL_SECONDS_1_HOUR = 1 * 60 * 60; // 3,600 seconds (1 hour)
-const STORAGE_KEY = 'bizz2u_1h_countdown_start';
+const TOTAL_SECONDS_15_MIN = 15 * 60; // 900 seconds (15 minutes)
+const STORAGE_KEY = 'bizz2u_15m_countdown_start';
 
 export const UrgencyHeader: React.FC<UrgencyHeaderProps> = ({ onClaimClick }) => {
   const [secondsRemaining, setSecondsRemaining] = useState<number>(() => {
@@ -15,20 +15,20 @@ export const UrgencyHeader: React.FC<UrgencyHeaderProps> = ({ onClaimClick }) =>
       const now = Math.floor(Date.now() / 1000);
       if (storedStart) {
         const elapsed = now - parseInt(storedStart, 10);
-        if (elapsed >= 0 && elapsed < TOTAL_SECONDS_1_HOUR) {
-          return TOTAL_SECONDS_1_HOUR - elapsed;
+        if (elapsed >= 0 && elapsed < TOTAL_SECONDS_15_MIN) {
+          return TOTAL_SECONDS_15_MIN - elapsed;
         }
       }
       localStorage.setItem(STORAGE_KEY, now.toString());
-      return TOTAL_SECONDS_1_HOUR;
+      return TOTAL_SECONDS_15_MIN;
     } catch {
-      return TOTAL_SECONDS_1_HOUR;
+      return TOTAL_SECONDS_15_MIN;
     }
   });
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setSecondsRemaining(prev => (prev <= 1 ? TOTAL_SECONDS_1_HOUR : prev - 1));
+      setSecondsRemaining(prev => (prev <= 1 ? TOTAL_SECONDS_15_MIN : prev - 1));
     }, 1000);
 
     return () => clearInterval(timer);
