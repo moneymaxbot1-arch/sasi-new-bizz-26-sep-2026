@@ -51,6 +51,26 @@
   <body class="bg-[#090D16] text-slate-100 antialiased font-sans selection:bg-emerald-500 selection:text-black" style="background-color: #090D16; color: #f8fafc; margin: 0; min-height: 100vh;">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script type="module">
+      // GitHub Pages fallback: If running statically on GitHub Pages root without Vite, load compiled bundle
+      setTimeout(function() {
+        var root = document.getElementById('root');
+        if (root && root.children.length === 0) {
+          var link = document.createElement('link');
+          link.rel = 'stylesheet';
+          link.href = './assets/bundle.css';
+          link.onerror = function() { link.href = './docs/assets/bundle.css'; };
+          document.head.appendChild(link);
+
+          var script = document.createElement('script');
+          script.type = 'module';
+          script.crossOrigin = 'anonymous';
+          script.src = './assets/bundle.js';
+          script.onerror = function() { script.src = './docs/assets/bundle.js'; };
+          document.body.appendChild(script);
+        }
+      }, 350);
+    </script>
   </body>
 </html>
 
