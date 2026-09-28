@@ -256,8 +256,8 @@ export const WhyAndWho: React.FC<WhyAndWhoProps> = ({ onClaimClick }) => {
                     }`}
                   >
                     <div>
-                      {/* Styled Visual Illustration Container */}
-                      <div className={`relative h-48 rounded-2xl bg-gradient-to-br ${pillar.illustrationTheme.gradient} border border-slate-700/60 overflow-hidden mb-6 flex flex-col items-center justify-center p-2`}>
+                      {/* Styled Big Visual Illustration Container */}
+                      <div className={`relative h-52 sm:h-56 w-full rounded-2xl bg-[#090E17] border border-slate-700/60 overflow-hidden mb-6 flex items-center justify-center p-0`}>
                         {pillar.id === 'traffic-generation' && <TrafficGenerationIllustration />}
                         {pillar.id === 'engagement' && <EngagementIllustration />}
                         {pillar.id === 'retargeting' && <RetargetingIllustration />}
