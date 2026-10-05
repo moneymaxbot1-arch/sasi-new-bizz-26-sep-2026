@@ -41,7 +41,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onClaimClick }) => {
         <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="xl:hidden p-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/80 transition-colors cursor-pointer"
+            className="md:hidden p-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/80 transition-colors cursor-pointer"
             aria-label="Toggle mobile menu"
           >
             {mobileMenuOpen ? <X className="w-5 h-5 text-emerald-400" /> : <Menu className="w-5 h-5" />}
@@ -55,34 +55,22 @@ export const Navbar: React.FC<NavbarProps> = ({ onClaimClick }) => {
         </div>
 
         {/* Zone 2: Desktop clean text navigation links */}
-        <nav className="hidden xl:flex items-center gap-4 text-xs font-medium text-slate-300 shrink-0">
-          <a href="#why-and-who" className="hover:text-emerald-400 transition-colors text-emerald-400 font-semibold">
-            Why & Who
-          </a>
+        <nav className="hidden md:flex items-center gap-5 text-xs font-medium text-slate-300 shrink-0">
           <a href="#bundle-tools" className="hover:text-emerald-400 transition-colors">
-            Software Suite
+            6 Software Suite
           </a>
-          <a href="#software-specs" className="hover:text-emerald-400 transition-colors">
-            In-Depth Specs
-          </a>
-          <a href="#cost-comparison" className="hover:text-emerald-400 transition-colors">
-            Cost Breakdown
-          </a>
-          <a href="#roi-calculator" className="hover:text-emerald-400 transition-colors">
-            ROI Calculator
-          </a>
-          <a href="#pricing" className="hover:text-emerald-400 transition-colors">
+          <a href="#pricing" className="hover:text-emerald-400 transition-colors text-emerald-400 font-semibold">
             Pricing Plans
           </a>
           <a href="#testimonials" className="hover:text-emerald-400 transition-colors">
-            Reviews
+            Testimonial
           </a>
           <a href="#faq" className="hover:text-emerald-400 transition-colors">
             FAQ
           </a>
           <a
             href="mailto:Bizzusupport@gmail.com"
-            className="hover:text-emerald-400 transition-colors flex items-center gap-1 text-emerald-400/90 font-medium"
+            className="hover:text-emerald-400 transition-colors flex items-center gap-1 text-slate-400 hover:text-emerald-400"
             title="Official Contact Email: Bizzusupport@gmail.com"
           >
             <Mail className="w-3.5 h-3.5 text-emerald-400" />
@@ -118,41 +106,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onClaimClick }) => {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="xl:hidden bg-[#0B101D] border-b border-slate-800 shadow-2xl px-4 py-4 space-y-2 animate-in slide-in-from-top-2 duration-200">
+        <div className="md:hidden bg-[#0B101D] border-b border-slate-800 shadow-2xl px-4 py-4 space-y-2 animate-in slide-in-from-top-2 duration-200">
           <div className="grid grid-cols-2 gap-2 text-xs font-semibold">
-            <button
-              onClick={() => handleNavClick('#why-and-who')}
-              className="p-2.5 rounded-lg bg-slate-900 border border-slate-800 text-left text-slate-200 hover:text-emerald-400 hover:border-emerald-500/40 flex items-center justify-between"
-            >
-              <span>4 Core Pillars</span>
-              <ChevronRight className="w-3.5 h-3.5 text-slate-500" />
-            </button>
             <button
               onClick={() => handleNavClick('#bundle-tools')}
               className="p-2.5 rounded-lg bg-slate-900 border border-slate-800 text-left text-slate-200 hover:text-emerald-400 hover:border-emerald-500/40 flex items-center justify-between"
             >
               <span>6 Software Suite</span>
-              <ChevronRight className="w-3.5 h-3.5 text-slate-500" />
-            </button>
-            <button
-              onClick={() => handleNavClick('#software-specs')}
-              className="p-2.5 rounded-lg bg-slate-900 border border-slate-800 text-left text-slate-200 hover:text-emerald-400 hover:border-emerald-500/40 flex items-center justify-between"
-            >
-              <span>In-Depth Specs</span>
-              <ChevronRight className="w-3.5 h-3.5 text-slate-500" />
-            </button>
-            <button
-              onClick={() => handleNavClick('#cost-comparison')}
-              className="p-2.5 rounded-lg bg-slate-900 border border-slate-800 text-left text-slate-200 hover:text-emerald-400 hover:border-emerald-500/40 flex items-center justify-between"
-            >
-              <span>$650 vs $15</span>
-              <ChevronRight className="w-3.5 h-3.5 text-slate-500" />
-            </button>
-            <button
-              onClick={() => handleNavClick('#roi-calculator')}
-              className="p-2.5 rounded-lg bg-slate-900 border border-slate-800 text-left text-slate-200 hover:text-emerald-400 hover:border-emerald-500/40 flex items-center justify-between"
-            >
-              <span>ROI Calculator</span>
               <ChevronRight className="w-3.5 h-3.5 text-slate-500" />
             </button>
             <button
@@ -166,7 +126,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onClaimClick }) => {
               onClick={() => handleNavClick('#testimonials')}
               className="p-2.5 rounded-lg bg-slate-900 border border-slate-800 text-left text-slate-200 hover:text-emerald-400 hover:border-emerald-500/40 flex items-center justify-between"
             >
-              <span>Reviews (1,840+)</span>
+              <span>Testimonial</span>
               <ChevronRight className="w-3.5 h-3.5 text-slate-500" />
             </button>
             <button

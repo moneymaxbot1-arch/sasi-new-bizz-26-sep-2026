@@ -339,14 +339,14 @@ export const PRICING_TIERS: PricingTier[] = [
 ];
 
 export const TESTIMONIALS: Testimonial[] = [
-  // 1. Malaysian: Nurul Huda (Petaling Jaya, Selangor, Malaysia)
+  // 1. Malaysian: Nurul Huda (Petaling Jaya, Selangor, Malaysia) - Malaysian Muslimah in Tudung
   {
     id: 't1',
     name: 'Nurul Huda',
     role: 'Founder & Managing Director',
     company: 'HijabChic Boutique & E-Com',
     avatarText: 'NH',
-    avatarUrl: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=160&h=160&fit=crop&crop=face',
+    avatarUrl: '/avatars/nurul_huda.jpg',
     location: 'Petaling Jaya, Selangor',
     countryFlag: '🇲🇾',
     rating: 5,
@@ -357,14 +357,14 @@ export const TESTIMONIALS: Testimonial[] = [
     toolsUsed: ['WATi', 'Mailchimp', 'Fomo'],
     planTier: 'Starter Pack ($15/mo)'
   },
-  // 2. Malaysian: Lim Jian Hao (Subang Jaya, Malaysia)
+  // 2. Malaysian: Lim Jian Hao (Subang Jaya, Malaysia) - Authentic Chinese Male Face
   {
     id: 't2',
     name: 'Lim Jian Hao',
     role: 'Head of E-Commerce Growth',
     company: 'Apex Digital Retail MY',
     avatarText: 'JH',
-    avatarUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=160&h=160&fit=crop&crop=face',
+    avatarUrl: '/avatars/lim_jianhao_chinese.jpg?v=2',
     location: 'Subang Jaya, Selangor',
     countryFlag: '🇲🇾',
     rating: 5,
@@ -393,14 +393,14 @@ export const TESTIMONIALS: Testimonial[] = [
     toolsUsed: ['UptimeRobot', 'Hostinger', 'WATi'],
     planTier: 'Starter Pack ($15/mo)'
   },
-  // 4. Malaysian: Farah Aisyah (Kuala Lumpur, Malaysia)
+  // 4. Malaysian: Farah Aisyah (Kuala Lumpur, Malaysia) - Authentic Malay Woman Face (Tudung)
   {
     id: 't4',
     name: 'Farah Aisyah',
     role: 'Co-Founder & Creative Director',
     company: 'Lumina Cosmetics Malaysia',
     avatarText: 'FA',
-    avatarUrl: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=160&h=160&fit=crop&crop=face',
+    avatarUrl: '/avatars/farah_aisyah_malay.jpg?v=2',
     location: 'Bangsar, Kuala Lumpur',
     countryFlag: '🇲🇾',
     rating: 5,
@@ -411,14 +411,14 @@ export const TESTIMONIALS: Testimonial[] = [
     toolsUsed: ['WATi', 'Bitly', 'Fomo'],
     planTier: 'Growth Pack ($35/mo)'
   },
-  // 5. Malaysian: Tan Wei Loon (Penang, Malaysia)
+  // 5. Malaysian: Tan Wei Loon (Penang, Malaysia) - Authentic Chinese Male Face
   {
     id: 't5',
     name: 'Tan Wei Loon',
     role: 'Managing Director',
     company: 'Straits Media Digital Agency',
     avatarText: 'WL',
-    avatarUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=160&h=160&fit=crop&crop=face',
+    avatarUrl: '/avatars/tan_weiloon_chinese.jpg?v=2',
     location: 'George Town, Penang',
     countryFlag: '🇲🇾',
     rating: 5,
@@ -447,14 +447,14 @@ export const TESTIMONIALS: Testimonial[] = [
     toolsUsed: ['WATi', 'Mailchimp'],
     planTier: 'Growth Pack ($35/mo)'
   },
-  // 7. Malaysian: Kavitha Nadarajah (Johor Bahru, Malaysia)
+  // 7. Malaysian: Kavitha Nadarajah (Johor Bahru, Malaysia) - Malaysian Indian professional woman
   {
     id: 't7',
     name: 'Kavitha Nadarajah',
     role: 'Founder & Principal Consultant',
     company: 'Apex Education & Training JB',
     avatarText: 'KN',
-    avatarUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=160&h=160&fit=crop&crop=face',
+    avatarUrl: '/avatars/kavitha_nadarajah.jpg',
     location: 'Johor Bahru, Johor',
     countryFlag: '🇲🇾',
     rating: 5,
@@ -465,14 +465,14 @@ export const TESTIMONIALS: Testimonial[] = [
     toolsUsed: ['WATi', 'Bitly', 'Hostinger'],
     planTier: 'Starter Pack ($15/mo)'
   },
-  // 8. Malaysian: Wong Shu Min (Kota Kinabalu, Sabah, Malaysia)
+  // 8. Malaysian: Wong Shu Min (Kota Kinabalu, Sabah, Malaysia) - Malaysian Chinese female founder
   {
     id: 't8',
     name: 'Wong Shu Min',
     role: 'E-Commerce Manager',
     company: 'Borneo Artisan Goods',
     avatarText: 'SM',
-    avatarUrl: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=160&h=160&fit=crop&crop=face',
+    avatarUrl: '/avatars/wong_shumin.jpg',
     location: 'Kota Kinabalu, Sabah',
     countryFlag: '🇲🇾',
     rating: 5,
@@ -501,14 +501,14 @@ export const TESTIMONIALS: Testimonial[] = [
     toolsUsed: ['Mailchimp', 'Hostinger', 'Bitly', 'Fomo'],
     planTier: 'BIG Agency ($150/mo)'
   },
-  // 10. Malaysian: Anis Zulaikha (Shah Alam, Selangor, Malaysia)
+  // 10. Malaysian: Anis Zulaikha (Shah Alam, Selangor, Malaysia) - Malaysian Muslimah in Tudung
   {
     id: 't10',
     name: 'Anis Zulaikha',
     role: 'Co-Founder & COO',
     company: 'Zulaikha Fashion & Modest Wear',
     avatarText: 'AZ',
-    avatarUrl: 'https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?w=160&h=160&fit=crop&crop=face',
+    avatarUrl: '/avatars/anis_tudung.jpg',
     location: 'Shah Alam, Selangor',
     countryFlag: '🇲🇾',
     rating: 5,
