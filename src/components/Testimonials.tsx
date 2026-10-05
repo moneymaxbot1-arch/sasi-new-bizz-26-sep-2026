@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { TESTIMONIALS } from '../data/bundleData';
-import { Star, CheckCircle2, TrendingUp, Sparkles, Filter, ChevronRight, Quote, ShieldCheck } from 'lucide-react';
+import { Star, CheckCircle2, TrendingUp, Sparkles, Filter, ChevronRight, Quote, ShieldCheck, MapPin } from 'lucide-react';
 
 interface TestimonialsProps {
   onClaimClick?: () => void;
@@ -12,11 +12,15 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onClaimClick }) => {
 
   const filtered = TESTIMONIALS.filter((t) => {
     if (filterCategory === 'all') return true;
+    if (filterCategory === 'malaysia') {
+      return t.countryFlag === '🇲🇾' || (t.location && t.location.toLowerCase().includes('malaysia'));
+    }
     if (filterCategory === 'sales') {
       return (
         t.metricLabel.toLowerCase().includes('sales') ||
         t.metricLabel.toLowerCase().includes('conversion') ||
         t.metricLabel.toLowerCase().includes('checkout') ||
+        t.metricLabel.toLowerCase().includes('orders') ||
         t.metricLabel.toLowerCase().includes('recovered')
       );
     }
@@ -26,11 +30,6 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onClaimClick }) => {
         t.metricLabel.toLowerCase().includes('time') ||
         t.metricLabel.toLowerCase().includes('setup') ||
         t.metricLabel.toLowerCase().includes('hours')
-      );
-    }
-    if (filterCategory === 'tools') {
-      return t.toolsUsed.some(
-        tool => tool === 'WATi' || tool === 'Wati' || tool === 'Mailchimp' || tool === 'Fomo'
       );
     }
     return true;
@@ -75,6 +74,17 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onClaimClick }) => {
             }`}
           >
             All Stories ({TESTIMONIALS.length})
+          </button>
+          <button
+            onClick={() => { setFilterCategory('malaysia'); setVisibleCount(7); }}
+            className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer flex items-center gap-1.5 ${
+              filterCategory === 'malaysia'
+                ? 'bg-emerald-500 text-slate-950 shadow-md font-bold ring-2 ring-emerald-300'
+                : 'bg-slate-900 text-emerald-400 hover:text-white border border-emerald-500/40 hover:bg-emerald-950/40'
+            }`}
+          >
+            <span>🇲🇾</span>
+            <span>Malaysian Founders (7)</span>
           </button>
           <button
             onClick={() => { setFilterCategory('sales'); setVisibleCount(6); }}
@@ -150,9 +160,41 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onClaimClick }) => {
               {/* Verified Author Footer */}
               <div className="pt-4 border-t border-slate-800 flex items-center justify-between gap-2">
                 <div className="flex items-center gap-3 min-w-0">
-                  <div className="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center font-bold text-xs text-emerald-400 font-mono shrink-0 shadow-inner">
-                    {t.avatarText}
+                  {/* Real Face Avatar with verified badge & flag */}
+                  <div className="relative shrink-0">
+                    {t.avatarUrl ? (
+                      <img
+                        src={t.avatarUrl}
+                        alt={t.name}
+                        loading="lazy"
+                        className="w-11 h-11 rounded-full object-cover border-2 border-emerald-400/80 shadow-md shadow-emerald-500/20"
+                        onError={(e) => {
+                          // Fallback to text avatar if image fails
+                          const target = e.currentTarget;
+                          target.style.display = 'none';
+                          const fallback = target.nextElementSibling as HTMLElement;
+                          if (fallback) fallback.style.display = 'flex';
+                        }}
+                      />
+                    ) : null}
+                    <div
+                      style={{ display: t.avatarUrl ? 'none' : 'flex' }}
+                      className="w-11 h-11 rounded-full bg-slate-800 border-2 border-slate-700 items-center justify-center font-bold text-xs text-emerald-400 font-mono shadow-inner"
+                    >
+                      {t.avatarText}
+                    </div>
+
+                    {/* Flag badge pinned to avatar */}
+                    {t.countryFlag && (
+                      <span
+                        title={t.location || 'Verified Buyer'}
+                        className="absolute -bottom-1 -right-1 text-xs bg-slate-900 border border-slate-750 rounded-full px-0.5 leading-none shadow-sm"
+                      >
+                        {t.countryFlag}
+                      </span>
+                    )}
                   </div>
+
                   <div className="min-w-0">
                     <div className="text-sm font-bold text-white flex items-center gap-1.5 truncate">
                       <span>{t.name}</span>
@@ -161,12 +203,18 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onClaimClick }) => {
                     <div className="text-xs text-slate-400 truncate">
                       <span>{t.role}</span> · <strong className="text-slate-300 font-semibold">{t.company}</strong>
                     </div>
+                    {t.location && (
+                      <div className="text-[11px] text-emerald-400/90 font-medium flex items-center gap-1 mt-0.5 truncate">
+                        <MapPin className="w-3 h-3 text-emerald-400 shrink-0" />
+                        <span>{t.location}</span>
+                      </div>
+                    )}
                   </div>
                 </div>
 
                 {t.planTier && (
                   <span
-                    className={`px-2.5 py-1 rounded-md text-[10px] font-mono font-bold shrink-0 whitespace-nowrap ${
+                    className={`px-2.5 py-1 rounded-md text-[10px] font-mono font-bold shrink-0 whitespace-nowrap self-start sm:self-center ${
                       t.planTier.includes('$150') || t.planTier.toLowerCase().includes('agency')
                         ? 'bg-cyan-500/10 text-cyan-300 border border-cyan-500/30'
                         : t.planTier.includes('$35') || t.planTier.toLowerCase().includes('growth')

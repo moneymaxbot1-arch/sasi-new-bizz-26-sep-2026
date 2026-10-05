@@ -50,6 +50,9 @@ export interface Testimonial {
   role: string;
   company: string;
   avatarText: string;
+  avatarUrl?: string;
+  location?: string;
+  countryFlag?: string;
   rating: number;
   headline: string;
   content: string;
