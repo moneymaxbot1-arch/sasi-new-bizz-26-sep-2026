@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Sparkles, ArrowRight, Mail, Menu, X, ChevronRight } from 'lucide-react';
 import { LanguageTranslator } from './LanguageTranslator';
+import { getSavedLanguage } from '../services/translationService';
+import { getCurrencyForLanguage, formatLocalizedPrice, CurrencyConfig } from '../utils/currencyUtils';
 
 interface NavbarProps {
   onClaimClick: () => void;
@@ -8,6 +10,21 @@ interface NavbarProps {
 
 export const Navbar: React.FC<NavbarProps> = ({ onClaimClick }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [currentCurrency, setCurrentCurrency] = useState<CurrencyConfig>(() =>
+    getCurrencyForLanguage(getSavedLanguage())
+  );
+
+  useEffect(() => {
+    const updateCurrency = () => {
+      setCurrentCurrency(getCurrencyForLanguage(getSavedLanguage()));
+    };
+    window.addEventListener('bizz2u_language_changed', updateCurrency as EventListener);
+    const interval = setInterval(updateCurrency, 800);
+    return () => {
+      window.removeEventListener('bizz2u_language_changed', updateCurrency as EventListener);
+      clearInterval(interval);
+    };
+  }, []);
 
   const handleNavClick = (href: string) => {
     setMobileMenuOpen(false);
@@ -18,7 +35,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onClaimClick }) => {
   };
 
   return (
-    <header className="w-full bg-[#090D16]/95 backdrop-blur-md border-b border-slate-800/80 sticky top-[37px] z-40">
+    <header className="w-full bg-[#090D16]/95 backdrop-blur-md border-b border-slate-800/80 sticky top-0 z-40">
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-1.5 sm:gap-4">
         {/* Left: Hamburger (Mobile) + Wordmark */}
         <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
@@ -93,7 +110,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onClaimClick }) => {
             className="flex items-center gap-1 sm:gap-2 px-2.5 sm:px-4 py-2 text-xs sm:text-sm font-bold text-slate-950 bg-gradient-to-r from-emerald-400 to-teal-300 hover:from-emerald-300 hover:to-teal-200 rounded-lg transition-all duration-200 shadow-[0_0_20px_rgba(52,211,153,0.3)] hover:shadow-[0_0_25px_rgba(52,211,153,0.5)] cursor-pointer whitespace-nowrap active:scale-98"
           >
             <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-slate-950" />
-            <span>From $15/mo</span>
+            <span>From {formatLocalizedPrice(15, currentCurrency)}/mo</span>
             <ArrowRight className="w-3.5 h-3.5 hidden sm:inline" />
           </button>
         </div>

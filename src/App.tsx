@@ -4,7 +4,6 @@
  */
 
 import React from 'react';
-import { UrgencyHeader } from './components/UrgencyHeader';
 import { Navbar } from './components/Navbar';
 import { AutomationVortexHero } from './components/AutomationVortexHero';
 import { WhyAndWho } from './components/WhyAndWho';
@@ -34,9 +33,6 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#090D16] text-slate-100 flex flex-col font-sans selection:bg-emerald-500 selection:text-black antialiased w-full max-w-[100vw] overflow-x-hidden">
-      {/* Top Urgency Header */}
-      <UrgencyHeader onClaimClick={() => scrollToPricing()} />
-
       {/* Main Navigation complying with Top Bar Contract */}
       <Navbar onClaimClick={() => scrollToPricing()} />
 

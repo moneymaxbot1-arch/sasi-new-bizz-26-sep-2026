@@ -555,13 +555,50 @@ export const FAQS: FaqItem[] = [
 ];
 
 export const RECENT_BUYERS: BuyerEvent[] = [
-  { id: 'b1', name: 'Marcus K.', location: 'Austin, Texas', tier: 'Starter Pack ($15/mo)', timeAgo: '2 minutes ago' },
-  { id: 'b2', name: 'Elena R.', location: 'London, UK', tier: 'Growth Pack ($35/mo)', timeAgo: '4 minutes ago' },
-  { id: 'b3', name: 'Jonathan V.', location: 'Toronto, Canada', tier: 'BIG Agency ($150/mo)', timeAgo: '7 minutes ago' },
-  { id: 'b4', name: 'Priya M.', location: 'Singapore', tier: 'Growth Pack ($35/mo)', timeAgo: '11 minutes ago' },
-  { id: 'b5', name: 'Lucas S.', location: 'Berlin, Germany', tier: 'Starter Pack ($15/mo)', timeAgo: '15 minutes ago' },
-  { id: 'b6', name: 'Liam O.', location: 'Dublin, Ireland', tier: 'BIG Agency ($150/mo)', timeAgo: '18 minutes ago' },
-  { id: 'b7', name: 'Sofia M.', location: 'Madrid, Spain', tier: 'Growth Pack ($35/mo)', timeAgo: '22 minutes ago' },
-  { id: 'b8', name: 'David B.', location: 'Chicago, Illinois', tier: 'Starter Pack ($15/mo)', timeAgo: '27 minutes ago' },
-  { id: 'b9', name: 'Chloe T.', location: 'Montreal, Canada', tier: 'BIG Agency ($150/mo)', timeAgo: '31 minutes ago' }
+  // 15 Malaysian buyers
+  { id: 'my-1', name: 'Ahmad Faiz', location: 'Kuala Lumpur, Malaysia', tier: 'Growth Pack ($35/mo)', timeAgo: 'just now' },
+  { id: 'my-2', name: 'Nurul Huda', location: 'Petaling Jaya, Malaysia', tier: 'Starter Pack ($15/mo)', timeAgo: '2 minutes ago' },
+  { id: 'my-3', name: 'Tan Wei Loon', location: 'Penang, Malaysia', tier: 'BIG Agency ($150/mo)', timeAgo: '4 minutes ago' },
+  { id: 'my-4', name: 'Siti Sarah', location: 'Johor Bahru, Malaysia', tier: 'Growth Pack ($35/mo)', timeAgo: '6 minutes ago' },
+  { id: 'my-5', name: 'Lim Jian Hao', location: 'Subang Jaya, Malaysia', tier: 'Starter Pack ($15/mo)', timeAgo: '8 minutes ago' },
+  { id: 'my-6', name: 'Muhammad Danial', location: 'Shah Alam, Malaysia', tier: 'Growth Pack ($35/mo)', timeAgo: '11 minutes ago' },
+  { id: 'my-7', name: 'Chong Kah Seng', location: 'Ipoh, Malaysia', tier: 'BIG Agency ($150/mo)', timeAgo: '13 minutes ago' },
+  { id: 'my-8', name: 'Farah Aisyah', location: 'Kuching, Sarawak, Malaysia', tier: 'Starter Pack ($15/mo)', timeAgo: '15 minutes ago' },
+  { id: 'my-9', name: 'Ravin Kumar', location: 'Klang, Malaysia', tier: 'Growth Pack ($35/mo)', timeAgo: '17 minutes ago' },
+  { id: 'my-10', name: 'Wong Shu Min', location: 'Kota Kinabalu, Sabah, Malaysia', tier: 'Starter Pack ($15/mo)', timeAgo: '19 minutes ago' },
+  { id: 'my-11', name: 'Khairul Anuar', location: 'Melaka, Malaysia', tier: 'BIG Agency ($150/mo)', timeAgo: '22 minutes ago' },
+  { id: 'my-12', name: 'Lee Chun Kit', location: 'Cyberjaya, Malaysia', tier: 'Growth Pack ($35/mo)', timeAgo: '24 minutes ago' },
+  { id: 'my-13', name: 'Anis Zulaikha', location: 'Seremban, Malaysia', tier: 'Starter Pack ($15/mo)', timeAgo: '27 minutes ago' },
+  { id: 'my-14', name: 'Hafizuddin R.', location: 'Kuantan, Malaysia', tier: 'Growth Pack ($35/mo)', timeAgo: '29 minutes ago' },
+  { id: 'my-15', name: 'Kavitha N.', location: 'Putrajaya, Malaysia', tier: 'Starter Pack ($15/mo)', timeAgo: '32 minutes ago' },
+
+  // 2 Singapore buyers
+  { id: 'sg-1', name: 'Darren Tan', location: 'Marina Bay, Singapore', tier: 'BIG Agency ($150/mo)', timeAgo: '5 minutes ago' },
+  { id: 'sg-2', name: 'Priya Mohan', location: 'Jurong East, Singapore', tier: 'Growth Pack ($35/mo)', timeAgo: '14 minutes ago' },
+
+  // 5 India buyers
+  { id: 'in-1', name: 'Arjun Sharma', location: 'Bengaluru, India', tier: 'BIG Agency ($150/mo)', timeAgo: '3 minutes ago' },
+  { id: 'in-2', name: 'Neha Patel', location: 'Mumbai, India', tier: 'Growth Pack ($35/mo)', timeAgo: '9 minutes ago' },
+  { id: 'in-3', name: 'Rohan Verma', location: 'Delhi NCR, India', tier: 'Starter Pack ($15/mo)', timeAgo: '16 minutes ago' },
+  { id: 'in-4', name: 'Pooja Iyer', location: 'Hyderabad, India', tier: 'Growth Pack ($35/mo)', timeAgo: '21 minutes ago' },
+  { id: 'in-5', name: 'Vikram Joshi', location: 'Pune, India', tier: 'BIG Agency ($150/mo)', timeAgo: '28 minutes ago' },
+
+  // 5 Australia buyers
+  { id: 'au-1', name: 'Liam O\'Connor', location: 'Sydney, Australia', tier: 'BIG Agency ($150/mo)', timeAgo: '7 minutes ago' },
+  { id: 'au-2', name: 'Emma Wilson', location: 'Melbourne, Australia', tier: 'Growth Pack ($35/mo)', timeAgo: '12 minutes ago' },
+  { id: 'au-3', name: 'Jack Campbell', location: 'Brisbane, Australia', tier: 'Starter Pack ($15/mo)', timeAgo: '18 minutes ago' },
+  { id: 'au-4', name: 'Chloe Davies', location: 'Perth, Australia', tier: 'Growth Pack ($35/mo)', timeAgo: '25 minutes ago' },
+  { id: 'au-5', name: 'Noah Taylor', location: 'Adelaide, Australia', tier: 'BIG Agency ($150/mo)', timeAgo: '33 minutes ago' },
+
+  // Canada buyers
+  { id: 'ca-1', name: 'Jonathan V.', location: 'Toronto, Ontario, Canada', tier: 'BIG Agency ($150/mo)', timeAgo: '10 minutes ago' },
+  { id: 'ca-2', name: 'Sophie Tremblay', location: 'Montreal, Quebec, Canada', tier: 'Growth Pack ($35/mo)', timeAgo: '20 minutes ago' },
+  { id: 'ca-3', name: 'Matthew Chen', location: 'Vancouver, BC, Canada', tier: 'Starter Pack ($15/mo)', timeAgo: '31 minutes ago' },
+
+  // 5 Dubai buyers
+  { id: 'ae-1', name: 'Tariq Al-Mansoor', location: 'Downtown Dubai, UAE', tier: 'BIG Agency ($150/mo)', timeAgo: '1 minute ago' },
+  { id: 'ae-2', name: 'Zayed Al-Nuaimi', location: 'Dubai Marina, UAE', tier: 'BIG Agency ($150/mo)', timeAgo: '8 minutes ago' },
+  { id: 'ae-3', name: 'Fatima Al-Hashimi', location: 'Business Bay, Dubai, UAE', tier: 'Growth Pack ($35/mo)', timeAgo: '16 minutes ago' },
+  { id: 'ae-4', name: 'Karim Haddad', location: 'Jumeirah, Dubai, UAE', tier: 'Starter Pack ($15/mo)', timeAgo: '23 minutes ago' },
+  { id: 'ae-5', name: 'Rashid Khan', location: 'DIFC, Dubai, UAE', tier: 'BIG Agency ($150/mo)', timeAgo: '30 minutes ago' }
 ];

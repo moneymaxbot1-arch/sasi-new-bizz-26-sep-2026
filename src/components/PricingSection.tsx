@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { PRICING_TIERS } from '../data/bundleData';
 import { PricingTier } from '../types';
 import { Sparkles, ArrowRight, ShieldCheck, Flame, Star, Check, Info, X, Lock, ExternalLink } from 'lucide-react';
+import { getSavedLanguage } from '../services/translationService';
+import { getCurrencyForLanguage, formatLocalizedPrice, CurrencyConfig } from '../utils/currencyUtils';
 
 interface PricingSectionProps {
   onSelectTier?: (tier: PricingTier) => void;
@@ -18,20 +20,10 @@ const getGatewayUrl = (tierId: string, is2Year: boolean) => {
   return is2Year ? 'https://rzp.io/rzp/QRFwZryF' : 'https://rzp.io/rzp/GO7eRrS';
 };
 
-const handleDirectRedirect = (url: string) => {
-  try {
-    const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
-    if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
-      // In case browser strictly blocks popups, fallback to window.location
-      if (window.top) {
-        window.top.location.href = url;
-      } else {
-        window.location.href = url;
-      }
-    }
-  } catch {
-    window.open(url, '_blank', 'noopener,noreferrer');
-  }
+const openPaymentGateway = (url: string) => {
+  // Opens payment gateway in a separate window/tab exactly 1 time
+  // Keeps the current website window completely intact so the customer can check and compare
+  window.open(url, '_blank', 'noopener,noreferrer');
 };
 
 interface ToolSpecDetail {
@@ -151,6 +143,29 @@ const STARTER_SOFTWARE_SPECS: Record<string, ToolSpecDetail> = {
 };
 
 export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) => {
+  // Localized currency state based on selected language (Hindi/Tamil -> INR ₹, Malay -> MYR RM, otherwise USD $)
+  const [currentCurrency, setCurrentCurrency] = useState<CurrencyConfig>(() => 
+    getCurrencyForLanguage(getSavedLanguage())
+  );
+
+  useEffect(() => {
+    const updateCurrencyFromLanguage = () => {
+      const lang = getSavedLanguage();
+      setCurrentCurrency(getCurrencyForLanguage(lang));
+    };
+
+    // Listen to custom event dispatched by translationService
+    window.addEventListener('bizz2u_language_changed', updateCurrencyFromLanguage as EventListener);
+    
+    // Also poll storage periodically in case Google translate combo or other tabs changed it
+    const interval = setInterval(updateCurrencyFromLanguage, 800);
+
+    return () => {
+      window.removeEventListener('bizz2u_language_changed', updateCurrencyFromLanguage as EventListener);
+      clearInterval(interval);
+    };
+  }, []);
+
   // Individual 1-Year / 2-Year selection state for each card
   const [cardCycles, setCardCycles] = useState<{ [tierId: string]: '2year' | '1year' }>({
     starter: '2year',
@@ -195,7 +210,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
     const cycle = cardCycles[tier.id] || '2year';
     const is2Year = cycle === '2year';
     const gatewayUrl = getGatewayUrl(tier.id, is2Year);
-    handleDirectRedirect(gatewayUrl);
+    openPaymentGateway(gatewayUrl);
   };
 
   return (
@@ -301,7 +316,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
             <span className="inline-block">
               Starting From as Low as{' '}
               <span className="text-emerald-400 font-mono whitespace-nowrap inline-block">
-                Only $15/Month
+                Only {formatLocalizedPrice(15, currentCurrency)}/Month
               </span>
             </span>
           </h2>
@@ -309,6 +324,13 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
           <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
             All 6 software licenses provided directly from original companies. Select 1-Year or 2-Year on top of each table to lock in immediate savings.
           </p>
+
+          {currentCurrency.code !== 'USD' && (
+            <div className="mt-3 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900/90 border border-slate-700 text-xs text-slate-300 font-medium">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span>Prices displayed in <strong className="text-white">{currentCurrency.name}</strong> ({currentCurrency.symbol})</span>
+            </div>
+          )}
         </div>
 
         {/* 3 Pricing Cards Grid */}
@@ -319,8 +341,10 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
             const isAgency = tier.id === 'agency';
             const cycle = cardCycles[tier.id] || '2year';
             const is2Year = cycle === '2year';
-            const activePrice = is2Year ? tier.price2Year : tier.price1Year;
-            const altPrice = is2Year ? tier.price1Year : tier.price2Year;
+            const activePriceUsd = is2Year ? tier.price2Year : tier.price1Year;
+            const altPriceUsd = is2Year ? tier.price1Year : tier.price2Year;
+            const activePriceFormatted = formatLocalizedPrice(activePriceUsd, currentCurrency);
+            const altPriceFormatted = formatLocalizedPrice(altPriceUsd, currentCurrency);
             const altTerm = is2Year ? '1 year' : '2 years';
 
             return (
@@ -444,8 +468,8 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
 
                     {/* Pricing Display: Gold ONLY for Center; Emerald for Starter; Cyan for Big Agency */}
                     <div 
-                      onClick={() => handleDirectRedirect(getGatewayUrl(tier.id, is2Year))}
-                      title={`Click to checkout ${tier.name} ($${activePrice}/mo) in a separate window`}
+                      onClick={() => openPaymentGateway(getGatewayUrl(tier.id, is2Year))}
+                      title={`Click to checkout ${tier.name} (${activePriceFormatted}/mo) in a separate window`}
                       className="text-center py-5 border-y border-slate-800/80 my-3 cursor-pointer group/price transition-all hover:bg-slate-900/40 rounded-xl"
                     >
                       <div className="flex items-baseline justify-center gap-1.5">
@@ -458,7 +482,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                               : 'text-cyan-400 drop-shadow-[0_0_20px_rgba(56,189,248,0.7)]'
                           }`}
                         >
-                          ${activePrice}
+                          {activePriceFormatted}
                         </span>
                         <span className="text-xs font-semibold text-slate-400 uppercase font-mono">
                           /month
@@ -475,7 +499,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                             ? 'text-emerald-300/90'
                             : 'text-cyan-300/90'
                         }`}>
-                          ${altPrice}/mo
+                          {altPriceFormatted}/mo
                         </span>
                       </div>
                     </div>
@@ -486,10 +510,6 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                         href={getGatewayUrl(tier.id, is2Year)}
                         target="_blank"
                         rel="noopener noreferrer"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          handleDirectRedirect(getGatewayUrl(tier.id, is2Year));
-                        }}
                         className={`w-full py-4 rounded-xl font-black text-base transition-all duration-200 cursor-pointer flex items-center justify-center gap-2 active:scale-98 ${
                           isStarter
                             ? is2Year
@@ -505,7 +525,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                         }`}
                       >
                         <span>
-                          {is2Year ? `Buy 2-Year Plan · $${activePrice}/mo` : `Buy 1-Year Plan · $${activePrice}/mo`}
+                          {is2Year ? `Buy 2-Year Plan · ${activePriceFormatted}/mo` : `Buy 1-Year Plan · ${activePriceFormatted}/mo`}
                         </span>
                         <ExternalLink className="w-4 h-4 stroke-[2.5]" />
                       </a>
@@ -2091,7 +2111,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                 <div className="pt-2 flex items-center justify-between text-xs text-slate-400">
                   <div className="flex items-center gap-1.5 text-emerald-400 font-semibold">
                     <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                    <span>Active in $15/mo Starter Pack</span>
+                    <span>Active in {formatLocalizedPrice(15, currentCurrency)}/mo Starter Pack</span>
                   </div>
                   <button
                     type="button"

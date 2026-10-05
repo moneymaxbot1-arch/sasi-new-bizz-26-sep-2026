@@ -76,9 +76,9 @@ export const LanguageTranslator: React.FC<LanguageTranslatorProps> = ({ compact 
       {/* Main Bar between Nav Links and CTA Button */}
       <div className="flex items-center gap-1 sm:gap-1.5 p-1 bg-slate-900/90 border border-slate-800 rounded-xl shadow-lg backdrop-blur-md">
         
-        {/* Mobile View (<640px): Show only current active language or top 2 quick flags */}
+        {/* Mobile View (<640px): Show top quick flags including EN, TA, HI, MS */}
         <div className="flex sm:hidden items-center gap-0.5">
-          {QUICK_LANGUAGES.slice(0, 2).map((lang) => {
+          {QUICK_LANGUAGES.filter(l => ['en', 'ta', 'hi', 'ms'].includes(l.code)).map((lang) => {
             const isActive = currentLang === lang.code;
             return (
               <button

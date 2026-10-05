@@ -9,7 +9,6 @@ import {
   Play, 
   Pause, 
   Flame, 
-  Smile, 
   ShieldCheck, 
   Activity,
   Layers,
@@ -186,11 +185,12 @@ export const AutomationVortexHero: React.FC<AutomationVortexHeroProps> = ({ onCl
             <span className="text-amber-300 font-mono">6 TOOLS UNIFIED INTO 1</span>
           </div>
 
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.1] text-balance">
-            World’s Most Powerful 6 Applications to Scale & Grow your Business Into{' '}
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.2] text-balance">
+            Turn your small business into an automated powerhouse by unlocking{' '}
             <span className="bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">
-              One Automated Sales Engine
-            </span>
+              enterprise-grade messaging, advanced CRM customer messaging, lightning-fast hosting and real-time tracking
+            </span>{' '}
+            without ever spending more than $15 a month
           </h2>
 
           <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed">
@@ -452,21 +452,6 @@ export const AutomationVortexHero: React.FC<AutomationVortexHeroProps> = ({ onCl
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-950/60 border border-emerald-500/40 text-emerald-300 text-xs font-bold">
                   <TrendingUp className="w-3.5 h-3.5 text-emerald-400" />
                   <span>Verified Outcome: {currentTool.benefit}</span>
-                </div>
-              </div>
-
-              {/* The "Happy Founder" Story Callout Box */}
-              <div className="p-4 bg-slate-950/70 border border-slate-800 rounded-2xl space-y-2 text-xs text-slate-300">
-                <div className="flex items-center gap-2 text-amber-300 font-bold">
-                  <Smile className="w-4 h-4 text-amber-400" />
-                  <span>Why Founders & Business Owners Love This Combination:</span>
-                </div>
-                <p className="leading-relaxed text-slate-300">
-                  "Before combining these 6 tools, I wasted hours updating lists manually and paid over $600/month. Combining Mailchimp, Hostinger, Fomo, WATi, UptimeRobot, and Bitly turned our customer acquisition into an automatic flywheel that converts while we sleep!"
-                </p>
-                <div className="pt-1 flex items-center justify-between text-[11px] text-slate-400 font-mono">
-                  <span>Owner: Alex M., Retail Founder</span>
-                  <span className="text-emerald-400 font-bold">100% Automated</span>
                 </div>
               </div>
 

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, Sparkles, Clock, Flame } from 'lucide-react';
 import { useCountdownTimer } from '../utils/countdownUtils';
+import { getSavedLanguage } from '../services/translationService';
+import { getCurrencyForLanguage, formatLocalizedPrice, CurrencyConfig } from '../utils/currencyUtils';
 
 interface MobileStickyBarProps {
   onClaimClick: () => void;
@@ -9,6 +11,21 @@ interface MobileStickyBarProps {
 export const MobileStickyBar: React.FC<MobileStickyBarProps> = ({ onClaimClick }) => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const { minutes, seconds, stockRemaining } = useCountdownTimer();
+  const [currentCurrency, setCurrentCurrency] = useState<CurrencyConfig>(() =>
+    getCurrencyForLanguage(getSavedLanguage())
+  );
+
+  useEffect(() => {
+    const updateCurrency = () => {
+      setCurrentCurrency(getCurrencyForLanguage(getSavedLanguage()));
+    };
+    window.addEventListener('bizz2u_language_changed', updateCurrency as EventListener);
+    const interval = setInterval(updateCurrency, 800);
+    return () => {
+      window.removeEventListener('bizz2u_language_changed', updateCurrency as EventListener);
+      clearInterval(interval);
+    };
+  }, []);
 
   // Track scroll position to show when the user scrolls the page
   useEffect(() => {
@@ -77,7 +94,7 @@ export const MobileStickyBar: React.FC<MobileStickyBarProps> = ({ onClaimClick }
           className="flex-1 max-w-[170px] sm:max-w-[190px] py-2.5 px-3 bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-300 hover:from-emerald-300 hover:to-cyan-200 text-slate-950 font-black text-xs sm:text-sm rounded-xl shadow-[0_0_20px_rgba(52,211,153,0.4)] flex items-center justify-center gap-1.5 cursor-pointer whitespace-nowrap active:scale-98 shrink-0"
         >
           <Sparkles className="w-3.5 h-3.5 shrink-0 fill-slate-950" />
-          <span>Subscribe · $15/mo</span>
+          <span>Subscribe · {formatLocalizedPrice(15, currentCurrency)}/mo</span>
           <ArrowRight className="w-3.5 h-3.5 shrink-0" />
         </button>
       </div>
