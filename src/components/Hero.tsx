@@ -1,7 +1,9 @@
-import React from 'react';
-import { ArrowRight, CheckCircle2, ShieldCheck, Zap, Star, TrendingUp, Users } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { ArrowRight, CheckCircle2, ShieldCheck, Zap, Star, TrendingUp, Users, Lock, RotateCcw, Clock } from 'lucide-react';
 import { TOTAL_MONTHLY_RETAIL, TOTAL_ANNUAL_RETAIL } from '../data/bundleData';
 import { useCountdownTimer } from '../utils/countdownUtils';
+import { TrustBadgesTrio } from './TrustBadgesTrio';
+import { getActiveCurrency, formatLocalizedPrice, CurrencyConfig } from '../utils/currencyUtils';
 
 interface HeroProps {
   onClaimClick: () => void;
@@ -9,6 +11,21 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onClaimClick }) => {
   const { stockRemaining, claimedCount } = useCountdownTimer();
+  const [currentCurrency, setCurrentCurrency] = useState<CurrencyConfig>(getActiveCurrency);
+
+  useEffect(() => {
+    const handleCurrencyChange = () => {
+      setCurrentCurrency(getActiveCurrency());
+    };
+    window.addEventListener('bizz2u_currency_changed', handleCurrencyChange as EventListener);
+    window.addEventListener('bizz2u_language_changed', handleCurrencyChange as EventListener);
+    const interval = setInterval(handleCurrencyChange, 800);
+    return () => {
+      window.removeEventListener('bizz2u_currency_changed', handleCurrencyChange as EventListener);
+      window.removeEventListener('bizz2u_language_changed', handleCurrencyChange as EventListener);
+      clearInterval(interval);
+    };
+  }, []);
 
   return (
     <section className="relative overflow-hidden pt-10 pb-16 lg:pt-16 lg:pb-24 bg-[#090D16]">
@@ -26,9 +43,9 @@ export const Hero: React.FC<HeroProps> = ({ onClaimClick }) => {
             <div className="flex flex-wrap items-center gap-2 text-xs sm:text-sm font-semibold tracking-wide text-emerald-400">
               <span className="uppercase tracking-wider">LIMITED TIME ALL-IN-ONE BUNDLE</span>
               <span aria-hidden="true" className="text-slate-600">·</span>
-              <span className="text-amber-400">SAVE $635 EVERY SINGLE MONTH</span>
+              <span className="text-amber-400">SAVE {formatLocalizedPrice(635, currentCurrency)} EVERY SINGLE MONTH</span>
               <span aria-hidden="true" className="text-slate-600">·</span>
-              <span className="text-slate-400">STARTING FROM AS LOW AS $15/MONTH</span>
+              <span className="text-slate-400">STARTING FROM AS LOW AS {formatLocalizedPrice(15, currentCurrency)}/MONTH</span>
             </div>
 
             {/* Main Headline */}
@@ -41,7 +58,7 @@ export const Hero: React.FC<HeroProps> = ({ onClaimClick }) => {
 
             {/* High-converting subheadline */}
             <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl">
-              Stop paying <span className="text-rose-400 font-semibold line-through font-mono tabular-nums">${TOTAL_MONTHLY_RETAIL}/month</span> across disconnected software. Get instant access to enterprise-grade Email Marketing, High-Speed Cloud Hosting, Social Proof Urgency, WhatsApp Broadcasting, 24/7 Uptime Monitoring, and Branded Link Tracking — with starter subscription packages starting from as low as <span className="text-emerald-400 font-bold font-mono">only $15/month</span>.
+              Stop paying <span className="text-rose-400 font-semibold line-through font-mono tabular-nums">{formatLocalizedPrice(TOTAL_MONTHLY_RETAIL, currentCurrency)}/month</span> across disconnected software. Get instant access to enterprise-grade Email Marketing, High-Speed Cloud Hosting, Social Proof Urgency, WhatsApp Broadcasting, 24/7 Uptime Monitoring, and Branded Link Tracking — with starter subscription packages starting from as low as <span className="text-emerald-400 font-bold font-mono">only {formatLocalizedPrice(15, currentCurrency)}/month</span>.
             </p>
 
             {/* Urgency Stock Banner */}
@@ -52,7 +69,7 @@ export const Hero: React.FC<HeroProps> = ({ onClaimClick }) => {
                   <span>TIER 1 PRICING EXPIRES WHEN 100 SUBSCRIBERS JOIN</span>
                 </div>
                 <div className="text-xs text-slate-400">
-                  Currently <span className="text-white font-bold font-mono">{claimedCount} claimed</span> · Only <span className="text-amber-300 font-bold font-mono">{stockRemaining} licenses remaining</span> at $15/mo
+                  Currently <span className="text-white font-bold font-mono">{claimedCount} claimed</span> · Only <span className="text-amber-300 font-bold font-mono">{stockRemaining} licenses remaining</span> at {formatLocalizedPrice(15, currentCurrency)}/mo
                 </div>
               </div>
               <div className="w-24 bg-slate-800 h-2.5 rounded-full overflow-hidden shrink-0 border border-slate-700">
@@ -71,34 +88,34 @@ export const Hero: React.FC<HeroProps> = ({ onClaimClick }) => {
                   className="px-8 py-4 text-base font-bold text-slate-950 bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-300 hover:from-emerald-300 hover:to-cyan-200 rounded-xl transition-all duration-200 shadow-[0_0_30px_rgba(52,211,153,0.35)] hover:shadow-[0_0_40px_rgba(52,211,153,0.5)] cursor-pointer flex items-center justify-center gap-3 active:scale-98"
                 >
                   <Zap className="w-5 h-5 fill-slate-950" />
-                  <span>Start 6-Tool Subscription · $15/mo</span>
+                  <span>Start 6-Tool Subscription · {formatLocalizedPrice(15, currentCurrency)}/mo</span>
                   <ArrowRight className="w-5 h-5" />
                 </button>
 
                 <a
-                  href="#cost-comparison"
+                  href="#pricing"
                   className="px-6 py-4 text-sm font-semibold text-slate-300 hover:text-white bg-slate-900/80 hover:bg-slate-800 border border-slate-700/80 rounded-xl transition-colors text-center whitespace-nowrap"
                 >
-                  See $650 vs $15 Breakdown
+                  See All Pricing Plans
                 </a>
               </div>
 
-              {/* Micro Trust Signals */}
-              <div className="flex flex-wrap items-center gap-y-2 gap-x-4 text-xs text-slate-400 pt-1">
-                <span className="flex items-center gap-1.5">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>Instant Portal Access</span>
+              {/* Micro Trust Signals featuring the 3 core pillars */}
+              <div className="flex flex-wrap items-center gap-y-2 gap-x-3 text-xs text-slate-300 pt-1">
+                <span className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-900/90 border border-slate-700/80 font-medium text-emerald-300">
+                  <RotateCcw className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                  <span>Cancel Anytime</span>
                 </span>
-                <span className="flex items-center gap-1.5 text-emerald-300 font-medium">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>Complete Beginner Video Tutorials</span>
+                <span className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-900/90 border border-slate-700/80 font-medium text-sky-300">
+                  <Lock className="w-3.5 h-3.5 text-sky-400 shrink-0" />
+                  <span>100% Private & Encrypted Data</span>
                 </span>
-                <span className="flex items-center gap-1.5">
-                  <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>Cancel Anytime · No Contracts</span>
+                <span className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-900/90 border border-slate-700/80 font-medium text-amber-300">
+                  <Zap className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                  <span>Instant 3-Minute Workspace Setup</span>
                 </span>
-                <span className="flex items-center gap-1.5 text-emerald-300 font-medium">
-                  <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
+                <span className="flex items-center gap-1.5 text-slate-400">
+                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
                   <span>30-Day Money-Back Guarantee · 1-Day Full Refund</span>
                 </span>
               </div>
@@ -118,7 +135,7 @@ export const Hero: React.FC<HeroProps> = ({ onClaimClick }) => {
 
           </div>
 
-          {/* Right Column: Visual Software Bundle Card Showcasing the 6 Tools */}
+          {/* Right Column: Visual Software Bundle Card Showcasing the 6 Tools (Infographic Layout) */}
           <div className="lg:col-span-5">
             <div className="relative bg-gradient-to-b from-slate-850 to-slate-900 border border-slate-700/90 rounded-2xl p-6 shadow-2xl shadow-emerald-950/20">
               
@@ -134,15 +151,15 @@ export const Hero: React.FC<HeroProps> = ({ onClaimClick }) => {
                 </div>
                 <div className="text-right">
                   <div className="text-xs text-slate-400 line-through font-mono tabular-nums">
-                    ${TOTAL_MONTHLY_RETAIL}/mo
+                    {formatLocalizedPrice(TOTAL_MONTHLY_RETAIL, currentCurrency)}/mo
                   </div>
                   <div className="text-xl font-extrabold text-emerald-400 font-mono tabular-nums">
-                    $15 <span className="text-xs font-normal text-slate-300">/month</span>
+                    {formatLocalizedPrice(15, currentCurrency)} <span className="text-xs font-normal text-slate-300">/month</span>
                   </div>
                 </div>
               </div>
 
-              {/* The 6 Tools Roster (Directly matching the user's uploaded image) */}
+              {/* The 6 Tools Roster (Directly matching the user's original infographic) */}
               <div className="divide-y divide-slate-800/80 my-3">
                 
                 {/* 1. Mailchimp */}
@@ -153,12 +170,12 @@ export const Hero: React.FC<HeroProps> = ({ onClaimClick }) => {
                     </div>
                     <div>
                       <div className="text-sm font-bold text-white">Mailchimp</div>
-                      <div className="text-xs text-slate-400">Email Marketing & Automations</div>
+                      <div className="text-xs text-slate-400">Billed Monthly · Email Marketing</div>
                     </div>
                   </div>
                   <div className="text-right">
                     <span className="text-xs font-mono font-semibold text-slate-300 bg-slate-800/80 px-2 py-0.5 rounded border border-slate-700">
-                      $162/mo value
+                      {formatLocalizedPrice(162, currentCurrency)}/mo value
                     </span>
                   </div>
                 </div>
@@ -171,12 +188,12 @@ export const Hero: React.FC<HeroProps> = ({ onClaimClick }) => {
                     </div>
                     <div>
                       <div className="text-sm font-bold text-white">Hostinger</div>
-                      <div className="text-xs text-slate-400">Fast Cloud Web Hosting & SSL</div>
+                      <div className="text-xs text-slate-400">Billed Monthly · Web Hosting</div>
                     </div>
                   </div>
                   <div className="text-right">
                     <span className="text-xs font-mono font-semibold text-slate-300 bg-slate-800/80 px-2 py-0.5 rounded border border-slate-700">
-                      $9/mo value
+                      {formatLocalizedPrice(9, currentCurrency)}/mo value
                     </span>
                   </div>
                 </div>
@@ -189,12 +206,12 @@ export const Hero: React.FC<HeroProps> = ({ onClaimClick }) => {
                     </div>
                     <div>
                       <div className="text-sm font-bold text-white">Fomo</div>
-                      <div className="text-xs text-slate-400">Social Proof Marketing Platform</div>
+                      <div className="text-xs text-slate-400">Billed Monthly · Social Proof Platform</div>
                     </div>
                   </div>
                   <div className="text-right">
                     <span className="text-xs font-mono font-semibold text-slate-300 bg-slate-800/80 px-2 py-0.5 rounded border border-slate-700">
-                      $50/mo value
+                      {formatLocalizedPrice(50, currentCurrency)}/mo value
                     </span>
                   </div>
                 </div>
@@ -207,12 +224,12 @@ export const Hero: React.FC<HeroProps> = ({ onClaimClick }) => {
                     </div>
                     <div>
                       <div className="text-sm font-bold text-white">WATi</div>
-                      <div className="text-xs text-slate-400">WhatsApp Marketing & Broadcasts</div>
+                      <div className="text-xs text-slate-400">Billed Monthly · WhatsApp Marketing</div>
                     </div>
                   </div>
                   <div className="text-right">
                     <span className="text-xs font-mono font-semibold text-slate-300 bg-slate-800/80 px-2 py-0.5 rounded border border-slate-700">
-                      $314/mo value
+                      {formatLocalizedPrice(314, currentCurrency)}/mo value
                     </span>
                   </div>
                 </div>
@@ -225,12 +242,12 @@ export const Hero: React.FC<HeroProps> = ({ onClaimClick }) => {
                     </div>
                     <div>
                       <div className="text-sm font-bold text-white">UptimeRobot</div>
-                      <div className="text-xs text-slate-400">Monitor Your Website's Uptime</div>
+                      <div className="text-xs text-slate-400">Billed Monthly · Website Monitoring</div>
                     </div>
                   </div>
                   <div className="text-right">
                     <span className="text-xs font-mono font-semibold text-slate-300 bg-slate-800/80 px-2 py-0.5 rounded border border-slate-700">
-                      $80/mo value
+                      {formatLocalizedPrice(80, currentCurrency)}/mo value
                     </span>
                   </div>
                 </div>
@@ -243,12 +260,12 @@ export const Hero: React.FC<HeroProps> = ({ onClaimClick }) => {
                     </div>
                     <div>
                       <div className="text-sm font-bold text-white">Bitly</div>
-                      <div className="text-xs text-slate-400">URL Shortener, QR Code & Bio</div>
+                      <div className="text-xs text-slate-400">Billed Monthly · Short Link & QR Suite</div>
                     </div>
                   </div>
                   <div className="text-right">
                     <span className="text-xs font-mono font-semibold text-slate-300 bg-slate-800/80 px-2 py-0.5 rounded border border-slate-700">
-                      $35/mo value
+                      {formatLocalizedPrice(35, currentCurrency)}/mo value
                     </span>
                   </div>
                 </div>
@@ -260,21 +277,24 @@ export const Hero: React.FC<HeroProps> = ({ onClaimClick }) => {
                 <div className="flex items-center justify-between text-xs text-slate-300 mb-2">
                   <span>Combined Retail Value:</span>
                   <span className="font-mono line-through font-semibold text-rose-400">
-                    ${TOTAL_MONTHLY_RETAIL}/mo (${TOTAL_ANNUAL_RETAIL}/yr)
+                    {formatLocalizedPrice(TOTAL_MONTHLY_RETAIL, currentCurrency)}/mo ({formatLocalizedPrice(TOTAL_ANNUAL_RETAIL, currentCurrency)}/yr)
                   </span>
                 </div>
                 <div className="flex items-center justify-between text-sm font-bold text-white mb-4">
                   <span className="text-emerald-400">Bundle Subscription:</span>
                   <span className="font-mono text-xl text-emerald-400">
-                    $15<span className="text-xs font-normal text-slate-300">/mo</span> <span className="text-xs font-normal text-slate-400 font-sans">(Save $635/mo)</span>
+                    {formatLocalizedPrice(15, currentCurrency)}<span className="text-xs font-normal text-slate-300">/mo</span> <span className="text-xs font-normal text-slate-400 font-sans">(Save {formatLocalizedPrice(635, currentCurrency)}/mo)</span>
                   </span>
                 </div>
                 <button
                   onClick={onClaimClick}
-                  className="w-full py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold rounded-xl transition-colors text-center text-sm cursor-pointer shadow-md"
+                  className="w-full py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold rounded-xl transition-colors text-center text-sm cursor-pointer shadow-md active:scale-98"
                 >
-                  Start $15/mo Subscription · Cancel Anytime
+                  Start {formatLocalizedPrice(15, currentCurrency)}/mo Subscription · Cancel Anytime
                 </button>
+                <div className="mt-3">
+                  <TrustBadgesTrio variant="compact" onClaimClick={onClaimClick} />
+                </div>
               </div>
 
             </div>

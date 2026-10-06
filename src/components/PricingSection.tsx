@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { PRICING_TIERS } from '../data/bundleData';
 import { PricingTier } from '../types';
-import { Sparkles, ArrowRight, ShieldCheck, Flame, Star, Check, Info, X, Lock, ExternalLink } from 'lucide-react';
-import { getSavedLanguage } from '../services/translationService';
-import { getCurrencyForLanguage, formatLocalizedPrice, CurrencyConfig } from '../utils/currencyUtils';
+import { Sparkles, ArrowRight, ShieldCheck, Flame, Star, Check, Info, X, Lock, ExternalLink, RotateCcw, Zap, Coins, TrendingUp } from 'lucide-react';
+import { getActiveCurrency, setAppCurrency, formatLocalizedPrice, CurrencyConfig, SUPPORTED_CURRENCIES } from '../utils/currencyUtils';
+import { TrustBadgesTrio } from './TrustBadgesTrio';
 
 interface PricingSectionProps {
   onSelectTier?: (tier: PricingTier) => void;
@@ -143,25 +143,22 @@ const STARTER_SOFTWARE_SPECS: Record<string, ToolSpecDetail> = {
 };
 
 export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) => {
-  // Localized currency state based on selected language (Hindi/Tamil -> INR ₹, Malay -> MYR RM, otherwise USD $)
-  const [currentCurrency, setCurrentCurrency] = useState<CurrencyConfig>(() => 
-    getCurrencyForLanguage(getSavedLanguage())
-  );
+  // Localized currency state (MYR RM 61, INR ₹1,305, SGD S$20, AUD A$23, AED 55, USD $15)
+  const [currentCurrency, setCurrentCurrency] = useState<CurrencyConfig>(getActiveCurrency);
 
   useEffect(() => {
-    const updateCurrencyFromLanguage = () => {
-      const lang = getSavedLanguage();
-      setCurrentCurrency(getCurrencyForLanguage(lang));
+    const updateCurrency = () => {
+      setCurrentCurrency(getActiveCurrency());
     };
 
-    // Listen to custom event dispatched by translationService
-    window.addEventListener('bizz2u_language_changed', updateCurrencyFromLanguage as EventListener);
+    window.addEventListener('bizz2u_currency_changed', updateCurrency as EventListener);
+    window.addEventListener('bizz2u_language_changed', updateCurrency as EventListener);
     
-    // Also poll storage periodically in case Google translate combo or other tabs changed it
-    const interval = setInterval(updateCurrencyFromLanguage, 800);
+    const interval = setInterval(updateCurrency, 800);
 
     return () => {
-      window.removeEventListener('bizz2u_language_changed', updateCurrencyFromLanguage as EventListener);
+      window.removeEventListener('bizz2u_currency_changed', updateCurrency as EventListener);
+      window.removeEventListener('bizz2u_language_changed', updateCurrency as EventListener);
       clearInterval(interval);
     };
   }, []);
@@ -321,16 +318,29 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
             </span>
           </h2>
 
-          <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-3xl mx-auto">
             All 6 software licenses provided directly from original companies. Select 1-Year or 2-Year on top of each table to lock in immediate savings.
           </p>
 
-          {currentCurrency.code !== 'USD' && (
-            <div className="mt-3 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900/90 border border-slate-700 text-xs text-slate-300 font-medium">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-              <span>Prices displayed in <strong className="text-white">{currentCurrency.name}</strong> ({currentCurrency.symbol})</span>
+          {/* Automatic Language-Synced Currency Note */}
+          <div className="mt-5 flex justify-center">
+            <div className="inline-flex flex-wrap items-center justify-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/90 border border-emerald-500/30 text-xs text-slate-300 font-medium shadow-md">
+              <TrendingUp className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+              <span>
+                <strong className="text-white font-bold">Auto-Localized Currency:</strong>{' '}
+                <span className="text-emerald-300 font-mono font-bold">{currentCurrency.name} ({currentCurrency.symbol.trim()})</span>
+              </span>
+              <span className="text-slate-500 hidden sm:inline">·</span>
+              <span className="text-emerald-400/90 font-mono text-[11px]">
+                {currentCurrency.exchangeNote}
+              </span>
             </div>
-          )}
+          </div>
+        </div>
+
+        {/* 3 Core Assurances Ribbon above Pricing */}
+        <div className="mb-10 max-w-5xl mx-auto">
+          <TrustBadgesTrio variant="ribbon" />
         </div>
 
         {/* 3 Pricing Cards Grid */}
@@ -529,6 +539,24 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                         </span>
                         <ExternalLink className="w-4 h-4 stroke-[2.5]" />
                       </a>
+
+                      {/* 3 Core Trust Guarantees */}
+                      <div className="mt-3 flex flex-col gap-1 text-[11px] text-slate-300 text-center">
+                        <div className="flex items-center justify-center gap-1.5 font-medium">
+                          <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                          <span className="text-white font-semibold">Cancel Anytime</span>
+                          <span className="text-slate-500">·</span>
+                          <span>No Contracts</span>
+                        </div>
+                        <div className="flex items-center justify-center gap-1.5 text-slate-300">
+                          <Lock className="w-3.5 h-3.5 text-sky-400 shrink-0" />
+                          <span>100% Private & Encrypted Data</span>
+                        </div>
+                        <div className="flex items-center justify-center gap-1.5 text-slate-300">
+                          <Sparkles className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                          <span>Instant 3-Minute Workspace Setup</span>
+                        </div>
+                      </div>
                     </div>
 
                     {/* 6 Software Allowances List: MODERATE BIG SIZE & BEAUTIFULLY MINGLED */}
@@ -624,7 +652,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                                   <span>HOSTINGER</span>
                                 </div>
                                 <span className="px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-500/40 text-[10px] font-mono font-bold uppercase">
-                                  $15 Plan Included
+                                  {formatLocalizedPrice(15, currentCurrency)} Plan Included
                                 </span>
                               </div>
                               <span className="text-xs font-mono font-bold text-emerald-400">
@@ -682,7 +710,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                                   <span>HOSTINGER</span>
                                 </div>
                                 <span className="px-2 py-0.5 rounded bg-amber-950 text-amber-300 border border-amber-500/40 text-[10px] font-mono font-bold uppercase">
-                                  $35 Plan Included
+                                  {formatLocalizedPrice(35, currentCurrency)} Plan Included
                                 </span>
                               </div>
                               <span className="text-xs font-mono font-bold text-amber-400">
@@ -740,7 +768,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                                   <span>HOSTINGER</span>
                                 </div>
                                 <span className="px-2 py-0.5 rounded bg-cyan-950 text-cyan-300 border border-cyan-500/40 text-[10px] font-mono font-bold uppercase">
-                                  $150 Plan Included
+                                  {formatLocalizedPrice(150, currentCurrency)} Plan Included
                                 </span>
                               </div>
                               <span className="text-xs font-mono font-bold text-cyan-400">
@@ -860,7 +888,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                                   </span>
                                 </div>
                                 <span className="px-2 py-0.5 rounded bg-orange-950 text-orange-300 border border-orange-500/40 text-[10px] font-mono font-bold uppercase">
-                                  $15 Plan Included
+                                  {formatLocalizedPrice(15, currentCurrency)} Plan Included
                                 </span>
                               </div>
                               <span className="text-xs font-mono font-bold text-[#F97316]">
@@ -922,7 +950,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                                   </span>
                                 </div>
                                 <span className="px-2 py-0.5 rounded bg-orange-950 text-orange-300 border border-orange-500/40 text-[10px] font-mono font-bold uppercase">
-                                  $35 Plan Included
+                                  {formatLocalizedPrice(35, currentCurrency)} Plan Included
                                 </span>
                               </div>
                               <span className="text-xs font-mono font-bold text-[#F97316]">
@@ -986,7 +1014,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                                   </span>
                                 </div>
                                 <span className="px-2 py-0.5 rounded bg-orange-950 text-orange-300 border border-orange-500/40 text-[10px] font-mono font-bold uppercase">
-                                  $150 Plan Included
+                                  {formatLocalizedPrice(150, currentCurrency)} Plan Included
                                 </span>
                               </div>
                               <span className="text-xs font-mono font-bold text-[#F97316]">
@@ -1111,7 +1139,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                                   <span className="font-extrabold text-xs text-white">UptimeRobot</span>
                                 </div>
                                 <span className="px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-500/40 text-[10px] font-mono font-bold uppercase">
-                                  $15 Plan Included
+                                  {formatLocalizedPrice(15, currentCurrency)} Plan Included
                                 </span>
                               </div>
                               <span className="text-xs font-mono font-bold text-[#10B981]">
@@ -1167,7 +1195,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                                   <span className="font-extrabold text-xs text-white">UptimeRobot</span>
                                 </div>
                                 <span className="px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-500/40 text-[10px] font-mono font-bold uppercase">
-                                  $35 Plan Included
+                                  {formatLocalizedPrice(35, currentCurrency)} Plan Included
                                 </span>
                               </div>
                               <span className="text-xs font-mono font-bold text-[#10B981]">
@@ -1223,7 +1251,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                                   <span className="font-extrabold text-xs text-white">UptimeRobot</span>
                                 </div>
                                 <span className="px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-500/40 text-[10px] font-mono font-bold uppercase">
-                                  $150 Plan Included
+                                  {formatLocalizedPrice(150, currentCurrency)} Plan Included
                                 </span>
                               </div>
                               <span className="text-xs font-mono font-bold text-[#10B981]">
@@ -1346,7 +1374,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                                   <span>MAILCHIMP</span>
                                 </div>
                                 <span className="px-2 py-0.5 rounded bg-amber-950 text-amber-300 border border-amber-500/40 text-[10px] font-mono font-bold uppercase">
-                                  $15 Plan Included
+                                  {formatLocalizedPrice(15, currentCurrency)} Plan Included
                                 </span>
                               </div>
                               <span className="text-xs font-mono font-bold text-[#FFE01B]">
@@ -1406,7 +1434,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                                   <span>MAILCHIMP</span>
                                 </div>
                                 <span className="px-2 py-0.5 rounded bg-amber-950 text-amber-300 border border-amber-500/40 text-[10px] font-mono font-bold uppercase">
-                                  $35 Plan Included
+                                  {formatLocalizedPrice(35, currentCurrency)} Plan Included
                                 </span>
                               </div>
                               <span className="text-xs font-mono font-bold text-[#FFE01B]">
@@ -1466,7 +1494,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                                   <span>MAILCHIMP</span>
                                 </div>
                                 <span className="px-2 py-0.5 rounded bg-amber-950 text-amber-300 border border-amber-500/40 text-[10px] font-mono font-bold uppercase">
-                                  $150 Plan Included
+                                  {formatLocalizedPrice(150, currentCurrency)} Plan Included
                                 </span>
                               </div>
                               <span className="text-xs font-mono font-bold text-[#FFE01B]">
@@ -1591,7 +1619,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                                   <span>WATi</span>
                                 </div>
                                 <span className="px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-500/40 text-[10px] font-mono font-bold uppercase">
-                                  $15 Plan Included
+                                  {formatLocalizedPrice(15, currentCurrency)} Plan Included
                                 </span>
                               </div>
                               <span className="text-xs font-mono font-bold text-[#00E785]">
@@ -1661,7 +1689,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                                   <span>WATi</span>
                                 </div>
                                 <span className="px-2 py-0.5 rounded bg-emerald-950 text-[#00E785] border border-[#00E785]/40 text-[10px] font-mono font-bold uppercase">
-                                  $35 Plan Included
+                                  {formatLocalizedPrice(35, currentCurrency)} Plan Included
                                 </span>
                               </div>
                               <span className="text-xs font-mono font-bold text-[#00E785]">
@@ -1731,7 +1759,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                                   <span>WATi</span>
                                 </div>
                                 <span className="px-2 py-0.5 rounded bg-emerald-950 text-[#00E785] border border-[#00E785]/40 text-[10px] font-mono font-bold uppercase">
-                                  $150 Plan Included
+                                  {formatLocalizedPrice(150, currentCurrency)} Plan Included
                                 </span>
                               </div>
                               <span className="text-xs font-mono font-bold text-[#00E785]">
@@ -1861,7 +1889,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                                   <span>bitly</span>
                                 </div>
                                 <span className="px-2 py-0.5 rounded bg-orange-950 text-orange-300 border border-orange-500/40 text-[10px] font-mono font-bold uppercase">
-                                  $15 Plan Included
+                                  {formatLocalizedPrice(15, currentCurrency)} Plan Included
                                 </span>
                               </div>
                               <span className="text-xs font-mono font-bold text-[#EE6123]">
@@ -1922,7 +1950,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                                   <span>bitly</span>
                                 </div>
                                 <span className="px-2 py-0.5 rounded bg-orange-950 text-orange-300 border border-orange-500/40 text-[10px] font-mono font-bold uppercase">
-                                  $35 Plan Included
+                                  {formatLocalizedPrice(35, currentCurrency)} Plan Included
                                 </span>
                               </div>
                               <span className="text-xs font-mono font-bold text-[#EE6123]">
@@ -1987,7 +2015,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                                   <span>bitly</span>
                                 </div>
                                 <span className="px-2 py-0.5 rounded bg-orange-950 text-orange-300 border border-orange-500/40 text-[10px] font-mono font-bold uppercase">
-                                  $150 Plan Included
+                                  {formatLocalizedPrice(150, currentCurrency)} Plan Included
                                 </span>
                               </div>
                               <span className="text-xs font-mono font-bold text-[#EE6123]">
@@ -2053,7 +2081,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
             );
           })}
 
-          {/* Interactive Specification Popup Modal/Flyout for the 1st Price Package ($15/mo Starter Pack) */}
+          {/* Interactive Specification Popup Modal/Flyout for the 1st Price Package ({formatLocalizedPrice(15, currentCurrency)}/mo Starter Pack) */}
           {activeStarterTool && STARTER_SOFTWARE_SPECS[activeStarterTool] && (
             <div
               className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-xs transition-opacity animate-in fade-in duration-200"

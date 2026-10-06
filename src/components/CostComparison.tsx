@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { SOFTWARE_TOOLS, TOTAL_MONTHLY_RETAIL, TOTAL_ANNUAL_RETAIL } from '../data/bundleData';
+import { getActiveCurrency, formatLocalizedPrice, CurrencyConfig } from '../utils/currencyUtils';
 import { Check, X, ArrowRight, DollarSign, Calculator, Sparkles, TrendingDown } from 'lucide-react';
 
 interface CostComparisonProps {
@@ -8,6 +9,21 @@ interface CostComparisonProps {
 
 export const CostComparison: React.FC<CostComparisonProps> = ({ onClaimClick }) => {
   const [timeframe, setTimeframe] = useState<'monthly' | 'annual' | 'threeYear'>('annual');
+  const [currentCurrency, setCurrentCurrency] = useState<CurrencyConfig>(getActiveCurrency);
+
+  useEffect(() => {
+    const handleCurrencyChange = () => {
+      setCurrentCurrency(getActiveCurrency());
+    };
+    window.addEventListener('bizz2u_currency_changed', handleCurrencyChange);
+    window.addEventListener('bizz2u_language_changed', handleCurrencyChange);
+    const interval = setInterval(handleCurrencyChange, 800);
+    return () => {
+      window.removeEventListener('bizz2u_currency_changed', handleCurrencyChange);
+      window.removeEventListener('bizz2u_language_changed', handleCurrencyChange);
+      clearInterval(interval);
+    };
+  }, []);
 
   const getMultiplier = () => {
     if (timeframe === 'monthly') return 1;
@@ -16,9 +32,9 @@ export const CostComparison: React.FC<CostComparisonProps> = ({ onClaimClick }) 
   };
 
   const multiplier = getMultiplier();
-  const individualTotal = TOTAL_MONTHLY_RETAIL * multiplier; // $650 * months
-  const bundleCost = 15 * multiplier; // $15/month subscription
-  const totalSaved = individualTotal - bundleCost;
+  const individualTotalUsd = TOTAL_MONTHLY_RETAIL * multiplier; // $650 * months
+  const bundleCostUsd = 15 * multiplier; // $15/month subscription
+  const totalSavedUsd = individualTotalUsd - bundleCostUsd;
 
   return (
     <section id="cost-comparison" className="py-20 bg-[#0B101D] border-t border-slate-800/80 relative">
@@ -30,7 +46,7 @@ export const CostComparison: React.FC<CostComparisonProps> = ({ onClaimClick }) 
             The Truth About Individual Subscriptions
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4 text-balance">
-            Stop Paying <span className="text-rose-400 font-mono">${TOTAL_MONTHLY_RETAIL}/Month</span> for Separate Software
+            Stop Paying <span className="text-rose-400 font-mono">{formatLocalizedPrice(TOTAL_MONTHLY_RETAIL, currentCurrency)}/Month</span> for Separate Software
           </h2>
           <p className="text-base text-slate-300">
             Here is the exact retail cost breakdown if you purchased each of these 6 business productivity & sales automation tools separately:
@@ -49,7 +65,7 @@ export const CostComparison: React.FC<CostComparisonProps> = ({ onClaimClick }) 
               }`}
             >
               <span className="sm:hidden">1 Month</span>
-              <span className="hidden sm:inline">1 Month ($650/mo vs $15/mo)</span>
+              <span className="hidden sm:inline">1 Month ({formatLocalizedPrice(650, currentCurrency)}/mo vs {formatLocalizedPrice(15, currentCurrency)}/mo)</span>
             </button>
             <button
               onClick={() => setTimeframe('annual')}
@@ -114,14 +130,14 @@ export const CostComparison: React.FC<CostComparisonProps> = ({ onClaimClick }) 
                           </span>
                         </div>
                         <div className="text-xs text-slate-400">
-                          Retail: <span className="font-mono text-slate-300 font-semibold">${tool.monthlyRetail}/mo</span>
+                          Retail: <span className="font-mono text-slate-300 font-semibold">{formatLocalizedPrice(tool.monthlyRetail, currentCurrency)}/mo</span>
                         </div>
                       </div>
                     </div>
 
                     <div className="text-right">
                       <div className="text-base font-extrabold text-rose-400 font-mono tabular-nums">
-                        ${cost.toLocaleString()}
+                        {formatLocalizedPrice(cost, currentCurrency)}
                       </div>
                       <div className="text-[11px] text-slate-400">
                         {timeframe === 'monthly' ? 'per month' : 'total cost'}
@@ -140,7 +156,7 @@ export const CostComparison: React.FC<CostComparisonProps> = ({ onClaimClick }) 
               </div>
               <div className="text-right">
                 <div className="text-2xl sm:text-3xl font-black text-rose-400 font-mono tabular-nums">
-                  ${individualTotal.toLocaleString()}
+                  {formatLocalizedPrice(individualTotalUsd, currentCurrency)}
                 </div>
                 <div className="text-xs text-rose-300/80 font-mono">
                   {timeframe === 'monthly' ? 'every 30 days' : `${multiplier} months of subscription bleed`}
@@ -201,21 +217,21 @@ export const CostComparison: React.FC<CostComparisonProps> = ({ onClaimClick }) 
                   Starter Subscription Rate
                 </span>
                 <span className="text-xs text-slate-400 line-through font-mono">
-                  ${individualTotal.toLocaleString()}
+                  {formatLocalizedPrice(individualTotalUsd, currentCurrency)}
                 </span>
               </div>
               <div className="flex items-baseline gap-2">
                 <span className="text-4xl sm:text-5xl font-black text-emerald-400 font-mono tabular-nums">
-                  ${timeframe === 'monthly' ? '15' : bundleCost.toLocaleString()}
+                  {timeframe === 'monthly' ? formatLocalizedPrice(15, currentCurrency) : formatLocalizedPrice(bundleCostUsd, currentCurrency)}
                 </span>
                 <span className="text-xs text-emerald-300 font-medium">
-                  {timeframe === 'monthly' ? '/month subscription (cancel anytime)' : `total across ${multiplier} months at $15/mo`}
+                  {timeframe === 'monthly' ? '/month subscription (cancel anytime)' : `total across ${multiplier} months at ${formatLocalizedPrice(15, currentCurrency)}/mo`}
                 </span>
               </div>
               <div className="mt-2 text-xs text-slate-400 border-t border-emerald-900/60 pt-2 flex items-center justify-between">
                 <span>Net Cash Saved:</span>
                 <span className="font-bold text-white font-mono tabular-nums text-sm">
-                  +${totalSaved.toLocaleString()}
+                  +{formatLocalizedPrice(totalSavedUsd, currentCurrency)}
                 </span>
               </div>
             </div>
@@ -225,7 +241,7 @@ export const CostComparison: React.FC<CostComparisonProps> = ({ onClaimClick }) 
               onClick={onClaimClick}
               className="w-full py-4 bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-300 hover:from-emerald-300 hover:to-cyan-200 text-slate-950 font-bold rounded-xl transition-all duration-200 shadow-[0_0_25px_rgba(52,211,153,0.3)] hover:shadow-[0_0_35px_rgba(52,211,153,0.4)] flex items-center justify-center gap-2 cursor-pointer active:scale-98"
             >
-              <span>Start 6-Tool Subscription ($15/mo)</span>
+              <span>Start 6-Tool Subscription ({formatLocalizedPrice(15, currentCurrency)}/mo)</span>
               <ArrowRight className="w-4 h-4" />
             </button>
 

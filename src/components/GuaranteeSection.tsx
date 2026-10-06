@@ -1,5 +1,6 @@
 import React from 'react';
 import { ShieldCheck, CheckCircle2, Zap, ArrowRight, Award, Clock, RefreshCw, AlertCircle } from 'lucide-react';
+import { TrustBadgesTrio } from './TrustBadgesTrio';
 
 interface GuaranteeSectionProps {
   onClaimClick: () => void;
@@ -9,6 +10,22 @@ export const GuaranteeSection: React.FC<GuaranteeSectionProps> = ({ onClaimClick
   return (
     <section id="satisfaction-guarantee" className="py-16 bg-[#0B101D] border-t border-slate-800/80">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Core Trust & Security Pillars: Cancel Anytime, 100% Private Data, Instant Setup */}
+        <div className="mb-12">
+          <div className="text-center max-w-2xl mx-auto mb-8">
+            <span className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-400">
+              Guaranteed Satisfaction & Freedom
+            </span>
+            <h3 className="text-2xl sm:text-3xl font-extrabold text-white mt-1">
+              Complete Buyer Confidence & Zero Risk
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-400 mt-2">
+              Every subscription comes with our triple buyer security assurance and immediate 1-click self-service control.
+            </p>
+          </div>
+          <TrustBadgesTrio variant="cards" onClaimClick={onClaimClick} />
+        </div>
+
         <div className="bg-gradient-to-br from-slate-900 via-slate-900 to-emerald-950/30 border-2 border-emerald-500/50 rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden">
           
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">

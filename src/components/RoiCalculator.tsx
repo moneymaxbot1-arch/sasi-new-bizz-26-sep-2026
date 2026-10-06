@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { DollarSign, Clock, TrendingUp, Sparkles, ArrowRight } from 'lucide-react';
 import { TOTAL_MONTHLY_RETAIL } from '../data/bundleData';
+import { getActiveCurrency, formatLocalizedPrice, CurrencyConfig } from '../utils/currencyUtils';
 
 interface RoiCalculatorProps {
   onClaimClick: () => void;
@@ -9,6 +10,21 @@ interface RoiCalculatorProps {
 export const RoiCalculator: React.FC<RoiCalculatorProps> = ({ onClaimClick }) => {
   const [currentMonthlySpend, setCurrentMonthlySpend] = useState<number>(650);
   const [teamSize, setTeamSize] = useState<number>(2);
+  const [currentCurrency, setCurrentCurrency] = useState<CurrencyConfig>(getActiveCurrency);
+
+  useEffect(() => {
+    const handleCurrencyChange = () => {
+      setCurrentCurrency(getActiveCurrency());
+    };
+    window.addEventListener('bizz2u_currency_changed', handleCurrencyChange);
+    window.addEventListener('bizz2u_language_changed', handleCurrencyChange);
+    const interval = setInterval(handleCurrencyChange, 800);
+    return () => {
+      window.removeEventListener('bizz2u_currency_changed', handleCurrencyChange);
+      window.removeEventListener('bizz2u_language_changed', handleCurrencyChange);
+      clearInterval(interval);
+    };
+  }, []);
 
   // Math
   const monthlyBundlePrice = 15;
@@ -27,10 +43,10 @@ export const RoiCalculator: React.FC<RoiCalculatorProps> = ({ onClaimClick }) =>
             Interactive ROI & Savings Calculator
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4 text-balance">
-            Calculate Exactly How Much You Save With Our $15/Mo Subscription
+            Calculate Exactly How Much You Save With Our {formatLocalizedPrice(15, currentCurrency)}/Mo Subscription
           </h2>
           <p className="text-base text-slate-300">
-            Slide the controls to calculate your immediate annual cash savings and hours recovered by switching to our unified $15/month automation package.
+            Slide the controls to calculate your immediate annual cash savings and hours recovered by switching to our unified {formatLocalizedPrice(15, currentCurrency)}/month automation package.
           </p>
         </div>
 
@@ -45,7 +61,7 @@ export const RoiCalculator: React.FC<RoiCalculatorProps> = ({ onClaimClick }) =>
                 <div className="flex justify-between items-center text-sm font-semibold">
                   <span className="text-slate-300">Your Current Monthly Tool Spend:</span>
                   <span className="font-mono text-emerald-400 font-bold text-base">
-                    ${currentMonthlySpend}/month
+                    {formatLocalizedPrice(currentMonthlySpend, currentCurrency)}/month
                   </span>
                 </div>
                 <input
@@ -58,9 +74,9 @@ export const RoiCalculator: React.FC<RoiCalculatorProps> = ({ onClaimClick }) =>
                   className="w-full h-2.5 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-emerald-400"
                 />
                 <div className="flex justify-between text-[11px] text-slate-400 font-mono">
-                  <span>$100/mo</span>
-                  <span className="text-amber-400 font-bold">Standard 6-Tool Retail: ${TOTAL_MONTHLY_RETAIL}/mo</span>
-                  <span>$1,500/mo</span>
+                  <span>{formatLocalizedPrice(100, currentCurrency)}/mo</span>
+                  <span className="text-amber-400 font-bold">Standard 6-Tool Retail: {formatLocalizedPrice(TOTAL_MONTHLY_RETAIL, currentCurrency)}/mo</span>
+                  <span>{formatLocalizedPrice(1500, currentCurrency)}/mo</span>
                 </div>
               </div>
 
@@ -91,10 +107,10 @@ export const RoiCalculator: React.FC<RoiCalculatorProps> = ({ onClaimClick }) =>
               <div className="p-4 bg-slate-850 rounded-xl border border-slate-800 text-xs text-slate-300 space-y-1">
                 <div className="font-bold text-white flex items-center gap-1.5">
                   <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-                  <span>The $15/Month Math Explained:</span>
+                  <span>The {formatLocalizedPrice(15, currentCurrency)}/Month Math Explained:</span>
                 </div>
                 <p>
-                  Instead of spending $650/month across 6 separate tool bills, you consolidate them into a single $15/month starting subscription package, putting over $7,600/year back into your business.
+                  Instead of spending {formatLocalizedPrice(650, currentCurrency)}/month across 6 separate tool bills, you consolidate them into a single {formatLocalizedPrice(15, currentCurrency)}/month starting subscription package, putting over {formatLocalizedPrice(7600, currentCurrency)}/year back into your business.
                 </p>
               </div>
 
@@ -108,7 +124,7 @@ export const RoiCalculator: React.FC<RoiCalculatorProps> = ({ onClaimClick }) =>
                   Net Annual Cash Saved
                 </div>
                 <div className="text-4xl sm:text-5xl font-black text-white font-mono tabular-nums mt-1">
-                  ${netAnnualSavings.toLocaleString()}
+                  {formatLocalizedPrice(netAnnualSavings, currentCurrency)}
                 </div>
                 <div className="text-xs text-slate-400 mt-1">
                   Every year by not paying recurring subscriptions
@@ -135,7 +151,7 @@ export const RoiCalculator: React.FC<RoiCalculatorProps> = ({ onClaimClick }) =>
                   <div className="text-xl font-bold text-emerald-400 font-mono tabular-nums mt-0.5">
                     +{roiPercentage.toLocaleString()}%
                   </div>
-                  <div className="text-[10px] text-slate-400">On your $15 buy</div>
+                  <div className="text-[10px] text-slate-400">On your {formatLocalizedPrice(15, currentCurrency)} buy</div>
                 </div>
               </div>
 
@@ -143,7 +159,7 @@ export const RoiCalculator: React.FC<RoiCalculatorProps> = ({ onClaimClick }) =>
                 onClick={onClaimClick}
                 className="w-full py-3.5 bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-bold rounded-xl text-sm transition-all duration-200 shadow-lg cursor-pointer flex items-center justify-center gap-2 active:scale-98"
               >
-                <span>Lock In Your $15 Access</span>
+                <span>Lock In Your {formatLocalizedPrice(15, currentCurrency)} Access</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
 

@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, Sparkles, Clock, Flame } from 'lucide-react';
 import { useCountdownTimer } from '../utils/countdownUtils';
-import { getSavedLanguage } from '../services/translationService';
-import { getCurrencyForLanguage, formatLocalizedPrice, CurrencyConfig } from '../utils/currencyUtils';
+import { getActiveCurrency, formatLocalizedPrice, CurrencyConfig } from '../utils/currencyUtils';
 
 interface MobileStickyBarProps {
   onClaimClick: () => void;
@@ -11,17 +10,17 @@ interface MobileStickyBarProps {
 export const MobileStickyBar: React.FC<MobileStickyBarProps> = ({ onClaimClick }) => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const { minutes, seconds, stockRemaining } = useCountdownTimer();
-  const [currentCurrency, setCurrentCurrency] = useState<CurrencyConfig>(() =>
-    getCurrencyForLanguage(getSavedLanguage())
-  );
+  const [currentCurrency, setCurrentCurrency] = useState<CurrencyConfig>(getActiveCurrency);
 
   useEffect(() => {
     const updateCurrency = () => {
-      setCurrentCurrency(getCurrencyForLanguage(getSavedLanguage()));
+      setCurrentCurrency(getActiveCurrency());
     };
+    window.addEventListener('bizz2u_currency_changed', updateCurrency as EventListener);
     window.addEventListener('bizz2u_language_changed', updateCurrency as EventListener);
     const interval = setInterval(updateCurrency, 800);
     return () => {
+      window.removeEventListener('bizz2u_currency_changed', updateCurrency as EventListener);
       window.removeEventListener('bizz2u_language_changed', updateCurrency as EventListener);
       clearInterval(interval);
     };

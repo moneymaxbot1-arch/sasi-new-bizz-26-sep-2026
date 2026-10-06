@@ -14,6 +14,8 @@ import {
   Layers,
   BarChart3
 } from 'lucide-react';
+import { TrustBadgesTrio } from './TrustBadgesTrio';
+import { getActiveCurrency, formatLocalizedPrice, CurrencyConfig } from '../utils/currencyUtils';
 
 interface AutomationVortexHeroProps {
   onClaimClick: () => void;
@@ -163,6 +165,22 @@ export const AutomationVortexHero: React.FC<AutomationVortexHeroProps> = ({ onCl
     return () => clearInterval(interval);
   }, [isAutoPlaying]);
 
+  const [currentCurrency, setCurrentCurrency] = useState<CurrencyConfig>(getActiveCurrency);
+
+  useEffect(() => {
+    const handleCurrencyChange = () => {
+      setCurrentCurrency(getActiveCurrency());
+    };
+    window.addEventListener('bizz2u_currency_changed', handleCurrencyChange);
+    window.addEventListener('bizz2u_language_changed', handleCurrencyChange);
+    const interval = setInterval(handleCurrencyChange, 800);
+    return () => {
+      window.removeEventListener('bizz2u_currency_changed', handleCurrencyChange);
+      window.removeEventListener('bizz2u_language_changed', handleCurrencyChange);
+      clearInterval(interval);
+    };
+  }, []);
+
   const currentTool = hoveredTool || TOOLS[activeStep];
   const totalRetailMonthly = TOOLS.reduce((sum, t) => sum + t.monthlyPrice, 0); // $650
 
@@ -190,11 +208,11 @@ export const AutomationVortexHero: React.FC<AutomationVortexHeroProps> = ({ onCl
             <span className="bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">
               enterprise-grade messaging, advanced CRM customer messaging, lightning-fast hosting and real-time tracking
             </span>{' '}
-            without ever spending more than $15 a month
+            without ever spending more than {formatLocalizedPrice(15, currentCurrency)} a month
           </h2>
 
           <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            Instead of juggling 6 separate monthly invoices totaling <span className="line-through text-rose-400 font-bold font-mono">${totalRetailMonthly}/month</span>, see how our unified software combo runs your marketing, hosting, CRM, and conversions on autopilot for <span className="text-emerald-400 font-bold font-mono">only $15</span>.
+            Instead of juggling 6 separate monthly invoices totaling <span className="line-through text-rose-400 font-bold font-mono">{formatLocalizedPrice(totalRetailMonthly, currentCurrency)}/month</span>, see how our unified software combo runs your marketing, hosting, CRM, and conversions on autopilot for <span className="text-emerald-400 font-bold font-mono">only {formatLocalizedPrice(15, currentCurrency)}</span>.
           </p>
 
         </div>
@@ -264,10 +282,20 @@ export const AutomationVortexHero: React.FC<AutomationVortexHeroProps> = ({ onCl
                   <div className="relative mb-0.5 sm:mb-1">
                     <div className="w-10 h-10 min-[360px]:w-12 min-[360px]:h-12 sm:w-16 sm:h-16 rounded-full bg-gradient-to-tr from-emerald-500 to-amber-300 p-0.5 shadow-lg flex items-center justify-center">
                       <div className="w-full h-full rounded-full bg-slate-950 flex flex-col items-center justify-center overflow-hidden">
-                        {/* Excited Smiling Business Owner Icon Illustration */}
-                        <div className="text-xl min-[360px]:text-2xl sm:text-3xl select-none" role="img" aria-label="Happy Businessman">
-                          🚀
-                        </div>
+                        {/* Excited Smiling Business Owner Picture from Infographic */}
+                        <img 
+                          src="/avatars/chinese_male_exec.jpg" 
+                          alt="Automated Business Owner"
+                          className="w-full h-full object-cover"
+                          onError={(e) => {
+                            // Fallback to emoji icon if image fails to load
+                            const target = e.currentTarget;
+                            target.style.display = 'none';
+                            if (target.parentElement) {
+                              target.parentElement.innerHTML = '<span class="text-2xl select-none">💼</span>';
+                            }
+                          }}
+                        />
                       </div>
                     </div>
                     {/* Urgency Badge */}
@@ -283,13 +311,13 @@ export const AutomationVortexHero: React.FC<AutomationVortexHeroProps> = ({ onCl
 
                   <div className="flex items-baseline justify-center gap-1 my-0.2 sm:my-0.5">
                     <span className="font-mono text-xl min-[360px]:text-2xl sm:text-3xl font-black text-white tracking-tight">
-                      $15
+                      {formatLocalizedPrice(15, currentCurrency)}
                     </span>
                     <span className="text-[10px] sm:text-xs text-emerald-400 font-semibold font-mono">
                       /mo
                     </span>
                     <span className="text-[9px] sm:text-xs text-rose-300 line-through font-mono ml-0.5 sm:ml-1">
-                      ${totalRetailMonthly}/mo
+                      {formatLocalizedPrice(totalRetailMonthly, currentCurrency)}/mo
                     </span>
                   </div>
 
@@ -299,7 +327,7 @@ export const AutomationVortexHero: React.FC<AutomationVortexHeroProps> = ({ onCl
 
                   {/* Click trigger hint */}
                   <div className="mt-1 sm:mt-1.5 inline-flex items-center gap-1 px-2 sm:px-2.5 py-0.5 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 text-[8px] sm:text-[9px] font-bold group-hover:bg-emerald-400 group-hover:text-slate-950 transition-colors">
-                    <span>From $15/mo</span>
+                    <span>From {formatLocalizedPrice(15, currentCurrency)}/mo</span>
                     <ArrowRight className="w-2.5 h-2.5" />
                   </div>
 
@@ -482,11 +510,16 @@ export const AutomationVortexHero: React.FC<AutomationVortexHeroProps> = ({ onCl
                 className="mt-4 w-full py-4 bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-300 hover:from-emerald-300 hover:to-cyan-200 text-slate-950 font-black rounded-xl text-sm transition-all duration-200 shadow-[0_0_25px_rgba(52,211,153,0.35)] hover:shadow-[0_0_35px_rgba(52,211,153,0.5)] cursor-pointer flex items-center justify-center gap-2 active:scale-98"
               >
                 <Zap className="w-4 h-4 fill-slate-950" />
-                <span>Start 6-Tool Subscription ($15/mo)</span>
+                <span>Start 6-Tool Subscription ({formatLocalizedPrice(15, currentCurrency)}/mo)</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
 
-              <div className="mt-2.5 flex items-center justify-center gap-3 text-[11px] text-slate-300">
+              {/* 3 Core Trust Guarantees */}
+              <div className="mt-3">
+                <TrustBadgesTrio variant="compact" onClaimClick={onClaimClick} />
+              </div>
+
+              <div className="mt-2.5 flex items-center justify-center gap-2 text-[11px] text-slate-400">
                 <span className="flex items-center gap-1 font-medium text-emerald-300">
                   <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
                   <span>30-Day Money-Back Guarantee · 1-Day Full Refund</span>
@@ -517,6 +550,11 @@ export const AutomationVortexHero: React.FC<AutomationVortexHeroProps> = ({ onCl
 
           </div>
 
+        </div>
+
+        {/* High-Converting 3 Core Assurance Ribbon */}
+        <div className="mt-10">
+          <TrustBadgesTrio variant="ribbon" onClaimClick={onClaimClick} />
         </div>
 
       </div>

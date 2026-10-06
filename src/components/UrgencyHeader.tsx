@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Flame, Clock, ArrowRight } from 'lucide-react';
 import { useCountdownTimer } from '../utils/countdownUtils';
+import { getActiveCurrency, formatLocalizedPrice, CurrencyConfig } from '../utils/currencyUtils';
 
 interface UrgencyHeaderProps {
   onClaimClick: () => void;
@@ -8,6 +9,22 @@ interface UrgencyHeaderProps {
 
 export const UrgencyHeader: React.FC<UrgencyHeaderProps> = ({ onClaimClick }) => {
   const { hours, minutes, seconds, stockRemaining } = useCountdownTimer();
+  const [currentCurrency, setCurrentCurrency] = useState<CurrencyConfig>(getActiveCurrency);
+
+  useEffect(() => {
+    const handleCurrencyChange = () => {
+      setCurrentCurrency(getActiveCurrency());
+    };
+    window.addEventListener('bizz2u_currency_changed', handleCurrencyChange);
+    window.addEventListener('bizz2u_language_changed', handleCurrencyChange);
+    const interval = setInterval(handleCurrencyChange, 800);
+    return () => {
+      window.removeEventListener('bizz2u_currency_changed', handleCurrencyChange);
+      window.removeEventListener('bizz2u_language_changed', handleCurrencyChange);
+      clearInterval(interval);
+    };
+  }, []);
+
   const format = (num: number) => num.toString().padStart(2, '0');
 
   return (
@@ -39,7 +56,7 @@ export const UrgencyHeader: React.FC<UrgencyHeaderProps> = ({ onClaimClick }) =>
             onClick={onClaimClick}
             className="flex items-center gap-1 px-3 py-1 bg-white text-rose-700 hover:bg-rose-50 font-bold rounded text-xs transition-colors shadow-sm cursor-pointer whitespace-nowrap"
           >
-            <span>Lock In $15/mo</span>
+            <span>Lock In {formatLocalizedPrice(15, currentCurrency)}/mo</span>
             <ArrowRight className="w-3 h-3" />
           </button>
         </div>

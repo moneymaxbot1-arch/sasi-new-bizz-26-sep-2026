@@ -51,15 +51,19 @@ export interface Testimonial {
   company: string;
   avatarText: string;
   avatarUrl?: string;
-  location?: string;
-  countryFlag?: string;
+  country?: string;
+  countryCode?: string;
+  flagEmoji?: string;
+  city?: string;
   rating: number;
   headline: string;
   content: string;
+  problemSolved?: string;
   metricLabel: string;
   metricValue: string;
   toolsUsed: string[];
   planTier?: string;
+  businessCategory?: string;
 }
 
 export interface FaqItem {

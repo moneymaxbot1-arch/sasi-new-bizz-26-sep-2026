@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { RECENT_BUYERS } from '../data/bundleData';
 import { BuyerEvent } from '../types';
+import { getActiveCurrency, formatTierName, CurrencyConfig } from '../utils/currencyUtils';
 import { X, CheckCircle2, ShoppingBag } from 'lucide-react';
 
 interface SocialProofPopupProps {
@@ -11,6 +12,21 @@ export const SocialProofPopup: React.FC<SocialProofPopupProps> = ({ onClaimClick
   const [currentEvent, setCurrentEvent] = useState<BuyerEvent | null>(null);
   const [visible, setVisible] = useState<boolean>(false);
   const [dismissed, setDismissed] = useState<boolean>(false);
+  const [currentCurrency, setCurrentCurrency] = useState<CurrencyConfig>(getActiveCurrency);
+
+  useEffect(() => {
+    const handleCurrencyChange = () => {
+      setCurrentCurrency(getActiveCurrency());
+    };
+    window.addEventListener('bizz2u_currency_changed', handleCurrencyChange);
+    window.addEventListener('bizz2u_language_changed', handleCurrencyChange);
+    const interval = setInterval(handleCurrencyChange, 800);
+    return () => {
+      window.removeEventListener('bizz2u_currency_changed', handleCurrencyChange);
+      window.removeEventListener('bizz2u_language_changed', handleCurrencyChange);
+      clearInterval(interval);
+    };
+  }, []);
 
   useEffect(() => {
     if (dismissed) return;
@@ -78,7 +94,7 @@ export const SocialProofPopup: React.FC<SocialProofPopupProps> = ({ onClaimClick
             }`}
           >
             <CheckCircle2 className="w-3 h-3 shrink-0" />
-            <span>Claimed {currentEvent.tier}</span>
+            <span>Claimed {formatTierName(currentEvent.tier, currentCurrency)}</span>
           </div>
           <div className="flex items-center gap-2 text-[10px] text-slate-400 mt-1">
             <span>{currentEvent.timeAgo}</span>

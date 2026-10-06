@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { SOFTWARE_TOOLS } from '../data/bundleData';
 import { Mail, Server, Flame, MessageSquare, Activity, Link2, CheckCircle2, Zap, ArrowRight } from 'lucide-react';
+import { getActiveCurrency, formatLocalizedPrice, CurrencyConfig } from '../utils/currencyUtils';
 
 interface ToolShowcaseProps {
   onClaimClick: () => void;
@@ -8,6 +9,21 @@ interface ToolShowcaseProps {
 
 export const ToolShowcase: React.FC<ToolShowcaseProps> = ({ onClaimClick }) => {
   const [activeToolId, setActiveToolId] = useState<string>(SOFTWARE_TOOLS[0].id);
+  const [currentCurrency, setCurrentCurrency] = useState<CurrencyConfig>(getActiveCurrency);
+
+  useEffect(() => {
+    const handleCurrencyChange = () => {
+      setCurrentCurrency(getActiveCurrency());
+    };
+    window.addEventListener('bizz2u_currency_changed', handleCurrencyChange);
+    window.addEventListener('bizz2u_language_changed', handleCurrencyChange);
+    const interval = setInterval(handleCurrencyChange, 800);
+    return () => {
+      window.removeEventListener('bizz2u_currency_changed', handleCurrencyChange);
+      window.removeEventListener('bizz2u_language_changed', handleCurrencyChange);
+      clearInterval(interval);
+    };
+  }, []);
 
   const activeTool = SOFTWARE_TOOLS.find(t => t.id === activeToolId) || SOFTWARE_TOOLS[0];
 
@@ -57,7 +73,7 @@ export const ToolShowcase: React.FC<ToolShowcaseProps> = ({ onClaimClick }) => {
                 <div className="mb-1.5">{getIcon(tool.icon)}</div>
                 <span className="text-xs font-bold truncate max-w-full">{tool.name}</span>
                 <span className="text-[10px] text-slate-400 font-mono mt-0.5 line-through">
-                  ${tool.monthlyRetail}/mo
+                  {formatLocalizedPrice(tool.monthlyRetail, currentCurrency)}/mo
                 </span>
               </button>
             );
@@ -78,7 +94,7 @@ export const ToolShowcase: React.FC<ToolShowcaseProps> = ({ onClaimClick }) => {
                 <span className="text-slate-400">·</span>
                 <span className="text-slate-300 font-medium">{activeTool.category}</span>
                 <span className="text-slate-400">·</span>
-                <span className="text-rose-400 line-through font-mono">Retail: ${activeTool.monthlyRetail}/month</span>
+                <span className="text-rose-400 line-through font-mono">Retail: {formatLocalizedPrice(activeTool.monthlyRetail, currentCurrency)}/month</span>
               </div>
 
               <div>
@@ -141,7 +157,7 @@ export const ToolShowcase: React.FC<ToolShowcaseProps> = ({ onClaimClick }) => {
                   onClick={onClaimClick}
                   className="px-4 py-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold rounded-lg text-xs cursor-pointer whitespace-nowrap transition-colors"
                 >
-                  Get Tool in $15 Pack
+                  Get Tool in {formatLocalizedPrice(15, currentCurrency)} Pack
                 </button>
               </div>
 
@@ -220,7 +236,7 @@ export const ToolShowcase: React.FC<ToolShowcaseProps> = ({ onClaimClick }) => {
                         <span className="font-mono">98% OPEN RATE</span>
                       </div>
                       <div className="text-xs text-slate-200 mt-2 bg-slate-950 p-2.5 rounded-lg border border-slate-800 font-sans">
-                        "Hey Alex! 👋 Your exclusive $15 bundle access expires in 3 hours. Reply YES to reserve your license!"
+                        "Hey Alex! 👋 Your exclusive {formatLocalizedPrice(15, currentCurrency)} bundle access expires in 3 hours. Reply YES to reserve your license!"
                       </div>
                     </div>
                     <div className="text-xs text-slate-400 flex justify-between font-mono">
@@ -267,7 +283,7 @@ export const ToolShowcase: React.FC<ToolShowcaseProps> = ({ onClaimClick }) => {
 
                 <div className="pt-2 text-center">
                   <span className="text-xs text-slate-400">
-                    Pre-configured integration recipe included with the $15 bundle
+                    Pre-configured integration recipe included with the {formatLocalizedPrice(15, currentCurrency)} bundle
                   </span>
                 </div>
 

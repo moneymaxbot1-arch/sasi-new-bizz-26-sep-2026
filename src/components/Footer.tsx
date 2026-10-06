@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ShieldCheck, Lock, Award, Mail } from 'lucide-react';
 import { TermsModal } from './TermsModal';
+import { getActiveCurrency, formatLocalizedPrice, CurrencyConfig } from '../utils/currencyUtils';
 
 interface FooterProps {
   onClaimClick: () => void;
@@ -8,6 +9,21 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ onClaimClick }) => {
   const [isTermsOpen, setIsTermsOpen] = useState(false);
+  const [currentCurrency, setCurrentCurrency] = useState<CurrencyConfig>(getActiveCurrency);
+
+  useEffect(() => {
+    const handleCurrencyChange = () => {
+      setCurrentCurrency(getActiveCurrency());
+    };
+    window.addEventListener('bizz2u_currency_changed', handleCurrencyChange);
+    window.addEventListener('bizz2u_language_changed', handleCurrencyChange);
+    const interval = setInterval(handleCurrencyChange, 800);
+    return () => {
+      window.removeEventListener('bizz2u_currency_changed', handleCurrencyChange);
+      window.removeEventListener('bizz2u_language_changed', handleCurrencyChange);
+      clearInterval(interval);
+    };
+  }, []);
 
   return (
     <footer className="bg-[#06080F] border-t border-slate-800/80 pt-14 pb-28 lg:pb-14 text-xs text-slate-400">
@@ -21,7 +37,7 @@ export const Footer: React.FC<FooterProps> = ({ onClaimClick }) => {
               <span className="w-2 h-2 rounded-full bg-emerald-400 inline-block" />
             </div>
             <p className="text-slate-400 max-w-sm leading-relaxed">
-              The premier business productivity & sales automation software suite. Giving entrepreneurs enterprise-tier tools starting at just $15/month.
+              The premier business productivity & sales automation software suite. Giving entrepreneurs enterprise-tier tools starting at just {formatLocalizedPrice(15, currentCurrency)}/month.
             </p>
             <div className="flex items-center gap-3 pt-1 text-slate-400 text-[11px]">
               <span className="flex items-center gap-1">
@@ -96,13 +112,13 @@ export const Footer: React.FC<FooterProps> = ({ onClaimClick }) => {
               Limited Time Special
             </div>
             <p className="text-slate-400 leading-relaxed">
-              Regular individual retail cost is $650/month across separate vendors. Start with all 6 tools from as low as $15/month with our promotional package.
+              Regular individual retail cost is {formatLocalizedPrice(650, currentCurrency)}/month across separate vendors. Start with all 6 tools from as low as {formatLocalizedPrice(15, currentCurrency)}/month with our promotional package.
             </p>
             <button
               onClick={onClaimClick}
               className="px-4 py-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold rounded-lg text-xs transition-colors cursor-pointer"
             >
-              Start $15/mo Subscription
+              Start {formatLocalizedPrice(15, currentCurrency)}/mo Subscription
             </button>
             <div className="pt-2 text-[11px] text-slate-400 flex items-center gap-1.5">
               <Mail className="w-3.5 h-3.5 text-emerald-400 shrink-0" />

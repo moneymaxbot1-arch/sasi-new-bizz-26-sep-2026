@@ -61,9 +61,11 @@ export const setAppLanguage = (langCode: string) => {
     }
 
     localStorage.setItem('bizz2u_lang', langCode);
+    localStorage.removeItem('bizz2u_currency');
 
-    // Notify components about language/currency update
+    // Notify all components about language and currency update
     window.dispatchEvent(new CustomEvent('bizz2u_language_changed', { detail: { langCode } }));
+    window.dispatchEvent(new CustomEvent('bizz2u_currency_changed', { detail: { langCode } }));
 
     // If English, clear translation cookie to return to native state
     if (langCode === 'en') {

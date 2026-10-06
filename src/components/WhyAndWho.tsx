@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   TrendingUp, 
   Users, 
@@ -22,6 +22,7 @@ import {
   RetargetingIllustration,
   WebsiteReliabilityIllustration
 } from './WhyPillarIllustrations';
+import { getActiveCurrency, formatLocalizedPrice, CurrencyConfig } from '../utils/currencyUtils';
 
 interface WhyAndWhoProps {
   onClaimClick: () => void;
@@ -183,6 +184,21 @@ const TARGET_AUDIENCES: TargetAudience[] = [
 export const WhyAndWho: React.FC<WhyAndWhoProps> = ({ onClaimClick }) => {
   const [activeTab, setActiveTab] = useState<'why' | 'who'>('why');
   const [selectedPillarId, setSelectedPillarId] = useState<string>(PILLARS[0].id);
+  const [currentCurrency, setCurrentCurrency] = useState<CurrencyConfig>(getActiveCurrency);
+
+  useEffect(() => {
+    const handleCurrencyChange = () => {
+      setCurrentCurrency(getActiveCurrency());
+    };
+    window.addEventListener('bizz2u_currency_changed', handleCurrencyChange);
+    window.addEventListener('bizz2u_language_changed', handleCurrencyChange);
+    const interval = setInterval(handleCurrencyChange, 800);
+    return () => {
+      window.removeEventListener('bizz2u_currency_changed', handleCurrencyChange);
+      window.removeEventListener('bizz2u_language_changed', handleCurrencyChange);
+      clearInterval(interval);
+    };
+  }, []);
 
   const selectedPillar = PILLARS.find(p => p.id === selectedPillarId) || PILLARS[0];
 
@@ -208,7 +224,7 @@ export const WhyAndWho: React.FC<WhyAndWhoProps> = ({ onClaimClick }) => {
           </h2>
 
           <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
-            Every growing business needs 4 core pillars to dominate online: <strong className="text-white">Traffic Generation</strong>, <strong className="text-white">Engagement & Trust</strong>, <strong className="text-white">Retargeting</strong>, and <strong className="text-white">Website Reliability</strong>. See how our $15/mo package solves all four effortlessly.
+            Every growing business needs 4 core pillars to dominate online: <strong className="text-white">Traffic Generation</strong>, <strong className="text-white">Engagement & Trust</strong>, <strong className="text-white">Retargeting</strong>, and <strong className="text-white">Website Reliability</strong>. See how our {formatLocalizedPrice(15, currentCurrency)}/mo package solves all four effortlessly.
           </p>
 
           {/* Interactive Switcher between "Why It's Essential" and "Who Will Benefit" */}
@@ -314,7 +330,7 @@ export const WhyAndWho: React.FC<WhyAndWhoProps> = ({ onClaimClick }) => {
                   </span>
                   <span className="text-slate-600">|</span>
                   <span className="text-xs text-slate-300 font-mono">
-                    Included in $15/mo plan
+                    Included in {formatLocalizedPrice(15, currentCurrency)}/mo plan
                   </span>
                 </div>
                 <h4 className="text-xl sm:text-2xl font-black text-white">
@@ -333,7 +349,7 @@ export const WhyAndWho: React.FC<WhyAndWhoProps> = ({ onClaimClick }) => {
                 <div className="text-center sm:text-right">
                   <div className="text-xs text-slate-400">All 4 Pillars Consolidated:</div>
                   <div className="text-2xl sm:text-3xl font-black text-white font-mono">
-                    $15<span className="text-xs font-normal text-emerald-400">/month</span>
+                    {formatLocalizedPrice(15, currentCurrency)}<span className="text-xs font-normal text-emerald-400">/month</span>
                   </div>
                 </div>
                 <button
@@ -341,7 +357,7 @@ export const WhyAndWho: React.FC<WhyAndWhoProps> = ({ onClaimClick }) => {
                   className="w-full sm:w-auto px-6 py-3.5 bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-300 hover:from-emerald-300 hover:to-cyan-200 text-slate-950 font-black rounded-xl text-xs shadow-lg transition-all duration-200 cursor-pointer flex items-center justify-center gap-2"
                 >
                   <Zap className="w-4 h-4 fill-slate-950" />
-                  <span>Activate All 4 Pillars for $15</span>
+                  <span>Activate All 4 Pillars for {formatLocalizedPrice(15, currentCurrency)}</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
@@ -384,7 +400,7 @@ export const WhyAndWho: React.FC<WhyAndWhoProps> = ({ onClaimClick }) => {
                     </div>
 
                     <div className="p-3.5 bg-emerald-950/20 border border-emerald-500/30 rounded-xl text-xs text-emerald-200">
-                      <strong className="text-emerald-400 block mb-0.5">How Our $15/Mo Stack Solves It:</strong>
+                      <strong className="text-emerald-400 block mb-0.5">How Our {formatLocalizedPrice(15, currentCurrency)}/Mo Stack Solves It:</strong>
                       {persona.howWeSolve}
                     </div>
                   </div>
