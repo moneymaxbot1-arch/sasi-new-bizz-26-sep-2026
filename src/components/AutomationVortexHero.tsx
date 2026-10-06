@@ -110,22 +110,22 @@ function RocketIllustration({ className = 'w-full h-full' }: { className?: strin
         <style>{`
           @keyframes rocketEngineVibration {
             0%, 100% {
-              transform: translate(50px, 45px) rotate(45deg) translate(0px, 0px);
+              transform: translate(49px, 49px) rotate(45deg) scale(1.35) translate(0px, 0px);
             }
             15% {
-              transform: translate(50px, 45px) rotate(45deg) translate(0.35px, -1.2px);
+              transform: translate(49px, 49px) rotate(45deg) scale(1.35) translate(0.35px, -1.2px);
             }
             35% {
-              transform: translate(50px, 45px) rotate(45deg) translate(-0.3px, -0.4px);
+              transform: translate(49px, 49px) rotate(45deg) scale(1.35) translate(-0.3px, -0.4px);
             }
             55% {
-              transform: translate(50px, 45px) rotate(45deg) translate(0.4px, -1.8px);
+              transform: translate(49px, 49px) rotate(45deg) scale(1.35) translate(0.4px, -1.8px);
             }
             75% {
-              transform: translate(50px, 45px) rotate(45deg) translate(-0.25px, -0.9px);
+              transform: translate(49px, 49px) rotate(45deg) scale(1.35) translate(-0.25px, -0.9px);
             }
             90% {
-              transform: translate(50px, 45px) rotate(45deg) translate(0.2px, -1.4px);
+              transform: translate(49px, 49px) rotate(45deg) scale(1.35) translate(0.2px, -1.4px);
             }
           }
 
@@ -669,15 +669,14 @@ export const AutomationVortexHero: React.FC<AutomationVortexHeroProps> = ({ onCl
           </div>
 
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.2] text-balance">
-            Turn your small business into an automated powerhouse by unlocking{' '}
+            Run Your Entire Business{' '}
             <span className="bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">
-              enterprise-grade messaging, advanced CRM customer messaging, lightning-fast hosting and real-time tracking
-            </span>{' '}
-            without ever spending more than {formatLocalizedPrice(15, currentCurrency)} a month
+              100% Automated
+            </span>
           </h2>
 
           <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            Instead of juggling 6 separate monthly invoices totaling <span className="line-through text-rose-400 font-bold font-mono">{formatLocalizedPrice(totalRetailMonthly, currentCurrency)}/month</span>, see how our unified software combo runs your marketing, hosting, CRM, and conversions on autopilot for <span className="text-emerald-400 font-bold font-mono">only {formatLocalizedPrice(15, currentCurrency)}</span>.
+            Automate your daily Business operations: CRM messaging, WhatsApp marketing, client workflows, and hosting into a single dashboard seamlessly from <span className="text-emerald-400 font-bold font-mono">{formatLocalizedPrice(15, currentCurrency)}/month</span>
           </p>
 
         </div>
@@ -745,11 +744,11 @@ export const AutomationVortexHero: React.FC<AutomationVortexHeroProps> = ({ onCl
                   
                   {/* Rocket Launcher Hub Icon & BOOSTING Badge */}
                   <div className="relative mb-1 sm:mb-1.5 flex items-center justify-center">
-                    <div className="w-12 h-12 min-[360px]:w-14 min-[360px]:h-14 sm:w-20 sm:h-20 rounded-full bg-gradient-to-tr from-emerald-400 via-amber-300 to-emerald-400 p-0.5 sm:p-1 shadow-lg flex items-center justify-center relative">
+                    <div className="w-14 h-14 min-[360px]:w-16 min-[360px]:h-16 sm:w-22 sm:h-22 rounded-full bg-gradient-to-tr from-emerald-400 via-amber-300 to-emerald-400 p-0.5 sm:p-1 shadow-xl flex items-center justify-center relative">
                       {/* Dynamic Engine Plume Flare Aura */}
-                      <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-orange-500/40 via-amber-400/20 to-emerald-400/30 blur-sm animate-pulse pointer-events-none" />
-                      <div className="w-full h-full rounded-full bg-[#050811] flex items-center justify-center overflow-hidden p-1 sm:p-1.5 relative">
-                        <RocketIllustration className="w-full h-full object-contain filter drop-shadow-[0_0_10px_rgba(249,115,22,0.5)]" />
+                      <div className="absolute -inset-1.5 rounded-full bg-gradient-to-tr from-orange-500/40 via-amber-400/25 to-emerald-400/35 blur-sm animate-pulse pointer-events-none" />
+                      <div className="w-full h-full rounded-full bg-[#050811] flex items-center justify-center overflow-hidden p-0 sm:p-0.5 relative">
+                        <RocketIllustration className="w-full h-full object-contain filter drop-shadow-[0_0_12px_rgba(249,115,22,0.6)]" />
                       </div>
                     </div>
                     {/* Urgency Badge centered directly below rocket circle */}

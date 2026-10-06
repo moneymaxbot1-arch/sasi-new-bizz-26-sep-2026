@@ -1311,6 +1311,96 @@ export const FAQS: FaqItem[] = [
     category: 'Pricing'
   },
   {
+    id: 'f-sales-impact',
+    question: 'How does this 6-software suite directly drive sales and accelerate business revenue?',
+    answer: 'Each software in the suite powers a crucial stage of your automated revenue funnel: Hostinger loads your pages in under 0.8 seconds so shoppers do not bounce; Bitly tracks which advertising campaigns deliver real paying customers; Fomo displays dynamic social proof popups that boost checkout conversion rates by 30%+; WATI replies to high-intent leads on WhatsApp in under 8 seconds before they look at competitors; Mailchimp automatically sends abandoned cart recovery drips to reclaim lost sales; and UptimeRobot monitors your checkout link every 60 seconds to ensure you never lose a sale to server downtime. Together, they create an automated sales engine that nurtures, converts, and closes sales 24/7 without extra manual labor.',
+    category: 'Sales & Operations'
+  },
+  {
+    id: 'f-software-operation',
+    question: 'How do all 6 software tools operate together as one unified growth system?',
+    answer: 'The suite is architected as an automated closed loop: When a prospective lead clicks your Bitly branded link on ads or social media, they land on your high-speed Hostinger store where Fomo instantly displays live buyer proof. When the prospect initiates an inquiry or fills out a lead form, WATI instantly triggers WhatsApp welcome packages and interactive catalogs, while Mailchimp automatically enrolls them into targeted drip nurture sequences. Meanwhile, UptimeRobot monitors your domains around the clock to guarantee flawless availability. Pre-configured webhooks and native integrations connect all six powerhouses effortlessly.',
+    category: 'Sales & Operations'
+  },
+  {
+    id: 'f-all-countries',
+    question: 'Can this software suite operate in my country, and are there any geographic restrictions?',
+    answer: 'Yes! The entire suite operates worldwide in all 195+ countries across Asia, Europe, North America, South America, Africa, the Middle East, and Oceania. All vendor platforms support multi-currency formatting, localized phone country codes for WhatsApp broadcasts, international top-level domains (.com, .my, .sg, .in, .ae, .uk, etc.), and multi-language visitor interfaces with zero regional firewalls or geographic blocks.',
+    category: 'Sales & Operations'
+  },
+  {
+    id: 'f-2tier-security',
+    question: 'Is 2-Tier Security (2FA) available, and is my account and customer data protected against hacking?',
+    answer: 'Yes, absolutely. Every tool in the suite features mandatory 2-Tier Authentication (2FA via Google Authenticator, SMS, or hardware security keys), 256-bit AES bank-grade database encryption, and TLS 1.3 protocol shielding for all data in transit. Your customer contact lists, phone numbers, and subscriber data are isolated in private, tenant-level encrypted cloud silos. Neither unauthorized outside parties nor malicious actors can hack, access, or export your private business data.',
+    category: 'Security & Privacy'
+  },
+  {
+    id: 'f-ai-optional',
+    question: 'Do all software tools operate without AI, or is AI mandatory to run my business?',
+    answer: 'All 6 software tools operate 100% reliably using standard, deterministic automation rules and do NOT require AI to function. You have total manual control over trigger workflows, fixed scheduled email drips, custom keyword auto-replies, and website designs. AI integration (such as Mailchimp AI copywriting or WATI smart response suggestions) is purely an optional booster if you want faster processing power, automated drafting, or extra efficiency. If you prefer to operate traditionally without AI, the suite works flawlessly out of the box.',
+    category: 'Security & Privacy'
+  },
+  {
+    id: 'f-wati-omnichannel',
+    question: 'Can WATI be used as customer relation support across all social media and e-commerce platforms (Facebook, Instagram, TikTok, X, Shopify, Amazon)?',
+    answer: 'Yes! WATI serves as an omnichannel customer relationship and support management hub that connects with your entire digital presence. You can link your official WhatsApp CRM directly to your Facebook Page CTA buttons, Instagram bio and story swipe-ups, TikTok profile links, X (Twitter) promotional posts, Shopify abandoned checkout webhooks, and Amazon seller storefronts. Customers across any social media channel or e-commerce storefront are seamlessly directed into one centralized team inbox for 24/7 instant chat, automated catalog sharing, and support ticketing.',
+    category: 'Integrations & Platforms'
+  },
+  {
+    id: 'f-no-trial-cancel-anytime',
+    question: 'Why is there no free trial version available, and can I really cancel anytime?',
+    answer: 'Because all 6 software products are provided as official, commercial-grade enterprise licenses through our negotiated bulk partnership, vendors do not provide free trial keys for full enterprise software tiers. To protect our volume rate starting at just $15/month (down from $650/month retail), full commercial licenses are provisioned immediately upon purchase. However, there are zero long-term commitments or hidden contracts: you can pause, upgrade, downgrade, or cancel your monthly subscription anytime with one click in your billing dashboard.',
+    category: 'Billing & Guarantee'
+  },
+  {
+    id: 'f-beginner-friendly',
+    question: 'Is the software really easy to handle for complete beginners with zero tech background?',
+    answer: 'Yes! Over 68% of our active users are first-time business owners, solo freelancers, or non-technical entrepreneurs. Every tool features an intuitive drag-and-drop visual interface—no coding, programming, or technical expertise is required. Upon joining, you receive our complete, step-by-step beginner video tutorials showing you click-by-click how to set up your domain, launch email funnels, and automate WhatsApp replies in under an hour. In addition, our dedicated Priority Customer Support desk is always available to help you whenever you need guidance.',
+    category: 'Support & Ease of Use'
+  },
+  {
+    id: 'f-payment-gateways',
+    question: 'Does this software suite process customer payments directly, or do I use 3rd-party services (PayPal, Stripe, Wise)?',
+    answer: 'This software suite does NOT directly handle or hold your customers’ money, guaranteeing zero financial liability and 100% privacy for your business. Instead, your Hostinger website and automation funnels integrate directly with trusted third-party payment gateways such as Stripe, PayPal, Wise, Razorpay, or your local regional merchant bank. 100% of your customer payments and revenue deposit directly into your personal or corporate bank account with zero intermediate processing fees.',
+    category: 'Billing & Guarantee'
+  },
+  {
+    id: 'f-limited-year-offer',
+    question: 'Is this special $15/month promotional offer only available this year?',
+    answer: 'Yes. The ultra-discounted volume rate starting at $15/month (a 97.7% reduction from the $650/month retail cost) is an exclusive promotional package available strictly for this contractual year. Next year, we will be introducing a different enterprise CRM package with different tool configurations and adjusted pricing tiers. When you lock in your subscription this year, your grandfathered subscription rate remains secured for your active account cycle.',
+    category: 'Billing & Guarantee'
+  },
+  {
+    id: 'f-traffic-surges',
+    question: 'How does the bundle handle massive traffic spikes and flash sale volumes without crashing?',
+    answer: 'Hostinger’s infrastructure runs on enterprise LiteSpeed web servers backed by global Cloudflare CDN edge caching engineered to handle 100,000+ monthly visits effortlessly. Bitly processes billions of link clicks per month with ultra-low latency, and UptimeRobot monitors your checkout pages every 60 seconds from 50+ global server nodes, immediately notifying your team via SMS, Telegram, or email if any performance dip is detected.',
+    category: 'Sales & Operations'
+  },
+  {
+    id: 'f-team-seats',
+    question: 'Can I add multiple staff members or support agents with separate login permissions?',
+    answer: 'Yes! Both our Growth Pack ($35/mo) and BIG Agency Pack ($150/mo) support multiple team member logins with granular role-based access control (RBAC). You can assign individual sales reps or customer support agents to handle incoming WhatsApp inquiries in WATI without granting them access to your billing information or administrative server controls.',
+    category: 'Sales & Operations'
+  },
+  {
+    id: 'f-mobile-apps',
+    question: 'Can I manage customer chats, view analytics, and monitor my business on iOS or Android mobile phones?',
+    answer: 'Yes! WATI, Mailchimp, Bitly, and UptimeRobot all provide native iOS and Android smartphone applications. You and your team can chat live with customers on WhatsApp, track real-time click analytics, review email open rates, and receive instant server uptime alerts directly from your mobile phone anywhere in the world.',
+    category: 'Support & Ease of Use'
+  },
+  {
+    id: 'f-data-ownership',
+    question: 'Do I own all my customer data, and can I export my contact lists anytime with zero lock-in?',
+    answer: 'You retain 100% exclusive legal and operational ownership of all your customer lists, phone numbers, email subscribers, and analytics history. Every platform in the suite provides 1-click export to standard CSV or Excel files at any time. There is strictly zero vendor lock-in—your business assets belong entirely to you.',
+    category: 'Security & Privacy'
+  },
+  {
+    id: 'f-existing-website',
+    question: 'What if I already have an existing website or custom domain—can I integrate without rebuilding?',
+    answer: 'Absolutely! You do not need to rebuild your existing digital assets. You can point your existing custom domain to Hostinger with a simple DNS change, or keep your existing website entirely as-is and embed Fomo social proof widgets, Bitly campaign tracking links, and WATI WhatsApp chat buttons with a single line of copy-paste script. You can also utilize the hosting to launch dedicated high-converting landing pages or subdomains for specific promotional funnels.',
+    category: 'Integrations & Platforms'
+  },
+  {
     id: 'f2',
     question: 'How do I access and activate the 6 software tools after payment?',
     answer: 'Immediately upon completing your order, you receive instant access to your private customer portal with license keys, 1-click activation links, pre-configured automation templates, and step-by-step video setup guides for Mailchimp, Hostinger, Fomo, WATi, UptimeRobot, and Bitly.',
