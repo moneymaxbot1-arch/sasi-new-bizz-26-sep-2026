@@ -58,7 +58,7 @@ export const GuaranteeSection: React.FC<GuaranteeSectionProps> = ({ onClaimClick
                 </div>
                 
                 <p className="text-slate-300 leading-relaxed">
-                  Our <strong className="text-white">30-day money-back guarantee & no questions asked policy</strong> is valid if the software we provided is <strong className="text-emerald-300">not working or not legit</strong>. If a customer finds that any software provided is not working, or the license code is fake or piracy, our team will <strong className="text-emerald-300 underline decoration-emerald-400/60 font-semibold">refund 100% of your money within 1 day (24 hours)</strong> — strictly no questions asked.
+                  With our <strong className="text-white">30-day money-back guarantee & no questions asked policy</strong>, our team will <strong className="text-emerald-300 underline decoration-emerald-400/60 font-semibold">refund 100% of your money within 1 day (24 hours)</strong> — strictly no questions asked.
                 </p>
 
                 <div className="pt-2 border-t border-slate-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
@@ -82,11 +82,11 @@ export const GuaranteeSection: React.FC<GuaranteeSectionProps> = ({ onClaimClick
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1 text-xs text-slate-300 font-medium">
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>100% Full refund within 1 day if not working or not legit</span>
+                  <span>100% Full refund within 1 day — no questions asked</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>Zero piracy & official direct vendor license verification</span>
+                  <span>Official direct vendor license verification</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />

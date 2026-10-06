@@ -1311,12 +1311,6 @@ export const FAQS: FaqItem[] = [
     category: 'Pricing'
   },
   {
-    id: 'f-currency',
-    question: 'How is international currency conversion calculated (e.g. USD to Malaysian Ringgit RM)?',
-    answer: 'All pricing strictly follows actual bank-grade currency market exchange rates. For example, our $15/month Starter Pack converts directly to RM61/month in Malaysian Ringgit (market exchange rate benchmark of 1 USD ≈ 4.07 MYR, so $15 = RM61). We provide real-time currency pricing for Malaysia (RM), India (₹), Singapore (S$), Australia (A$), UAE (AED), Taiwan (NT$), Hong Kong (HK$), South Korea (₩), Europe (€), and UK (£) with complete pricing transparency and zero foreign exchange penalty.',
-    category: 'Pricing'
-  },
-  {
     id: 'f2',
     question: 'How do I access and activate the 6 software tools after payment?',
     answer: 'Immediately upon completing your order, you receive instant access to your private customer portal with license keys, 1-click activation links, pre-configured automation templates, and step-by-step video setup guides for Mailchimp, Hostinger, Fomo, WATi, UptimeRobot, and Bitly.',
@@ -1337,7 +1331,7 @@ export const FAQS: FaqItem[] = [
   {
     id: 'f5',
     question: 'What is the 30-Day Money-Back Guarantee & "No Questions Asked" refund policy?',
-    answer: 'All 6 software licenses are 100% legitimate and authentic from official original vendor companies. Our 30-Day Money-Back Guarantee & No Questions Asked policy is strictly valid if the software we provided is not working or not legit: if any customer finds that any software provided is not working, or the license code is fake or piracy, our team will refund 100% of your money within 1 day (24 hours) — no questions asked. In addition, if you need an instant license replacement, we can replace it within 2 minutes. Reach our official support desk directly at Bizzusupport@gmail.com.',
+    answer: 'All 6 software licenses are 100% legitimate and authentic from official original vendor companies. With our 30-Day Money-Back Guarantee & No Questions Asked policy, our team will refund 100% of your money within 1 day (24 hours) — no questions asked. In addition, if you need an instant license replacement, we can replace it within 2 minutes. Reach our official support desk directly at Bizzusupport@gmail.com.',
     category: 'Guarantee'
   },
   {
