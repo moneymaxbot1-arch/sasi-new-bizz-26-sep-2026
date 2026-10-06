@@ -731,7 +731,7 @@ export const AutomationVortexHero: React.FC<AutomationVortexHeroProps> = ({ onCl
                 })}
               </svg>
 
-              {/* CENTER CIRCLE: The Unified $15 Automated Business Growth Hub with Rocket Launcher */}
+              {/* CENTER CIRCLE: The Unified $15 Automated Business Growth Hub with Malaysian Male Photo */}
               <div 
                 onClick={onClaimClick}
                 className="relative z-20 w-36 h-36 min-[360px]:w-40 min-[360px]:h-40 sm:w-56 sm:h-56 rounded-full bg-gradient-to-br from-slate-900 via-[#0a1420] to-[#041d15] border-3 sm:border-4 border-emerald-400 p-2 shadow-[0_0_60px_rgba(52,211,153,0.4)] flex flex-col items-center justify-center text-center cursor-pointer transition-transform hover:scale-105 active:scale-95 group"
@@ -742,16 +742,26 @@ export const AutomationVortexHero: React.FC<AutomationVortexHeroProps> = ({ onCl
 
                 <div className="relative z-10 flex flex-col items-center px-2 sm:px-3">
                   
-                  {/* Rocket Launcher Hub Icon & BOOSTING Badge */}
+                  {/* Malaysian Male Entrepreneur Photo & BOOSTING Badge */}
                   <div className="relative mb-1 sm:mb-1.5 flex items-center justify-center">
                     <div className="w-14 h-14 min-[360px]:w-16 min-[360px]:h-16 sm:w-22 sm:h-22 rounded-full bg-gradient-to-tr from-emerald-400 via-amber-300 to-emerald-400 p-0.5 sm:p-1 shadow-xl flex items-center justify-center relative">
-                      {/* Dynamic Engine Plume Flare Aura */}
-                      <div className="absolute -inset-1.5 rounded-full bg-gradient-to-tr from-orange-500/40 via-amber-400/25 to-emerald-400/35 blur-sm animate-pulse pointer-events-none" />
-                      <div className="w-full h-full rounded-full bg-[#050811] flex items-center justify-center overflow-hidden p-0 sm:p-0.5 relative">
-                        <RocketIllustration className="w-full h-full object-contain filter drop-shadow-[0_0_12px_rgba(249,115,22,0.6)]" />
+                      {/* Dynamic Pulse Glow Aura */}
+                      <div className="absolute -inset-1.5 rounded-full bg-gradient-to-tr from-emerald-500/40 via-teal-400/25 to-emerald-400/35 blur-sm animate-pulse pointer-events-none" />
+                      <div className="w-full h-full rounded-full bg-[#050811] flex items-center justify-center overflow-hidden relative border-2 border-emerald-400/40 shadow-inner">
+                        <img 
+                          src="/avatars/amirul_hafiz.jpg" 
+                          alt="Malaysian Male Business Owner" 
+                          className="w-full h-full object-cover rounded-full"
+                          onError={(e) => {
+                            const target = e.currentTarget;
+                            if (!target.src.includes('khairul_azman')) {
+                              target.src = '/avatars/khairul_azman.jpg';
+                            }
+                          }}
+                        />
                       </div>
                     </div>
-                    {/* Urgency Badge centered directly below rocket circle */}
+                    {/* Urgency Badge centered directly below avatar circle */}
                     <span className="absolute -bottom-1 sm:-bottom-1.5 left-1/2 -translate-x-1/2 px-2 sm:px-2.5 py-0.5 rounded-full bg-emerald-400 text-slate-950 font-black text-[8px] sm:text-[9px] uppercase shadow-md tracking-wider z-20 whitespace-nowrap">
                       BOOSTING
                     </span>
