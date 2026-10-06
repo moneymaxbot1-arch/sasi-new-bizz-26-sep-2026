@@ -539,7 +539,7 @@ export const TESTIMONIALS: Testimonial[] = [
     countryCode: 'MY',
     flagEmoji: '🇲🇾',
     avatarText: 'AC',
-    avatarUrl: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=160&h=160&q=80',
+    avatarUrl: '/images/aaron_chong.jpg',
     rating: 5,
     headline: 'Sub-second page speeds slashed checkout bounce rate from 68% to 24%',
     content: 'We were setting ad money on fire with slow page loads. Moving to Hostinger LiteSpeed cloud and adding Fomo live buyer badges lifted checkout completions by 54%, adding RM38,000 in monthly sales.',
