@@ -17,7 +17,7 @@ import {
 import { TrustBadgesTrio } from './TrustBadgesTrio';
 import { getActiveCurrency, formatLocalizedPrice, CurrencyConfig } from '../utils/currencyUtils';
 
-// Custom Rocket Booster illustration matching the exact launcher design
+// 8K Ultra-Animated Rocket Booster with roaring thruster fire, supersonic mach diamonds & shooting ember particles
 function RocketIllustration({ className = 'w-full h-full' }: { className?: string }) {
   return (
     <svg
@@ -25,7 +25,7 @@ function RocketIllustration({ className = 'w-full h-full' }: { className?: strin
       className={className}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      aria-label="Rocket Booster Launcher"
+      aria-label="8K Animated Rocket Booster Launcher"
     >
       <defs>
         {/* Fuselage metallic 3D gradient */}
@@ -62,53 +62,389 @@ function RocketIllustration({ className = 'w-full h-full' }: { className?: strin
           <stop offset="100%" stopColor="#0284c7" />
         </linearGradient>
 
-        {/* Flame outer amber-orange gradient */}
+        {/* Roaring plasma flame outer amber-orange gradient */}
         <linearGradient id="vortexFlameOuter" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stopColor="#fbbf24" />
-          <stop offset="40%" stopColor="#f97316" />
-          <stop offset="100%" stopColor="#ea580c" />
+          <stop offset="0%" stopColor="#fef08a" />
+          <stop offset="25%" stopColor="#fbbf24" />
+          <stop offset="65%" stopColor="#f97316" />
+          <stop offset="100%" stopColor="#dc2626" stopOpacity="0.85" />
         </linearGradient>
 
-        {/* Flame inner core golden-yellow gradient */}
+        {/* Mid-core fiery yellow gradient */}
+        <linearGradient id="vortexFlameMid" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stopColor="#ffffff" />
+          <stop offset="35%" stopColor="#fde047" />
+          <stop offset="75%" stopColor="#f59e0b" />
+          <stop offset="100%" stopColor="#ea580c" stopOpacity="0.75" />
+        </linearGradient>
+
+        {/* Inner white-hot ignition core flame */}
         <linearGradient id="vortexFlameInner" x1="0%" y1="0%" x2="0%" y2="100%">
           <stop offset="0%" stopColor="#ffffff" />
-          <stop offset="50%" stopColor="#fef08a" />
+          <stop offset="45%" stopColor="#ffffff" />
+          <stop offset="80%" stopColor="#fef08a" />
           <stop offset="100%" stopColor="#facc15" />
         </linearGradient>
 
-        {/* Drop shadow for 3D depth */}
+        {/* Radial exhaust heat glow */}
+        <radialGradient id="vortexExhaustAura" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="#fb923c" stopOpacity="0.9" />
+          <stop offset="45%" stopColor="#ea580c" stopOpacity="0.45" />
+          <stop offset="100%" stopColor="#dc2626" stopOpacity="0" />
+        </radialGradient>
+
+        {/* Drop shadow for 3D rocket depth */}
         <filter id="vortexRocketShadow" x="-20%" y="-20%" width="140%" height="140%">
-          <feDropShadow dx="-1" dy="1.5" stdDeviation="2" floodColor="#000000" floodOpacity="0.4" />
+          <feDropShadow dx="-1" dy="1.5" stdDeviation="2" floodColor="#000000" floodOpacity="0.45" />
         </filter>
+
+        {/* Dynamic flame aura bloom filter */}
+        <filter id="vortexFlameGlow" x="-30%" y="-30%" width="160%" height="160%">
+          <feGaussianBlur stdDeviation="1.8" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+
+        <style>{`
+          @keyframes rocketEngineVibration {
+            0%, 100% {
+              transform: translate(50px, 45px) rotate(45deg) translate(0px, 0px);
+            }
+            15% {
+              transform: translate(50px, 45px) rotate(45deg) translate(0.35px, -1.2px);
+            }
+            35% {
+              transform: translate(50px, 45px) rotate(45deg) translate(-0.3px, -0.4px);
+            }
+            55% {
+              transform: translate(50px, 45px) rotate(45deg) translate(0.4px, -1.8px);
+            }
+            75% {
+              transform: translate(50px, 45px) rotate(45deg) translate(-0.25px, -0.9px);
+            }
+            90% {
+              transform: translate(50px, 45px) rotate(45deg) translate(0.2px, -1.4px);
+            }
+          }
+
+          @keyframes fireRoarOuter {
+            0%, 100% {
+              transform: scaleY(1) scaleX(1);
+              opacity: 0.95;
+            }
+            20% {
+              transform: scaleY(1.36) scaleX(1.1);
+              opacity: 1;
+            }
+            45% {
+              transform: scaleY(0.92) scaleX(0.92);
+              opacity: 0.88;
+            }
+            70% {
+              transform: scaleY(1.28) scaleX(1.05);
+              opacity: 1;
+            }
+            85% {
+              transform: scaleY(1.05) scaleX(0.96);
+              opacity: 0.92;
+            }
+          }
+
+          @keyframes fireRoarMid {
+            0%, 100% {
+              transform: scaleY(1) scaleX(1);
+              opacity: 0.95;
+            }
+            25% {
+              transform: scaleY(1.4) scaleX(1.12);
+              opacity: 1;
+            }
+            50% {
+              transform: scaleY(0.88) scaleX(0.9);
+              opacity: 0.9;
+            }
+            75% {
+              transform: scaleY(1.3) scaleX(1.06);
+              opacity: 1;
+            }
+          }
+
+          @keyframes fireRoarInner {
+            0%, 100% {
+              transform: scaleY(1) scaleX(1);
+              opacity: 0.95;
+            }
+            30% {
+              transform: scaleY(1.42) scaleX(1.16);
+              opacity: 1;
+            }
+            60% {
+              transform: scaleY(0.85) scaleX(0.88);
+              opacity: 0.92;
+            }
+            85% {
+              transform: scaleY(1.25) scaleX(1.08);
+              opacity: 1;
+            }
+          }
+
+          @keyframes fireTongueLeft {
+            0%, 100% {
+              transform: scale(1) rotate(0deg);
+              opacity: 0.75;
+            }
+            50% {
+              transform: scale(1.38, 1.3) rotate(-9deg);
+              opacity: 1;
+            }
+          }
+
+          @keyframes fireTongueRight {
+            0%, 100% {
+              transform: scale(1) rotate(0deg);
+              opacity: 0.75;
+            }
+            50% {
+              transform: scale(1.3, 1.4) rotate(9deg);
+              opacity: 1;
+            }
+          }
+
+          @keyframes sparkFly1 {
+            0% {
+              transform: translate(0px, 24px) scale(1);
+              opacity: 1;
+            }
+            100% {
+              transform: translate(-7px, 56px) scale(0.15);
+              opacity: 0;
+            }
+          }
+
+          @keyframes sparkFly2 {
+            0% {
+              transform: translate(2px, 24px) scale(1.2);
+              opacity: 1;
+            }
+            100% {
+              transform: translate(8px, 60px) scale(0.18);
+              opacity: 0;
+            }
+          }
+
+          @keyframes sparkFly3 {
+            0% {
+              transform: translate(-1.5px, 24px) scale(1.1);
+              opacity: 1;
+            }
+            100% {
+              transform: translate(-3px, 66px) scale(0.1);
+              opacity: 0;
+            }
+          }
+
+          @keyframes sparkFly4 {
+            0% {
+              transform: translate(1px, 25px) scale(1);
+              opacity: 1;
+            }
+            100% {
+              transform: translate(5px, 52px) scale(0.2);
+              opacity: 0;
+            }
+          }
+
+          @keyframes machShockPulse {
+            0%, 100% {
+              transform: scale(0.82);
+              opacity: 0.65;
+            }
+            50% {
+              transform: scale(1.3);
+              opacity: 1;
+            }
+          }
+
+          @keyframes glowRadiancePulse {
+            0%, 100% {
+              opacity: 0.4;
+              transform: scale(0.92);
+            }
+            50% {
+              opacity: 0.95;
+              transform: scale(1.3);
+            }
+          }
+
+          @keyframes windowGlareShimmer {
+            0%, 100% {
+              opacity: 0.75;
+            }
+            50% {
+              opacity: 1;
+            }
+          }
+
+          .vortex-rocket-hull {
+            animation: rocketEngineVibration 0.55s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
+            will-change: transform;
+          }
+
+          .vortex-fire-outer {
+            transform-origin: 0px 24px;
+            animation: fireRoarOuter 0.16s ease-in-out infinite alternate;
+            will-change: transform, opacity;
+          }
+
+          .vortex-fire-mid {
+            transform-origin: 0px 24px;
+            animation: fireRoarMid 0.13s ease-in-out infinite alternate;
+            will-change: transform, opacity;
+          }
+
+          .vortex-fire-inner {
+            transform-origin: 0px 24px;
+            animation: fireRoarInner 0.11s ease-in-out infinite alternate;
+            will-change: transform, opacity;
+          }
+
+          .vortex-fire-left {
+            transform-origin: -4px 24px;
+            animation: fireTongueLeft 0.19s ease-in-out infinite alternate;
+            will-change: transform, opacity;
+          }
+
+          .vortex-fire-right {
+            transform-origin: 4px 24px;
+            animation: fireTongueRight 0.17s ease-in-out infinite alternate;
+            will-change: transform, opacity;
+          }
+
+          .vortex-spark-1 {
+            animation: sparkFly1 0.5s ease-out infinite;
+          }
+          .vortex-spark-2 {
+            animation: sparkFly2 0.6s ease-out 0.15s infinite;
+          }
+          .vortex-spark-3 {
+            animation: sparkFly3 0.7s ease-out 0.3s infinite;
+          }
+          .vortex-spark-4 {
+            animation: sparkFly4 0.55s ease-out 0.08s infinite;
+          }
+
+          .vortex-mach-1 {
+            transform-origin: 0px 33px;
+            animation: machShockPulse 0.18s ease-in-out infinite alternate;
+          }
+          .vortex-mach-2 {
+            transform-origin: 0px 42px;
+            animation: machShockPulse 0.22s ease-in-out 0.07s infinite alternate;
+          }
+
+          .vortex-glow-aura {
+            transform-origin: 0px 28px;
+            animation: glowRadiancePulse 0.35s ease-in-out infinite alternate;
+          }
+
+          .vortex-glass-glare {
+            animation: windowGlareShimmer 1.4s ease-in-out infinite;
+          }
+        `}</style>
       </defs>
 
-      <g transform="translate(50, 48) rotate(45)">
-        {/* Flame exhaust plume */}
-        <path
-          d="M -6 23 C -13 32 -8 44 0 52 C 8 44 13 32 6 23 Z"
-          fill="url(#vortexFlameOuter)"
-        />
-        <path
-          d="M -3.5 23 C -7 30 -4 38 0 44 C 4 38 7 30 3.5 23 Z"
-          fill="url(#vortexFlameInner)"
+      {/* Main Hull Group with supersonic thrust vibration & forward surge */}
+      <g className="vortex-rocket-hull">
+        {/* Engine Exhaust Backlight Radial Glow */}
+        <circle
+          cx="0"
+          cy="32"
+          r="18"
+          fill="url(#vortexExhaustAura)"
+          className="vortex-glow-aura"
         />
 
-        {/* Left fin */}
+        {/* Flying Sparks / Bursting Fire Particles shooting backwards */}
+        <circle cx="0" cy="0" r="1.4" fill="#ffffff" className="vortex-spark-1" />
+        <circle cx="0" cy="0" r="1.6" fill="#facc15" className="vortex-spark-2" />
+        <circle cx="0" cy="0" r="1.3" fill="#fb923c" className="vortex-spark-3" />
+        <circle cx="0" cy="0" r="1.2" fill="#ef4444" className="vortex-spark-4" />
+
+        {/* Left Side Fire Tongue */}
+        <path
+          d="M -5 23 C -11 29 -12 37 -7 43 C -5 36 -4 29 -3 23 Z"
+          fill="url(#vortexFlameOuter)"
+          className="vortex-fire-left"
+        />
+
+        {/* Right Side Fire Tongue */}
+        <path
+          d="M 5 23 C 11 29 12 37 7 43 C 5 36 4 29 3 23 Z"
+          fill="url(#vortexFlameOuter)"
+          className="vortex-fire-right"
+        />
+
+        {/* Main Central Roaring Exhaust Fire Stream */}
+        <path
+          d="M -7.5 23 C -15 34 -10 49 0 58 C 10 49 15 34 7.5 23 Z"
+          fill="url(#vortexFlameOuter)"
+          className="vortex-fire-outer"
+          filter="url(#vortexFlameGlow)"
+        />
+
+        {/* Mid-core Fire Plume */}
+        <path
+          d="M -5 23 C -9 32 -6 43 0 49 C 6 43 9 32 5 23 Z"
+          fill="url(#vortexFlameMid)"
+          className="vortex-fire-mid"
+        />
+
+        {/* Inner Hot Combustion Flame Core */}
+        <path
+          d="M -3.2 23 C -5.5 30 -3.5 38 0 42 C 3.5 38 5.5 30 3.2 23 Z"
+          fill="url(#vortexFlameInner)"
+          className="vortex-fire-inner"
+        />
+
+        {/* Mach Shock Diamonds (Supersonic Thrust Shockwaves) */}
+        <polygon
+          points="0,29 2.5,33 0,37 -2.5,33"
+          fill="#ffffff"
+          className="vortex-mach-1"
+        />
+        <polygon
+          points="0,38 2,41.5 0,45 -2,41.5"
+          fill="#fef08a"
+          className="vortex-mach-2"
+        />
+
+        {/* Left aerodynamic fin */}
         <path
           d="M -11 9 C -19 12 -23 23 -22 28 C -16 27 -11 23 -9 19 Z"
           fill="url(#vortexRocketFin)"
         />
 
-        {/* Right fin */}
+        {/* Right aerodynamic fin */}
         <path
           d="M 11 9 C 19 12 23 23 22 28 C 16 27 11 23 9 19 Z"
           fill="url(#vortexRocketFin)"
         />
 
-        {/* Thruster nozzle base */}
+        {/* Thruster titanium nozzle base */}
         <path
           d="M -7 21 L 7 21 L 5.5 24.5 L -5.5 24.5 Z"
           fill="#1e293b"
+        />
+        <line
+          x1="-6"
+          y1="24.5"
+          x2="6"
+          y2="24.5"
+          stroke="#f97316"
+          strokeWidth="1.2"
+          opacity="0.9"
         />
 
         {/* Rocket main fuselage capsule body */}
@@ -139,6 +475,7 @@ function RocketIllustration({ className = 'w-full h-full' }: { className?: strin
           d="M -2.8 -5 A 4 4 0 0 1 2.8 -5 A 4.8 4.8 0 0 0 -2.8 -5 Z"
           fill="#ffffff"
           opacity="0.85"
+          className="vortex-glass-glare"
         />
       </g>
     </svg>
@@ -408,9 +745,11 @@ export const AutomationVortexHero: React.FC<AutomationVortexHeroProps> = ({ onCl
                   
                   {/* Rocket Launcher Hub Icon & BOOSTING Badge */}
                   <div className="relative mb-1 sm:mb-1.5 flex items-center justify-center">
-                    <div className="w-11 h-11 min-[360px]:w-13 min-[360px]:h-13 sm:w-18 sm:h-18 rounded-full bg-gradient-to-tr from-emerald-400 via-amber-300 to-emerald-400 p-0.5 sm:p-1 shadow-lg flex items-center justify-center">
-                      <div className="w-full h-full rounded-full bg-[#050811] flex items-center justify-center overflow-hidden p-1 sm:p-1.5">
-                        <RocketIllustration className="w-full h-full object-contain filter drop-shadow-[0_0_8px_rgba(52,211,153,0.35)]" />
+                    <div className="w-12 h-12 min-[360px]:w-14 min-[360px]:h-14 sm:w-20 sm:h-20 rounded-full bg-gradient-to-tr from-emerald-400 via-amber-300 to-emerald-400 p-0.5 sm:p-1 shadow-lg flex items-center justify-center relative">
+                      {/* Dynamic Engine Plume Flare Aura */}
+                      <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-orange-500/40 via-amber-400/20 to-emerald-400/30 blur-sm animate-pulse pointer-events-none" />
+                      <div className="w-full h-full rounded-full bg-[#050811] flex items-center justify-center overflow-hidden p-1 sm:p-1.5 relative">
+                        <RocketIllustration className="w-full h-full object-contain filter drop-shadow-[0_0_10px_rgba(249,115,22,0.5)]" />
                       </div>
                     </div>
                     {/* Urgency Badge centered directly below rocket circle */}
