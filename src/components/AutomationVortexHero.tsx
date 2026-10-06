@@ -17,6 +17,134 @@ import {
 import { TrustBadgesTrio } from './TrustBadgesTrio';
 import { getActiveCurrency, formatLocalizedPrice, CurrencyConfig } from '../utils/currencyUtils';
 
+// Custom Rocket Booster illustration matching the exact launcher design
+function RocketIllustration({ className = 'w-full h-full' }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 100 100"
+      className={className}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-label="Rocket Booster Launcher"
+    >
+      <defs>
+        {/* Fuselage metallic 3D gradient */}
+        <linearGradient id="vortexRocketBody" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#ffffff" />
+          <stop offset="45%" stopColor="#f8fafc" />
+          <stop offset="80%" stopColor="#e2e8f0" />
+          <stop offset="100%" stopColor="#cbd5e1" />
+        </linearGradient>
+
+        {/* Nose cone crimson-red gradient */}
+        <linearGradient id="vortexRocketNose" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#ff4d6d" />
+          <stop offset="55%" stopColor="#e11d48" />
+          <stop offset="100%" stopColor="#be123c" />
+        </linearGradient>
+
+        {/* Fins red/magenta gradient */}
+        <linearGradient id="vortexRocketFin" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#ff4d6d" />
+          <stop offset="100%" stopColor="#d91b42" />
+        </linearGradient>
+
+        {/* Porthole rim metallic gradient */}
+        <linearGradient id="vortexWindowRim" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#cbd5e1" />
+          <stop offset="100%" stopColor="#64748b" />
+        </linearGradient>
+
+        {/* Porthole glass cyan gradient */}
+        <linearGradient id="vortexWindowGlass" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#7dd3fc" />
+          <stop offset="50%" stopColor="#38bdf8" />
+          <stop offset="100%" stopColor="#0284c7" />
+        </linearGradient>
+
+        {/* Flame outer amber-orange gradient */}
+        <linearGradient id="vortexFlameOuter" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stopColor="#fbbf24" />
+          <stop offset="40%" stopColor="#f97316" />
+          <stop offset="100%" stopColor="#ea580c" />
+        </linearGradient>
+
+        {/* Flame inner core golden-yellow gradient */}
+        <linearGradient id="vortexFlameInner" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stopColor="#ffffff" />
+          <stop offset="50%" stopColor="#fef08a" />
+          <stop offset="100%" stopColor="#facc15" />
+        </linearGradient>
+
+        {/* Drop shadow for 3D depth */}
+        <filter id="vortexRocketShadow" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="-1" dy="1.5" stdDeviation="2" floodColor="#000000" floodOpacity="0.4" />
+        </filter>
+      </defs>
+
+      <g transform="translate(50, 48) rotate(45)">
+        {/* Flame exhaust plume */}
+        <path
+          d="M -6 23 C -13 32 -8 44 0 52 C 8 44 13 32 6 23 Z"
+          fill="url(#vortexFlameOuter)"
+        />
+        <path
+          d="M -3.5 23 C -7 30 -4 38 0 44 C 4 38 7 30 3.5 23 Z"
+          fill="url(#vortexFlameInner)"
+        />
+
+        {/* Left fin */}
+        <path
+          d="M -11 9 C -19 12 -23 23 -22 28 C -16 27 -11 23 -9 19 Z"
+          fill="url(#vortexRocketFin)"
+        />
+
+        {/* Right fin */}
+        <path
+          d="M 11 9 C 19 12 23 23 22 28 C 16 27 11 23 9 19 Z"
+          fill="url(#vortexRocketFin)"
+        />
+
+        {/* Thruster nozzle base */}
+        <path
+          d="M -7 21 L 7 21 L 5.5 24.5 L -5.5 24.5 Z"
+          fill="#1e293b"
+        />
+
+        {/* Rocket main fuselage capsule body */}
+        <path
+          d="M -12 15 C -13.5 3 -10 -15 0 -29 C 10 -15 13.5 3 12 15 C 8 21.5 -8 21.5 -12 15 Z"
+          fill="url(#vortexRocketBody)"
+          filter="url(#vortexRocketShadow)"
+        />
+
+        {/* Red dome nose cone */}
+        <path
+          d="M -8.2 -12.5 C -4.8 -20.5 0 -29 0 -29 C 0 -29 4.8 -20.5 8.2 -12.5 C 5 -10 -5 -10 -8.2 -12.5 Z"
+          fill="url(#vortexRocketNose)"
+        />
+
+        {/* Center dorsal fin 3D rib */}
+        <path
+          d="M -1.2 11 L 1.2 11 L 0 24 Z"
+          fill="#be123c"
+          opacity="0.8"
+        />
+
+        {/* Circular glass porthole window */}
+        <circle cx="0" cy="-2.5" r="7.2" fill="url(#vortexWindowRim)" />
+        <circle cx="0" cy="-2.5" r="5.6" fill="url(#vortexWindowGlass)" />
+        {/* Reflection glare arc */}
+        <path
+          d="M -2.8 -5 A 4 4 0 0 1 2.8 -5 A 4.8 4.8 0 0 0 -2.8 -5 Z"
+          fill="#ffffff"
+          opacity="0.85"
+        />
+      </g>
+    </svg>
+  );
+}
+
 interface AutomationVortexHeroProps {
   onClaimClick: () => void;
 }
@@ -267,7 +395,7 @@ export const AutomationVortexHero: React.FC<AutomationVortexHeroProps> = ({ onCl
                 })}
               </svg>
 
-              {/* CENTER CIRCLE: The Unified $15 Automated Business Growth Hub with Excited Businessman */}
+              {/* CENTER CIRCLE: The Unified $15 Automated Business Growth Hub with Rocket Launcher */}
               <div 
                 onClick={onClaimClick}
                 className="relative z-20 w-36 h-36 min-[360px]:w-40 min-[360px]:h-40 sm:w-56 sm:h-56 rounded-full bg-gradient-to-br from-slate-900 via-[#0a1420] to-[#041d15] border-3 sm:border-4 border-emerald-400 p-2 shadow-[0_0_60px_rgba(52,211,153,0.4)] flex flex-col items-center justify-center text-center cursor-pointer transition-transform hover:scale-105 active:scale-95 group"
@@ -278,34 +406,21 @@ export const AutomationVortexHero: React.FC<AutomationVortexHeroProps> = ({ onCl
 
                 <div className="relative z-10 flex flex-col items-center px-2 sm:px-3">
                   
-                  {/* Businessman Success Avatar / Badge */}
-                  <div className="relative mb-0.5 sm:mb-1">
-                    <div className="w-10 h-10 min-[360px]:w-12 min-[360px]:h-12 sm:w-16 sm:h-16 rounded-full bg-gradient-to-tr from-emerald-500 to-amber-300 p-0.5 shadow-lg flex items-center justify-center">
-                      <div className="w-full h-full rounded-full bg-slate-950 flex flex-col items-center justify-center overflow-hidden">
-                        {/* Excited Smiling Business Owner Picture from Infographic */}
-                        <img 
-                          src="/avatars/chinese_male_exec.jpg" 
-                          alt="Automated Business Owner"
-                          className="w-full h-full object-cover"
-                          onError={(e) => {
-                            // Fallback to emoji icon if image fails to load
-                            const target = e.currentTarget;
-                            target.style.display = 'none';
-                            if (target.parentElement) {
-                              target.parentElement.innerHTML = '<span class="text-2xl select-none">💼</span>';
-                            }
-                          }}
-                        />
+                  {/* Rocket Launcher Hub Icon & BOOSTING Badge */}
+                  <div className="relative mb-1 sm:mb-1.5 flex items-center justify-center">
+                    <div className="w-11 h-11 min-[360px]:w-13 min-[360px]:h-13 sm:w-18 sm:h-18 rounded-full bg-gradient-to-tr from-emerald-400 via-amber-300 to-emerald-400 p-0.5 sm:p-1 shadow-lg flex items-center justify-center">
+                      <div className="w-full h-full rounded-full bg-[#050811] flex items-center justify-center overflow-hidden p-1 sm:p-1.5">
+                        <RocketIllustration className="w-full h-full object-contain filter drop-shadow-[0_0_8px_rgba(52,211,153,0.35)]" />
                       </div>
                     </div>
-                    {/* Urgency Badge */}
-                    <span className="absolute -bottom-1 -right-1 px-1 sm:px-1.5 py-0.2 sm:py-0.5 rounded-full bg-emerald-400 text-slate-950 font-black text-[8px] sm:text-[9px] uppercase shadow">
+                    {/* Urgency Badge centered directly below rocket circle */}
+                    <span className="absolute -bottom-1 sm:-bottom-1.5 left-1/2 -translate-x-1/2 px-2 sm:px-2.5 py-0.5 rounded-full bg-emerald-400 text-slate-950 font-black text-[8px] sm:text-[9px] uppercase shadow-md tracking-wider z-20 whitespace-nowrap">
                       BOOSTING
                     </span>
                   </div>
 
                   {/* Core Value Text */}
-                  <div className="text-[9px] sm:text-xs font-extrabold uppercase tracking-wider text-emerald-300">
+                  <div className="text-[9px] sm:text-xs font-extrabold uppercase tracking-wider text-emerald-300 mt-1 sm:mt-1.5">
                     6x Automation Hub
                   </div>
 
