@@ -560,7 +560,7 @@ export const TESTIMONIALS: Testimonial[] = [
     countryCode: 'MY',
     flagEmoji: '🇲🇾',
     avatarText: 'DN',
-    avatarUrl: 'https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&w=160&h=160&q=80',
+    avatarUrl: '/images/dayang_norita.jpg',
     rating: 5,
     headline: '24/7 automated WhatsApp CRM unlocked 190% jump in export orders',
     content: 'Timezone lag meant overseas buyers in Australia and the US waited 10 hours for custom quotes. Automated 24/7 WhatsApp replies and Mailchimp sequences closed international buyers while I slept.',
