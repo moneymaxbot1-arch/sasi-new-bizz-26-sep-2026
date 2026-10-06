@@ -668,15 +668,15 @@ export const AutomationVortexHero: React.FC<AutomationVortexHeroProps> = ({ onCl
             <span className="text-amber-300 font-mono">6 TOOLS UNIFIED INTO 1</span>
           </div>
 
-          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.2] text-balance">
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.15] text-balance">
             Run Your Entire Business{' '}
-            <span className="bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">
+            <span className="block mt-1 sm:mt-2 bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">
               100% Automated
             </span>
           </h2>
 
-          <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            Automate your daily Business operations: CRM messaging, WhatsApp marketing, client workflows, and hosting into a single dashboard seamlessly from <span className="text-emerald-400 font-bold font-mono">{formatLocalizedPrice(15, currentCurrency)}/month</span>
+          <p className="text-base sm:text-lg lg:text-xl text-slate-200 max-w-3xl mx-auto leading-relaxed">
+            Automate your daily Business operations: CRM messaging, WhatsApp marketing, client workflows and hosting into a single dashboard seamlessly from <span className="text-emerald-400 font-bold font-mono">{formatLocalizedPrice(15, currentCurrency)}/month</span>
           </p>
 
         </div>

@@ -9,15 +9,15 @@ export interface LanguageOption {
 }
 
 export const LANGUAGES_32: LanguageOption[] = [
-  // 6 Top Quick Languages requested specifically by user
+  // Top Quick Languages on menu
   { code: 'en', name: 'English', nativeName: 'English', flag: '🇺🇸', region: 'Global', isQuick: true },
   { code: 'ta', name: 'Tamil', nativeName: 'தமிழ்', flag: '🇮🇳', region: 'India, Sri Lanka, Singapore', isQuick: true },
-  { code: 'hi', name: 'Hindi', nativeName: 'हिन्दी', flag: '🇮🇳', region: 'India', isQuick: true },
   { code: 'zh-CN', name: 'Chinese', nativeName: '简体中文', flag: '🇨🇳', region: 'China, Singapore', isQuick: true },
   { code: 'ms', name: 'Malay', nativeName: 'Bahasa Melayu', flag: '🇲🇾', region: 'Malaysia, Brunei, Singapore', isQuick: true },
-  { code: 'ar', name: 'Arabic', nativeName: 'العربية', flag: '🇸🇦', region: 'Middle East & North Africa', isRTL: true, isQuick: true },
 
-  // Remaining world languages bringing total to 32
+  // Other languages
+  { code: 'hi', name: 'Hindi', nativeName: 'हिन्दी', flag: '🇮🇳', region: 'India' },
+  { code: 'ar', name: 'Arabic', nativeName: 'العربية', flag: '🇸🇦', region: 'Middle East & North Africa', isRTL: true },
   { code: 'es', name: 'Spanish', nativeName: 'Español', flag: '🇪🇸', region: 'Spain & Latin America' },
   { code: 'fr', name: 'French', nativeName: 'Français', flag: '🇫🇷', region: 'France, Canada, Africa' },
   { code: 'de', name: 'German', nativeName: 'Deutsch', flag: '🇩🇪', region: 'Germany, Austria, Switzerland' },
