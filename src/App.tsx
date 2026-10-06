@@ -56,7 +56,10 @@ export default function App() {
         {/* In-Depth Features & Functions of all 6 Software Powerhouses */}
         <InDepthSoftwareSpecs onClaimClick={() => scrollToPricing()} />
 
-        {/* How the 6 tools connect into an automated sales machine */}
+        {/* Verifiable Customer Testimonials & Metrics (45+ in-depth regional and global customer stories) */}
+        <Testimonials onClaimClick={() => scrollToPricing()} />
+
+        {/* How the 6 tools connect into an automated sales machine (The Complete Closed-Loop Automation System) */}
         <AutomationPlaybook onClaimClick={() => scrollToPricing()} />
 
         {/* Dynamic ROI and Savings Calculator */}
@@ -64,9 +67,6 @@ export default function App() {
 
         {/* High-Converting 3-Tier Pricing (Starting at $15/mo) */}
         <PricingSection />
-
-        {/* Verifiable Customer Testimonials & Metrics (45+ in-depth regional and global customer stories) */}
-        <Testimonials onClaimClick={() => scrollToPricing()} />
 
         {/* 100% Satisfaction Guarantee & Immediate 2-Minute Replacement Section */}
         <GuaranteeSection onClaimClick={() => scrollToPricing()} />
