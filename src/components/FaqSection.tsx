@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { FAQS } from '../data/bundleData';
-import { ChevronDown, ArrowRight, Mail, Search, Sparkles } from 'lucide-react';
+import { ChevronDown, ArrowRight, Mail, Search, Sparkles, Building2, Home, Landmark, ShoppingBag, Briefcase } from 'lucide-react';
 
 interface FaqSectionProps {
   onClaimClick: () => void;
@@ -10,6 +10,89 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onClaimClick }) => {
   const [openId, setOpenId] = useState<string | null>(FAQS[0]?.id || null);
   const [activeCategory, setActiveCategory] = useState<string>('All');
   const [searchQuery, setSearchQuery] = useState<string>('');
+
+  const industrySectors = [
+    {
+      id: 'f-sector-b2b',
+      label: 'B2B Companies',
+      icon: Building2,
+      sublabel: 'Selling Products & Services',
+      tag: '⚡ 8s Intake & RFPs',
+      animClass: 'animate-sector-float',
+      bgCard: 'from-blue-950/80 via-slate-900 to-[#03152d]',
+      borderColor: 'border-blue-500/35 hover:border-blue-400',
+      activeBorder: 'border-blue-400 ring-2 ring-blue-400/70 shadow-[0_0_30px_rgba(59,130,246,0.35)]',
+      iconBoxBg: 'bg-blue-500/20 text-blue-400 border border-blue-400/40 shadow-[0_0_15px_rgba(59,130,246,0.3)]',
+      titleColor: 'text-blue-300 group-hover:text-blue-100',
+      tagBg: 'bg-blue-500/20 text-blue-300 border-blue-400/40',
+      btnActiveBg: 'bg-blue-500 text-slate-950 font-black',
+      btnInactiveBg: 'bg-blue-950/70 text-blue-300 border border-blue-500/40 group-hover:bg-blue-500 group-hover:text-slate-950'
+    },
+    {
+      id: 'f-sector-real-estate',
+      label: 'Real Estate Agencies',
+      icon: Home,
+      sublabel: 'Agents & Property Developers',
+      tag: '🏡 -80% No-Shows',
+      animClass: 'animate-sector-bounce',
+      bgCard: 'from-emerald-950/80 via-slate-900 to-[#021f15]',
+      borderColor: 'border-emerald-500/35 hover:border-emerald-400',
+      activeBorder: 'border-emerald-400 ring-2 ring-emerald-400/70 shadow-[0_0_30px_rgba(16,185,129,0.35)]',
+      iconBoxBg: 'bg-emerald-500/20 text-emerald-400 border border-emerald-400/40 shadow-[0_0_15px_rgba(16,185,129,0.3)]',
+      titleColor: 'text-emerald-300 group-hover:text-emerald-100',
+      tagBg: 'bg-emerald-500/20 text-emerald-300 border-emerald-400/40',
+      btnActiveBg: 'bg-emerald-400 text-slate-950 font-black',
+      btnInactiveBg: 'bg-emerald-950/70 text-emerald-300 border border-emerald-500/40 group-hover:bg-emerald-400 group-hover:text-slate-950'
+    },
+    {
+      id: 'f-sector-financial-services',
+      label: 'Financial Services',
+      icon: Landmark,
+      sublabel: 'Banks, Insurance & Wealth',
+      tag: '🏦 Bank-Grade 2FA',
+      animClass: 'animate-sector-pulse',
+      bgCard: 'from-amber-950/80 via-slate-900 to-[#241703]',
+      borderColor: 'border-amber-500/35 hover:border-amber-400',
+      activeBorder: 'border-amber-400 ring-2 ring-amber-400/70 shadow-[0_0_30px_rgba(245,158,11,0.35)]',
+      iconBoxBg: 'bg-amber-500/20 text-amber-400 border border-amber-400/40 shadow-[0_0_15px_rgba(245,158,11,0.3)]',
+      titleColor: 'text-amber-300 group-hover:text-amber-100',
+      tagBg: 'bg-amber-500/20 text-amber-300 border-amber-400/40',
+      btnActiveBg: 'bg-amber-400 text-slate-950 font-black',
+      btnInactiveBg: 'bg-amber-950/70 text-amber-300 border border-amber-500/40 group-hover:bg-amber-400 group-hover:text-slate-950'
+    },
+    {
+      id: 'f-sector-retail-ecommerce',
+      label: 'Retail & E-Commerce',
+      icon: ShoppingBag,
+      sublabel: 'Online & Multi-Channel Stores',
+      tag: '🛒 +30% Cart Recovery',
+      animClass: 'animate-sector-wiggle',
+      bgCard: 'from-rose-950/80 via-slate-900 to-[#280515]',
+      borderColor: 'border-rose-500/35 hover:border-rose-400',
+      activeBorder: 'border-rose-400 ring-2 ring-rose-400/70 shadow-[0_0_30px_rgba(244,63,94,0.35)]',
+      iconBoxBg: 'bg-rose-500/20 text-rose-400 border border-rose-400/40 shadow-[0_0_15px_rgba(244,63,94,0.3)]',
+      titleColor: 'text-rose-300 group-hover:text-rose-100',
+      tagBg: 'bg-rose-500/20 text-rose-300 border-rose-400/40',
+      btnActiveBg: 'bg-rose-500 text-white font-black',
+      btnInactiveBg: 'bg-rose-950/70 text-rose-300 border border-rose-500/40 group-hover:bg-rose-500 group-hover:text-white'
+    },
+    {
+      id: 'f-sector-professional-services',
+      label: 'Professional Services',
+      icon: Briefcase,
+      sublabel: 'Consulting, Law & Agencies',
+      tag: '⚖️ 24/7 Client Triage',
+      animClass: 'animate-sector-float',
+      bgCard: 'from-purple-950/80 via-slate-900 to-[#1b0930]',
+      borderColor: 'border-purple-500/35 hover:border-purple-400',
+      activeBorder: 'border-purple-400 ring-2 ring-purple-400/70 shadow-[0_0_30px_rgba(168,85,247,0.35)]',
+      iconBoxBg: 'bg-purple-500/20 text-purple-400 border border-purple-400/40 shadow-[0_0_15px_rgba(168,85,247,0.3)]',
+      titleColor: 'text-purple-300 group-hover:text-purple-100',
+      tagBg: 'bg-purple-500/20 text-purple-300 border-purple-400/40',
+      btnActiveBg: 'bg-purple-500 text-white font-black',
+      btnInactiveBg: 'bg-purple-950/70 text-purple-300 border border-purple-500/40 group-hover:bg-purple-500 group-hover:text-white'
+    },
+  ];
 
   // Extract unique categories
   const categories = useMemo(() => {
@@ -47,8 +130,84 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onClaimClick }) => {
             Everything You Need to Know Before Joining
           </h2>
           <p className="text-base text-slate-300 max-w-2xl mx-auto">
-            Clear, transparent answers on sales automation, worldwide operation, security, AI options, social media CRM, and zero-risk billing.
+            Clear, transparent answers on sales automation, industry solutions (B2B, Real Estate, Finance, Retail, Professional Services), worldwide operation, and zero-risk billing.
           </p>
+        </div>
+
+        {/* Industry Sector Quick-Select Cards (Distinct Colors, Bigger Typography & Big Animated Symbols) */}
+        <div className="mb-8 p-4 sm:p-6 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-2xl">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-4 px-1">
+            <span className="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-white flex items-center gap-2">
+              <Sparkles className="w-4 h-4 text-emerald-400 shrink-0" />
+              <span>Explore Automated Solutions By Industry Sector</span>
+            </span>
+            <span className="text-xs text-emerald-400 font-semibold">
+              Pre-configured blueprints tailored to your business model
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3.5">
+            {industrySectors.map((sector) => {
+              const Icon = sector.icon;
+              const isSelected = activeCategory === 'Industry Sectors' && openId === sector.id;
+              return (
+                <button
+                  key={sector.id}
+                  onClick={() => {
+                    setActiveCategory('Industry Sectors');
+                    setOpenId(sector.id);
+                    setSearchQuery('');
+                    // Smoothly scroll down to the opened question
+                    setTimeout(() => {
+                      const el = document.getElementById(sector.id);
+                      if (el) {
+                        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                      }
+                    }, 50);
+                  }}
+                  className={`group p-4 sm:p-4.5 rounded-2xl border text-left transition-all duration-200 cursor-pointer flex flex-col justify-between relative bg-gradient-to-br ${sector.bgCard} ${
+                    isSelected ? sector.activeBorder : `${sector.borderColor} hover:scale-[1.02]`
+                  }`}
+                >
+                  <div>
+                    {/* Top Row: Big Animated Symbol & Benefit Tag */}
+                    <div className="flex items-center justify-between gap-2 mb-3">
+                      <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center shrink-0 transition-transform group-hover:scale-110 ${sector.iconBoxBg}`}>
+                        <Icon className={`w-6 h-6 sm:w-7 sm:h-7 ${sector.animClass}`} />
+                      </div>
+                      <span className={`text-[10px] sm:text-[11px] font-bold px-2 py-0.5 rounded-full border whitespace-nowrap ${sector.tagBg}`}>
+                        {sector.tag}
+                      </span>
+                    </div>
+
+                    {/* Sector Title - Large, Clear & Bold (No Truncation) */}
+                    <div className={`text-base sm:text-lg font-black tracking-tight leading-snug mb-1 transition-colors ${sector.titleColor}`}>
+                      {sector.label}
+                    </div>
+
+                    {/* Subtitle / Description - Bigger & Clear */}
+                    <p className="text-xs sm:text-sm text-slate-300 font-medium leading-relaxed mb-3">
+                      {sector.sublabel}
+                    </p>
+                  </div>
+
+                  {/* Bottom Action Pill - High Conviction & Instant Feedback */}
+                  <div className={`mt-2 py-2 px-3 rounded-lg text-xs font-bold text-center transition-all flex items-center justify-center gap-1.5 ${
+                    isSelected ? sector.btnActiveBg : sector.btnInactiveBg
+                  }`}>
+                    {isSelected ? (
+                      <span>✓ Active Sector</span>
+                    ) : (
+                      <>
+                        <span>Explore Workflows</span>
+                        <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                      </>
+                    )}
+                  </div>
+                </button>
+              );
+            })}
+          </div>
         </div>
 
         {/* Search Input Bar */}
@@ -60,7 +219,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onClaimClick }) => {
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Search questions (e.g. AI, security, WATI, payment gateways, sales, countries...)"
+            placeholder="Search questions (e.g. B2B, real estate, finance, e-commerce, consulting, pricing, security...)"
             className="w-full pl-10 pr-4 py-3 bg-slate-900/90 border border-slate-800 rounded-xl text-white placeholder-slate-500 text-sm focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all"
           />
           {searchQuery && (
@@ -122,6 +281,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onClaimClick }) => {
               const isOpen = openId === faq.id;
               return (
                 <div
+                  id={faq.id}
                   key={faq.id}
                   className="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden transition-all duration-200"
                 >
@@ -145,7 +305,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onClaimClick }) => {
                   </button>
 
                   {isOpen && (
-                    <div className="px-5 pb-5 pt-2 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/60 bg-slate-950/40">
+                    <div className="px-5 pb-5 pt-2 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/60 bg-slate-950/40 whitespace-pre-line space-y-2">
                       {faq.answer}
                     </div>
                   )}

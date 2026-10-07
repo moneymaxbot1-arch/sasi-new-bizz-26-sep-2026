@@ -742,27 +742,228 @@ export const AutomationVortexHero: React.FC<AutomationVortexHeroProps> = ({ onCl
 
                 <div className="relative z-10 flex flex-col items-center px-2 sm:px-3">
                   
-                  {/* Malaysian Male Entrepreneur Photo & BOOSTING Badge */}
-                  <div className="relative mb-1 sm:mb-1.5 flex items-center justify-center">
-                    <div className="w-14 h-14 min-[360px]:w-16 min-[360px]:h-16 sm:w-22 sm:h-22 rounded-full bg-gradient-to-tr from-emerald-400 via-amber-300 to-emerald-400 p-0.5 sm:p-1 shadow-xl flex items-center justify-center relative">
-                      {/* Dynamic Pulse Glow Aura */}
-                      <div className="absolute -inset-1.5 rounded-full bg-gradient-to-tr from-emerald-500/40 via-teal-400/25 to-emerald-400/35 blur-sm animate-pulse pointer-events-none" />
-                      <div className="w-full h-full rounded-full bg-[#050811] flex items-center justify-center overflow-hidden relative border-2 border-emerald-400/40 shadow-inner">
-                        <img 
-                          src="/avatars/amirul_hafiz.jpg" 
-                          alt="Malaysian Male Business Owner" 
-                          className="w-full h-full object-cover rounded-full"
-                          onError={(e) => {
-                            const target = e.currentTarget;
-                            if (!target.src.includes('khairul_azman')) {
-                              target.src = '/avatars/khairul_azman.jpg';
-                            }
-                          }}
-                        />
+                  {/* Animated Rocket with Blasting Fire & BOOSTING Badge */}
+                  <div className="relative mb-0.5 sm:mb-1 flex flex-col items-center justify-center">
+                    <div className="w-16 h-16 min-[360px]:w-20 min-[360px]:h-20 sm:w-26 sm:h-26 rounded-full bg-gradient-to-b from-[#0b1f28] via-[#051119] to-[#02090f] p-1 shadow-[0_0_25px_rgba(16,185,129,0.35)] flex items-center justify-center relative border-2 border-emerald-400/60 overflow-visible group-hover:border-emerald-300">
+                      {/* Dynamic Thruster & Launch Aura */}
+                      <div className="absolute -inset-1 rounded-full bg-gradient-to-b from-cyan-500/20 via-emerald-500/30 to-amber-500/40 blur-md pointer-events-none animate-pulse" />
+                      
+                      {/* Starfield Particles inside portal */}
+                      <div className="absolute inset-0 rounded-full overflow-hidden pointer-events-none">
+                        <div className="absolute top-2 left-3 w-1 h-1 bg-white/70 rounded-full animate-ping" />
+                        <div className="absolute top-4 right-4 w-1 h-1 bg-cyan-300/60 rounded-full" />
+                        <div className="absolute bottom-6 left-4 w-0.5 h-0.5 bg-amber-200/60 rounded-full" />
+                      </div>
+
+                      {/* The Rocket and Animated Fire (Bigger Size, extending dynamically) */}
+                      <div className="relative w-full h-full flex items-center justify-center animate-rocket-vibrate">
+                        <svg 
+                          viewBox="0 0 100 120" 
+                          className="w-full h-full overflow-visible drop-shadow-[0_4px_12px_rgba(0,0,0,0.6)]"
+                        >
+                          <defs>
+                            {/* Rocket Body Gradient */}
+                            <linearGradient id="rocketBodyGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                              <stop offset="0%" stopColor="#e2e8f0" />
+                              <stop offset="35%" stopColor="#ffffff" />
+                              <stop offset="70%" stopColor="#f1f5f9" />
+                              <stop offset="100%" stopColor="#94a3b8" />
+                            </linearGradient>
+
+                            {/* Nosecone & Fin Gradient */}
+                            <linearGradient id="rocketAccentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                              <stop offset="0%" stopColor="#10b981" />
+                              <stop offset="50%" stopColor="#059669" />
+                              <stop offset="100%" stopColor="#047857" />
+                            </linearGradient>
+
+                            {/* Cyan Energy Stripe */}
+                            <linearGradient id="rocketStripeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                              <stop offset="0%" stopColor="#38bdf8" />
+                              <stop offset="100%" stopColor="#06b6d4" />
+                            </linearGradient>
+
+                            {/* Glass Window Gradient */}
+                            <radialGradient id="windowGlassGrad" cx="35%" cy="35%" r="65%">
+                              <stop offset="0%" stopColor="#a5f3fc" />
+                              <stop offset="50%" stopColor="#06b6d4" />
+                              <stop offset="100%" stopColor="#083344" />
+                            </radialGradient>
+
+                            {/* Fire Flame Outer (Orange-Red) */}
+                            <linearGradient id="flameOuterGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                              <stop offset="0%" stopColor="#fb923c" />
+                              <stop offset="35%" stopColor="#f97316" />
+                              <stop offset="75%" stopColor="#ef4444" />
+                              <stop offset="100%" stopColor="transparent" />
+                            </linearGradient>
+
+                            {/* Fire Flame Mid (Yellow-Orange) */}
+                            <linearGradient id="flameMidGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                              <stop offset="0%" stopColor="#fef08a" />
+                              <stop offset="40%" stopColor="#fde047" />
+                              <stop offset="80%" stopColor="#f59e0b" />
+                              <stop offset="100%" stopColor="transparent" />
+                            </linearGradient>
+
+                            {/* Fire Flame Core (White-Hot Plasma) */}
+                            <linearGradient id="flameCoreGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                              <stop offset="0%" stopColor="#ffffff" />
+                              <stop offset="45%" stopColor="#fef9c3" />
+                              <stop offset="85%" stopColor="#38bdf8" />
+                              <stop offset="100%" stopColor="transparent" />
+                            </linearGradient>
+
+                            {/* Heat Glow Filter */}
+                            <filter id="fireGlow" x="-50%" y="-20%" width="200%" height="200%">
+                              <feGaussianBlur stdDeviation="3.5" result="blur" />
+                              <feMerge>
+                                <feMergeNode in="blur" />
+                                <feMergeNode in="SourceGraphic" />
+                              </feMerge>
+                            </filter>
+                          </defs>
+
+                          {/* ================= ANIMATED FIRE BLAST FROM ROCKET ================= */}
+                          <g id="rocket-exhaust">
+                            {/* Heat Aura Glow beneath nozzle */}
+                            <circle 
+                              cx="50" 
+                              cy="80" 
+                              r="16" 
+                              fill="url(#flameOuterGrad)" 
+                              opacity="0.6" 
+                              className="animate-thruster-heat" 
+                            />
+
+                            {/* Outer Blasting Flame (Layer 1 - Red/Orange) */}
+                            <path
+                              d="M 40 70 Q 32 85 41 100 Q 48 114 50 120 Q 52 114 59 100 Q 68 85 60 70 Z"
+                              fill="url(#flameOuterGrad)"
+                              filter="url(#fireGlow)"
+                              className="animate-rocket-flame-outer"
+                            />
+
+                            {/* Mid Blasting Flame (Layer 2 - Amber/Gold) */}
+                            <path
+                              d="M 43 70 Q 37 84 44 96 Q 48 106 50 110 Q 52 106 56 96 Q 63 84 57 70 Z"
+                              fill="url(#flameMidGrad)"
+                              className="animate-rocket-flame-mid"
+                            />
+
+                            {/* Inner Core Flame (Layer 3 - White-Hot Intense Plasma) */}
+                            <path
+                              d="M 46 70 Q 42 80 47 90 Q 49 98 50 102 Q 51 98 53 90 Q 58 80 54 70 Z"
+                              fill="url(#flameCoreGrad)"
+                              className="animate-rocket-flame-core"
+                            />
+
+                            {/* Left Booster Jet Flame */}
+                            <path
+                              d="M 31 66 Q 26 76 30 84 Q 32 78 35 66 Z"
+                              fill="url(#flameMidGrad)"
+                              className="animate-rocket-flame-mid"
+                            />
+
+                            {/* Right Booster Jet Flame */}
+                            <path
+                              d="M 69 66 Q 74 76 70 84 Q 68 78 65 66 Z"
+                              fill="url(#flameMidGrad)"
+                              className="animate-rocket-flame-mid"
+                            />
+
+                            {/* Spark Embers Ejected Downward */}
+                            <circle cx="50" cy="88" r="2.2" fill="#ffffff" className="animate-rocket-spark-1" />
+                            <circle cx="47" cy="92" r="1.8" fill="#fde047" className="animate-rocket-spark-2" />
+                            <circle cx="53" cy="90" r="1.6" fill="#f97316" className="animate-rocket-spark-3" />
+                          </g>
+
+                          {/* ================= ROCKET BODY ================= */}
+                          <g id="rocket-fuselage">
+                            {/* Left Wing Fin */}
+                            <path
+                              d="M 37 46 L 24 66 Q 22 70 27 70 L 37 66 Z"
+                              fill="url(#rocketAccentGrad)"
+                              stroke="#065f46"
+                              strokeWidth="0.8"
+                            />
+                            {/* Left Wing highlight */}
+                            <path d="M 35 48 L 26 66 L 31 66 Z" fill="#34d399" opacity="0.6" />
+
+                            {/* Right Wing Fin */}
+                            <path
+                              d="M 63 46 L 76 66 Q 78 70 73 70 L 63 66 Z"
+                              fill="url(#rocketAccentGrad)"
+                              stroke="#065f46"
+                              strokeWidth="0.8"
+                            />
+                            {/* Right Wing Shadow */}
+                            <path d="M 65 48 L 74 66 L 69 66 Z" fill="#047857" opacity="0.7" />
+
+                            {/* Center Main Fuselage */}
+                            <path
+                              d="M 50 6 Q 64 24 64 54 L 63 68 L 37 68 L 36 54 Q 36 24 50 6 Z"
+                              fill="url(#rocketBodyGrad)"
+                              stroke="#94a3b8"
+                              strokeWidth="0.8"
+                            />
+
+                            {/* Nosecone Tip (Emerald/Teal gloss) */}
+                            <path
+                              d="M 50 6 Q 57 15 59 24 L 41 24 Q 43 15 50 6 Z"
+                              fill="url(#rocketAccentGrad)"
+                            />
+                            {/* Nosecone shine */}
+                            <path
+                              d="M 50 8 Q 53 14 54 22 L 48 22 Q 47 14 50 8 Z"
+                              fill="#6ee7b7"
+                              opacity="0.8"
+                            />
+
+                            {/* Aerodynamic Body Racing Stripes */}
+                            <path d="M 47 24 L 47 68 L 53 68 L 53 24 Z" fill="url(#rocketStripeGrad)" opacity="0.85" />
+
+                            {/* Fuselage Side Highlight (Reflective 3D metallic sheen) */}
+                            <path
+                              d="M 40 26 Q 38 42 38 64 L 41 64 Q 41 42 43 26 Z"
+                              fill="#ffffff"
+                              opacity="0.8"
+                            />
+
+                            {/* Center Porthole / Cockpit Window */}
+                            <circle cx="50" cy="38" r="7.5" fill="#0f172a" stroke="#cbd5e1" strokeWidth="1.2" />
+                            <circle cx="50" cy="38" r="6" fill="url(#windowGlassGrad)" />
+                            {/* Glass Crescent Glare Reflection */}
+                            <path
+                              d="M 47 34 A 4.5 4.5 0 0 1 53 35 A 4.5 4.5 0 0 0 47 34 Z"
+                              fill="#ffffff"
+                              opacity="0.9"
+                            />
+                            <circle cx="48" cy="36" r="1.2" fill="#ffffff" opacity="0.9" />
+
+                            {/* Dorsal Fin / Center Stabilizer Rib */}
+                            <path d="M 49.5 48 L 50.5 48 L 50.5 68 L 49.5 68 Z" fill="#065f46" />
+
+                            {/* Main Rocket Thruster Engine Nozzle (Bottom Bell) */}
+                            <path
+                              d="M 42 68 L 40 73 Q 40 74 42 74 L 58 74 Q 60 74 60 73 L 58 68 Z"
+                              fill="#334155"
+                              stroke="#1e293b"
+                              strokeWidth="0.8"
+                            />
+                            {/* Engine Rim Glowing Heat Ring */}
+                            <line x1="42" y1="74" x2="58" y2="74" stroke="#fbbf24" strokeWidth="1.2" />
+
+                            {/* Left & Right Mini Booster Nozzles */}
+                            <rect x="29" y="66" width="5" height="3" rx="0.5" fill="#475569" />
+                            <rect x="66" y="66" width="5" height="3" rx="0.5" fill="#475569" />
+                          </g>
+                        </svg>
                       </div>
                     </div>
-                    {/* Urgency Badge centered directly below avatar circle */}
-                    <span className="absolute -bottom-1 sm:-bottom-1.5 left-1/2 -translate-x-1/2 px-2 sm:px-2.5 py-0.5 rounded-full bg-emerald-400 text-slate-950 font-black text-[8px] sm:text-[9px] uppercase shadow-md tracking-wider z-20 whitespace-nowrap">
+                    {/* Urgency Badge centered directly below rocket thruster flame */}
+                    <span className="absolute -bottom-1 sm:-bottom-1.5 left-1/2 -translate-x-1/2 px-2.5 sm:px-3 py-0.5 rounded-full bg-emerald-400 text-slate-950 font-black text-[8px] sm:text-[9px] uppercase shadow-[0_0_12px_rgba(52,211,153,0.8)] tracking-wider z-20 whitespace-nowrap flex items-center gap-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-ping" />
                       BOOSTING
                     </span>
                   </div>

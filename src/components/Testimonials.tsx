@@ -42,7 +42,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onClaimClick }) => {
 
   // Quick outcome filter options (NO country flags!)
   const outcomeFilters = [
-    { id: 'all', label: 'All Reviews (45)' },
+    { id: 'all', label: `All Reviews (${TESTIMONIALS.length})` },
     { id: 'sales', label: '💰 Boost Sales & Conversions' },
     { id: 'cost', label: '⚡ Save Money & Cut SaaS Costs' },
     { id: 'crm', label: '💬 Instant WhatsApp CRM & Replies' },
@@ -290,6 +290,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onClaimClick }) => {
                           <img
                             src={t.avatarUrl}
                             alt={t.name}
+                            referrerPolicy="no-referrer"
                             onError={() => handleImageError(t.id)}
                             className="w-10 h-10 rounded-full object-cover border-2 border-emerald-500/30 shadow-md"
                             loading="lazy"

@@ -808,48 +808,7 @@ export const TESTIMONIALS: Testimonial[] = [
     planTier: 'Growth Pack ($35/mo)',
     businessCategory: 'sales'
   },
-  {
-    id: 'sg-2',
-    name: 'Cheryl Seah',
-    role: 'Aesthetics Clinic Founder',
-    company: '',
-    city: 'Orchard Road',
-    country: 'Singapore',
-    countryCode: 'SG',
-    flagEmoji: '🇸🇬',
-    avatarText: 'CS',
-    avatarUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=160&h=160&q=80',
-    rating: 5,
-    headline: 'Clinic cancellations dropped under 2%, saving 18 staff hours/week',
-    content: 'Last-minute cancellations on Orchard Road cost us a fortune. WATi automated WhatsApp reminder flows virtually eliminated no-shows while freeing 18 hours of staff time every single week.',
-    problemSolved: 'Virtually eliminated cancellations and saved 18 receptionist hours weekly',
-    metricLabel: 'No-Show Rate',
-    metricValue: '< 2.0%',
-    toolsUsed: ['WATi', 'Mailchimp'],
-    planTier: 'Starter Pack ($15/mo)',
-    businessCategory: 'productivity'
-  },
-  {
-    id: 'sg-3',
-    name: 'Bryan Koh',
-    role: 'Growth Agency CEO',
-    company: '',
-    city: 'Tampines',
-    country: 'Singapore',
-    countryCode: 'SG',
-    flagEmoji: '🇸🇬',
-    avatarText: 'BK',
-    avatarUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=160&h=160&q=80',
-    rating: 5,
-    headline: 'Consolidated 15 clients on one license and saved S$6,000 every month',
-    content: 'We replaced hundreds of dollars in disparate tool licenses per client with the BIG Agency pack. We pocket S$6,000/mo in pure savings while delivering 10x faster WhatsApp and email workflows.',
-    problemSolved: 'Cut client software overhead by S$6,000/mo while accelerating results',
-    metricLabel: 'Monthly Cost Saved',
-    metricValue: 'S$6,000/mo',
-    toolsUsed: ['Mailchimp', 'WATi', 'Hostinger', 'Fomo', 'UptimeRobot', 'Bitly'],
-    planTier: 'BIG Agency ($150/mo)',
-    businessCategory: 'productivity'
-  },
+
 
   // ===================== AUSTRALIA TESTIMONIALS =====================
   {
@@ -873,48 +832,7 @@ export const TESTIMONIALS: Testimonial[] = [
     planTier: 'Growth Pack ($35/mo)',
     businessCategory: 'sales'
   },
-  {
-    id: 'au-2',
-    name: 'Emma Wilson',
-    role: 'Coffee Subscription Founder',
-    company: '',
-    city: 'Melbourne',
-    country: 'Australia',
-    countryCode: 'AU',
-    flagEmoji: '🇦🇺',
-    avatarText: 'EW',
-    avatarUrl: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=160&h=160&q=80',
-    rating: 5,
-    headline: 'Automated subscriber onboarding cut recurring churn by 44%',
-    content: 'Subscription churn was bleeding our recurring revenue. Automated Mailchimp care journeys and Bitly account links cut cancellations by 44% and added 160 recurring members in 60 days.',
-    problemSolved: 'Cut subscription subscriber churn by 44% with automated care journeys',
-    metricLabel: 'Subscriber Churn Cut',
-    metricValue: '-44.0%',
-    toolsUsed: ['Mailchimp', 'Bitly', 'Hostinger'],
-    planTier: 'Starter Pack ($15/mo)',
-    businessCategory: 'productivity'
-  },
-  {
-    id: 'au-3',
-    name: 'Jack Campbell',
-    role: 'Digital Commerce Lead',
-    company: '',
-    city: 'Brisbane',
-    country: 'Australia',
-    countryCode: 'AU',
-    flagEmoji: '🇦🇺',
-    avatarText: 'JC',
-    avatarUrl: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=160&h=160&q=80',
-    rating: 5,
-    headline: '20-second UptimeRobot check caught a gateway crash, saving AUD $35,000',
-    content: 'At 3 AM on a Saturday, our payment gateway crashed. UptimeRobot woke our dev within 20 seconds, avoiding an estimated AUD $35,000 weekend disaster. This software pays for itself forever.',
-    problemSolved: 'Caught payment gateway crash in 20 seconds and saved AUD $35K',
-    metricLabel: 'Revenue Protected',
-    metricValue: 'AUD $35,000',
-    toolsUsed: ['UptimeRobot', 'Hostinger', 'Bitly'],
-    planTier: 'Starter Pack ($15/mo)',
-    businessCategory: 'productivity'
-  },
+
 
   // ===================== TAIWAN TESTIMONIALS =====================
   {
@@ -992,7 +910,7 @@ export const TESTIMONIALS: Testimonial[] = [
     countryCode: 'HK',
     flagEmoji: '🇭🇰',
     avatarText: 'WC',
-    avatarUrl: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=160&h=160&q=80',
+    avatarUrl: '/images/wing_yan_cheung_exec.jpg',
     rating: 5,
     headline: 'Fomo live buyer proofs generated HK$480,000 in timepiece sales',
     content: 'Luxury shoppers hesitate without proof of trust. Real-time verified buyer notifications gave collectors the confidence to check out immediately, driving HK$480,000 in monthly sales.',
@@ -1036,7 +954,7 @@ export const TESTIMONIALS: Testimonial[] = [
     countryCode: 'KR',
     flagEmoji: '🇰🇷',
     avatarText: 'JK',
-    avatarUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=160&h=160&q=80',
+    avatarUrl: '/images/ji_woo_kim.jpg',
     rating: 5,
     headline: 'Continuous 30s monitoring cut customer complaints by 72%',
     content: 'Server downtime kills customer trust. UptimeRobot catches API latency in 30 seconds and notifies our engineers before users even notice, cutting negative support complaints by 72%.',
@@ -1164,7 +1082,7 @@ export const TESTIMONIALS: Testimonial[] = [
     countryCode: 'IN',
     flagEmoji: '🇮🇳',
     avatarText: 'PS',
-    avatarUrl: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=160&h=160&q=80',
+    avatarUrl: '/images/priya_sharma.jpg',
     rating: 5,
     headline: 'WhatsApp broadcast generated 214 orders in 3 hours with 97% open rates',
     content: 'Email open rates hovered at 19%. With WATi WhatsApp broadcasts, 97% of recipients opened our drop announcement, generating 214 paid orders before lunch. Email is officially dead.',
@@ -1175,27 +1093,7 @@ export const TESTIMONIALS: Testimonial[] = [
     planTier: 'Growth Pack ($35/mo)',
     businessCategory: 'sales'
   },
-  {
-    id: 't7',
-    name: 'Alexander Lindholm',
-    role: 'SaaS CTO',
-    company: '',
-    city: 'Stockholm',
-    country: 'Sweden',
-    countryCode: 'SE',
-    flagEmoji: '🇸🇪',
-    avatarText: 'AL',
-    avatarUrl: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=160&h=160&q=80',
-    rating: 5,
-    headline: '380ms server response speed lifted free trial signups by 64%',
-    content: 'Moving funnels to Hostinger cloud dropped latency to 380ms. Combined with Fomo real-time signups, free trial captures surged 64% in under three weeks without changing our ad creative.',
-    problemSolved: 'Accelerated TTFB latency to 380ms and lifted free trial signups by 64%',
-    metricLabel: 'Trial Signup Lift',
-    metricValue: '+64.2%',
-    toolsUsed: ['Hostinger', 'Fomo', 'UptimeRobot'],
-    planTier: 'Growth Pack ($35/mo)',
-    businessCategory: 'sales'
-  },
+
   {
     id: 't8',
     name: 'Chloe Tremblay',
@@ -1238,48 +1136,7 @@ export const TESTIMONIALS: Testimonial[] = [
     planTier: 'Starter Pack ($15/mo)',
     businessCategory: 'sales'
   },
-  {
-    id: 't10',
-    name: 'Rachel Goldberg',
-    role: 'DTC Growth Strategist',
-    company: '',
-    city: 'Chicago',
-    country: 'United States',
-    countryCode: 'US',
-    flagEmoji: '🇺🇸',
-    avatarText: 'RG',
-    avatarUrl: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=160&h=160&q=80',
-    rating: 5,
-    headline: 'Fomo urgency notifications made checkout velocity 4.2x faster',
-    content: 'Shoppers used to leave items in their cart for 2 days. Fomo verified buyer activity dropped decision time from 48 hours to under 35 minutes, closing sales before shoppers leave.',
-    problemSolved: 'Reduced buyer decision hesitation from 48 hours to under 35 minutes',
-    metricLabel: 'Checkout Velocity',
-    metricValue: '4.2x Faster',
-    toolsUsed: ['Fomo', 'Hostinger', 'Mailchimp'],
-    planTier: 'Growth Pack ($35/mo)',
-    businessCategory: 'sales'
-  },
-  {
-    id: 't11',
-    name: 'Jason Wu',
-    role: 'Growth Consultant',
-    company: '',
-    city: 'Singapore',
-    country: 'Singapore',
-    countryCode: 'SG',
-    flagEmoji: '🇸🇬',
-    avatarText: 'JW',
-    avatarUrl: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=160&h=160&q=80',
-    rating: 5,
-    headline: 'Launched our entire sales automation pipeline in 45 minutes flat',
-    content: 'Most bundles give you empty licenses. What makes this killer is the pre-configured blueprints: we plugged in the Mailchimp sequences and WATi flows and had sales rolling before lunch.',
-    problemSolved: 'Deployed full sales automation and WhatsApp sequences in under 45 minutes',
-    metricLabel: 'Setup Speed',
-    metricValue: '< 45 Mins',
-    toolsUsed: ['Mailchimp', 'WATi', 'Bitly'],
-    planTier: 'Starter Pack ($15/mo)',
-    businessCategory: 'productivity'
-  },
+
   {
     id: 't12',
     name: 'Danielle Brooks',
@@ -1308,6 +1165,24 @@ export const FAQS: FaqItem[] = [
     id: 'f1',
     question: 'Why does the bundle subscription start from as low as $15/month (RM61/mo) when retail is $650/month?',
     answer: 'This is a limited-time promotional volume partnership. Instead of paying each software company separately ($162 for Mailchimp, $314 for WATi, $80 for UptimeRobot, etc.), our enterprise volume license allows us to offer this complete 6-software package starting at just $15 per month (RM61/month in Malaysia based on the actual currency market exchange rate), slashing your software overhead by 97.7%.',
+    category: 'Pricing'
+  },
+  {
+    id: 'f-no-trial-cancel-anytime',
+    question: 'Why is there no free trial version available, and can I really cancel anytime?',
+    answer: 'Because all 6 software products are provided as official, commercial-grade enterprise licenses through our negotiated bulk partnership, vendors do not provide free trial keys for full enterprise software tiers. To protect our volume rate starting at just $15/month (down from $650/month retail), full commercial licenses are provisioned immediately upon purchase. However, there are zero long-term commitments or hidden contracts: you can pause, upgrade, downgrade, or cancel your monthly subscription anytime with one click in your billing dashboard.',
+    category: 'Pricing'
+  },
+  {
+    id: 'f-payment-gateways',
+    question: 'Does this software suite process customer payments directly, or do I use 3rd-party services (PayPal, Stripe, Wise)?',
+    answer: 'This software suite does NOT directly handle or hold your customers’ money, guaranteeing zero financial liability and 100% privacy for your business. Instead, your Hostinger website and automation funnels integrate directly with trusted third-party payment gateways such as Stripe, PayPal, Wise, Razorpay, or your local regional merchant bank. 100% of your customer payments and revenue deposit directly into your personal or corporate bank account with zero intermediate processing fees.',
+    category: 'Pricing'
+  },
+  {
+    id: 'f-limited-year-offer',
+    question: 'Is this special $15/month promotional offer only available this year?',
+    answer: 'Yes. The ultra-discounted volume rate starting at $15/month (a 97.7% reduction from the $650/month retail cost) is an exclusive promotional package available strictly for this contractual year. Next year, we will be introducing a different enterprise CRM package with different tool configurations and adjusted pricing tiers. When you lock in your subscription this year, your grandfathered subscription rate remains secured for your active account cycle.',
     category: 'Pricing'
   },
   {
@@ -1347,28 +1222,10 @@ export const FAQS: FaqItem[] = [
     category: 'Integrations & Platforms'
   },
   {
-    id: 'f-no-trial-cancel-anytime',
-    question: 'Why is there no free trial version available, and can I really cancel anytime?',
-    answer: 'Because all 6 software products are provided as official, commercial-grade enterprise licenses through our negotiated bulk partnership, vendors do not provide free trial keys for full enterprise software tiers. To protect our volume rate starting at just $15/month (down from $650/month retail), full commercial licenses are provisioned immediately upon purchase. However, there are zero long-term commitments or hidden contracts: you can pause, upgrade, downgrade, or cancel your monthly subscription anytime with one click in your billing dashboard.',
-    category: 'Billing & Guarantee'
-  },
-  {
     id: 'f-beginner-friendly',
     question: 'Is the software really easy to handle for complete beginners with zero tech background?',
     answer: 'Yes! Over 68% of our active users are first-time business owners, solo freelancers, or non-technical entrepreneurs. Every tool features an intuitive drag-and-drop visual interface—no coding, programming, or technical expertise is required. Upon joining, you receive our complete, step-by-step beginner video tutorials showing you click-by-click how to set up your domain, launch email funnels, and automate WhatsApp replies in under an hour. In addition, our dedicated Priority Customer Support desk is always available to help you whenever you need guidance.',
     category: 'Support & Ease of Use'
-  },
-  {
-    id: 'f-payment-gateways',
-    question: 'Does this software suite process customer payments directly, or do I use 3rd-party services (PayPal, Stripe, Wise)?',
-    answer: 'This software suite does NOT directly handle or hold your customers’ money, guaranteeing zero financial liability and 100% privacy for your business. Instead, your Hostinger website and automation funnels integrate directly with trusted third-party payment gateways such as Stripe, PayPal, Wise, Razorpay, or your local regional merchant bank. 100% of your customer payments and revenue deposit directly into your personal or corporate bank account with zero intermediate processing fees.',
-    category: 'Billing & Guarantee'
-  },
-  {
-    id: 'f-limited-year-offer',
-    question: 'Is this special $15/month promotional offer only available this year?',
-    answer: 'Yes. The ultra-discounted volume rate starting at $15/month (a 97.7% reduction from the $650/month retail cost) is an exclusive promotional package available strictly for this contractual year. Next year, we will be introducing a different enterprise CRM package with different tool configurations and adjusted pricing tiers. When you lock in your subscription this year, your grandfathered subscription rate remains secured for your active account cycle.',
-    category: 'Billing & Guarantee'
   },
   {
     id: 'f-traffic-surges',
@@ -1435,6 +1292,73 @@ export const FAQS: FaqItem[] = [
     question: 'How do I contact official customer support if I have questions or need assistance?',
     answer: 'You can email our official customer support desk directly anytime at Bizzusupport@gmail.com. Whether you need activation guidance, custom tier recommendations, or technical assistance, our support team replies promptly.',
     category: 'Support'
+  },
+
+  // ===================== INDUSTRY SECTOR SOLUTIONS =====================
+  {
+    id: 'f-sector-b2b',
+    question: 'How does this automated software suite help B2B Companies selling products or services seamlessly?',
+    answer: `For B2B companies with multi-stakeholder sales cycles, RFP proposals, and pipeline requirements, this suite automates the entire journey from inbound lead capture to closed contracts:
+
+• Instant Lead Qualification & WhatsApp Routing (WATI): When a business prospect requests a quote or demo, automated interactive WhatsApp menus immediately qualify company headcount, timeline, and budget within 8 seconds. High-intent decision-makers are instantly routed to senior account reps via round-robin distribution.
+• Multi-Touch RFP & Demo Nurture Drips (Mailchimp): Keep procurement teams and executives engaged with automated email drip campaigns featuring ROI calculators, client case studies, and compliance certifications.
+• High-Speed B2B Portals & Demo Sites (Hostinger): Deploy dedicated client portals, private staging sites, and proposal landing pages with <0.8s load times and 99.9% uptime.
+• Proposal & Pitch Deck Attribution (Bitly): Track exactly when stakeholders open and review proposal PDFs, NDA agreements, and pricing sheets with branded short links, allowing your sales team to follow up at the exact moment of highest interest.
+• Institutional Social Proof (Fomo): Display live notifications of verified demo bookings and corporate client onboardings to build instant credibility with enterprise procurement teams.
+• 24/7 SLA & Client Portal Health (UptimeRobot): Round-the-clock 30-second latency checks ensure your customer dashboard, client portals, and webhook endpoints never suffer undetected downtime.`,
+    category: 'Industry Sectors'
+  },
+  {
+    id: 'f-sector-real-estate',
+    question: 'How does this automated software empower Real Estate Agencies, property agents, and developers?',
+    answer: `In real estate, lead response speed directly determines closed commissions. The automation suite enables agencies, solo agents, and property developers to capture and nurture buyers 24/7:
+
+• Instant WhatsApp Brochure & Floorplan Delivery (WATI): When property seekers click ads on Facebook, Instagram, or portals (PropertyGuru, Zillow, iProperty), automated workflows deliver high-resolution project e-brochures, floorplans, and video walk-throughs in under 5 seconds.
+• Automated Viewing & Showroom Scheduling (WATI): Buyers can choose private viewing time slots directly within WhatsApp chat. Automated 24-hour and 2-hour calendar reminder messages eliminate missed showroom appointments and cut no-shows by over 80%.
+• Dedicated Project Launch Micro-Sites (Hostinger): Developers and agencies can launch unlimited sub-domain landing pages for new residential developments with high-speed photo galleries and interactive virtual tour embeds.
+• Verified Buyer Urgency & Unit Reservation Alerts (Fomo): Authentic real-time notifications (e.g. "Unit 14B reserved 18 minutes ago" or "Showroom viewing scheduled in Central District") drive genuine buyer confidence and fear of missing out.
+• Listing Attribution via Branded Links & QR Codes (Bitly): Track which billboards, physical property flyers, TikTok reels, or property portal listings generate genuine buyer leads using custom branded QR codes and analytics links.
+• Smart Buyer Tagging & Blast Broadcasts: Automatically segment leads by budget tier (luxury, affordable housing, commercial investment) and broadcast new project releases with 98% open rates.`,
+    category: 'Industry Sectors'
+  },
+  {
+    id: 'f-sector-financial-services',
+    question: 'How does this automated software support Financial Services, banks, insurance firms, and investment companies?',
+    answer: `Financial institutions and advisory firms require enterprise-grade security, high client trust, and consistent compliance. This suite provides reliable, zero-liability automation:
+
+• Bank-Grade Security & Zero Financial Intermediary: The software suite never holds or touches client funds. Client transactions connect directly to your merchant bank or trusted payment rails (Stripe, PayPal, Razorpay) with 256-bit AES encryption and TLS 1.3 encryption.
+• WhatsApp Policy Renewal & Premium Alerts (WATI): Insurance agencies and wealth planners automate policy renewal notices, premium due dates, and claim status updates over official WhatsApp business channels—achieving 97%+ open rates compared to ignored postal mail or spam-filtered emails.
+• Automated Consultation & Financial Health Check Booking: Clients schedule advisory consultations, mortgage pre-qualification calls, or portfolio reviews through self-service calendars with automated document preparation checklists.
+• Branded & Tamper-Resistant Document Links (Bitly): Protect clients against phishing and scam fears by sharing quarterly statements, prospectus PDFs, and policy guidelines using authenticated custom branded URLs with strict click logging.
+• Fintech Portal & Core API Uptime Monitoring (UptimeRobot): 30-second interval latency monitoring for client login portals, loan application endpoints, and transaction webhooks, immediately alerting IT compliance officers to avert regulatory downtime penalties.
+• Mandatory 2-Factor Authentication (2FA): Multi-tier authentication across all staff logins ensures client financial records and contact registries remain completely shielded against unauthorized access.`,
+    category: 'Industry Sectors'
+  },
+  {
+    id: 'f-sector-retail-ecommerce',
+    question: 'How does this automated software accelerate Retail and E-commerce businesses across online and multi-channel storefronts?',
+    answer: `For online storefronts, direct-to-consumer (D2C) brands, and multi-channel retailers, the software suite drives direct revenue recovery and customer lifetime value:
+
+• Sub-Second Storefront Speed (Hostinger): Enterprise LiteSpeed cloud servers and global CDN edge caching keep catalog pages, high-resolution product photos, and checkout funnels loading in under 0.8 seconds, eliminating cart abandonment caused by slow load speeds.
+• Real-Time Social Proof Popups (Fomo): Display authentic, verified buyer purchase popups (e.g. "Emma from Melbourne just bought Roasted Coffee Beans 4 minutes ago") and live product view counts, lifting checkout conversion rates by 30%+.
+• Automated Abandoned Cart Recovery (WATI + Mailchimp): When a shopper leaves items in their cart, automated sequences fire within 15 minutes across WhatsApp and email with 1-click checkout recovery links, recovering 15% to 28% of otherwise lost sales.
+• Multi-Channel Order Tracking & Dispatch Alerts (WATI): Automated shipping confirmations, tracking links, and delivery notifications broadcast directly to customers' WhatsApp, slashing "Where is my order?" (WISMO) customer support tickets by 70%.
+• Campaign & Influencer Attribution (Bitly): Generate dedicated tracking links for TikTok creators, affiliate partners, and seasonal flash sales to identify your highest-converting marketing channels in real time.
+• Checkout Gateway Crash Defense (UptimeRobot): Continuous 60-second checks on payment gateways prevent lost revenue during flash sales by alerting store managers immediately if a third-party processor hiccups.`,
+    category: 'Industry Sectors'
+  },
+  {
+    id: 'f-sector-professional-services',
+    question: 'How does this automated software streamline Professional Services, consulting firms, law offices, and marketing agencies?',
+    answer: `Professional service practices trade on reputation, responsiveness, and seamless client intake. This automation suite replaces manual administrative overhead with automated workflows:
+
+• 24/7 Client Intake & Case Triage (WATI): Law offices, accounting firms, and management consultancies deploy automated intake flows that capture prospective client details, legal practice area requirements, or audit needs around the clock, sending partners an organized executive summary sheet.
+• Retainer Drips & Regulatory Thought Leadership (Mailchimp): Nurture corporate retainers with polished monthly regulatory briefs, industry insights, and legal updates using pre-configured executive email newsletter templates.
+• Proposal & Pitch Deck Engagement Tracking (Bitly): When sending high-stakes advisory proposals, audit decks, or retainer contracts, custom branded links reveal precisely when corporate clients open your proposal documents and how frequently they share them internally.
+• Multi-Client Workspace Consolidation (BIG Agency Pack): Marketing agencies can manage up to 15 client domains and sub-accounts under one centralized license dashboard, eliminating redundant software subscriptions and pocketing thousands in software arbitrage.
+• Executive Web Presence & Custom Domains (Hostinger): Host professional firm websites with custom corporate email addresses (partner@yourfirm.com), fast SSL security, and private client portal subdomains.
+• Consultation Appointment Confirmation & Reminders: Prevent expensive partner consultation no-shows with automated WhatsApp meeting links, calendar invites, and prep instructions delivered directly to executives' phones.`,
+    category: 'Industry Sectors'
   }
 ];
 

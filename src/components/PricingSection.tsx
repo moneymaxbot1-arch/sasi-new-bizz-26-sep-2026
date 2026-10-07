@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { PRICING_TIERS } from '../data/bundleData';
 import { PricingTier } from '../types';
-import { Sparkles, ArrowRight, ShieldCheck, Flame, Star, Check, Info, X, Lock, ExternalLink, RotateCcw, Zap, Coins, TrendingUp } from 'lucide-react';
+import { Sparkles, ArrowRight, ShieldCheck, Flame, Star, Check, Info, X, Lock, ExternalLink, RotateCcw, Zap, Coins, TrendingUp, ChevronDown, HelpCircle } from 'lucide-react';
 import { getActiveCurrency, setAppCurrency, formatLocalizedPrice, CurrencyConfig, SUPPORTED_CURRENCIES } from '../utils/currencyUtils';
 import { TrustBadgesTrio } from './TrustBadgesTrio';
 
@@ -195,6 +195,9 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
   const [hoveredAgencyMailchimp, setHoveredAgencyMailchimp] = useState<boolean>(false);
   const [hoveredAgencyWati, setHoveredAgencyWati] = useState<boolean>(false);
   const [hoveredAgencyBitly, setHoveredAgencyBitly] = useState<boolean>(false);
+
+  // Billing & Guarantee FAQ toggle in pricing section
+  const [openPricingFaq, setOpenPricingFaq] = useState<string | null>(null);
 
   const handleToggleCycle = (tierId: string, cycle: '2year' | '1year') => {
     setCardCycles((prev) => ({
@@ -2165,6 +2168,56 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
           <p className="text-slate-300 leading-relaxed">
             With our 30-day money-back guarantee & no questions asked policy, our team will <strong className="text-emerald-300">refund your money within 1 day (no questions asked)</strong>, or replace your license within 2 minutes via <a href="mailto:Bizzusupport@gmail.com" className="text-emerald-400 underline font-mono">Bizzusupport@gmail.com</a>.
           </p>
+        </div>
+
+        {/* Frequently Asked Billing & Guarantee Questions embedded into Pricing Section */}
+        <div className="mt-8 max-w-3xl mx-auto p-5 rounded-2xl bg-slate-900/50 border border-slate-800">
+          <div className="text-center mb-4">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-emerald-400 flex items-center justify-center gap-1.5">
+              <HelpCircle className="w-4 h-4 text-emerald-400" />
+              <span>Billing & Guarantee FAQs</span>
+            </h4>
+          </div>
+          <div className="space-y-2">
+            {[
+              {
+                id: 'pfaq-1',
+                question: 'Why is there no free trial version available, and can I really cancel anytime?',
+                answer: 'Because all 6 software products are provided as official, commercial-grade enterprise licenses through our negotiated bulk partnership, vendors do not provide free trial keys for full enterprise software tiers. To protect our volume rate starting at just $15/month (down from $650/month retail), full commercial licenses are provisioned immediately upon purchase. However, there are zero long-term commitments or hidden contracts: you can pause, upgrade, downgrade, or cancel your monthly subscription anytime with one click in your billing dashboard.'
+              },
+              {
+                id: 'pfaq-2',
+                question: 'Does this software suite process customer payments directly, or do I use 3rd-party services (PayPal, Stripe, Wise)?',
+                answer: 'This software suite does NOT directly handle or hold your customers’ money, guaranteeing zero financial liability and 100% privacy for your business. Instead, your Hostinger website and automation funnels integrate directly with trusted third-party payment gateways such as Stripe, PayPal, Wise, Razorpay, or your local regional merchant bank. 100% of your customer payments and revenue deposit directly into your personal or corporate bank account with zero intermediate processing fees.'
+              },
+              {
+                id: 'pfaq-3',
+                question: 'Is this special $15/month promotional offer only available this year?',
+                answer: 'Yes. The ultra-discounted volume rate starting at $15/month (a 97.7% reduction from the $650/month retail cost) is an exclusive promotional package available strictly for this contractual year. Next year, we will be introducing a different enterprise CRM package with different tool configurations and adjusted pricing tiers. When you lock in your subscription this year, your grandfathered subscription rate remains secured for your active account cycle.'
+              }
+            ].map((faq) => {
+              const isOpen = openPricingFaq === faq.id;
+              return (
+                <div 
+                  key={faq.id}
+                  className="rounded-xl border border-slate-800 bg-slate-900/80 overflow-hidden transition-all"
+                >
+                  <button
+                    onClick={() => setOpenPricingFaq(isOpen ? null : faq.id)}
+                    className="w-full px-4 py-3 text-left flex items-center justify-between gap-3 text-xs sm:text-sm font-semibold text-white hover:text-emerald-400 transition-colors"
+                  >
+                    <span>{faq.question}</span>
+                    <ChevronDown className={`w-4 h-4 text-slate-400 shrink-0 transition-transform duration-200 ${isOpen ? 'rotate-180 text-emerald-400' : ''}`} />
+                  </button>
+                  {isOpen && (
+                    <div className="px-4 pb-3 pt-1 text-xs text-slate-300 leading-relaxed border-t border-slate-800/60 bg-slate-950/40">
+                      {faq.answer}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
         </div>
 
       </div>

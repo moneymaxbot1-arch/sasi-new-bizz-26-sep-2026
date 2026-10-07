@@ -25,6 +25,210 @@
   animation: pulseGlow 4s ease-in-out infinite;
 }
 
+/* Rocket Thruster Engine Animations */
+@keyframes rocketVibrate {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  20% {
+    transform: translateY(-2px) rotate(-0.6deg);
+  }
+  40% {
+    transform: translateY(1px) rotate(0.6deg);
+  }
+  60% {
+    transform: translateY(-1px) rotate(-0.3deg);
+  }
+  80% {
+    transform: translateY(1.5px) rotate(0.4deg);
+  }
+}
+
+@keyframes rocketFlameOuter {
+  0%, 100% {
+    transform: scaleY(1) scaleX(1);
+    opacity: 0.95;
+  }
+  25% {
+    transform: scaleY(1.35) scaleX(1.1);
+    opacity: 1;
+  }
+  50% {
+    transform: scaleY(0.9) scaleX(0.92);
+    opacity: 0.85;
+  }
+  75% {
+    transform: scaleY(1.25) scaleX(1.05);
+    opacity: 1;
+  }
+}
+
+@keyframes rocketFlameMid {
+  0%, 100% {
+    transform: scaleY(1) scaleX(1);
+    opacity: 0.9;
+  }
+  33% {
+    transform: scaleY(1.3) scaleX(0.95);
+    opacity: 1;
+  }
+  66% {
+    transform: scaleY(0.92) scaleX(1.08);
+    opacity: 0.88;
+  }
+}
+
+@keyframes rocketFlameCore {
+  0%, 100% {
+    transform: scaleY(1) scaleX(1);
+    opacity: 0.95;
+  }
+  50% {
+    transform: scaleY(1.45) scaleX(0.88);
+    opacity: 1;
+  }
+}
+
+@keyframes rocketSpark1 {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(28px) scale(0.2);
+    opacity: 0;
+  }
+}
+
+@keyframes rocketSpark2 {
+  0% {
+    transform: translateY(0) scale(0.9);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(32px) translateX(4px) scale(0.1);
+    opacity: 0;
+  }
+}
+
+@keyframes rocketSpark3 {
+  0% {
+    transform: translateY(0) scale(0.9);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(30px) translateX(-4px) scale(0.1);
+    opacity: 0;
+  }
+}
+
+@keyframes thrusterHeatGlow {
+  0%, 100% {
+    opacity: 0.55;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.2);
+  }
+}
+
+.animate-rocket-vibrate {
+  animation: rocketVibrate 0.18s ease-in-out infinite;
+}
+
+.animate-rocket-flame-outer {
+  transform-origin: 50% 0%;
+  animation: rocketFlameOuter 0.16s ease-in-out infinite;
+}
+
+.animate-rocket-flame-mid {
+  transform-origin: 50% 0%;
+  animation: rocketFlameMid 0.14s ease-in-out infinite alternate;
+}
+
+.animate-rocket-flame-core {
+  transform-origin: 50% 0%;
+  animation: rocketFlameCore 0.1s ease-in-out infinite;
+}
+
+.animate-rocket-spark-1 {
+  animation: rocketSpark1 0.4s linear infinite;
+}
+
+.animate-rocket-spark-2 {
+  animation: rocketSpark2 0.45s linear infinite 0.15s;
+}
+
+.animate-rocket-spark-3 {
+  animation: rocketSpark3 0.38s linear infinite 0.25s;
+}
+
+.animate-thruster-heat {
+  animation: thrusterHeatGlow 0.3s ease-in-out infinite alternate;
+}
+
+/* Industry Sector Icon Animations */
+@keyframes sectorIconFloat {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-5px) scale(1.08);
+  }
+}
+
+@keyframes sectorIconPulseGlow {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 4px currentColor);
+  }
+  50% {
+    transform: scale(1.12);
+    filter: drop-shadow(0 0 12px currentColor);
+  }
+}
+
+@keyframes sectorIconWiggle {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    transform: rotate(-9deg) scale(1.08);
+  }
+  75% {
+    transform: rotate(9deg) scale(1.08);
+  }
+}
+
+@keyframes sectorIconBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-6px) scale(1.05);
+  }
+  60% {
+    transform: translateY(-2px);
+  }
+}
+
+.animate-sector-float {
+  animation: sectorIconFloat 2.6s ease-in-out infinite;
+}
+
+.animate-sector-pulse {
+  animation: sectorIconPulseGlow 2.2s ease-in-out infinite;
+}
+
+.animate-sector-wiggle {
+  animation: sectorIconWiggle 2.8s ease-in-out infinite;
+}
+
+.animate-sector-bounce {
+  animation: sectorIconBounce 2.4s ease-in-out infinite;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
