@@ -623,7 +623,7 @@ export const TESTIMONIALS: Testimonial[] = [
     countryCode: 'MY',
     flagEmoji: '🇲🇾',
     avatarText: 'DH',
-    avatarUrl: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=160&h=160&q=80',
+    avatarUrl: '/images/danial_hakim.jpg',
     rating: 5,
     headline: '100% zero-downtime during wholesale rushes saved RM40,000',
     content: 'Server crashes during bulk order season used to cost us thousands in dropped forms. UptimeRobot 30s checks and Hostinger cloud kept our order engine at 100% availability through 3,200 transactions.',
