@@ -6,6 +6,7 @@
 import React from 'react';
 import { Navbar } from './components/Navbar';
 import { AutomationVortexHero } from './components/AutomationVortexHero';
+import { DailyWorkflowSlides } from './components/DailyWorkflowSlides';
 import { WhyAndWho } from './components/WhyAndWho';
 import { CountdownTimer } from './components/CountdownTimer';
 import { Hero } from './components/Hero';
@@ -37,6 +38,9 @@ export default function App() {
 
       {/* Website Entrance: 6-Software Orbit Animation Fusing Into Business Growth Hub */}
       <AutomationVortexHero onClaimClick={() => scrollToPricing()} />
+
+      {/* Daily Workflow Automation Slides (1 Single Section Slide Format) */}
+      <DailyWorkflowSlides onClaimClick={() => scrollToPricing()} />
 
       {/* Why & Who Will Benefit (4 Pillars: Traffic, Engagement, Retargeting, Website Reliability) */}
       <WhyAndWho onClaimClick={() => scrollToPricing()} />
