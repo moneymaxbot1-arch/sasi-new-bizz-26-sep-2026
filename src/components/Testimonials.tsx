@@ -304,7 +304,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onClaimClick }) => {
                         title="Click to view photo in circle"
                       >
                         {isImageBroken ? (
-                          <div className="w-11 h-11 rounded-full bg-gradient-to-br from-emerald-600 to-teal-800 border-2 border-emerald-500/30 flex items-center justify-center font-bold text-xs text-white font-mono shadow-inner">
+                          <div className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-600 to-teal-800 border-2 border-emerald-500/30 flex items-center justify-center font-bold text-xs text-white font-mono shadow-inner">
                             {t.avatarText}
                           </div>
                         ) : (
@@ -313,7 +313,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onClaimClick }) => {
                             alt={t.name}
                             referrerPolicy="no-referrer"
                             onError={() => handleImageError(t.id)}
-                            className="w-11 h-11 rounded-full object-cover object-top border-2 border-emerald-500/30 group-hover/avatar:border-emerald-400 group-hover/avatar:ring-2 group-hover/avatar:ring-emerald-500/30 shadow-md transition-all duration-200 group-hover/avatar:scale-105"
+                            className="w-12 h-12 rounded-full object-cover object-center border-2 border-emerald-500/40 group-hover/avatar:border-emerald-400 group-hover/avatar:ring-2 group-hover/avatar:ring-emerald-500/30 shadow-md transition-all duration-200 group-hover/avatar:scale-105"
                             loading="lazy"
                           />
                         )}
