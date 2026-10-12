@@ -25,13 +25,6 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onClaimClick }) => {
   const [visibleCount, setVisibleCount] = useState<number>(9);
   const [failedImages, setFailedImages] = useState<Record<string, boolean>>({});
   const [currentCurrency, setCurrentCurrency] = useState<CurrencyConfig>(getActiveCurrency);
-  const [previewAvatar, setPreviewAvatar] = useState<{
-    name: string;
-    url: string;
-    role: string;
-    country: string;
-    flagEmoji?: string;
-  } | null>(null);
 
   useEffect(() => {
     const handleCurrencyChange = () => {
@@ -287,39 +280,28 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onClaimClick }) => {
                   {/* Verified Author Footer (NO Business Name!) */}
                   <div className="pt-4 border-t border-slate-800 flex items-center justify-between gap-3">
                     <div className="flex items-center gap-3 min-w-0">
-                      {/* Avatar Face with small national flag badge */}
-                      <div
-                        className="relative shrink-0 cursor-pointer group/avatar"
-                        onClick={() => {
-                          if (!isImageBroken && t.avatarUrl) {
-                            setPreviewAvatar({
-                              name: t.name,
-                              url: t.avatarUrl,
-                              role: t.role,
-                              country: t.city ? `${t.city}, ${t.country || ''}` : (t.country || 'Verified Buyer'),
-                              flagEmoji: t.flagEmoji
-                            });
-                          }
-                        }}
-                        title="Click to view photo in circle"
-                      >
+                      {/* Avatar Face with small national flag badge (strictly locked to small size, non-clickable, zero zoom) */}
+                      <div className="relative shrink-0 select-none pointer-events-none cursor-default">
                         {isImageBroken ? (
-                          <div className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-600 to-teal-800 border-2 border-emerald-500/30 flex items-center justify-center font-bold text-xs text-white font-mono shadow-inner">
+                          <div className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-600 to-teal-800 border-2 border-emerald-500/30 flex items-center justify-center font-bold text-xs text-white font-mono shadow-inner select-none pointer-events-none">
                             {t.avatarText}
                           </div>
                         ) : (
-                          <img
-                            src={t.avatarUrl}
-                            alt={t.name}
-                            referrerPolicy="no-referrer"
-                            onError={() => handleImageError(t.id)}
-                            className="w-12 h-12 rounded-full object-cover object-center border-2 border-emerald-500/40 group-hover/avatar:border-emerald-400 group-hover/avatar:ring-2 group-hover/avatar:ring-emerald-500/30 shadow-md transition-all duration-200 group-hover/avatar:scale-105"
-                            loading="lazy"
-                          />
+                          <div className="w-12 h-12 min-w-12 min-h-12 max-w-12 max-h-12 rounded-full overflow-hidden border-2 border-emerald-500/40 shadow-md bg-slate-900 select-none pointer-events-none">
+                            <img
+                              src={t.avatarUrl}
+                              alt={t.name}
+                              referrerPolicy="no-referrer"
+                              onError={() => handleImageError(t.id)}
+                              className="w-full h-full object-cover object-top pointer-events-none select-none"
+                              loading="lazy"
+                              draggable={false}
+                            />
+                          </div>
                         )}
                         {/* Small flag icon */}
                         <div
-                          className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-slate-900 border border-slate-700 flex items-center justify-center text-[10px] select-none shadow-sm"
+                          className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-slate-900 border border-slate-700 flex items-center justify-center text-[10px] select-none shadow-sm pointer-events-none"
                           title={t.country}
                         >
                           {t.flagEmoji || '🌐'}
@@ -398,55 +380,6 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onClaimClick }) => {
             >
               Join 1,840+ Growing Businesses · Claim Bundle Starting at {formatLocalizedPrice(15, currentCurrency)}/mo
             </button>
-          </div>
-        )}
-
-        {/* Circle Avatar Preview Modal */}
-        {previewAvatar && (
-          <div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 animate-in fade-in duration-150"
-            onClick={() => setPreviewAvatar(null)}
-          >
-            <div
-              className="bg-slate-900 border border-slate-700/80 rounded-3xl p-6 sm:p-8 max-w-sm w-full flex flex-col items-center text-center shadow-2xl relative"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <button
-                onClick={() => setPreviewAvatar(null)}
-                className="absolute top-4 right-4 text-slate-400 hover:text-white p-1 rounded-full bg-slate-800/80 hover:bg-slate-700 transition-colors cursor-pointer"
-                title="Close"
-              >
-                <X className="w-5 h-5" />
-              </button>
-
-              <div className="relative mb-5">
-                <img
-                  src={previewAvatar.url}
-                  alt={previewAvatar.name}
-                  referrerPolicy="no-referrer"
-                  className="w-44 h-44 sm:w-52 sm:h-52 rounded-full object-cover object-top border-4 border-emerald-500 shadow-2xl ring-4 ring-emerald-500/20"
-                />
-                {previewAvatar.flagEmoji && (
-                  <div className="absolute bottom-2 right-2 w-8 h-8 rounded-full bg-slate-900 border-2 border-emerald-500/50 flex items-center justify-center text-base shadow-lg">
-                    {previewAvatar.flagEmoji}
-                  </div>
-                )}
-              </div>
-
-              <div className="text-lg font-bold text-white flex items-center justify-center gap-1.5">
-                <span>{previewAvatar.name}</span>
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-              </div>
-              <div className="text-xs text-slate-400 mt-1">{previewAvatar.role}</div>
-              <div className="text-xs text-emerald-400 font-medium mt-1">{previewAvatar.country}</div>
-
-              <button
-                onClick={() => setPreviewAvatar(null)}
-                className="mt-6 px-6 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold rounded-xl border border-slate-700 transition-colors cursor-pointer"
-              >
-                Close View
-              </button>
-            </div>
           </div>
         )}
 
