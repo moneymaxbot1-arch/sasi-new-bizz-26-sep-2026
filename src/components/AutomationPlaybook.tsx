@@ -9,7 +9,7 @@ export const AutomationPlaybook: React.FC<AutomationPlaybookProps> = ({ onClaimC
   const steps = [
     {
       num: '01',
-      tool: 'Bitly',
+      tool: 'Smart Link',
       role: 'Attribution & Tracking',
       desc: 'Turn long messy campaign URLs into branded short links and track exact click conversions from social media, ads, and influencers.',
       icon: <Link2 className="w-5 h-5 text-amber-400" />,
@@ -17,7 +17,7 @@ export const AutomationPlaybook: React.FC<AutomationPlaybookProps> = ({ onClaimC
     },
     {
       num: '02',
-      tool: 'Hostinger',
+      tool: 'Cloud Hosting',
       role: 'High-Speed Web Infrastructure',
       desc: 'Deploy high-converting sales landing pages that load in under 1 second. Fast pages slash bounce rates and rank higher.',
       icon: <Server className="w-5 h-5 text-indigo-400" />,
@@ -25,7 +25,7 @@ export const AutomationPlaybook: React.FC<AutomationPlaybookProps> = ({ onClaimC
     },
     {
       num: '03',
-      tool: 'Fomo',
+      tool: 'Click Fomo',
       role: 'Real-Time Social Proof',
       desc: 'Trigger authentic live buyer popups and active visitor counters while prospects browse, pushing fence-sitters to complete purchase.',
       icon: <Flame className="w-5 h-5 text-orange-400" />,
@@ -33,7 +33,7 @@ export const AutomationPlaybook: React.FC<AutomationPlaybookProps> = ({ onClaimC
     },
     {
       num: '04',
-      tool: 'Mailchimp',
+      tool: 'E-mail Rocket',
       role: 'Automated Email Nurturing',
       desc: 'Automatically trigger onboarding journeys, welcome discount codes, abandoned cart emails, and high-margin repeat purchase campaigns.',
       icon: <Mail className="w-5 h-5 text-[#FFE01B]" />,
@@ -41,7 +41,7 @@ export const AutomationPlaybook: React.FC<AutomationPlaybookProps> = ({ onClaimC
     },
     {
       num: '05',
-      tool: 'WATi',
+      tool: 'WhatsApp Flow',
       role: 'Instant WhatsApp Conversion',
       desc: 'Connect with leads on WhatsApp where open rates hit 98%. Automate customer support inquiries and send targeted broadcast deals.',
       icon: <MessageSquare className="w-5 h-5 text-emerald-400" />,
@@ -49,7 +49,7 @@ export const AutomationPlaybook: React.FC<AutomationPlaybookProps> = ({ onClaimC
     },
     {
       num: '06',
-      tool: 'UptimeRobot',
+      tool: 'Site Shield',
       role: '24/7 Revenue Guardian',
       desc: 'Monitors your domain and checkout endpoints continuously every 30 seconds. Sends instant SMS warnings if your gateway goes down.',
       icon: <Activity className="w-5 h-5 text-teal-400" />,

@@ -71,7 +71,7 @@
       <rect x="0" y="0" width="460" height="470" rx="20" fill="#051C2C" stroke="#06B6D4" stroke-width="1.5" />
       <rect x="30" y="30" width="130" height="30" rx="8" fill="#06B6D4" fill-opacity="0.2" />
       <text x="45" y="50" fill="#67E8F9" font-size="13" font-weight="800">AUTOMATION</text>
-      <text x="30" y="110" fill="#FFFFFF" font-size="24" font-weight="800">UptimeRobot Sentry Grid</text>
+      <text x="30" y="110" fill="#FFFFFF" font-size="24" font-weight="800">Site Shield Sentry Grid</text>
 
       <!-- Pulse Monitor Box -->
       <g transform="translate(30, 140)">

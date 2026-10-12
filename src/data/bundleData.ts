@@ -2,13 +2,13 @@ import { SoftwareTool, PricingTier, Testimonial, FaqItem, BuyerEvent } from '../
 
 export const SOFTWARE_TOOLS: SoftwareTool[] = [
   {
-    id: 'mailchimp',
-    name: 'Mailchimp',
+    id: "__ID_E-mail Rocket__",
+    name: 'E-mail Rocket',
     category: 'Email Marketing Automation & AI Integration',
     monthlyRetail: 162,
     tagline: 'Email marketing automation with multi-LLM AI integration & custom SMTP control',
-    description: 'Email Marketing Automation that lets you continue using your favorite AI apps such as ChatGPT, Claude, Google Gemini, Grok, Meta Llama, DeepSeek, and Qwen3 alongside Mailchimp for enhanced email marketing performance.',
-    fullSummary: 'Send emails directly from your own SMTP servers, ensuring maximum control, privacy, and deliverability. Avail Mailchimp at a flat promotional bundle rate starting at $15 per month. Seamlessly integrate preferred SMTP services like Amazon SES, Mailgun, and SendGrid. Craft visually appealing emails quickly using the built-in drag-and-drop builder, import subscriber lists in Excel format, build automated drip campaigns, and analyze real-time open, click, and bounce rates powered by leading AI models. Connect seamlessly to Telegram, Instagram, Facebook, and WhatsApp using API keys.',
+    description: 'Email Marketing Automation that lets you continue using your favorite AI apps such as ChatGPT, Claude, Google Gemini, Grok, Meta Llama, DeepSeek, and Qwen3 alongside E-mail Rocket for enhanced email marketing performance.',
+    fullSummary: 'Send emails directly from your own SMTP servers, ensuring maximum control, privacy, and deliverability. Avail E-mail Rocket at a flat promotional bundle rate starting at $15 per month. Seamlessly integrate preferred SMTP services like Amazon SES, Mailgun, and SendGrid. Craft visually appealing emails quickly using the built-in drag-and-drop builder, import subscriber lists in Excel format, build automated drip campaigns, and analyze real-time open, click, and bounce rates powered by leading AI models. Connect seamlessly to Telegram, Instagram, Facebook, and WhatsApp using API keys.',
     keyFeatures: [
       'Built-in Drag-and-Drop visual email template builder',
       'Direct custom SMTP integration (Amazon SES, Mailgun, SendGrid)',
@@ -36,8 +36,8 @@ export const SOFTWARE_TOOLS: SoftwareTool[] = [
     originalImageLabel: 'Billed Monthly · Email Marketing'
   },
   {
-    id: 'hostinger',
-    name: 'Hostinger',
+    id: "__ID_Cloud Hosting__",
+    name: 'Cloud Hosting',
     category: 'SSD Web Hosting & Managed Cloud',
     monthlyRetail: 9,
     tagline: 'SSD Hosting with unlimited storage & bandwidth, free CDN, US servers & 1-click AI/CMS apps',
@@ -74,8 +74,8 @@ export const SOFTWARE_TOOLS: SoftwareTool[] = [
     originalImageLabel: 'Billed Monthly · Web Hosting'
   },
   {
-    id: 'fomo',
-    name: 'Fomo',
+    id: "__ID_Click Fomo__",
+    name: 'Click Fomo',
     category: 'Social Proof Marketing Platform',
     monthlyRetail: 50,
     tagline: 'Automated social proof notifications, live counters, review feeds & lead collectors',
@@ -84,7 +84,7 @@ export const SOFTWARE_TOOLS: SoftwareTool[] = [
     keyFeatures: [
       'Automated real-time purchase popups & live conversions counters',
       'Lead generation email collector & request collector widgets',
-      'FOMO countdown timers, discount coupon popups & video displays',
+      'Click Fomo countdown timers, discount coupon popups & video displays',
       'Interactive emoji feedback, score ratings & cookie consent banners'
     ],
     inDepthFeatures: [
@@ -95,7 +95,7 @@ export const SOFTWARE_TOOLS: SoftwareTool[] = [
       'Showcase recent live conversions and cumulative conversion counters to establish credible social proof',
       'Wide variety of notification widgets: coupons, live visitor counters, video displays, and emoji reactions',
       'Effortlessly collect emails and capture qualified leads directly with the built-in email collector',
-      'Induce psychological urgency and FOMO with animated countdown timers linked to lead capture',
+      'Induce psychological urgency and Click Fomo with animated countdown timers linked to lead capture',
       'Display randomized authentic client reviews and testimonials to boost purchase credibility',
       'Engage visitors interactively with emoji feedback widgets for instant sentiment analysis',
       'Streamline inquiries with the request collector for structured lead data gathering',
@@ -113,13 +113,13 @@ export const SOFTWARE_TOOLS: SoftwareTool[] = [
     originalImageLabel: 'Billed Monthly · Social Proof Marketing Platform'
   },
   {
-    id: 'wati',
-    name: 'WATi',
+    id: "__ID_WhatsApp Flow__",
+    name: 'WhatsApp Flow',
     category: 'WhatsApp & Omnichannel Marketing CRM',
     monthlyRetail: 314,
     tagline: 'WhatsApp & Telegram Chatbot CRM with no 24-hr rule restriction & OpenAI tech',
     description: 'Effortlessly create and deploy AI chatbots across Telegram, Instagram, Facebook, and WhatsApp Business accounts in simple steps. Send promotional broadcasts, notifications, and automated sequence messages at any time.',
-    fullSummary: 'Benefit from industry-leading 98% open rates with no 24-hour rule restriction across Telegram, Instagram, Facebook, and WhatsApp. Centralized live-chat team inbox, WhatsApp Catalog eCommerce checkout, OpenAI conversational language technology, and rich third-party webhook integrations with ChatGPT, Claude, Google Gemini, Grok, Meta Llama, DeepSeek, Qwen3, Typeform, WooCommerce, and Shopify. Supports automated COD to Prepaid conversion, SMS/email fallback APIs, and auto-responders (Mailchimp, Sendinblue, ActiveCampaign).',
+    fullSummary: 'Benefit from industry-leading 98% open rates with no 24-hour rule restriction across Telegram, Instagram, Facebook, and WhatsApp. Centralized live-chat team inbox, WhatsApp Catalog eCommerce checkout, OpenAI conversational language technology, and rich third-party webhook integrations with ChatGPT, Claude, Google Gemini, Grok, Meta Llama, DeepSeek, Qwen3, Typeform, WooCommerce, and Shopify. Supports automated COD to Prepaid conversion, SMS/email fallback APIs, and auto-responders (E-mail Rocket, Sendinblue, ActiveCampaign).',
     keyFeatures: [
       'Official WhatsApp, Telegram, Instagram & Facebook Chatbot builder',
       'High open rates with NO 24-hour rule restriction on broadcasts',
@@ -128,7 +128,7 @@ export const SOFTWARE_TOOLS: SoftwareTool[] = [
     ],
     inDepthFeatures: [
       'Effortlessly build Chatbots for Telegram, Instagram, Facebook, and WhatsApp Business accounts',
-      'Connect WATi in just a few simple steps for a hassle-free, no-code omnichannel setup',
+      'Connect WhatsApp Flow in just a few simple steps for a hassle-free, no-code omnichannel setup',
       'Send promotional broadcasts, alerts, and transactional notifications whenever you want',
       'Benefit from sky-high 98% open rates with no 24-hour window restrictions across connected channels',
       'Set up automated sequence drip messages triggered across minutes, hours, or days',
@@ -141,12 +141,12 @@ export const SOFTWARE_TOOLS: SoftwareTool[] = [
       'Seamless WooCommerce integration for automated order alerts and Cash-on-Delivery (COD) to Prepaid conversion',
       'Shopify, Amazon, and eCommerce webhook automation workflows for real-time fulfillment updates',
       'Configurable APIs for sending automated SMS and fallback emails when users provide details',
-      'Auto-responder sync with Mailchimp, Sendinblue (Brevo), and ActiveCampaign for subscriber storage',
+      'Auto-responder sync with E-mail Rocket, Sendinblue (Brevo), and ActiveCampaign for subscriber storage',
       'Integrate AI web forms, WP Elementor, and Google Forms with webhook support for instant WhatsApp triggers',
       'Comprehensive REST API endpoints for developers to send custom text, templates, and add subscribers'
     ],
     aiIntegrations: ['OpenAI Language Tech', 'ChatGPT', 'Claude', 'Google Gemini', 'Grok', 'Meta Llama', 'DeepSeek', 'Qwen3'],
-    protocolsAndIntegrations: ['WhatsApp Cloud API', 'Telegram Bot API', 'Instagram Direct API', 'Facebook Messenger', 'Shopify', 'WooCommerce', 'WP Elementor', 'Google Forms', 'Typeform', 'Amazon', 'ActiveCampaign', 'Mailchimp'],
+    protocolsAndIntegrations: ['WhatsApp Cloud API', 'Telegram Bot API', 'Instagram Direct API', 'Facebook Messenger', 'Shopify', 'WooCommerce', 'WP Elementor', 'Google Forms', 'Typeform', 'Amazon', 'ActiveCampaign', 'E-mail Rocket'],
     businessImpact: '98% open rates and 45% click-through rates that dramatically out-convert traditional SMS & email',
     badgeColor: '#25D366',
     accentBg: 'from-emerald-500/20 to-emerald-900/10',
@@ -154,8 +154,8 @@ export const SOFTWARE_TOOLS: SoftwareTool[] = [
     originalImageLabel: 'Billed Monthly · WhatsApp Marketing'
   },
   {
-    id: 'uptimerobot',
-    name: 'UptimeRobot',
+    id: "__ID_Site Shield__",
+    name: 'Site Shield',
     category: 'Server, Website & API Monitoring Tool',
     monthlyRetail: 80,
     tagline: 'Ultimate Server/Website/API monitoring with AI provider integration & incident management',
@@ -191,8 +191,8 @@ export const SOFTWARE_TOOLS: SoftwareTool[] = [
     originalImageLabel: 'Billed Monthly · Monitor Your Website\'s'
   },
   {
-    id: 'bitly',
-    name: 'Bitly',
+    id: "__ID_Smart Link__",
+    name: 'Smart Link',
     category: 'URL Shortener, Dynamic QR & Bio Link Suite (Toliyos Engine)',
     monthlyRetail: 35,
     tagline: 'Custom short URLs, dynamic QR codes, branded bio pages, GDPR compliance & 120+ web tools',
@@ -256,12 +256,12 @@ export const PRICING_TIERS: PricingTier[] = [
       bitly: '1 Project'
     },
     features: [
-      'Hostinger: 1 Domain High-Speed Hosting',
-      'FOMO: 3,000 Monthly Unique Visitors',
-      'UptimeRobot: 1 WebPage / Real-time Tracking',
-      'Mailchimp: 3,000 Active Email Subscribers',
-      'WATi: 2,000 WhatsApp Marketing Subscribers',
-      'Bitly: 1 Branded Project & Custom Links',
+      'Cloud Hosting: 1 Domain High-Speed Hosting',
+      'Click Fomo: 3,000 Monthly Unique Visitors',
+      'Site Shield: 1 WebPage / Real-time Tracking',
+      'E-mail Rocket: 3,000 Active Email Subscribers',
+      'WhatsApp Flow: 2,000 WhatsApp Marketing Subscribers',
+      'Smart Link: 1 Branded Project & Custom Links',
       'Complete Beginner Video Tutorial Academy',
       '30-Day Money-Back Guarantee (Authenticity/Working) · 1-Day Full Refund'
     ],
@@ -290,12 +290,12 @@ export const PRICING_TIERS: PricingTier[] = [
       bitly: '20 Project'
     },
     features: [
-      'Hostinger: 5 Domains High-Speed Hosting',
-      'FOMO: 10,000 Monthly Unique Visitors',
-      'UptimeRobot: 10 WebPages / Live Tracking',
-      'Mailchimp: 10,000 Active Email Subscribers',
-      'WATi: 10,000 WhatsApp Marketing Subscribers',
-      'Bitly: 20 Branded Campaign Projects',
+      'Cloud Hosting: 5 Domains High-Speed Hosting',
+      'Click Fomo: 10,000 Monthly Unique Visitors',
+      'Site Shield: 10 WebPages / Live Tracking',
+      'E-mail Rocket: 10,000 Active Email Subscribers',
+      'WhatsApp Flow: 10,000 WhatsApp Marketing Subscribers',
+      'Smart Link: 20 Branded Campaign Projects',
       '50+ Pre-built Copy Swipe Files & Cart Recovery',
       'Priority VIP Support Desk Access'
     ],
@@ -314,7 +314,7 @@ export const PRICING_TIERS: PricingTier[] = [
     period: '/month',
     badge: 'Unlimited Commercial Rights',
     tagline: 'Enterprise scale for high-volume agencies & commerce',
-    description: 'Unrestricted commercial deploy rights with 1,000 domains, 300,000 subscribers, and 500 Bitly projects.',
+    description: 'Unrestricted commercial deploy rights with 1,000 domains, 300,000 subscribers, and 500 Smart Link projects.',
     toolAllowances: {
       hostinger: '1,000 Domain Hosting',
       fomo: '100,000 Unique Visitors',
@@ -324,12 +324,12 @@ export const PRICING_TIERS: PricingTier[] = [
       bitly: '500 Project'
     },
     features: [
-      'Hostinger: 1,000 Domains High-Speed Hosting',
-      'FOMO: 100,000 Monthly Unique Visitors',
-      'UptimeRobot: 1,000 WebPages / Live Tracking',
-      'Mailchimp: 300,000 Active Email Subscribers',
-      'WATi: 85,000 WhatsApp Marketing Subscribers',
-      'Bitly: 500 Branded Campaign Projects',
+      'Cloud Hosting: 1,000 Domains High-Speed Hosting',
+      'Click Fomo: 100,000 Monthly Unique Visitors',
+      'Site Shield: 1,000 WebPages / Live Tracking',
+      'E-mail Rocket: 300,000 Active Email Subscribers',
+      'WhatsApp Flow: 85,000 WhatsApp Marketing Subscribers',
+      'Smart Link: 500 Branded Campaign Projects',
       'Unlimited Commercial Client Deploy Rights',
       'Done-For-You Agency Pitch Deck & Retainer Calculator'
     ],
@@ -353,11 +353,11 @@ export const TESTIMONIALS: Testimonial[] = [
     avatarUrl: '/images/khairul_azman.jpg',
     rating: 5,
     headline: 'Recovered RM34,500 in lost carts within 48 hours on autopilot',
-    content: 'I thought $15/mo was too good to be true. Day 1, WATi automated WhatsApp recovery brought back RM34,500 in abandoned carts. If you sell online without this, you are literally throwing cash into a shredder.',
+    content: 'I thought $15/mo was too good to be true. Day 1, WhatsApp Flow automated WhatsApp recovery brought back RM34,500 in abandoned carts. If you sell online without this, you are literally throwing cash into a shredder.',
     problemSolved: 'Recovered 68% of abandoned carts & cut RM2,100/mo software waste',
     metricLabel: 'Recovered Revenue',
     metricValue: '+RM34,500',
-    toolsUsed: ['WATi', 'Mailchimp', 'Hostinger'],
+    toolsUsed: ['WhatsApp Flow', 'E-mail Rocket', 'Cloud Hosting'],
     planTier: 'Starter Pack ($15/mo)',
     businessCategory: 'sales'
   },
@@ -378,7 +378,7 @@ export const TESTIMONIALS: Testimonial[] = [
     problemSolved: 'Eliminated missed appointments and automated booking follow-ups',
     metricLabel: 'No-Show Rate Cut',
     metricValue: '32% → 3.8%',
-    toolsUsed: ['WATi', 'Mailchimp'],
+    toolsUsed: ['WhatsApp Flow', 'E-mail Rocket'],
     planTier: 'Growth Pack ($35/mo)',
     businessCategory: 'productivity'
   },
@@ -395,11 +395,11 @@ export const TESTIMONIALS: Testimonial[] = [
     avatarUrl: '/images/tan_wei_loon.jpg',
     rating: 5,
     headline: 'Sub-second speeds and trackable quotes closed RM280,000 in B2B orders',
-    content: 'Ditched our slow $580/mo CRM setup on day one. With Hostinger LiteSpeed and Bitly trackable PDF quotes, our B2B close rate jumped 185% because buyers get catalog specs in under 3 minutes.',
+    content: 'Ditched our slow $580/mo CRM setup on day one. With Cloud Hosting LiteSpeed and Smart Link trackable PDF quotes, our B2B close rate jumped 185% because buyers get catalog specs in under 3 minutes.',
     problemSolved: 'Replaced $580/mo CRM overhead and accelerated quote response times',
     metricLabel: 'B2B Close Rate',
     metricValue: '+185%',
-    toolsUsed: ['Hostinger', 'Bitly', 'UptimeRobot'],
+    toolsUsed: ['Cloud Hosting', 'Smart Link', 'Site Shield'],
     planTier: 'BIG Agency ($150/mo)',
     businessCategory: 'sales'
   },
@@ -416,11 +416,11 @@ export const TESTIMONIALS: Testimonial[] = [
     avatarUrl: '/images/farhan_bin_razak.jpg',
     rating: 5,
     headline: 'Live buyer notifications + WhatsApp did RM82,000 in 48 hours',
-    content: 'The psychological trigger of Fomo live purchase popups combined with a WATi broadcast created intense urgency. We cleared RM82,000 in inventory in one weekend—paying off the bundle for the next 10 years.',
+    content: 'The psychological trigger of Click Fomo live purchase popups combined with a WhatsApp Flow broadcast created intense urgency. We cleared RM82,000 in inventory in one weekend—paying off the bundle for the next 10 years.',
     problemSolved: 'Created unstoppable buyer urgency and converted visitors 3.4x faster',
     metricLabel: '48-Hour Sales',
     metricValue: 'RM82,000',
-    toolsUsed: ['Fomo', 'WATi', 'Hostinger'],
+    toolsUsed: ['Click Fomo', 'WhatsApp Flow', 'Cloud Hosting'],
     planTier: 'Growth Pack ($35/mo)',
     businessCategory: 'sales'
   },
@@ -441,7 +441,7 @@ export const TESTIMONIALS: Testimonial[] = [
     problemSolved: 'Consolidated 18 client marketing stacks and slashed monthly agency overhead',
     metricLabel: 'Monthly Savings',
     metricValue: 'RM14,200/mo',
-    toolsUsed: ['Mailchimp', 'Hostinger', 'Bitly', 'Fomo', 'WATi'],
+    toolsUsed: ['E-mail Rocket', 'Cloud Hosting', 'Smart Link', 'Click Fomo', 'WhatsApp Flow'],
     planTier: 'BIG Agency ($150/mo)',
     businessCategory: 'productivity'
   },
@@ -462,7 +462,7 @@ export const TESTIMONIALS: Testimonial[] = [
     problemSolved: 'Instant 8-second 24/7 quote responses stopped competitors from stealing leads',
     metricLabel: 'Response Speed',
     metricValue: '6 hrs → 8 secs',
-    toolsUsed: ['WATi', 'Bitly'],
+    toolsUsed: ['WhatsApp Flow', 'Smart Link'],
     planTier: 'Starter Pack ($15/mo)',
     businessCategory: 'sales'
   },
@@ -479,11 +479,11 @@ export const TESTIMONIALS: Testimonial[] = [
     avatarUrl: '/images/amanda_lee.jpg',
     rating: 5,
     headline: 'Saved RM4,800/mo by moving direct sales off 30% delivery apps',
-    content: 'Delivery apps ate 30% of our bakery profits. Automated Mailchimp VIP menus and Fomo live purchase proofs shifted 64% of buyers directly to our site. We pocket an extra RM4,800 every month in pure margin.',
+    content: 'Delivery apps ate 30% of our bakery profits. Automated E-mail Rocket VIP menus and Click Fomo live purchase proofs shifted 64% of buyers directly to our site. We pocket an extra RM4,800 every month in pure margin.',
     problemSolved: 'Replaced 30% delivery platform commissions with automated direct sales',
     metricLabel: 'Direct Orders',
     metricValue: '+240%',
-    toolsUsed: ['Hostinger', 'Mailchimp', 'Fomo'],
+    toolsUsed: ['Cloud Hosting', 'E-mail Rocket', 'Click Fomo'],
     planTier: 'Starter Pack ($15/mo)',
     businessCategory: 'sales'
   },
@@ -500,11 +500,11 @@ export const TESTIMONIALS: Testimonial[] = [
     avatarUrl: '/images/hafizuddin_salleh.jpg',
     rating: 5,
     headline: 'WhatsApp budget calculator closed RM180,000 in renovation contracts',
-    content: 'Homeowners want instant estimates before booking a survey. Our automated WATi quote bot qualifies the budget and schedules on-site visits instantly. We booked 44 consultations and signed RM180,000 in 14 days.',
+    content: 'Homeowners want instant estimates before booking a survey. Our automated WhatsApp Flow quote bot qualifies the budget and schedules on-site visits instantly. We booked 44 consultations and signed RM180,000 in 14 days.',
     problemSolved: 'Automated instant project estimation and trackable QR lead attribution',
     metricLabel: 'Contracts Closed',
     metricValue: 'RM180,000',
-    toolsUsed: ['WATi', 'Bitly'],
+    toolsUsed: ['WhatsApp Flow', 'Smart Link'],
     planTier: 'Growth Pack ($35/mo)',
     businessCategory: 'sales'
   },
@@ -521,11 +521,11 @@ export const TESTIMONIALS: Testimonial[] = [
     avatarUrl: '/images/mei_shan_teo.jpg',
     rating: 5,
     headline: 'Automated WhatsApp check-ins saved 25 hours of front-desk toil weekly',
-    content: 'Answering repetitive parking and wifi questions was exhausting our team. WATi automated concierge flows resolve 90% of guest inquiries before they arrive. Reviews hit 4.9 stars on Google.',
+    content: 'Answering repetitive parking and wifi questions was exhausting our team. WhatsApp Flow automated concierge flows resolve 90% of guest inquiries before they arrive. Reviews hit 4.9 stars on Google.',
     problemSolved: 'Automated 90% of routine guest questions and freed 25 hours weekly',
     metricLabel: 'Hours Saved',
     metricValue: '25 hrs/week',
-    toolsUsed: ['WATi', 'Bitly'],
+    toolsUsed: ['WhatsApp Flow', 'Smart Link'],
     planTier: 'Starter Pack ($15/mo)',
     businessCategory: 'productivity'
   },
@@ -542,11 +542,11 @@ export const TESTIMONIALS: Testimonial[] = [
     avatarUrl: '/images/aaron_chong.jpg',
     rating: 5,
     headline: 'Sub-second page speeds slashed checkout bounce rate from 68% to 24%',
-    content: 'We were setting ad money on fire with slow page loads. Moving to Hostinger LiteSpeed cloud and adding Fomo live buyer badges lifted checkout completions by 54%, adding RM38,000 in monthly sales.',
+    content: 'We were setting ad money on fire with slow page loads. Moving to Cloud Hosting LiteSpeed cloud and adding Click Fomo live buyer badges lifted checkout completions by 54%, adding RM38,000 in monthly sales.',
     problemSolved: 'Eliminated mobile checkout friction and slashed bounce rate by 65%',
     metricLabel: 'Checkout Lift',
     metricValue: '+54.2%',
-    toolsUsed: ['Hostinger', 'Fomo', 'UptimeRobot'],
+    toolsUsed: ['Cloud Hosting', 'Click Fomo', 'Site Shield'],
     planTier: 'Growth Pack ($35/mo)',
     businessCategory: 'sales'
   },
@@ -563,11 +563,11 @@ export const TESTIMONIALS: Testimonial[] = [
     avatarUrl: '/images/dayang_norita.jpg',
     rating: 5,
     headline: '24/7 automated WhatsApp CRM unlocked 190% jump in export orders',
-    content: 'Timezone lag meant overseas buyers in Australia and the US waited 10 hours for custom quotes. Automated 24/7 WhatsApp replies and Mailchimp sequences closed international buyers while I slept.',
+    content: 'Timezone lag meant overseas buyers in Australia and the US waited 10 hours for custom quotes. Automated 24/7 WhatsApp replies and E-mail Rocket sequences closed international buyers while I slept.',
     problemSolved: 'Solved cross-border timezone delays and automated overseas wholesale inquiries',
     metricLabel: 'Export Orders Lift',
     metricValue: '+190%',
-    toolsUsed: ['WATi', 'Mailchimp'],
+    toolsUsed: ['WhatsApp Flow', 'E-mail Rocket'],
     planTier: 'Starter Pack ($15/mo)',
     businessCategory: 'sales'
   },
@@ -588,7 +588,7 @@ export const TESTIMONIALS: Testimonial[] = [
     problemSolved: 'Automated seasonal bookings and eliminated 3 hours of daily email toil',
     metricLabel: 'Advance Bookings',
     metricValue: '$19,500.00',
-    toolsUsed: ['WATi', 'Bitly', 'Hostinger'],
+    toolsUsed: ['WhatsApp Flow', 'Smart Link', 'Cloud Hosting'],
     planTier: 'Growth Pack ($35/mo)',
     businessCategory: 'sales'
   },
@@ -605,11 +605,11 @@ export const TESTIMONIALS: Testimonial[] = [
     avatarUrl: '/images/stephen_low.jpg',
     rating: 5,
     headline: 'Shortened B2B corporate sales cycle from 45 days down to 11 days',
-    content: 'Proposal decks usually go into a black hole. Trackable Bitly links and Mailchimp nurture triggers alert us the exact minute an HR Director opens our deck, letting us close RM65,000 in retainers fast.',
+    content: 'Proposal decks usually go into a black hole. Trackable Smart Link links and E-mail Rocket nurture triggers alert us the exact minute an HR Director opens our deck, letting us close RM65,000 in retainers fast.',
     problemSolved: 'Accelerated enterprise sales turnaround with instant click attribution alerts',
     metricLabel: 'Sales Cycle',
     metricValue: '45d → 11d',
-    toolsUsed: ['Mailchimp', 'WATi', 'Bitly'],
+    toolsUsed: ['E-mail Rocket', 'WhatsApp Flow', 'Smart Link'],
     planTier: 'Starter Pack ($15/mo)',
     businessCategory: 'sales'
   },
@@ -626,11 +626,11 @@ export const TESTIMONIALS: Testimonial[] = [
     avatarUrl: '/images/danial_hakim.jpg',
     rating: 5,
     headline: '100% zero-downtime during wholesale rushes saved RM40,000',
-    content: 'Server crashes during bulk order season used to cost us thousands in dropped forms. UptimeRobot 30s checks and Hostinger cloud kept our order engine at 100% availability through 3,200 transactions.',
+    content: 'Server crashes during bulk order season used to cost us thousands in dropped forms. Site Shield 30s checks and Cloud Hosting cloud kept our order engine at 100% availability through 3,200 transactions.',
     problemSolved: 'Eliminated server crashes during peak wholesale rush with 30s monitoring',
     metricLabel: 'Peak Season Uptime',
     metricValue: '100% Zero-Loss',
-    toolsUsed: ['UptimeRobot', 'Hostinger', 'Bitly'],
+    toolsUsed: ['Site Shield', 'Cloud Hosting', 'Smart Link'],
     planTier: 'BIG Agency ($150/mo)',
     businessCategory: 'productivity'
   },
@@ -647,11 +647,11 @@ export const TESTIMONIALS: Testimonial[] = [
     avatarUrl: '/images/anis_zulaikha.jpg',
     rating: 5,
     headline: 'Automated prescription refill CRM lifted monthly retention to 94%',
-    content: 'Patients used to forget maintenance refills, hurting both health and cash flow. Our automated WATi WhatsApp refill bot reminds them with a 1-click re-order button. Repeat monthly orders surged 73%.',
+    content: 'Patients used to forget maintenance refills, hurting both health and cash flow. Our automated WhatsApp Flow WhatsApp refill bot reminds them with a 1-click re-order button. Repeat monthly orders surged 73%.',
     problemSolved: 'Automated recurring customer re-orders and lifted monthly retention to 94%',
     metricLabel: 'Repeat Retain Rate',
     metricValue: '+73% Repeat',
-    toolsUsed: ['WATi', 'Mailchimp'],
+    toolsUsed: ['WhatsApp Flow', 'E-mail Rocket'],
     planTier: 'Starter Pack ($15/mo)',
     businessCategory: 'sales'
   },
@@ -674,7 +674,7 @@ export const TESTIMONIALS: Testimonial[] = [
     problemSolved: 'Cut ₹45,000/mo on redundant software and automated 600 daily order tickets',
     metricLabel: 'Support Reduction',
     metricValue: '-68.4%',
-    toolsUsed: ['WATi', 'Mailchimp', 'UptimeRobot'],
+    toolsUsed: ['WhatsApp Flow', 'E-mail Rocket', 'Site Shield'],
     planTier: 'Growth Pack ($35/mo)',
     businessCategory: 'productivity'
   },
@@ -691,11 +691,11 @@ export const TESTIMONIALS: Testimonial[] = [
     avatarUrl: '/images/anand_iyer.jpg',
     rating: 5,
     headline: 'Recovered ₹2.8M in festive sales using live proof and WhatsApp alerts',
-    content: 'Fomo live purchase popups paired with instant WhatsApp cart reminders lifted our recovery rate from 8% to 34%. That single automation generated ₹2.8 Million in revenue over Diwali weekend.',
+    content: 'Click Fomo live purchase popups paired with instant WhatsApp cart reminders lifted our recovery rate from 8% to 34%. That single automation generated ₹2.8 Million in revenue over Diwali weekend.',
     problemSolved: 'Recovered ₹2.8M in festive cart drop-offs using live social proof triggers',
     metricLabel: 'Cart Recovery Lift',
     metricValue: '+325%',
-    toolsUsed: ['Fomo', 'WATi', 'Hostinger'],
+    toolsUsed: ['Click Fomo', 'WhatsApp Flow', 'Cloud Hosting'],
     planTier: 'Starter Pack ($15/mo)',
     businessCategory: 'sales'
   },
@@ -712,11 +712,11 @@ export const TESTIMONIALS: Testimonial[] = [
     avatarUrl: 'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=160&h=160&q=80',
     rating: 5,
     headline: '30-second uptime detection saved $18,000 in SLA late penalties',
-    content: 'Dispatch API timeouts previously cost us $1,500 daily in penalties. UptimeRobot alerts our on-call team within 30 seconds, dropping our incident resolution from 2 hours to 90 seconds.',
+    content: 'Dispatch API timeouts previously cost us $1,500 daily in penalties. Site Shield alerts our on-call team within 30 seconds, dropping our incident resolution from 2 hours to 90 seconds.',
     problemSolved: 'Prevented SLA breach penalties and dropped incident resolution to 90s',
     metricLabel: 'Resolution Speed',
     metricValue: '2 hrs → 90 secs',
-    toolsUsed: ['UptimeRobot', 'Bitly'],
+    toolsUsed: ['Site Shield', 'Smart Link'],
     planTier: 'BIG Agency ($150/mo)',
     businessCategory: 'productivity'
   },
@@ -739,7 +739,7 @@ export const TESTIMONIALS: Testimonial[] = [
     problemSolved: 'Sub-15-second lead response captured high-net-worth buyers before competitors',
     metricLabel: 'Contracts Closed',
     metricValue: 'AED 4.2M',
-    toolsUsed: ['WATi', 'Bitly', 'Hostinger'],
+    toolsUsed: ['WhatsApp Flow', 'Smart Link', 'Cloud Hosting'],
     planTier: 'BIG Agency ($150/mo)',
     businessCategory: 'sales'
   },
@@ -756,11 +756,11 @@ export const TESTIMONIALS: Testimonial[] = [
     avatarUrl: 'https://images.unsplash.com/photo-1589156280159-27698a70f29e?auto=format&fit=crop&w=160&h=160&q=80',
     rating: 5,
     headline: 'Slashed software costs by 94% while delivering 5-star VIP experiences',
-    content: 'We dumped an $800/mo enterprise CRM for the $35 Growth Pack. The automated Mailchimp invitations and Fomo RSVP proof filled our private galas in record time for a fraction of the cost.',
+    content: 'We dumped an $800/mo enterprise CRM for the $35 Growth Pack. The automated E-mail Rocket invitations and Click Fomo RSVP proof filled our private galas in record time for a fraction of the cost.',
     problemSolved: 'Replaced an $800/mo disconnected software stack with $35/mo all-in-one suite',
     metricLabel: 'Annual Tooling Saved',
     metricValue: '$9,180/year',
-    toolsUsed: ['Mailchimp', 'Hostinger', 'Fomo'],
+    toolsUsed: ['E-mail Rocket', 'Cloud Hosting', 'Click Fomo'],
     planTier: 'Growth Pack ($35/mo)',
     businessCategory: 'productivity'
   },
@@ -777,11 +777,11 @@ export const TESTIMONIALS: Testimonial[] = [
     avatarUrl: 'https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?auto=format&fit=crop&w=160&h=160&q=80',
     rating: 5,
     headline: 'Branded short links & dynamic QR cards captured 280+ HNW leads',
-    content: 'Physical business cards get thrown away. Dynamic Bitly vCard QR codes let summit attendees save our contacts in one tap, feeding directly into our automated Mailchimp onboarding sequence.',
+    content: 'Physical business cards get thrown away. Dynamic Smart Link vCard QR codes let summit attendees save our contacts in one tap, feeding directly into our automated E-mail Rocket onboarding sequence.',
     problemSolved: 'Turned corporate summits into high-converting automated lead capture engines',
     metricLabel: 'HNW Leads Captured',
     metricValue: '+280 Leads',
-    toolsUsed: ['Bitly', 'Mailchimp'],
+    toolsUsed: ['Smart Link', 'E-mail Rocket'],
     planTier: 'Starter Pack ($15/mo)',
     businessCategory: 'sales'
   },
@@ -800,11 +800,11 @@ export const TESTIMONIALS: Testimonial[] = [
     avatarUrl: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=160&h=160&q=80',
     rating: 5,
     headline: 'Store conversion rate doubled from 1.8% to 4.4% on paid traffic',
-    content: 'Ad clicks in Singapore are brutal. Hosting fast pages on Hostinger with Fomo live purchase triggers doubled our conversion rate, halving our customer acquisition costs without extra ad spend.',
+    content: 'Ad clicks in Singapore are brutal. Hosting fast pages on Cloud Hosting with Click Fomo live purchase triggers doubled our conversion rate, halving our customer acquisition costs without extra ad spend.',
     problemSolved: 'Doubled e-commerce conversion rate and halved customer acquisition costs',
     metricLabel: 'Conversion Lift',
     metricValue: '1.8% → 4.4%',
-    toolsUsed: ['Hostinger', 'Fomo', 'Bitly'],
+    toolsUsed: ['Cloud Hosting', 'Click Fomo', 'Smart Link'],
     planTier: 'Growth Pack ($35/mo)',
     businessCategory: 'sales'
   },
@@ -824,11 +824,11 @@ export const TESTIMONIALS: Testimonial[] = [
     avatarUrl: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=160&h=160&q=80',
     rating: 5,
     headline: 'Recovered AUD $21,400 in off-season gear with 96.8% WhatsApp open rates',
-    content: 'Email open rates dropped to 15%. We launched WATi WhatsApp VIP alerts and recovered AUD $21,400 in abandoned orders in two weeks. At $15/mo, the ROI is almost comical.',
+    content: 'Email open rates dropped to 15%. We launched WhatsApp Flow WhatsApp VIP alerts and recovered AUD $21,400 in abandoned orders in two weeks. At $15/mo, the ROI is almost comical.',
     problemSolved: 'Overcame off-season retail slump and achieved 96.8% broadcast open rates',
     metricLabel: 'Recovered Off-Season',
     metricValue: 'AUD $21,400',
-    toolsUsed: ['WATi', 'Mailchimp', 'Fomo'],
+    toolsUsed: ['WhatsApp Flow', 'E-mail Rocket', 'Click Fomo'],
     planTier: 'Growth Pack ($35/mo)',
     businessCategory: 'sales'
   },
@@ -848,11 +848,11 @@ export const TESTIMONIALS: Testimonial[] = [
     avatarUrl: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=160&h=160&q=80',
     rating: 5,
     headline: 'Cross-border Southeast Asia sales shot up 165% with WhatsApp bot',
-    content: 'Shoppers in Malaysia and Singapore ignore cold emails. Deploying WATi automated WhatsApp support unlocked explosive cross-border demand, surging international sales by 165% in 90 days.',
+    content: 'Shoppers in Malaysia and Singapore ignore cold emails. Deploying WhatsApp Flow automated WhatsApp support unlocked explosive cross-border demand, surging international sales by 165% in 90 days.',
     problemSolved: 'Eliminated foreign customer communication hesitation with instant chat support',
     metricLabel: 'Cross-Border Sales',
     metricValue: '+165%',
-    toolsUsed: ['WATi', 'Mailchimp', 'Hostinger'],
+    toolsUsed: ['WhatsApp Flow', 'E-mail Rocket', 'Cloud Hosting'],
     planTier: 'Growth Pack ($35/mo)',
     businessCategory: 'sales'
   },
@@ -869,11 +869,11 @@ export const TESTIMONIALS: Testimonial[] = [
     avatarUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=160&h=160&q=80',
     rating: 5,
     headline: '3-minute RFQ turnaround won a $320,000 European supply contract',
-    content: 'B2B buyers evaluate 5 suppliers at once. Our automated Bitly spec delivery answers technical RFQs in 3 minutes instead of 24 hours. That speed won us a $320,000 manufacturing agreement.',
+    content: 'B2B buyers evaluate 5 suppliers at once. Our automated Smart Link spec delivery answers technical RFQs in 3 minutes instead of 24 hours. That speed won us a $320,000 manufacturing agreement.',
     problemSolved: 'Reduced RFQ response delay from 24 hours to 3 minutes and won $320K deal',
     metricLabel: 'Contract Won',
     metricValue: '$320,000.00',
-    toolsUsed: ['Bitly', 'UptimeRobot', 'Hostinger'],
+    toolsUsed: ['Smart Link', 'Site Shield', 'Cloud Hosting'],
     planTier: 'BIG Agency ($150/mo)',
     businessCategory: 'sales'
   },
@@ -892,11 +892,11 @@ export const TESTIMONIALS: Testimonial[] = [
     avatarUrl: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=160&h=160&q=80',
     rating: 5,
     headline: 'Shortened high-ticket onboarding from 3 weeks to 4 days',
-    content: 'Client onboarding was stuck in email back-and-forth. Password-protected Bitly documents and WATi automated checklists slashed onboarding turnaround by 80% with zero extra staff.',
+    content: 'Client onboarding was stuck in email back-and-forth. Password-protected Smart Link documents and WhatsApp Flow automated checklists slashed onboarding turnaround by 80% with zero extra staff.',
     problemSolved: 'Automated client paperwork and slashed onboarding turnaround by 80%',
     metricLabel: 'Onboarding Speed',
     metricValue: '-80% Faster',
-    toolsUsed: ['Bitly', 'WATi'],
+    toolsUsed: ['Smart Link', 'WhatsApp Flow'],
     planTier: 'Growth Pack ($35/mo)',
     businessCategory: 'productivity'
   },
@@ -912,12 +912,12 @@ export const TESTIMONIALS: Testimonial[] = [
     avatarText: 'WC',
     avatarUrl: '/images/wing_yan_cheung_exec.jpg',
     rating: 5,
-    headline: 'Fomo live buyer proofs generated HK$480,000 in timepiece sales',
+    headline: 'Click Fomo live buyer proofs generated HK$480,000 in timepiece sales',
     content: 'Luxury shoppers hesitate without proof of trust. Real-time verified buyer notifications gave collectors the confidence to check out immediately, driving HK$480,000 in monthly sales.',
     problemSolved: 'Removed buyer hesitation at checkout and generated HK$480K in sales',
     metricLabel: 'Luxury Sales Lift',
     metricValue: 'HK$480,000',
-    toolsUsed: ['Fomo', 'Hostinger', 'UptimeRobot'],
+    toolsUsed: ['Click Fomo', 'Cloud Hosting', 'Site Shield'],
     planTier: 'Starter Pack ($15/mo)',
     businessCategory: 'sales'
   },
@@ -936,11 +936,11 @@ export const TESTIMONIALS: Testimonial[] = [
     avatarUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=160&h=160&q=80',
     rating: 5,
     headline: 'Real-time stock urgency triggers spiked flash sales by 240%',
-    content: 'Shoppers browse and forget. Fomo live stock counters combined with instant WhatsApp abandoned cart triggers turned procrastinators into instant buyers, lifting flash sales by 240%.',
+    content: 'Shoppers browse and forget. Click Fomo live stock counters combined with instant WhatsApp abandoned cart triggers turned procrastinators into instant buyers, lifting flash sales by 240%.',
     problemSolved: 'Turned cart drop-offs into immediate buyers with real-time stock urgency',
     metricLabel: 'Flash Sale Lift',
     metricValue: '+240%',
-    toolsUsed: ['Fomo', 'WATi', 'Hostinger'],
+    toolsUsed: ['Click Fomo', 'WhatsApp Flow', 'Cloud Hosting'],
     planTier: 'Growth Pack ($35/mo)',
     businessCategory: 'sales'
   },
@@ -957,11 +957,11 @@ export const TESTIMONIALS: Testimonial[] = [
     avatarUrl: '/images/ji_woo_kim.jpg',
     rating: 5,
     headline: 'Continuous 30s monitoring cut customer complaints by 72%',
-    content: 'Server downtime kills customer trust. UptimeRobot catches API latency in 30 seconds and notifies our engineers before users even notice, cutting negative support complaints by 72%.',
+    content: 'Server downtime kills customer trust. Site Shield catches API latency in 30 seconds and notifies our engineers before users even notice, cutting negative support complaints by 72%.',
     problemSolved: 'Eliminated IoT server downtime blindsides with 30s latency detection alerts',
     metricLabel: 'Complaints Cut',
     metricValue: '-72.0%',
-    toolsUsed: ['UptimeRobot', 'Mailchimp', 'Hostinger'],
+    toolsUsed: ['Site Shield', 'E-mail Rocket', 'Cloud Hosting'],
     planTier: 'Starter Pack ($15/mo)',
     businessCategory: 'productivity'
   },
@@ -980,11 +980,11 @@ export const TESTIMONIALS: Testimonial[] = [
     avatarUrl: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=160&h=160&q=80',
     rating: 5,
     headline: 'Automated $8,400 in recovered carts in 30 days for just $15/mo',
-    content: 'We were paying $500/mo for individual tool bills. This $15 bundle gave us identical horsepower: WATi and Mailchimp recovered $8,400 in abandoned checkouts in month one.',
+    content: 'We were paying $500/mo for individual tool bills. This $15 bundle gave us identical horsepower: WhatsApp Flow and E-mail Rocket recovered $8,400 in abandoned checkouts in month one.',
     problemSolved: 'Recovered lost cart drop-offs on autopilot and cut $500/mo software subscription fees',
     metricLabel: 'Recovered Sales',
     metricValue: '+$8,400.00',
-    toolsUsed: ['WATi', 'Mailchimp', 'Fomo'],
+    toolsUsed: ['WhatsApp Flow', 'E-mail Rocket', 'Click Fomo'],
     planTier: 'Starter Pack ($15/mo)',
     businessCategory: 'sales'
   },
@@ -1001,11 +1001,11 @@ export const TESTIMONIALS: Testimonial[] = [
     avatarUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=160&h=160&q=80',
     rating: 5,
     headline: 'Sales landing page conversion rate jumped from 2.1% to 4.8%',
-    content: 'Fomo live buyer activity plus 0.7-second page loads on Hostinger lifted our conversions from 2.1% to 4.8%. The $15 investment was paid back in our first 2 hours of running traffic.',
+    content: 'Click Fomo live buyer activity plus 0.7-second page loads on Cloud Hosting lifted our conversions from 2.1% to 4.8%. The $15 investment was paid back in our first 2 hours of running traffic.',
     problemSolved: 'Boosted conversion rates by 128% and accelerated page load times to 0.7 seconds',
     metricLabel: 'Conversion Lift',
     metricValue: '+128%',
-    toolsUsed: ['Fomo', 'Bitly', 'Hostinger'],
+    toolsUsed: ['Click Fomo', 'Smart Link', 'Cloud Hosting'],
     planTier: 'Growth Pack ($35/mo)',
     businessCategory: 'sales'
   },
@@ -1022,11 +1022,11 @@ export const TESTIMONIALS: Testimonial[] = [
     avatarUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=160&h=160&q=80',
     rating: 5,
     headline: 'Instant SMS alert saved us $12K during a gateway outage',
-    content: 'UptimeRobot caught a payment gateway error in 20 seconds. We rerouted traffic immediately, preventing $12,000 in lost holiday sales while competitors lost an entire weekend.',
+    content: 'Site Shield caught a payment gateway error in 20 seconds. We rerouted traffic immediately, preventing $12,000 in lost holiday sales while competitors lost an entire weekend.',
     problemSolved: 'Detected checkout payment failure in 20 seconds and prevented $12K in lost transactions',
     metricLabel: 'Downtime Prevented',
     metricValue: '100% Zero-Loss',
-    toolsUsed: ['UptimeRobot', 'Hostinger', 'WATi'],
+    toolsUsed: ['Site Shield', 'Cloud Hosting', 'WhatsApp Flow'],
     planTier: 'Starter Pack ($15/mo)',
     businessCategory: 'productivity'
   },
@@ -1043,11 +1043,11 @@ export const TESTIMONIALS: Testimonial[] = [
     avatarUrl: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=160&h=160&q=80',
     rating: 5,
     headline: 'Cut manual customer follow-up time by 18 hours every week',
-    content: 'My team used to spend 4 hours daily answering repetitive order status questions. Automated WATi flows resolve 85% of queries on autopilot without hiring extra staff.',
+    content: 'My team used to spend 4 hours daily answering repetitive order status questions. Automated WhatsApp Flow flows resolve 85% of queries on autopilot without hiring extra staff.',
     problemSolved: 'Automated 85% of repetitive customer support queries and saved 18 hours weekly',
     metricLabel: 'Hours Saved',
     metricValue: '18 hrs/week',
-    toolsUsed: ['WATi', 'Mailchimp'],
+    toolsUsed: ['WhatsApp Flow', 'E-mail Rocket'],
     planTier: 'Growth Pack ($35/mo)',
     businessCategory: 'productivity'
   },
@@ -1068,7 +1068,7 @@ export const TESTIMONIALS: Testimonial[] = [
     problemSolved: 'Eliminated 5 recurring SaaS subscriptions and saved $7,200 annually for agency clients',
     metricLabel: 'Annual Cost Saved',
     metricValue: '$7,200/yr',
-    toolsUsed: ['Mailchimp', 'Hostinger', 'Bitly', 'Fomo'],
+    toolsUsed: ['E-mail Rocket', 'Cloud Hosting', 'Smart Link', 'Click Fomo'],
     planTier: 'BIG Agency ($150/mo)',
     businessCategory: 'productivity'
   },
@@ -1085,11 +1085,11 @@ export const TESTIMONIALS: Testimonial[] = [
     avatarUrl: '/images/priya_sharma.jpg',
     rating: 5,
     headline: 'WhatsApp broadcast generated 214 orders in 3 hours with 97% open rates',
-    content: 'Email open rates hovered at 19%. With WATi WhatsApp broadcasts, 97% of recipients opened our drop announcement, generating 214 paid orders before lunch. Email is officially dead.',
+    content: 'Email open rates hovered at 19%. With WhatsApp Flow WhatsApp broadcasts, 97% of recipients opened our drop announcement, generating 214 paid orders before lunch. Email is officially dead.',
     problemSolved: 'Replaced low-open email outreach with 97% open rate WhatsApp broadcasts',
     metricLabel: 'Open Rate',
     metricValue: '97.4%',
-    toolsUsed: ['WATi', 'Bitly'],
+    toolsUsed: ['WhatsApp Flow', 'Smart Link'],
     planTier: 'Growth Pack ($35/mo)',
     businessCategory: 'sales'
   },
@@ -1107,11 +1107,11 @@ export const TESTIMONIALS: Testimonial[] = [
     avatarUrl: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=160&h=160&q=80',
     rating: 5,
     headline: 'Cut ad CPA by 38% after finding and killing 3 wasted ad campaigns',
-    content: 'Bitly custom branded links gave us crystal-clear attribution across TikTok and Meta. We immediately killed underperforming ads and scaled the winners, cutting customer acquisition cost by 38%.',
+    content: 'Smart Link custom branded links gave us crystal-clear attribution across TikTok and Meta. We immediately killed underperforming ads and scaled the winners, cutting customer acquisition cost by 38%.',
     problemSolved: 'Identified wasted ad spend and cut customer acquisition CPA by 38.5%',
     metricLabel: 'CPA Reduction',
     metricValue: '-38.5%',
-    toolsUsed: ['Bitly', 'UptimeRobot'],
+    toolsUsed: ['Smart Link', 'Site Shield'],
     planTier: 'Growth Pack ($35/mo)',
     businessCategory: 'productivity'
   },
@@ -1128,11 +1128,11 @@ export const TESTIMONIALS: Testimonial[] = [
     avatarUrl: '/images/tariq_al_mansoor.jpg',
     rating: 5,
     headline: 'Automated 2 AM weekend demo bookings jumped by 89%',
-    content: 'Prospective buyers browsing at 2 AM on weekends get instant answers via WATi chat and book product demos on autopilot. Demo pipeline volume jumped 89% with zero staff online.',
+    content: 'Prospective buyers browsing at 2 AM on weekends get instant answers via WhatsApp Flow chat and book product demos on autopilot. Demo pipeline volume jumped 89% with zero staff online.',
     problemSolved: 'Automated 24/7 weekend demo booking and customer inquiries on autopilot',
     metricLabel: 'Demo Surge',
     metricValue: '+89%',
-    toolsUsed: ['Mailchimp', 'WATi', 'Fomo'],
+    toolsUsed: ['E-mail Rocket', 'WhatsApp Flow', 'Click Fomo'],
     planTier: 'Starter Pack ($15/mo)',
     businessCategory: 'sales'
   },
@@ -1150,11 +1150,11 @@ export const TESTIMONIALS: Testimonial[] = [
     avatarUrl: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=160&h=160&q=80',
     rating: 5,
     headline: 'Zero crashes and 100% uptime through a 12x traffic product drop',
-    content: 'Our biggest drop of the year surged traffic 12x. UptimeRobot verified 100% availability while Hostinger absorbed every spike effortlessly. No website crashes, no lost revenue.',
+    content: 'Our biggest drop of the year surged traffic 12x. Site Shield verified 100% availability while Cloud Hosting absorbed every spike effortlessly. No website crashes, no lost revenue.',
     problemSolved: 'Handled 12x traffic surge without a single millisecond of downtime',
     metricLabel: 'Peak Traffic Uptime',
     metricValue: '100.0%',
-    toolsUsed: ['UptimeRobot', 'Hostinger'],
+    toolsUsed: ['Site Shield', 'Cloud Hosting'],
     planTier: 'BIG Agency ($150/mo)',
     businessCategory: 'productivity'
   }
@@ -1163,8 +1163,8 @@ export const TESTIMONIALS: Testimonial[] = [
 export const FAQS: FaqItem[] = [
   {
     id: 'f1',
-    question: 'Why does the bundle subscription start from as low as $15/month (RM61/mo) when retail is $650/month?',
-    answer: 'This is a limited-time promotional volume partnership. Instead of paying each software company separately ($162 for Mailchimp, $314 for WATi, $80 for UptimeRobot, etc.), our enterprise volume license allows us to offer this complete 6-software package starting at just $15 per month (RM61/month in Malaysia based on the actual currency market exchange rate), slashing your software overhead by 97.7%.',
+    question: 'How does the Bizz2u 6 powerful software bundle for just $15/month compare to the competitor price (Combined Retail Value: $650/month or $7,800/yr)?',
+    answer: 'The competitor price across all 6 standalone tools has a Combined Retail Value of $650/month or ($7,800/yr): WhatsApp Flow ($314/mo), E-mail Rocket ($162/mo), Site Shield ($80/mo), Click Fomo ($50/mo), Smart Link ($35/mo), and Cloud Hosting ($9/mo). Through our Bizz2u pre-negotiated enterprise bulk license partnership, you get all 6 powerful software tools bundled together for just $15/month ($180/yr), slashing your software expenses by $635/month ($7,620/yr, 97.7% savings) with one single invoice, zero contracts, and unified 24/7 priority support.',
     category: 'Pricing'
   },
   {
@@ -1176,7 +1176,7 @@ export const FAQS: FaqItem[] = [
   {
     id: 'f-payment-gateways',
     question: 'Does this software suite process customer payments directly, or do I use 3rd-party services (PayPal, Stripe, Wise)?',
-    answer: 'This software suite does NOT directly handle or hold your customers’ money, guaranteeing zero financial liability and 100% privacy for your business. Instead, your Hostinger website and automation funnels integrate directly with trusted third-party payment gateways such as Stripe, PayPal, Wise, Razorpay, or your local regional merchant bank. 100% of your customer payments and revenue deposit directly into your personal or corporate bank account with zero intermediate processing fees.',
+    answer: 'This software suite does NOT directly handle or hold your customers’ money, guaranteeing zero financial liability and 100% privacy for your business. Instead, your Cloud Hosting website and automation funnels integrate directly with trusted third-party payment gateways such as Stripe, PayPal, Wise, Razorpay, or your local regional merchant bank. 100% of your customer payments and revenue deposit directly into your personal or corporate bank account with zero intermediate processing fees.',
     category: 'Pricing'
   },
   {
@@ -1188,13 +1188,13 @@ export const FAQS: FaqItem[] = [
   {
     id: 'f-sales-impact',
     question: 'How does this 6-software suite directly drive sales and accelerate business revenue?',
-    answer: 'Each software in the suite powers a crucial stage of your automated revenue funnel: Hostinger loads your pages in under 0.8 seconds so shoppers do not bounce; Bitly tracks which advertising campaigns deliver real paying customers; Fomo displays dynamic social proof popups that boost checkout conversion rates by 30%+; WATI replies to high-intent leads on WhatsApp in under 8 seconds before they look at competitors; Mailchimp automatically sends abandoned cart recovery drips to reclaim lost sales; and UptimeRobot monitors your checkout link every 60 seconds to ensure you never lose a sale to server downtime. Together, they create an automated sales engine that nurtures, converts, and closes sales 24/7 without extra manual labor.',
+    answer: 'Each software in the suite powers a crucial stage of your automated revenue funnel: Cloud Hosting loads your pages in under 0.8 seconds so shoppers do not bounce; Smart Link tracks which advertising campaigns deliver real paying customers; Click Fomo displays dynamic social proof popups that boost checkout conversion rates by 30%+; WhatsApp Flow replies to high-intent leads on WhatsApp in under 8 seconds before they look at competitors; E-mail Rocket automatically sends abandoned cart recovery drips to reclaim lost sales; and Site Shield monitors your checkout link every 60 seconds to ensure you never lose a sale to server downtime. Together, they create an automated sales engine that nurtures, converts, and closes sales 24/7 without extra manual labor.',
     category: 'Sales & Operations'
   },
   {
     id: 'f-software-operation',
     question: 'How do all 6 software tools operate together as one unified growth system?',
-    answer: 'The suite is architected as an automated closed loop: When a prospective lead clicks your Bitly branded link on ads or social media, they land on your high-speed Hostinger store where Fomo instantly displays live buyer proof. When the prospect initiates an inquiry or fills out a lead form, WATI instantly triggers WhatsApp welcome packages and interactive catalogs, while Mailchimp automatically enrolls them into targeted drip nurture sequences. Meanwhile, UptimeRobot monitors your domains around the clock to guarantee flawless availability. Pre-configured webhooks and native integrations connect all six powerhouses effortlessly.',
+    answer: 'The suite is architected as an automated closed loop: When a prospective lead clicks your Smart Link branded link on ads or social media, they land on your high-speed Cloud Hosting store where Click Fomo instantly displays live buyer proof. When the prospect initiates an inquiry or fills out a lead form, WhatsApp Flow instantly triggers WhatsApp welcome packages and interactive catalogs, while E-mail Rocket automatically enrolls them into targeted drip nurture sequences. Meanwhile, Site Shield monitors your domains around the clock to guarantee flawless availability. Pre-configured webhooks and native integrations connect all six powerhouses effortlessly.',
     category: 'Sales & Operations'
   },
   {
@@ -1212,13 +1212,13 @@ export const FAQS: FaqItem[] = [
   {
     id: 'f-ai-optional',
     question: 'Do all software tools operate without AI, or is AI mandatory to run my business?',
-    answer: 'All 6 software tools operate 100% reliably using standard, deterministic automation rules and do NOT require AI to function. You have total manual control over trigger workflows, fixed scheduled email drips, custom keyword auto-replies, and website designs. AI integration (such as Mailchimp AI copywriting or WATI smart response suggestions) is purely an optional booster if you want faster processing power, automated drafting, or extra efficiency. If you prefer to operate traditionally without AI, the suite works flawlessly out of the box.',
+    answer: 'All 6 software tools operate 100% reliably using standard, deterministic automation rules and do NOT require AI to function. You have total manual control over trigger workflows, fixed scheduled email drips, custom keyword auto-replies, and website designs. AI integration (such as E-mail Rocket AI copywriting or WhatsApp Flow smart response suggestions) is purely an optional booster if you want faster processing power, automated drafting, or extra efficiency. If you prefer to operate traditionally without AI, the suite works flawlessly out of the box.',
     category: 'Security & Privacy'
   },
   {
     id: 'f-wati-omnichannel',
-    question: 'Can WATI be used as customer relation support across all social media and e-commerce platforms (Facebook, Instagram, TikTok, X, Shopify, Amazon)?',
-    answer: 'Yes! WATI serves as an omnichannel customer relationship and support management hub that connects with your entire digital presence. You can link your official WhatsApp CRM directly to your Facebook Page CTA buttons, Instagram bio and story swipe-ups, TikTok profile links, X (Twitter) promotional posts, Shopify abandoned checkout webhooks, and Amazon seller storefronts. Customers across any social media channel or e-commerce storefront are seamlessly directed into one centralized team inbox for 24/7 instant chat, automated catalog sharing, and support ticketing.',
+    question: 'Can WhatsApp Flow be used as customer relation support across all social media and e-commerce platforms (Facebook, Instagram, TikTok, X, Shopify, Amazon)?',
+    answer: 'Yes! WhatsApp Flow serves as an omnichannel customer relationship and support management hub that connects with your entire digital presence. You can link your official WhatsApp CRM directly to your Facebook Page CTA buttons, Instagram bio and story swipe-ups, TikTok profile links, X (Twitter) promotional posts, Shopify abandoned checkout webhooks, and Amazon seller storefronts. Customers across any social media channel or e-commerce storefront are seamlessly directed into one centralized team inbox for 24/7 instant chat, automated catalog sharing, and support ticketing.',
     category: 'Integrations & Platforms'
   },
   {
@@ -1230,19 +1230,19 @@ export const FAQS: FaqItem[] = [
   {
     id: 'f-traffic-surges',
     question: 'How does the bundle handle massive traffic spikes and flash sale volumes without crashing?',
-    answer: 'Hostinger’s infrastructure runs on enterprise LiteSpeed web servers backed by global Cloudflare CDN edge caching engineered to handle 100,000+ monthly visits effortlessly. Bitly processes billions of link clicks per month with ultra-low latency, and UptimeRobot monitors your checkout pages every 60 seconds from 50+ global server nodes, immediately notifying your team via SMS, Telegram, or email if any performance dip is detected.',
+    answer: 'Cloud Hosting’s infrastructure runs on enterprise LiteSpeed web servers backed by global Cloudflare CDN edge caching engineered to handle 100,000+ monthly visits effortlessly. Smart Link processes billions of link clicks per month with ultra-low latency, and Site Shield monitors your checkout pages every 60 seconds from 50+ global server nodes, immediately notifying your team via SMS, Telegram, or email if any performance dip is detected.',
     category: 'Sales & Operations'
   },
   {
     id: 'f-team-seats',
     question: 'Can I add multiple staff members or support agents with separate login permissions?',
-    answer: 'Yes! Both our Growth Pack ($35/mo) and BIG Agency Pack ($150/mo) support multiple team member logins with granular role-based access control (RBAC). You can assign individual sales reps or customer support agents to handle incoming WhatsApp inquiries in WATI without granting them access to your billing information or administrative server controls.',
+    answer: 'Yes! Both our Growth Pack ($35/mo) and BIG Agency Pack ($150/mo) support multiple team member logins with granular role-based access control (RBAC). You can assign individual sales reps or customer support agents to handle incoming WhatsApp inquiries in WhatsApp Flow without granting them access to your billing information or administrative server controls.',
     category: 'Sales & Operations'
   },
   {
     id: 'f-mobile-apps',
     question: 'Can I manage customer chats, view analytics, and monitor my business on iOS or Android mobile phones?',
-    answer: 'Yes! WATI, Mailchimp, Bitly, and UptimeRobot all provide native iOS and Android smartphone applications. You and your team can chat live with customers on WhatsApp, track real-time click analytics, review email open rates, and receive instant server uptime alerts directly from your mobile phone anywhere in the world.',
+    answer: 'Yes! WhatsApp Flow, E-mail Rocket, Smart Link, and Site Shield all provide native iOS and Android smartphone applications. You and your team can chat live with customers on WhatsApp, track real-time click analytics, review email open rates, and receive instant server uptime alerts directly from your mobile phone anywhere in the world.',
     category: 'Support & Ease of Use'
   },
   {
@@ -1254,13 +1254,13 @@ export const FAQS: FaqItem[] = [
   {
     id: 'f-existing-website',
     question: 'What if I already have an existing website or custom domain—can I integrate without rebuilding?',
-    answer: 'Absolutely! You do not need to rebuild your existing digital assets. You can point your existing custom domain to Hostinger with a simple DNS change, or keep your existing website entirely as-is and embed Fomo social proof widgets, Bitly campaign tracking links, and WATI WhatsApp chat buttons with a single line of copy-paste script. You can also utilize the hosting to launch dedicated high-converting landing pages or subdomains for specific promotional funnels.',
+    answer: 'Absolutely! You do not need to rebuild your existing digital assets. You can point your existing custom domain to Cloud Hosting with a simple DNS change, or keep your existing website entirely as-is and embed Click Fomo social proof widgets, Smart Link campaign tracking links, and WhatsApp Flow WhatsApp chat buttons with a single line of copy-paste script. You can also utilize the hosting to launch dedicated high-converting landing pages or subdomains for specific promotional funnels.',
     category: 'Integrations & Platforms'
   },
   {
     id: 'f2',
     question: 'How do I access and activate the 6 software tools after payment?',
-    answer: 'Immediately upon completing your order, you receive instant access to your private customer portal with license keys, 1-click activation links, pre-configured automation templates, and step-by-step video setup guides for Mailchimp, Hostinger, Fomo, WATi, UptimeRobot, and Bitly.',
+    answer: 'Immediately upon completing your order, you receive instant access to your private customer portal with license keys, 1-click activation links, pre-configured automation templates, and step-by-step video setup guides for E-mail Rocket, Cloud Hosting, Click Fomo, WhatsApp Flow, Site Shield, and Smart Link.',
     category: 'Access'
   },
   {
@@ -1300,12 +1300,12 @@ export const FAQS: FaqItem[] = [
     question: 'How does this automated software suite help B2B Companies selling products or services seamlessly?',
     answer: `For B2B companies with multi-stakeholder sales cycles, RFP proposals, and pipeline requirements, this suite automates the entire journey from inbound lead capture to closed contracts:
 
-• Instant Lead Qualification & WhatsApp Routing (WATI): When a business prospect requests a quote or demo, automated interactive WhatsApp menus immediately qualify company headcount, timeline, and budget within 8 seconds. High-intent decision-makers are instantly routed to senior account reps via round-robin distribution.
-• Multi-Touch RFP & Demo Nurture Drips (Mailchimp): Keep procurement teams and executives engaged with automated email drip campaigns featuring ROI calculators, client case studies, and compliance certifications.
-• High-Speed B2B Portals & Demo Sites (Hostinger): Deploy dedicated client portals, private staging sites, and proposal landing pages with <0.8s load times and 99.9% uptime.
-• Proposal & Pitch Deck Attribution (Bitly): Track exactly when stakeholders open and review proposal PDFs, NDA agreements, and pricing sheets with branded short links, allowing your sales team to follow up at the exact moment of highest interest.
-• Institutional Social Proof (Fomo): Display live notifications of verified demo bookings and corporate client onboardings to build instant credibility with enterprise procurement teams.
-• 24/7 SLA & Client Portal Health (UptimeRobot): Round-the-clock 30-second latency checks ensure your customer dashboard, client portals, and webhook endpoints never suffer undetected downtime.`,
+• Instant Lead Qualification & WhatsApp Routing (WhatsApp Flow): When a business prospect requests a quote or demo, automated interactive WhatsApp menus immediately qualify company headcount, timeline, and budget within 8 seconds. High-intent decision-makers are instantly routed to senior account reps via round-robin distribution.
+• Multi-Touch RFP & Demo Nurture Drips (E-mail Rocket): Keep procurement teams and executives engaged with automated email drip campaigns featuring ROI calculators, client case studies, and compliance certifications.
+• High-Speed B2B Portals & Demo Sites (Cloud Hosting): Deploy dedicated client portals, private staging sites, and proposal landing pages with <0.8s load times and 99.9% uptime.
+• Proposal & Pitch Deck Attribution (Smart Link): Track exactly when stakeholders open and review proposal PDFs, NDA agreements, and pricing sheets with branded short links, allowing your sales team to follow up at the exact moment of highest interest.
+• Institutional Social Proof (Click Fomo): Display live notifications of verified demo bookings and corporate client onboardings to build instant credibility with enterprise procurement teams.
+• 24/7 SLA & Client Portal Health (Site Shield): Round-the-clock 30-second latency checks ensure your customer dashboard, client portals, and webhook endpoints never suffer undetected downtime.`,
     category: 'Industry Sectors'
   },
   {
@@ -1313,11 +1313,11 @@ export const FAQS: FaqItem[] = [
     question: 'How does this automated software empower Real Estate Agencies, property agents, and developers?',
     answer: `In real estate, lead response speed directly determines closed commissions. The automation suite enables agencies, solo agents, and property developers to capture and nurture buyers 24/7:
 
-• Instant WhatsApp Brochure & Floorplan Delivery (WATI): When property seekers click ads on Facebook, Instagram, or portals (PropertyGuru, Zillow, iProperty), automated workflows deliver high-resolution project e-brochures, floorplans, and video walk-throughs in under 5 seconds.
-• Automated Viewing & Showroom Scheduling (WATI): Buyers can choose private viewing time slots directly within WhatsApp chat. Automated 24-hour and 2-hour calendar reminder messages eliminate missed showroom appointments and cut no-shows by over 80%.
-• Dedicated Project Launch Micro-Sites (Hostinger): Developers and agencies can launch unlimited sub-domain landing pages for new residential developments with high-speed photo galleries and interactive virtual tour embeds.
-• Verified Buyer Urgency & Unit Reservation Alerts (Fomo): Authentic real-time notifications (e.g. "Unit 14B reserved 18 minutes ago" or "Showroom viewing scheduled in Central District") drive genuine buyer confidence and fear of missing out.
-• Listing Attribution via Branded Links & QR Codes (Bitly): Track which billboards, physical property flyers, TikTok reels, or property portal listings generate genuine buyer leads using custom branded QR codes and analytics links.
+• Instant WhatsApp Brochure & Floorplan Delivery (WhatsApp Flow): When property seekers click ads on Facebook, Instagram, or portals (PropertyGuru, Zillow, iProperty), automated workflows deliver high-resolution project e-brochures, floorplans, and video walk-throughs in under 5 seconds.
+• Automated Viewing & Showroom Scheduling (WhatsApp Flow): Buyers can choose private viewing time slots directly within WhatsApp chat. Automated 24-hour and 2-hour calendar reminder messages eliminate missed showroom appointments and cut no-shows by over 80%.
+• Dedicated Project Launch Micro-Sites (Cloud Hosting): Developers and agencies can launch unlimited sub-domain landing pages for new residential developments with high-speed photo galleries and interactive virtual tour embeds.
+• Verified Buyer Urgency & Unit Reservation Alerts (Click Fomo): Authentic real-time notifications (e.g. "Unit 14B reserved 18 minutes ago" or "Showroom viewing scheduled in Central District") drive genuine buyer confidence and fear of missing out.
+• Listing Attribution via Branded Links & QR Codes (Smart Link): Track which billboards, physical property flyers, TikTok reels, or property portal listings generate genuine buyer leads using custom branded QR codes and analytics links.
 • Smart Buyer Tagging & Blast Broadcasts: Automatically segment leads by budget tier (luxury, affordable housing, commercial investment) and broadcast new project releases with 98% open rates.`,
     category: 'Industry Sectors'
   },
@@ -1327,10 +1327,10 @@ export const FAQS: FaqItem[] = [
     answer: `Financial institutions and advisory firms require enterprise-grade security, high client trust, and consistent compliance. This suite provides reliable, zero-liability automation:
 
 • Bank-Grade Security & Zero Financial Intermediary: The software suite never holds or touches client funds. Client transactions connect directly to your merchant bank or trusted payment rails (Stripe, PayPal, Razorpay) with 256-bit AES encryption and TLS 1.3 encryption.
-• WhatsApp Policy Renewal & Premium Alerts (WATI): Insurance agencies and wealth planners automate policy renewal notices, premium due dates, and claim status updates over official WhatsApp business channels—achieving 97%+ open rates compared to ignored postal mail or spam-filtered emails.
+• WhatsApp Policy Renewal & Premium Alerts (WhatsApp Flow): Insurance agencies and wealth planners automate policy renewal notices, premium due dates, and claim status updates over official WhatsApp business channels—achieving 97%+ open rates compared to ignored postal mail or spam-filtered emails.
 • Automated Consultation & Financial Health Check Booking: Clients schedule advisory consultations, mortgage pre-qualification calls, or portfolio reviews through self-service calendars with automated document preparation checklists.
-• Branded & Tamper-Resistant Document Links (Bitly): Protect clients against phishing and scam fears by sharing quarterly statements, prospectus PDFs, and policy guidelines using authenticated custom branded URLs with strict click logging.
-• Fintech Portal & Core API Uptime Monitoring (UptimeRobot): 30-second interval latency monitoring for client login portals, loan application endpoints, and transaction webhooks, immediately alerting IT compliance officers to avert regulatory downtime penalties.
+• Branded & Tamper-Resistant Document Links (Smart Link): Protect clients against phishing and scam fears by sharing quarterly statements, prospectus PDFs, and policy guidelines using authenticated custom branded URLs with strict click logging.
+• Fintech Portal & Core API Uptime Monitoring (Site Shield): 30-second interval latency monitoring for client login portals, loan application endpoints, and transaction webhooks, immediately alerting IT compliance officers to avert regulatory downtime penalties.
 • Mandatory 2-Factor Authentication (2FA): Multi-tier authentication across all staff logins ensures client financial records and contact registries remain completely shielded against unauthorized access.`,
     category: 'Industry Sectors'
   },
@@ -1339,12 +1339,12 @@ export const FAQS: FaqItem[] = [
     question: 'How does this automated software accelerate Retail and E-commerce businesses across online and multi-channel storefronts?',
     answer: `For online storefronts, direct-to-consumer (D2C) brands, and multi-channel retailers, the software suite drives direct revenue recovery and customer lifetime value:
 
-• Sub-Second Storefront Speed (Hostinger): Enterprise LiteSpeed cloud servers and global CDN edge caching keep catalog pages, high-resolution product photos, and checkout funnels loading in under 0.8 seconds, eliminating cart abandonment caused by slow load speeds.
-• Real-Time Social Proof Popups (Fomo): Display authentic, verified buyer purchase popups (e.g. "Emma from Melbourne just bought Roasted Coffee Beans 4 minutes ago") and live product view counts, lifting checkout conversion rates by 30%+.
-• Automated Abandoned Cart Recovery (WATI + Mailchimp): When a shopper leaves items in their cart, automated sequences fire within 15 minutes across WhatsApp and email with 1-click checkout recovery links, recovering 15% to 28% of otherwise lost sales.
-• Multi-Channel Order Tracking & Dispatch Alerts (WATI): Automated shipping confirmations, tracking links, and delivery notifications broadcast directly to customers' WhatsApp, slashing "Where is my order?" (WISMO) customer support tickets by 70%.
-• Campaign & Influencer Attribution (Bitly): Generate dedicated tracking links for TikTok creators, affiliate partners, and seasonal flash sales to identify your highest-converting marketing channels in real time.
-• Checkout Gateway Crash Defense (UptimeRobot): Continuous 60-second checks on payment gateways prevent lost revenue during flash sales by alerting store managers immediately if a third-party processor hiccups.`,
+• Sub-Second Storefront Speed (Cloud Hosting): Enterprise LiteSpeed cloud servers and global CDN edge caching keep catalog pages, high-resolution product photos, and checkout funnels loading in under 0.8 seconds, eliminating cart abandonment caused by slow load speeds.
+• Real-Time Social Proof Popups (Click Fomo): Display authentic, verified buyer purchase popups (e.g. "Emma from Melbourne just bought Roasted Coffee Beans 4 minutes ago") and live product view counts, lifting checkout conversion rates by 30%+.
+• Automated Abandoned Cart Recovery (WhatsApp Flow + E-mail Rocket): When a shopper leaves items in their cart, automated sequences fire within 15 minutes across WhatsApp and email with 1-click checkout recovery links, recovering 15% to 28% of otherwise lost sales.
+• Multi-Channel Order Tracking & Dispatch Alerts (WhatsApp Flow): Automated shipping confirmations, tracking links, and delivery notifications broadcast directly to customers' WhatsApp, slashing "Where is my order?" (WISMO) customer support tickets by 70%.
+• Campaign & Influencer Attribution (Smart Link): Generate dedicated tracking links for TikTok creators, affiliate partners, and seasonal flash sales to identify your highest-converting marketing channels in real time.
+• Checkout Gateway Crash Defense (Site Shield): Continuous 60-second checks on payment gateways prevent lost revenue during flash sales by alerting store managers immediately if a third-party processor hiccups.`,
     category: 'Industry Sectors'
   },
   {
@@ -1352,11 +1352,11 @@ export const FAQS: FaqItem[] = [
     question: 'How does this automated software streamline Professional Services, consulting firms, law offices, and marketing agencies?',
     answer: `Professional service practices trade on reputation, responsiveness, and seamless client intake. This automation suite replaces manual administrative overhead with automated workflows:
 
-• 24/7 Client Intake & Case Triage (WATI): Law offices, accounting firms, and management consultancies deploy automated intake flows that capture prospective client details, legal practice area requirements, or audit needs around the clock, sending partners an organized executive summary sheet.
-• Retainer Drips & Regulatory Thought Leadership (Mailchimp): Nurture corporate retainers with polished monthly regulatory briefs, industry insights, and legal updates using pre-configured executive email newsletter templates.
-• Proposal & Pitch Deck Engagement Tracking (Bitly): When sending high-stakes advisory proposals, audit decks, or retainer contracts, custom branded links reveal precisely when corporate clients open your proposal documents and how frequently they share them internally.
+• 24/7 Client Intake & Case Triage (WhatsApp Flow): Law offices, accounting firms, and management consultancies deploy automated intake flows that capture prospective client details, legal practice area requirements, or audit needs around the clock, sending partners an organized executive summary sheet.
+• Retainer Drips & Regulatory Thought Leadership (E-mail Rocket): Nurture corporate retainers with polished monthly regulatory briefs, industry insights, and legal updates using pre-configured executive email newsletter templates.
+• Proposal & Pitch Deck Engagement Tracking (Smart Link): When sending high-stakes advisory proposals, audit decks, or retainer contracts, custom branded links reveal precisely when corporate clients open your proposal documents and how frequently they share them internally.
 • Multi-Client Workspace Consolidation (BIG Agency Pack): Marketing agencies can manage up to 15 client domains and sub-accounts under one centralized license dashboard, eliminating redundant software subscriptions and pocketing thousands in software arbitrage.
-• Executive Web Presence & Custom Domains (Hostinger): Host professional firm websites with custom corporate email addresses (partner@yourfirm.com), fast SSL security, and private client portal subdomains.
+• Executive Web Presence & Custom Domains (Cloud Hosting): Host professional firm websites with custom corporate email addresses (partner@yourfirm.com), fast SSL security, and private client portal subdomains.
 • Consultation Appointment Confirmation & Reminders: Prevent expensive partner consultation no-shows with automated WhatsApp meeting links, calendar invites, and prep instructions delivered directly to executives' phones.`,
     category: 'Industry Sectors'
   }

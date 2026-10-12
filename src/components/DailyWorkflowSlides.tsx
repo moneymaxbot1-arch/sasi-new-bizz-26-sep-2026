@@ -454,16 +454,6 @@ export const DailyWorkflowSlides: React.FC<DailyWorkflowSlidesProps> = () => {
                 className="hidden" 
               />
 
-              {/* Upload Images Button (Multi-file enabled) */}
-              <button
-                type="button"
-                onClick={() => fileInputRef.current?.click()}
-                className="px-2.5 py-1.5 rounded-lg bg-gradient-to-r from-emerald-600/90 to-teal-600/90 hover:from-emerald-500 hover:to-teal-500 border border-emerald-400/50 text-white font-medium transition-all text-xs flex items-center gap-1.5 cursor-pointer shadow-[0_0_15px_rgba(16,185,129,0.3)]"
-                title="Select multiple images at once (20, 30, 50+ images supported)"
-              >
-                <Upload className="w-3.5 h-3.5" />
-                <span className="font-semibold">{hasCustomUploads ? 'Replace All' : 'Upload Images'}</span>
-              </button>
 
               {/* Add More Slides Button (when deck is populated) */}
               {hasCustomUploads && (

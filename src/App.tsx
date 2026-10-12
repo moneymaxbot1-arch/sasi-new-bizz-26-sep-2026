@@ -6,10 +6,9 @@
 import React from 'react';
 import { Navbar } from './components/Navbar';
 import { AutomationVortexHero } from './components/AutomationVortexHero';
-import { DailyWorkflowSlides } from './components/DailyWorkflowSlides';
+import { CostComparison } from './components/CostComparison';
 import { WhyAndWho } from './components/WhyAndWho';
 import { CountdownTimer } from './components/CountdownTimer';
-import { Hero } from './components/Hero';
 import { ToolShowcase } from './components/ToolShowcase';
 import { InDepthSoftwareSpecs } from './components/InDepthSoftwareSpecs';
 import { AutomationPlaybook } from './components/AutomationPlaybook';
@@ -39,18 +38,16 @@ export default function App() {
       {/* Website Entrance: 6-Software Orbit Animation Fusing Into Business Growth Hub */}
       <AutomationVortexHero onClaimClick={() => scrollToPricing()} />
 
-      {/* Daily Workflow Automation Slides (1 Single Section Slide Format) */}
-      <DailyWorkflowSlides onClaimClick={() => scrollToPricing()} />
+      {/* Competitor Price Comparison Section: Standalone Competitors $650/mo vs Bizz2u $15/mo */}
+      <CostComparison onClaimClick={() => scrollToPricing()} />
 
       {/* Why & Who Will Benefit (4 Pillars: Traffic, Engagement, Retargeting, Website Reliability) */}
       <WhyAndWho onClaimClick={() => scrollToPricing()} />
 
-      {/* Hero Section with 6-Software High Conversion Presentation */}
+      {/* Main Content Area */}
       <main className="flex-1">
-        <Hero onClaimClick={() => scrollToPricing()} />
-
         {/* Prominent Real-Time 15-Minute Countdown Timer Section */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 sm:-mt-10 mb-14 relative z-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12 mb-14 relative z-20">
           <CountdownTimer onClaimClick={() => scrollToPricing()} />
         </div>
 

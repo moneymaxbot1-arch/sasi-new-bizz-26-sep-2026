@@ -71,7 +71,7 @@
       <rect x="0" y="0" width="460" height="470" rx="20" fill="#1C0913" stroke="#E11D48" stroke-width="1.5" />
       <rect x="30" y="30" width="130" height="30" rx="8" fill="#F43F5E" fill-opacity="0.2" />
       <text x="45" y="50" fill="#FDA4AF" font-size="13" font-weight="800">AUTOMATION</text>
-      <text x="30" y="110" fill="#FFFFFF" font-size="24" font-weight="800">Fomo Social Proof Engine</text>
+      <text x="30" y="110" fill="#FFFFFF" font-size="24" font-weight="800">Click Fomo Social Proof Engine</text>
 
       <!-- Live Notification Card -->
       <g transform="translate(30, 140)">

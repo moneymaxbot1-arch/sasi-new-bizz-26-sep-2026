@@ -36,7 +36,7 @@ export const UrgencyHeader: React.FC<UrgencyHeaderProps> = ({ onClaimClick }) =>
             <span>97.7% OFF FLASH SALE</span>
           </span>
           <span className="hidden md:inline text-rose-100">
-            6-in-1 Business Automation Suite: Mailchimp, Hostinger, Fomo, WATi, UptimeRobot, Bitly
+            6-in-1 Business Automation Suite: Cloud Hosting, WhatsApp Flow, E-mail Rocket, Smart Link, Site Shield, Click Fomo
           </span>
           <span className="hidden lg:inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-black/30 border border-amber-300/40 text-amber-200 font-bold text-xs">
             🔥 {stockRemaining} Licenses Left!

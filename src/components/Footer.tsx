@@ -98,12 +98,12 @@ export const Footer: React.FC<FooterProps> = ({ onClaimClick }) => {
               Initiated Software
             </div>
             <ul className="space-y-1.5 text-slate-400">
-              <li>Mailchimp (SendgoMail)</li>
-              <li>Hostinger (Hostverge)</li>
-              <li>Fomo (Prooflander)</li>
-              <li>WATi (WTbotBuilder)</li>
-              <li>UptimeRobot (UpDowntime)</li>
-              <li>Bitly (Taliyos)</li>
+              <li>Cloud Hosting</li>
+              <li>WhatsApp Flow</li>
+              <li>E-mail Rocket</li>
+              <li>Smart Link</li>
+              <li>Site Shield</li>
+              <li>Click Fomo</li>
             </ul>
           </div>
 

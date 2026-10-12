@@ -57,22 +57,22 @@ export const ToolShowcase: React.FC<ToolShowcaseProps> = ({ onClaimClick }) => {
         </div>
 
         {/* Interactive Tool Selector Tabs */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 p-1.5 bg-slate-900 border border-slate-800 rounded-2xl mb-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-2.5 p-2 bg-slate-900 border border-slate-800 rounded-2xl mb-8">
           {SOFTWARE_TOOLS.map((tool) => {
             const isActive = tool.id === activeToolId;
             return (
               <button
                 key={tool.id}
                 onClick={() => setActiveToolId(tool.id)}
-                className={`p-3 rounded-xl flex flex-col items-center justify-center text-center transition-all cursor-pointer ${
+                className={`py-3.5 px-3 sm:py-4 sm:px-3.5 rounded-xl flex flex-col items-center justify-center text-center transition-all cursor-pointer ${
                   isActive
                     ? 'bg-slate-800 text-white shadow-lg border border-slate-700'
                     : 'text-slate-400 hover:text-slate-200 hover:bg-slate-850'
                 }`}
               >
-                <div className="mb-1.5">{getIcon(tool.icon)}</div>
-                <span className="text-xs font-bold truncate max-w-full">{tool.name}</span>
-                <span className="text-[10px] text-slate-400 font-mono mt-0.5 line-through">
+                <div className="mb-2">{getIcon(tool.icon)}</div>
+                <span className="text-sm sm:text-base font-bold text-white truncate max-w-full">{tool.name}</span>
+                <span className="text-xs sm:text-sm text-slate-400 font-mono mt-1 line-through">
                   {formatLocalizedPrice(tool.monthlyRetail, currentCurrency)}/mo
                 </span>
               </button>
@@ -219,7 +219,7 @@ export const ToolShowcase: React.FC<ToolShowcaseProps> = ({ onClaimClick }) => {
                       </div>
                       <div>
                         <div className="text-xs font-bold text-white">Sarah T. from Chicago purchased 4 min ago</div>
-                        <div className="text-[11px] text-slate-400">Verified by Fomo Live Activity · 18 others looking</div>
+                        <div className="text-[11px] text-slate-400">Verified by Click Fomo Live Activity · 18 others looking</div>
                       </div>
                     </div>
                     <div className="p-3 bg-slate-900 rounded-xl border border-slate-800 text-xs text-slate-300">

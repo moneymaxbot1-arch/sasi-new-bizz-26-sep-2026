@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { SOFTWARE_TOOLS } from '../data/bundleData';
+import { getActiveCurrency, formatLocalizedPrice, CurrencyConfig } from '../utils/currencyUtils';
 import { 
   Bot, 
   Cpu, 
@@ -25,6 +26,21 @@ export const InDepthSoftwareSpecs: React.FC<InDepthSoftwareSpecsProps> = ({ onCl
   const [selectedToolId, setSelectedToolId] = useState<string>(SOFTWARE_TOOLS[0].id);
   const [activeTab, setActiveTab] = useState<'features' | 'ai' | 'integrations'>('features');
   const [copiedText, setCopiedText] = useState<string | null>(null);
+  const [currentCurrency, setCurrentCurrency] = useState<CurrencyConfig>(getActiveCurrency);
+
+  useEffect(() => {
+    const handleCurrencyChange = () => {
+      setCurrentCurrency(getActiveCurrency());
+    };
+    window.addEventListener('bizz2u_currency_changed', handleCurrencyChange);
+    window.addEventListener('bizz2u_language_changed', handleCurrencyChange);
+    const interval = setInterval(handleCurrencyChange, 800);
+    return () => {
+      window.removeEventListener('bizz2u_currency_changed', handleCurrencyChange);
+      window.removeEventListener('bizz2u_language_changed', handleCurrencyChange);
+      clearInterval(interval);
+    };
+  }, []);
 
   const tool = SOFTWARE_TOOLS.find(t => t.id === selectedToolId) || SOFTWARE_TOOLS[0];
 
@@ -65,14 +81,14 @@ export const InDepthSoftwareSpecs: React.FC<InDepthSoftwareSpecsProps> = ({ onCl
         </div>
 
         {/* 6 Software Selector Pills */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 p-2 bg-slate-900/90 border border-slate-800 rounded-2xl mb-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 sm:gap-3 p-2 sm:p-2.5 bg-slate-900/90 border border-slate-800 rounded-2xl mb-8">
           {SOFTWARE_TOOLS.map((t, idx) => {
             const isSelected = t.id === selectedToolId;
             return (
               <button
                 key={t.id}
                 onClick={() => setSelectedToolId(t.id)}
-                className={`p-3 rounded-xl flex flex-col items-center justify-center text-center transition-all cursor-pointer ${
+                className={`py-3.5 px-3 sm:py-4 sm:px-3.5 rounded-xl flex flex-col items-center justify-center text-center transition-all cursor-pointer ${
                   isSelected
                     ? 'bg-slate-800 border-2 text-white shadow-xl scale-[1.02]'
                     : 'bg-slate-900/50 border border-transparent text-slate-400 hover:text-white hover:bg-slate-850'
@@ -84,13 +100,15 @@ export const InDepthSoftwareSpecs: React.FC<InDepthSoftwareSpecsProps> = ({ onCl
               >
                 <div 
                   style={{ color: t.badgeColor }}
-                  className="text-xs font-black font-mono px-2 py-0.5 rounded-md bg-slate-950 mb-1"
+                  className="text-xs sm:text-sm font-black font-mono px-2.5 py-0.5 rounded-md bg-slate-950 mb-1.5"
                 >
                   0{idx + 1}
                 </div>
-                <span className="text-xs font-bold text-white tracking-tight">{t.name}</span>
-                <span className="text-[10px] text-slate-400 font-mono mt-0.5 line-through">
-                  ${t.monthlyRetail}/mo
+                <span className="text-sm sm:text-base lg:text-lg font-bold text-white tracking-normal leading-snug">
+                  {t.name}
+                </span>
+                <span className="text-xs sm:text-sm text-slate-400 font-mono mt-1 line-through">
+                  {formatLocalizedPrice(t.monthlyRetail, currentCurrency)}/mo
                 </span>
               </button>
             );
@@ -106,15 +124,15 @@ export const InDepthSoftwareSpecs: React.FC<InDepthSoftwareSpecsProps> = ({ onCl
               <div className="flex flex-wrap items-center gap-2 mb-2">
                 <span 
                   style={{ backgroundColor: `${tool.badgeColor}20`, color: tool.badgeColor, borderColor: `${tool.badgeColor}40` }}
-                  className="px-2.5 py-1 rounded-md text-xs font-bold font-mono border"
+                  className="px-2.5 py-1 rounded-md text-xs sm:text-sm font-bold font-mono border"
                 >
                   TOOL {SOFTWARE_TOOLS.findIndex(t => t.id === tool.id) + 1} OF 6
                 </span>
-                <span className="text-xs font-semibold text-slate-300 bg-slate-800 px-2.5 py-1 rounded-md border border-slate-700">
+                <span className="text-xs sm:text-sm font-semibold text-slate-300 bg-slate-800 px-2.5 py-1 rounded-md border border-slate-700">
                   {tool.category}
                 </span>
-                <span className="text-xs text-rose-400 line-through font-mono px-2 py-1 bg-slate-900 rounded border border-slate-800">
-                  Standalone Retail: ${tool.monthlyRetail}/month
+                <span className="text-xs sm:text-sm text-rose-400 line-through font-mono px-2.5 py-1 bg-slate-900 rounded border border-slate-800">
+                  Standalone Retail: {formatLocalizedPrice(tool.monthlyRetail, currentCurrency)}/month
                 </span>
               </div>
               <h3 className="text-2xl sm:text-4xl font-black text-white">
@@ -130,7 +148,7 @@ export const InDepthSoftwareSpecs: React.FC<InDepthSoftwareSpecsProps> = ({ onCl
               <div>
                 <div className="text-[11px] text-slate-400 uppercase font-semibold">Included in Starter:</div>
                 <div className="text-2xl font-black text-white font-mono">
-                  $15<span className="text-xs font-normal text-emerald-400">/month</span>
+                  {formatLocalizedPrice(15, currentCurrency)}<span className="text-xs font-normal text-emerald-400">/month</span>
                 </div>
               </div>
               <button

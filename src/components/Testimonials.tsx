@@ -61,7 +61,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onClaimClick }) => {
           const matches = text.includes('save') || text.includes('overhead') || text.includes('bill') || text.includes('subscription') || text.includes('margin') || text.includes('cut') || text.includes('waste');
           if (!matches) return false;
         } else if (selectedOutcome === 'crm') {
-          const matches = text.includes('crm') || text.includes('whatsapp') || text.includes('reply') || text.includes('response') || text.includes('booking') || text.includes('wati') || text.includes('chat') || text.includes('reminder');
+          const matches = text.includes('crm') || text.includes('whatsapp') || text.includes('reply') || text.includes('response') || text.includes('booking') || text.includes('whatsapp flow') || text.includes('chat') || text.includes('reminder');
           if (!matches) return false;
         } else if (selectedOutcome === 'uptime') {
           const matches = text.includes('uptime') || text.includes('downtime') || text.includes('speed') || text.includes('server') || text.includes('ping') || text.includes('incident') || text.includes('crash');

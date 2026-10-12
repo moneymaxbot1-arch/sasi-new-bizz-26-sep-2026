@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { FAQS } from '../data/bundleData';
-import { ChevronDown, ArrowRight, Mail, Search, Sparkles, Building2, Home, Landmark, ShoppingBag, Briefcase } from 'lucide-react';
+import { ChevronDown, ArrowRight, Mail, Search, Sparkles, Building2, Home, Landmark, ShoppingBag, Briefcase, Scale, HelpCircle } from 'lucide-react';
 
 interface FaqSectionProps {
   onClaimClick: () => void;
@@ -119,23 +119,50 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onClaimClick }) => {
 
   return (
     <section id="faq" className="py-20 bg-[#090D16] border-t border-slate-800/80">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="text-center mb-10">
+        {/* Section Header */}
+        <div className="text-center max-w-4xl mx-auto mb-10">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-xs font-semibold text-emerald-400 uppercase tracking-widest mb-3">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Frequently Asked Questions ({FAQS.length} Answers)</span>
+            <span>FAQ & Competitor Price vs. Bizz2u Comparison ({FAQS.length} Answers)</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
             Everything You Need to Know Before Joining
           </h2>
           <p className="text-base text-slate-300 max-w-2xl mx-auto">
-            Clear, transparent answers on sales automation, industry solutions (B2B, Real Estate, Finance, Retail, Professional Services), worldwide operation, and zero-risk billing.
+            Clear, transparent answers on sales automation, industry blueprints, and frequently asked questions about the Bizz2u bundle.
           </p>
+
+          {/* Quick Sub-Navigation Pills */}
+          <div className="flex flex-wrap items-center justify-center gap-2.5 mt-6">
+            <a
+              href="#cost-comparison"
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 hover:bg-emerald-500/20 text-xs font-bold transition-all"
+            >
+              <Scale className="w-3.5 h-3.5 text-emerald-400" />
+              <span>Competitor Comparison ($650/mo vs $15/mo)</span>
+            </a>
+            <a
+              href="#industry-sectors"
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:border-slate-700 text-xs font-semibold transition-all"
+            >
+              <Building2 className="w-3.5 h-3.5 text-blue-400" />
+              <span>Industry Sector Blueprints</span>
+            </a>
+            <a
+              href="#faq-questions"
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:border-slate-700 text-xs font-semibold transition-all"
+            >
+              <HelpCircle className="w-3.5 h-3.5 text-emerald-400" />
+              <span>FAQ Questions ({FAQS.length})</span>
+            </a>
+          </div>
         </div>
 
-        {/* Industry Sector Quick-Select Cards (Distinct Colors, Bigger Typography & Big Animated Symbols) */}
-        <div className="mb-8 p-4 sm:p-6 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-2xl">
+        <div className="max-w-4xl mx-auto">
+          {/* Industry Sector Quick-Select Cards (Distinct Colors, Bigger Typography & Big Animated Symbols) */}
+          <div id="industry-sectors" className="mb-8 p-4 sm:p-6 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-2xl">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-4 px-1">
             <span className="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-white flex items-center gap-2">
               <Sparkles className="w-4 h-4 text-emerald-400 shrink-0" />
@@ -211,7 +238,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onClaimClick }) => {
         </div>
 
         {/* Search Input Bar */}
-        <div className="relative mb-6">
+        <div id="faq-questions" className="relative mb-6">
           <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
             <Search className="w-4 h-4" />
           </div>
@@ -348,6 +375,8 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onClaimClick }) => {
             <span>Get Started for $15</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </button>
+        </div>
+
         </div>
 
       </div>

@@ -55,11 +55,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onClaimClick }) => {
 
         {/* Zone 2: Desktop clean text navigation links */}
         <nav className="hidden md:flex items-center gap-5 text-xs font-medium text-slate-300 shrink-0">
-          <a href="#daily-workflow-automation" className="hover:text-emerald-400 transition-colors text-emerald-300 font-semibold flex items-center gap-1">
-            <span>Daily Automation</span>
-          </a>
           <a href="#bundle-tools" className="hover:text-emerald-400 transition-colors">
             6 Software Suite
+          </a>
+          <a href="#cost-comparison" className="hover:text-emerald-400 transition-colors">
+            Competitor vs Bizz2u
           </a>
           <a href="#pricing" className="hover:text-emerald-400 transition-colors text-emerald-400 font-semibold">
             Pricing Plans
@@ -82,14 +82,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onClaimClick }) => {
 
         {/* Language Selector */}
         <div className="flex items-center gap-1 sm:gap-2">
-          <a
-            href="mailto:Bizzusupport@gmail.com"
-            className="hidden lg:flex xl:hidden items-center gap-1 text-xs text-slate-300 hover:text-emerald-400 transition-colors font-mono"
-            title="Official Email: Bizzusupport@gmail.com"
-          >
-            <Mail className="w-3.5 h-3.5 text-emerald-400" />
-            <span>Contact Support</span>
-          </a>
           <LanguageTranslator />
         </div>
 
@@ -111,17 +103,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onClaimClick }) => {
         <div className="md:hidden bg-[#0B101D] border-b border-slate-800 shadow-2xl px-4 py-4 space-y-2 animate-in slide-in-from-top-2 duration-200">
           <div className="grid grid-cols-2 gap-2 text-xs font-semibold">
             <button
-              onClick={() => handleNavClick('#daily-workflow-automation')}
-              className="p-2.5 rounded-lg bg-emerald-950/40 border border-emerald-500/40 text-left text-emerald-300 hover:text-white flex items-center justify-between col-span-2"
-            >
-              <span>⚡ Daily Business Automation Workflows</span>
-              <ChevronRight className="w-3.5 h-3.5 text-emerald-400" />
-            </button>
-            <button
               onClick={() => handleNavClick('#bundle-tools')}
               className="p-2.5 rounded-lg bg-slate-900 border border-slate-800 text-left text-slate-200 hover:text-emerald-400 hover:border-emerald-500/40 flex items-center justify-between"
             >
               <span>6 Software Suite</span>
+              <ChevronRight className="w-3.5 h-3.5 text-slate-500" />
+            </button>
+            <button
+              onClick={() => handleNavClick('#cost-comparison')}
+              className="p-2.5 rounded-lg bg-slate-900 border border-slate-800 text-left text-slate-200 hover:text-emerald-400 hover:border-emerald-500/40 flex items-center justify-between"
+            >
+              <span>Competitor vs Bizz2u</span>
               <ChevronRight className="w-3.5 h-3.5 text-slate-500" />
             </button>
             <button

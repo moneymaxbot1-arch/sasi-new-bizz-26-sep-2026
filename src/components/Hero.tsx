@@ -150,121 +150,134 @@ export const Hero: React.FC<HeroProps> = ({ onClaimClick }) => {
                   </h3>
                 </div>
                 <div className="text-right">
-                  <div className="text-xs text-slate-400 line-through font-mono tabular-nums">
-                    {formatLocalizedPrice(TOTAL_MONTHLY_RETAIL, currentCurrency)}/mo
+                  <div className="text-xs text-rose-400/90 font-mono">
+                    <span className="text-[10px] text-slate-400 uppercase mr-1">Competitors:</span>
+                    <span className="line-through">{formatLocalizedPrice(TOTAL_MONTHLY_RETAIL, currentCurrency)}/mo</span>
                   </div>
-                  <div className="text-xl font-extrabold text-emerald-400 font-mono tabular-nums">
+                  <div className="text-xl sm:text-2xl font-black text-emerald-400 font-mono tabular-nums">
                     {formatLocalizedPrice(15, currentCurrency)} <span className="text-xs font-normal text-slate-300">/month</span>
                   </div>
                 </div>
               </div>
 
-              {/* The 6 Tools Roster (Directly matching the user's original infographic) */}
+              {/* The 6 Tools Roster (Directly matching the user's comparison) */}
               <div className="divide-y divide-slate-800/80 my-3">
                 
-                {/* 1. Mailchimp */}
-                <div className="py-2.5 flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-lg bg-[#FFE01B]/15 border border-[#FFE01B]/30 flex items-center justify-center font-bold text-[#FFE01B] text-xs">
-                      MC
+                {/* 1. E-mail Rocket */}
+                <div className="py-2.5 flex items-center justify-between gap-3">
+                  <div className="flex items-center gap-3 min-w-0">
+                    <div className="w-8 h-8 rounded-lg bg-[#FFE01B]/15 border border-[#FFE01B]/30 flex items-center justify-center font-bold text-[#FFE01B] text-xs shrink-0">
+                      ER
                     </div>
-                    <div>
-                      <div className="text-sm font-bold text-white">Mailchimp</div>
-                      <div className="text-xs text-slate-400">Billed Monthly · Email Marketing</div>
+                    <div className="min-w-0">
+                      <div className="text-sm font-bold text-white flex items-center gap-1.5 flex-wrap">
+                        <span>E-mail Rocket</span>
+                      </div>
+                      <div className="text-xs text-slate-400 truncate">Billed Monthly · Email Marketing</div>
                     </div>
                   </div>
-                  <div className="text-right">
-                    <span className="text-xs font-mono font-semibold text-slate-300 bg-slate-800/80 px-2 py-0.5 rounded border border-slate-700">
+                  <div className="text-right shrink-0">
+                    <span className="text-xs font-mono font-semibold text-slate-300 bg-slate-800/80 px-2 py-0.5 rounded border border-slate-700 whitespace-nowrap">
                       {formatLocalizedPrice(162, currentCurrency)}/mo value
                     </span>
                   </div>
                 </div>
 
-                {/* 2. Hostinger */}
-                <div className="py-2.5 flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-lg bg-[#673DE6]/20 border border-[#673DE6]/40 flex items-center justify-center font-bold text-indigo-300 text-xs">
-                      H
+                {/* 2. Cloud Hosting */}
+                <div className="py-2.5 flex items-center justify-between gap-3">
+                  <div className="flex items-center gap-3 min-w-0">
+                    <div className="w-8 h-8 rounded-lg bg-[#673DE6]/20 border border-[#673DE6]/40 flex items-center justify-center font-bold text-indigo-300 text-xs shrink-0">
+                      CH
                     </div>
-                    <div>
-                      <div className="text-sm font-bold text-white">Hostinger</div>
-                      <div className="text-xs text-slate-400">Billed Monthly · Web Hosting</div>
+                    <div className="min-w-0">
+                      <div className="text-sm font-bold text-white flex items-center gap-1.5 flex-wrap">
+                        <span>Cloud Hosting</span>
+                      </div>
+                      <div className="text-xs text-slate-400 truncate">Billed Monthly · Web Hosting</div>
                     </div>
                   </div>
-                  <div className="text-right">
-                    <span className="text-xs font-mono font-semibold text-slate-300 bg-slate-800/80 px-2 py-0.5 rounded border border-slate-700">
+                  <div className="text-right shrink-0">
+                    <span className="text-xs font-mono font-semibold text-slate-300 bg-slate-800/80 px-2 py-0.5 rounded border border-slate-700 whitespace-nowrap">
                       {formatLocalizedPrice(9, currentCurrency)}/mo value
                     </span>
                   </div>
                 </div>
 
-                {/* 3. Fomo */}
-                <div className="py-2.5 flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-lg bg-[#FF6B4A]/20 border border-[#FF6B4A]/40 flex items-center justify-center font-bold text-orange-300 text-xs">
-                      FOMO
+                {/* 3. Click Fomo */}
+                <div className="py-2.5 flex items-center justify-between gap-3">
+                  <div className="flex items-center gap-3 min-w-0">
+                    <div className="w-8 h-8 rounded-lg bg-[#FF6B4A]/20 border border-[#FF6B4A]/40 flex items-center justify-center font-bold text-orange-300 text-xs shrink-0">
+                      CF
                     </div>
-                    <div>
-                      <div className="text-sm font-bold text-white">Fomo</div>
-                      <div className="text-xs text-slate-400">Billed Monthly · Social Proof Platform</div>
+                    <div className="min-w-0">
+                      <div className="text-sm font-bold text-white flex items-center gap-1.5 flex-wrap">
+                        <span>Click Fomo</span>
+                      </div>
+                      <div className="text-xs text-slate-400 truncate">Billed Monthly · Social Proof Platform</div>
                     </div>
                   </div>
-                  <div className="text-right">
-                    <span className="text-xs font-mono font-semibold text-slate-300 bg-slate-800/80 px-2 py-0.5 rounded border border-slate-700">
+                  <div className="text-right shrink-0">
+                    <span className="text-xs font-mono font-semibold text-slate-300 bg-slate-800/80 px-2 py-0.5 rounded border border-slate-700 whitespace-nowrap">
                       {formatLocalizedPrice(50, currentCurrency)}/mo value
                     </span>
                   </div>
                 </div>
 
-                {/* 4. Wati */}
-                <div className="py-2.5 flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-lg bg-[#25D366]/20 border border-[#25D366]/40 flex items-center justify-center font-bold text-emerald-300 text-xs">
-                      WATi
+                {/* 4. WhatsApp Flow */}
+                <div className="py-2.5 flex items-center justify-between gap-3">
+                  <div className="flex items-center gap-3 min-w-0">
+                    <div className="w-8 h-8 rounded-lg bg-[#25D366]/20 border border-[#25D366]/40 flex items-center justify-center font-bold text-emerald-300 text-xs shrink-0">
+                      WF
                     </div>
-                    <div>
-                      <div className="text-sm font-bold text-white">WATi</div>
-                      <div className="text-xs text-slate-400">Billed Monthly · WhatsApp Marketing</div>
+                    <div className="min-w-0">
+                      <div className="text-sm font-bold text-white flex items-center gap-1.5 flex-wrap">
+                        <span>WhatsApp Flow</span>
+                      </div>
+                      <div className="text-xs text-slate-400 truncate">Billed Monthly · WhatsApp Marketing</div>
                     </div>
                   </div>
-                  <div className="text-right">
-                    <span className="text-xs font-mono font-semibold text-slate-300 bg-slate-800/80 px-2 py-0.5 rounded border border-slate-700">
+                  <div className="text-right shrink-0">
+                    <span className="text-xs font-mono font-semibold text-slate-300 bg-slate-800/80 px-2 py-0.5 rounded border border-slate-700 whitespace-nowrap">
                       {formatLocalizedPrice(314, currentCurrency)}/mo value
                     </span>
                   </div>
                 </div>
 
-                {/* 5. UptimeRobot */}
-                <div className="py-2.5 flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-lg bg-[#17C964]/20 border border-[#17C964]/40 flex items-center justify-center font-bold text-teal-300 text-xs">
-                      UR
+                {/* 5. Site Shield */}
+                <div className="py-2.5 flex items-center justify-between gap-3">
+                  <div className="flex items-center gap-3 min-w-0">
+                    <div className="w-8 h-8 rounded-lg bg-[#17C964]/20 border border-[#17C964]/40 flex items-center justify-center font-bold text-teal-300 text-xs shrink-0">
+                      SS
                     </div>
-                    <div>
-                      <div className="text-sm font-bold text-white">UptimeRobot</div>
-                      <div className="text-xs text-slate-400">Billed Monthly · Website Monitoring</div>
+                    <div className="min-w-0">
+                      <div className="text-sm font-bold text-white flex items-center gap-1.5 flex-wrap">
+                        <span>Site Shield</span>
+                      </div>
+                      <div className="text-xs text-slate-400 truncate">Billed Monthly · Website Monitoring</div>
                     </div>
                   </div>
-                  <div className="text-right">
-                    <span className="text-xs font-mono font-semibold text-slate-300 bg-slate-800/80 px-2 py-0.5 rounded border border-slate-700">
+                  <div className="text-right shrink-0">
+                    <span className="text-xs font-mono font-semibold text-slate-300 bg-slate-800/80 px-2 py-0.5 rounded border border-slate-700 whitespace-nowrap">
                       {formatLocalizedPrice(80, currentCurrency)}/mo value
                     </span>
                   </div>
                 </div>
 
-                {/* 6. Bitly */}
-                <div className="py-2.5 flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-lg bg-[#EE6123]/20 border border-[#EE6123]/40 flex items-center justify-center font-bold text-amber-300 text-xs">
-                      bitly
+                {/* 6. Smart Link */}
+                <div className="py-2.5 flex items-center justify-between gap-3">
+                  <div className="flex items-center gap-3 min-w-0">
+                    <div className="w-8 h-8 rounded-lg bg-[#EE6123]/20 border border-[#EE6123]/40 flex items-center justify-center font-bold text-amber-300 text-xs shrink-0">
+                      SL
                     </div>
-                    <div>
-                      <div className="text-sm font-bold text-white">Bitly</div>
-                      <div className="text-xs text-slate-400">Billed Monthly · Short Link & QR Suite</div>
+                    <div className="min-w-0">
+                      <div className="text-sm font-bold text-white flex items-center gap-1.5 flex-wrap">
+                        <span>Smart Link</span>
+                      </div>
+                      <div className="text-xs text-slate-400 truncate">Billed Monthly · Short Link & QR Suite</div>
                     </div>
                   </div>
-                  <div className="text-right">
-                    <span className="text-xs font-mono font-semibold text-slate-300 bg-slate-800/80 px-2 py-0.5 rounded border border-slate-700">
+                  <div className="text-right shrink-0">
+                    <span className="text-xs font-mono font-semibold text-slate-300 bg-slate-800/80 px-2 py-0.5 rounded border border-slate-700 whitespace-nowrap">
                       {formatLocalizedPrice(35, currentCurrency)}/mo value
                     </span>
                   </div>
@@ -275,20 +288,20 @@ export const Hero: React.FC<HeroProps> = ({ onClaimClick }) => {
               {/* Value Summary Footer */}
               <div className="mt-4 pt-4 border-t border-slate-800 bg-slate-900/60 -mx-6 -mb-6 p-6 rounded-b-2xl">
                 <div className="flex items-center justify-between text-xs text-slate-300 mb-2">
-                  <span>Combined Retail Value:</span>
-                  <span className="font-mono line-through font-semibold text-rose-400">
+                  <span className="font-medium text-slate-300">Combined Competitor Retail Value:</span>
+                  <span className="font-mono line-through font-bold text-rose-400 text-sm">
                     {formatLocalizedPrice(TOTAL_MONTHLY_RETAIL, currentCurrency)}/mo ({formatLocalizedPrice(TOTAL_ANNUAL_RETAIL, currentCurrency)}/yr)
                   </span>
                 </div>
                 <div className="flex items-center justify-between text-sm font-bold text-white mb-4">
-                  <span className="text-emerald-400">Bundle Subscription:</span>
-                  <span className="font-mono text-xl text-emerald-400">
-                    {formatLocalizedPrice(15, currentCurrency)}<span className="text-xs font-normal text-slate-300">/mo</span> <span className="text-xs font-normal text-slate-400 font-sans">(Save {formatLocalizedPrice(635, currentCurrency)}/mo)</span>
+                  <span className="text-emerald-400">Our 6 Software Bundle:</span>
+                  <span className="font-mono text-xl sm:text-2xl text-emerald-400">
+                    {formatLocalizedPrice(15, currentCurrency)}<span className="text-xs font-normal text-slate-300">/mo</span> <span className="text-xs font-bold text-emerald-300 font-sans">(Save {formatLocalizedPrice(635, currentCurrency)}/mo)</span>
                   </span>
                 </div>
                 <button
                   onClick={onClaimClick}
-                  className="w-full py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold rounded-xl transition-colors text-center text-sm cursor-pointer shadow-md active:scale-98"
+                  className="w-full py-3.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold rounded-xl transition-colors text-center text-sm cursor-pointer shadow-md active:scale-98"
                 >
                   Start {formatLocalizedPrice(15, currentCurrency)}/mo Subscription · Cancel Anytime
                 </button>

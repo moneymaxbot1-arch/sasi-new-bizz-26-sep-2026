@@ -66,11 +66,11 @@ const PILLARS: CorePillar[] = [
     badge: 'Acquisition & Reach',
     tagline: 'Attract qualified visitors continuously without exhausting ad budgets',
     problem: 'Attracting visitors to your website is a constant struggle. Without consistent, high-intent traffic, your online presence remains unnoticed and ad costs spiral out of control.',
-    solution: 'Deploy ultra-fast US SSD hosting (Hostinger) for sub-second SEO rankings, dynamic branded short links and QR codes (Bitly) across social & offline campaigns, and custom domain mapping.',
+    solution: 'Deploy ultra-fast US SSD hosting (Cloud Hosting) for sub-second SEO rankings, dynamic branded short links and QR codes (Smart Link) across social & offline campaigns, and custom domain mapping.',
     keyBenefit: '1-Click branded short links + dynamic QR codes boost click-through rates by 34% and bring organic traffic into your funnels.',
     metric: '+34%',
     metricLabel: 'Higher Click-Through & Scans',
-    toolsResponsible: ['Bitly', 'Hostinger', 'Mailchimp'],
+    toolsResponsible: ['Smart Link', 'Cloud Hosting', 'E-mail Rocket'],
     illustrationTheme: {
       gradient: 'from-amber-500/15 via-orange-500/10 to-slate-900',
       border: 'border-amber-500/40',
@@ -85,11 +85,11 @@ const PILLARS: CorePillar[] = [
     badge: 'Social Proof & On-Site Conversion',
     tagline: 'Turn cold skeptics into eager buyers with real-time social proof',
     problem: 'Once users land on your website, keeping them engaged and building trust is difficult. Bounce rates exceed 70% when first-time visitors see zero signs of active buyer activity.',
-    solution: 'Fomo automatically streams real-time verified buyer popups, live visitor counters, interactive emoji reactions, and countdown timers to build immediate authenticity.',
+    solution: 'Click Fomo automatically streams real-time verified buyer popups, live visitor counters, interactive emoji reactions, and countdown timers to build immediate authenticity.',
     keyBenefit: 'Acts as your 24/7 virtual sales team, proving to visitors that real people are actively buying right now.',
     metric: '+34%',
     metricLabel: 'Lift in Checkout Completion',
-    toolsResponsible: ['Fomo', 'WATi'],
+    toolsResponsible: ['Click Fomo', 'WhatsApp Flow'],
     illustrationTheme: {
       gradient: 'from-rose-500/15 via-pink-500/10 to-slate-900',
       border: 'border-rose-500/40',
@@ -104,11 +104,11 @@ const PILLARS: CorePillar[] = [
     badge: 'Omnichannel Conversion',
     tagline: 'Reconnect with interested prospects on channels they actually open',
     problem: 'Reaching out to potential customers who have shown interest in your content or offerings is challenging. Traditional emails get lost in spam, and finding a cost-effective way to reconnect is key.',
-    solution: 'Combine Mailchimp automated email drip sequences with WATi 98% open-rate WhatsApp broadcasts, Telegram catalog checkout, and automated abandoned cart recovery sequences.',
+    solution: 'Combine E-mail Rocket automated email drip sequences with WhatsApp Flow 98% open-rate WhatsApp broadcasts, Telegram catalog checkout, and automated abandoned cart recovery sequences.',
     keyBenefit: 'Recover up to 40% of abandoned carts with instant WhatsApp follow-ups that bypass saturated inboxes with zero 24-hour rule restrictions.',
     metric: '98%',
     metricLabel: 'WhatsApp Open Rates',
-    toolsResponsible: ['WATi', 'Mailchimp'],
+    toolsResponsible: ['WhatsApp Flow', 'E-mail Rocket'],
     illustrationTheme: {
       gradient: 'from-emerald-500/15 via-teal-500/10 to-slate-900',
       border: 'border-emerald-500/40',
@@ -123,11 +123,11 @@ const PILLARS: CorePillar[] = [
     badge: 'Infrastructure Shield',
     tagline: 'Protect every dollar of revenue with 24/7 automated monitoring',
     problem: 'Downtime can be disastrous for any online business. A broken payment gateway, crashed database, or expired SSL certificate quietly drains revenue while you sleep.',
-    solution: 'UptimeRobot verifies your server, checkout page, and REST APIs every 30 seconds with immediate SMS, Telegram, and Email alerts the moment an anomaly is detected.',
+    solution: 'Site Shield verifies your server, checkout page, and REST APIs every 30 seconds with immediate SMS, Telegram, and Email alerts the moment an anomaly is detected.',
     keyBenefit: 'Detect and resolve silent payment gateway failures in 30 seconds before customers bounce to your competitors.',
     metric: '99.9%',
     metricLabel: 'Verified Uptime Assurance',
-    toolsResponsible: ['UptimeRobot', 'Hostinger'],
+    toolsResponsible: ['Site Shield', 'Cloud Hosting'],
     illustrationTheme: {
       gradient: 'from-cyan-500/15 via-blue-500/10 to-slate-900',
       border: 'border-cyan-500/40',
@@ -145,9 +145,9 @@ const TARGET_AUDIENCES: TargetAudience[] = [
     badge: 'DTC & Retail',
     headline: 'Stop losing checkouts to cart abandonment and silent outages',
     painPoint: 'Paying separate $200+/mo bills for email, WhatsApp apps, hosting, and social proof plugins that don\'t talk to each other.',
-    howWeSolve: 'Trigger Fomo live purchase alerts on product pages, broadcast flash sales via WATi WhatsApp (98% opens), and host fast landing pages on Hostinger SSD.',
+    howWeSolve: 'Trigger Click Fomo live purchase alerts on product pages, broadcast flash sales via WhatsApp Flow (98% opens), and host fast landing pages on Cloud Hosting SSD.',
     result: '+42% higher conversion rate with instant abandoned cart recovery',
-    recommendedTool: 'WATi + Fomo + Mailchimp'
+    recommendedTool: 'WhatsApp Flow + Click Fomo + E-mail Rocket'
   },
   {
     id: 'agencies',
@@ -155,7 +155,7 @@ const TARGET_AUDIENCES: TargetAudience[] = [
     badge: 'Agencies & Service Pros',
     headline: 'Deliver complete client tech stacks without eating your profit margins',
     painPoint: 'Client software expenses eat into retainer profits, forcing you to juggle 10 different passwords and expensive vendor billing.',
-    howWeSolve: 'Equip every client with complete tracking links (Bitly), email automations (Mailchimp), uptime status pages (UptimeRobot), and WhatsApp CRM for just $15/mo.',
+    howWeSolve: 'Equip every client with complete tracking links (Smart Link), email automations (E-mail Rocket), uptime status pages (Site Shield), and WhatsApp CRM for just $15/mo.',
     result: 'Save $635/month per client while packaging a premium enterprise stack',
     recommendedTool: 'All 6 Tools Unified'
   },
@@ -167,7 +167,7 @@ const TARGET_AUDIENCES: TargetAudience[] = [
     painPoint: 'Spending $650/mo before generating your first $1,000 in revenue, creating dangerous cash-flow burn on a student or startup budget.',
     howWeSolve: 'Get unlimited cloud hosting, professional custom SMTP email marketing, 24/7 API monitoring, and link attribution for the price of two coffees a month.',
     result: 'Save $7,620 in your first year while looking 100% credible to early buyers',
-    recommendedTool: 'Hostinger + Bitly + UptimeRobot'
+    recommendedTool: 'Cloud Hosting + Smart Link + Site Shield'
   },
   {
     id: 'local-biz',
@@ -175,9 +175,9 @@ const TARGET_AUDIENCES: TargetAudience[] = [
     badge: 'Local Commerce & Clinics',
     headline: 'Automate booking reminders, customer reviews, and lead capture',
     painPoint: 'Manual follow-ups over phone or email cause 30%+ appointment no-shows and lost repeat business.',
-    howWeSolve: 'Automate 2-way WhatsApp appointment confirmations with WATi, generate scan-to-pay QR codes with Bitly, and show verified local reviews with Fomo.',
+    howWeSolve: 'Automate 2-way WhatsApp appointment confirmations with WhatsApp Flow, generate scan-to-pay QR codes with Smart Link, and show verified local reviews with Click Fomo.',
     result: 'Cut appointment no-shows by 75% and automate repeat bookings 24/7',
-    recommendedTool: 'WATi + Bitly + Fomo'
+    recommendedTool: 'WhatsApp Flow + Smart Link + Click Fomo'
   }
 ];
 

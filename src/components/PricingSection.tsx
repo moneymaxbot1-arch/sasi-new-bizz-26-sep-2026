@@ -38,7 +38,7 @@ interface ToolSpecDetail {
 const STARTER_SOFTWARE_SPECS: Record<string, ToolSpecDetail> = {
   hostinger: {
     id: 'hostinger',
-    name: 'HOSTINGER',
+    name: 'Cloud Hosting',
     category: 'Cloud Web Hosting',
     tagline: 'High-speed cloud server infrastructure',
     features: [
@@ -52,7 +52,7 @@ const STARTER_SOFTWARE_SPECS: Record<string, ToolSpecDetail> = {
   },
   fomo: {
     id: 'fomo',
-    name: 'FOMO',
+    name: 'Click Fomo',
     category: 'Social Proof & Conversions',
     tagline: 'Real-time buyer activity & live visitor notifications',
     features: [
@@ -69,7 +69,7 @@ const STARTER_SOFTWARE_SPECS: Record<string, ToolSpecDetail> = {
   },
   uptimeRobot: {
     id: 'uptimeRobot',
-    name: 'UptimeRobot',
+    name: 'Site Shield',
     category: '24/7 Monitoring Alert Suite',
     tagline: 'Instant downtime & server performance monitoring',
     features: [
@@ -81,7 +81,7 @@ const STARTER_SOFTWARE_SPECS: Record<string, ToolSpecDetail> = {
   },
   mailchimp: {
     id: 'mailchimp',
-    name: 'MAILCHIMP',
+    name: 'E-mail Rocket',
     category: 'Email Marketing & CRM',
     tagline: 'Automated email marketing & customer sequence journeys',
     features: [
@@ -98,7 +98,7 @@ const STARTER_SOFTWARE_SPECS: Record<string, ToolSpecDetail> = {
   },
   wati: {
     id: 'wati',
-    name: 'WATi',
+    name: 'WhatsApp Flow',
     category: 'WhatsApp Business API',
     tagline: 'Broadcast marketing, automated chatbots & customer support',
     features: [
@@ -124,7 +124,7 @@ const STARTER_SOFTWARE_SPECS: Record<string, ToolSpecDetail> = {
   },
   bitly: {
     id: 'bitly',
-    name: 'BITLY',
+    name: 'Smart Link',
     category: 'Branded Short Links & QR',
     tagline: 'Custom short URL attribution, biolinks & QR codes',
     features: [
@@ -609,12 +609,8 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                       >
                         <div className="flex items-center gap-2 mb-1.5">
                           <div className="flex items-center gap-1.5 px-3 py-1 rounded-md bg-slate-900 border border-slate-700 shadow-xs">
-                            <span className="w-3.5 h-3.5 bg-[#673DE6] rounded-xs flex items-center justify-center text-white font-black text-[9px]">
-                              H
-                            </span>
-                            <span className="font-black tracking-wider text-xs text-white font-sans">
-                              HOSTINGER
-                            </span>
+                            <span className="w-4 h-3.5 bg-[#673DE6] rounded-xs flex items-center justify-center text-white font-black text-[8px]">CH</span>
+                            <span className="font-black tracking-wider text-xs text-white font-sans">Cloud Hosting</span>
                           </div>
                           <span className="w-2 h-2 rounded-full bg-cyan-400" />
                           {isStarter && (
@@ -652,7 +648,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                               <div className="flex items-center gap-2">
                                 <div className="flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#673DE6] text-white font-black text-xs shadow-xs">
                                   <span>H</span>
-                                  <span>HOSTINGER</span>
+                                  <span>Cloud Hosting</span>
                                 </div>
                                 <span className="px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-500/40 text-[10px] font-mono font-bold uppercase">
                                   {formatLocalizedPrice(15, currentCurrency)} Plan Included
@@ -710,7 +706,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                               <div className="flex items-center gap-2">
                                 <div className="flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#673DE6] text-white font-black text-xs shadow-xs">
                                   <span>H</span>
-                                  <span>HOSTINGER</span>
+                                  <span>Cloud Hosting</span>
                                 </div>
                                 <span className="px-2 py-0.5 rounded bg-amber-950 text-amber-300 border border-amber-500/40 text-[10px] font-mono font-bold uppercase">
                                   {formatLocalizedPrice(35, currentCurrency)} Plan Included
@@ -768,7 +764,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                               <div className="flex items-center gap-2">
                                 <div className="flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#673DE6] text-white font-black text-xs shadow-xs">
                                   <span>H</span>
-                                  <span>HOSTINGER</span>
+                                  <span>Cloud Hosting</span>
                                 </div>
                                 <span className="px-2 py-0.5 rounded bg-cyan-950 text-cyan-300 border border-cyan-500/40 text-[10px] font-mono font-bold uppercase">
                                   {formatLocalizedPrice(150, currentCurrency)} Plan Included
@@ -847,9 +843,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                       >
                         <div className="flex items-center gap-2 mb-1.5">
                           <div className="px-3.5 py-1 rounded-md bg-slate-900 border border-slate-700 shadow-xs">
-                            <span className="font-serif font-black tracking-tight text-base text-[#F97316]">
-                              fomo
-                            </span>
+                            <span className="font-sans font-black tracking-tight text-xs text-[#F97316]">Click Fomo</span>
                           </div>
                           <span className="w-2 h-2 rounded-full bg-cyan-400" />
                           {isStarter && (
@@ -872,7 +866,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                           {tier.toolAllowances.fomo}
                         </span>
 
-                        {/* Floating Popup for FOMO ($15 Starter) displayed BELOW the FOMO box with BIGGER WORDS & ANIMATED APPROACH */}
+                        {/* Floating Popup for Click Fomo ($15 Starter) displayed BELOW the FOMO box with BIGGER WORDS & ANIMATED APPROACH */}
                         {isStarter && hoveredFomo && (
                           <div
                             onMouseEnter={() => setHoveredFomo(true)}
@@ -882,13 +876,11 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                             {/* Upward pointing triangle/arrow */}
                             <div className="absolute bottom-full left-1/2 -translate-x-1/2 w-0 h-0 border-x-8 border-x-transparent border-b-8 border-b-[#F97316]" />
 
-                            {/* Header with FOMO logo and package indication */}
+                            {/* Header with Click Fomo logo and package indication */}
                             <div className="flex items-center justify-between pb-3 mb-3.5 border-b border-slate-800">
                               <div className="flex items-center gap-2">
                                 <div className="px-2.5 py-0.5 rounded bg-slate-900 border border-slate-700">
-                                  <span className="font-serif font-black tracking-tight text-base text-[#F97316]">
-                                    fomo
-                                  </span>
+                                  <span className="font-sans font-black tracking-tight text-xs text-[#F97316]">Click Fomo</span>
                                 </div>
                                 <span className="px-2 py-0.5 rounded bg-orange-950 text-orange-300 border border-orange-500/40 text-[10px] font-mono font-bold uppercase">
                                   {formatLocalizedPrice(15, currentCurrency)} Plan Included
@@ -934,7 +926,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                           </div>
                         )}
 
-                        {/* Floating Popup for FOMO ($35 Growth - 2nd price box) displayed BELOW with BIGGER WORDS & ANIMATED APPROACH */}
+                        {/* Floating Popup for Click Fomo ($35 Growth - 2nd price box) displayed BELOW with BIGGER WORDS & ANIMATED APPROACH */}
                         {isCenter && hoveredGrowthFomo && (
                           <div
                             onMouseEnter={() => setHoveredGrowthFomo(true)}
@@ -944,13 +936,11 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                             {/* Upward pointing triangle/arrow */}
                             <div className="absolute bottom-full left-1/2 -translate-x-1/2 w-0 h-0 border-x-8 border-x-transparent border-b-8 border-b-[#F97316]" />
 
-                            {/* Header with FOMO logo and package indication */}
+                            {/* Header with Click Fomo logo and package indication */}
                             <div className="flex items-center justify-between pb-3 mb-3.5 border-b border-slate-800">
                               <div className="flex items-center gap-2">
                                 <div className="px-2.5 py-0.5 rounded bg-slate-900 border border-slate-700">
-                                  <span className="font-serif font-black tracking-tight text-base text-[#F97316]">
-                                    fomo
-                                  </span>
+                                  <span className="font-sans font-black tracking-tight text-xs text-[#F97316]">Click Fomo</span>
                                 </div>
                                 <span className="px-2 py-0.5 rounded bg-orange-950 text-orange-300 border border-orange-500/40 text-[10px] font-mono font-bold uppercase">
                                   {formatLocalizedPrice(35, currentCurrency)} Plan Included
@@ -998,7 +988,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                           </div>
                         )}
 
-                        {/* Floating Popup for FOMO ($150 Agency - 3rd price box) displayed BELOW with BIGGER WORDS & ANIMATED APPROACH */}
+                        {/* Floating Popup for Click Fomo ($150 Agency - 3rd price box) displayed BELOW with BIGGER WORDS & ANIMATED APPROACH */}
                         {isAgency && hoveredAgencyFomo && (
                           <div
                             onMouseEnter={() => setHoveredAgencyFomo(true)}
@@ -1008,13 +998,11 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                             {/* Upward pointing triangle/arrow */}
                             <div className="absolute bottom-full left-1/2 -translate-x-1/2 w-0 h-0 border-x-8 border-x-transparent border-b-8 border-b-[#F97316]" />
 
-                            {/* Header with FOMO logo and package indication */}
+                            {/* Header with Click Fomo logo and package indication */}
                             <div className="flex items-center justify-between pb-3 mb-3.5 border-b border-slate-800">
                               <div className="flex items-center gap-2">
                                 <div className="px-2.5 py-0.5 rounded bg-slate-900 border border-slate-700">
-                                  <span className="font-serif font-black tracking-tight text-base text-[#F97316]">
-                                    fomo
-                                  </span>
+                                  <span className="font-sans font-black tracking-tight text-xs text-[#F97316]">Click Fomo</span>
                                 </div>
                                 <span className="px-2 py-0.5 rounded bg-orange-950 text-orange-300 border border-orange-500/40 text-[10px] font-mono font-bold uppercase">
                                   {formatLocalizedPrice(150, currentCurrency)} Plan Included
@@ -1099,9 +1087,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                         <div className="flex items-center gap-2 mb-1.5">
                           <div className="flex items-center gap-2 px-3 py-1 rounded-md bg-slate-900 border border-slate-700 shadow-xs">
                             <span className="w-2.5 h-2.5 rounded-full bg-[#10B981] animate-pulse shadow-[0_0_8px_#10b981]" />
-                            <span className="font-extrabold text-xs text-white">
-                              UptimeRobot
-                            </span>
+                            <span className="font-extrabold text-xs text-white">Site Shield</span>
                           </div>
                           <span className="w-2 h-2 rounded-full bg-cyan-400" />
                           {isStarter && (
@@ -1124,7 +1110,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                           {tier.toolAllowances.uptimeRobot}
                         </span>
 
-                        {/* Floating Popup for UptimeRobot ($15 Starter) displayed BELOW with BIGGER WORDS & ANIMATED APPROACH */}
+                        {/* Floating Popup for Site Shield ($15 Starter) displayed BELOW with BIGGER WORDS & ANIMATED APPROACH */}
                         {isStarter && hoveredUptimeRobot && (
                           <div
                             onMouseEnter={() => setHoveredUptimeRobot(true)}
@@ -1134,12 +1120,12 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                             {/* Upward pointing triangle/arrow */}
                             <div className="absolute bottom-full left-1/2 -translate-x-1/2 w-0 h-0 border-x-8 border-x-transparent border-b-8 border-b-[#10B981]" />
 
-                            {/* Header with UptimeRobot badge and package indication */}
+                            {/* Header with Site Shield badge and package indication */}
                             <div className="flex items-center justify-between pb-3 mb-3.5 border-b border-slate-800">
                               <div className="flex items-center gap-2">
                                 <div className="flex items-center gap-1.5 px-2.5 py-1 rounded bg-slate-900 border border-slate-700 shadow-xs">
                                   <span className="w-2.5 h-2.5 rounded-full bg-[#10B981] animate-pulse shadow-[0_0_8px_#10b981]" />
-                                  <span className="font-extrabold text-xs text-white">UptimeRobot</span>
+                                  <span className="font-extrabold text-xs text-white">Site Shield</span>
                                 </div>
                                 <span className="px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-500/40 text-[10px] font-mono font-bold uppercase">
                                   {formatLocalizedPrice(15, currentCurrency)} Plan Included
@@ -1180,7 +1166,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                           </div>
                         )}
 
-                        {/* Floating Popup for UptimeRobot ($35 Growth - 2nd price box) displayed BELOW with BIGGER WORDS & ANIMATED APPROACH */}
+                        {/* Floating Popup for Site Shield ($35 Growth - 2nd price box) displayed BELOW with BIGGER WORDS & ANIMATED APPROACH */}
                         {isCenter && hoveredGrowthUptimeRobot && (
                           <div
                             onMouseEnter={() => setHoveredGrowthUptimeRobot(true)}
@@ -1190,12 +1176,12 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                             {/* Upward pointing triangle/arrow */}
                             <div className="absolute bottom-full left-1/2 -translate-x-1/2 w-0 h-0 border-x-8 border-x-transparent border-b-8 border-b-[#10B981]" />
 
-                            {/* Header with UptimeRobot badge and package indication */}
+                            {/* Header with Site Shield badge and package indication */}
                             <div className="flex items-center justify-between pb-3 mb-3.5 border-b border-slate-800">
                               <div className="flex items-center gap-2">
                                 <div className="flex items-center gap-1.5 px-2.5 py-1 rounded bg-slate-900 border border-slate-700 shadow-xs">
                                   <span className="w-2.5 h-2.5 rounded-full bg-[#10B981] animate-pulse shadow-[0_0_8px_#10b981]" />
-                                  <span className="font-extrabold text-xs text-white">UptimeRobot</span>
+                                  <span className="font-extrabold text-xs text-white">Site Shield</span>
                                 </div>
                                 <span className="px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-500/40 text-[10px] font-mono font-bold uppercase">
                                   {formatLocalizedPrice(35, currentCurrency)} Plan Included
@@ -1236,7 +1222,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                           </div>
                         )}
 
-                        {/* Floating Popup for UptimeRobot ($150 Agency - 3rd price box) displayed BELOW with BIGGER WORDS & ANIMATED APPROACH */}
+                        {/* Floating Popup for Site Shield ($150 Agency - 3rd price box) displayed BELOW with BIGGER WORDS & ANIMATED APPROACH */}
                         {isAgency && hoveredAgencyUptimeRobot && (
                           <div
                             onMouseEnter={() => setHoveredAgencyUptimeRobot(true)}
@@ -1246,12 +1232,12 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                             {/* Upward pointing triangle/arrow */}
                             <div className="absolute bottom-full left-1/2 -translate-x-1/2 w-0 h-0 border-x-8 border-x-transparent border-b-8 border-b-[#10B981]" />
 
-                            {/* Header with UptimeRobot badge and package indication */}
+                            {/* Header with Site Shield badge and package indication */}
                             <div className="flex items-center justify-between pb-3 mb-3.5 border-b border-slate-800">
                               <div className="flex items-center gap-2">
                                 <div className="flex items-center gap-1.5 px-2.5 py-1 rounded bg-slate-900 border border-slate-700 shadow-xs">
                                   <span className="w-2.5 h-2.5 rounded-full bg-[#10B981] animate-pulse shadow-[0_0_8px_#10b981]" />
-                                  <span className="font-extrabold text-xs text-white">UptimeRobot</span>
+                                  <span className="font-extrabold text-xs text-white">Site Shield</span>
                                 </div>
                                 <span className="px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-500/40 text-[10px] font-mono font-bold uppercase">
                                   {formatLocalizedPrice(150, currentCurrency)} Plan Included
@@ -1335,9 +1321,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                       >
                         <div className="flex items-center gap-2 mb-1.5">
                           <div className="flex items-center gap-1.5 px-3.5 py-1 rounded-md bg-[#FFE01B] text-slate-950 border border-amber-400 shadow-xs">
-                            <span className="font-black tracking-tight text-xs uppercase font-sans">
-                              mailchimp
-                            </span>
+                            <span className="font-black tracking-tight text-xs uppercase font-sans">E-mail Rocket</span>
                           </div>
                           <span className="w-2 h-2 rounded-full bg-cyan-400" />
                           {isStarter && (
@@ -1360,7 +1344,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                           {tier.toolAllowances.mailchimp}
                         </span>
 
-                        {/* Floating Popup for Mailchimp ($15 Starter) displayed with BIGGER WORDS & ANIMATED APPROACH */}
+                        {/* Floating Popup for E-mail Rocket ($15 Starter) displayed with BIGGER WORDS & ANIMATED APPROACH */}
                         {isStarter && hoveredMailchimp && (
                           <div
                             onMouseEnter={() => setHoveredMailchimp(true)}
@@ -1370,11 +1354,11 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                             {/* Upward pointing triangle/arrow */}
                             <div className="absolute bottom-full left-1/2 -translate-x-1/2 w-0 h-0 border-x-8 border-x-transparent border-b-8 border-b-[#FFE01B]" />
 
-                            {/* Header with Mailchimp logo and package indication */}
+                            {/* Header with E-mail Rocket logo and package indication */}
                             <div className="flex items-center justify-between pb-3 mb-3.5 border-b border-slate-800">
                               <div className="flex items-center gap-2">
                                 <div className="px-2.5 py-1 rounded bg-[#FFE01B] text-slate-950 font-black text-xs uppercase font-sans">
-                                  <span>MAILCHIMP</span>
+                                  <span>E-mail Rocket</span>
                                 </div>
                                 <span className="px-2 py-0.5 rounded bg-amber-950 text-amber-300 border border-amber-500/40 text-[10px] font-mono font-bold uppercase">
                                   {formatLocalizedPrice(15, currentCurrency)} Plan Included
@@ -1420,7 +1404,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                           </div>
                         )}
 
-                        {/* Floating Popup for Mailchimp ($35 Growth - 2nd price box) displayed with BIGGER WORDS & ANIMATED APPROACH */}
+                        {/* Floating Popup for E-mail Rocket ($35 Growth - 2nd price box) displayed with BIGGER WORDS & ANIMATED APPROACH */}
                         {isCenter && hoveredGrowthMailchimp && (
                           <div
                             onMouseEnter={() => setHoveredGrowthMailchimp(true)}
@@ -1430,11 +1414,11 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                             {/* Upward pointing triangle/arrow */}
                             <div className="absolute bottom-full left-1/2 -translate-x-1/2 w-0 h-0 border-x-8 border-x-transparent border-b-8 border-b-[#FFE01B]" />
 
-                            {/* Header with Mailchimp logo and package indication */}
+                            {/* Header with E-mail Rocket logo and package indication */}
                             <div className="flex items-center justify-between pb-3 mb-3.5 border-b border-slate-800">
                               <div className="flex items-center gap-2">
                                 <div className="px-2.5 py-1 rounded bg-[#FFE01B] text-slate-950 font-black text-xs uppercase font-sans">
-                                  <span>MAILCHIMP</span>
+                                  <span>E-mail Rocket</span>
                                 </div>
                                 <span className="px-2 py-0.5 rounded bg-amber-950 text-amber-300 border border-amber-500/40 text-[10px] font-mono font-bold uppercase">
                                   {formatLocalizedPrice(35, currentCurrency)} Plan Included
@@ -1480,7 +1464,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                           </div>
                         )}
 
-                        {/* Floating Popup for Mailchimp ($150 Agency - 3rd price box) displayed with BIGGER WORDS & ANIMATED APPROACH */}
+                        {/* Floating Popup for E-mail Rocket ($150 Agency - 3rd price box) displayed with BIGGER WORDS & ANIMATED APPROACH */}
                         {isAgency && hoveredAgencyMailchimp && (
                           <div
                             onMouseEnter={() => setHoveredAgencyMailchimp(true)}
@@ -1490,11 +1474,11 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                             {/* Upward pointing triangle/arrow */}
                             <div className="absolute bottom-full left-1/2 -translate-x-1/2 w-0 h-0 border-x-8 border-x-transparent border-b-8 border-b-[#FFE01B]" />
 
-                            {/* Header with Mailchimp logo and package indication */}
+                            {/* Header with E-mail Rocket logo and package indication */}
                             <div className="flex items-center justify-between pb-3 mb-3.5 border-b border-slate-800">
                               <div className="flex items-center gap-2">
                                 <div className="px-2.5 py-1 rounded bg-[#FFE01B] text-slate-950 font-black text-xs uppercase font-sans">
-                                  <span>MAILCHIMP</span>
+                                  <span>E-mail Rocket</span>
                                 </div>
                                 <span className="px-2 py-0.5 rounded bg-amber-950 text-amber-300 border border-amber-500/40 text-[10px] font-mono font-bold uppercase">
                                   {formatLocalizedPrice(150, currentCurrency)} Plan Included
@@ -1579,9 +1563,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                             <div className="w-4 h-4 rounded-xs bg-[#00E785] flex items-center justify-center text-slate-950 text-[9px] font-black">
                               💬
                             </div>
-                            <span className="font-black text-sm text-white tracking-wide">
-                              WATi
-                            </span>
+                            <span className="font-black text-sm text-white tracking-wide">WhatsApp Flow</span>
                           </div>
                           <span className="w-2 h-2 rounded-full bg-cyan-400" />
                           {isStarter && (
@@ -1604,7 +1586,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                           {tier.toolAllowances.wati}
                         </span>
 
-                        {/* Floating Popup for WATI ($15 Starter) displayed BELOW with BIGGER WORDS & ANIMATED APPROACH */}
+                        {/* Floating Popup for WhatsApp Flow ($15 Starter) displayed BELOW with BIGGER WORDS & ANIMATED APPROACH */}
                         {isStarter && hoveredWati && (
                           <div
                             onMouseEnter={() => setHoveredWati(true)}
@@ -1614,12 +1596,12 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                             {/* Upward pointing triangle/arrow */}
                             <div className="absolute bottom-full left-1/2 -translate-x-1/2 w-0 h-0 border-x-8 border-x-transparent border-b-8 border-b-[#00E785]" />
 
-                            {/* Header with WATI badge and package indication */}
+                            {/* Header with WhatsApp Flow badge and package indication */}
                             <div className="flex items-center justify-between pb-3 mb-3.5 border-b border-slate-800">
                               <div className="flex items-center gap-2">
                                 <div className="flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#00E785] text-slate-950 font-black text-xs uppercase shadow-xs">
                                   <span>💬</span>
-                                  <span>WATi</span>
+                                  <span>WhatsApp Flow</span>
                                 </div>
                                 <span className="px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-500/40 text-[10px] font-mono font-bold uppercase">
                                   {formatLocalizedPrice(15, currentCurrency)} Plan Included
@@ -1674,7 +1656,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                           </div>
                         )}
 
-                        {/* Floating Popup for WATI ($35 Growth - 2nd price box) displayed BELOW with BIGGER WORDS & ANIMATED APPROACH */}
+                        {/* Floating Popup for WhatsApp Flow ($35 Growth - 2nd price box) displayed BELOW with BIGGER WORDS & ANIMATED APPROACH */}
                         {isCenter && hoveredGrowthWati && (
                           <div
                             onMouseEnter={() => setHoveredGrowthWati(true)}
@@ -1684,12 +1666,12 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                             {/* Upward pointing triangle/arrow */}
                             <div className="absolute bottom-full left-1/2 -translate-x-1/2 w-0 h-0 border-x-8 border-x-transparent border-b-8 border-b-[#00E785]" />
 
-                            {/* Header with WATI badge and package indication */}
+                            {/* Header with WhatsApp Flow badge and package indication */}
                             <div className="flex items-center justify-between pb-3 mb-3.5 border-b border-slate-800">
                               <div className="flex items-center gap-2">
                                 <div className="flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#00E785] text-slate-950 font-black text-xs uppercase shadow-xs">
                                   <span>💬</span>
-                                  <span>WATi</span>
+                                  <span>WhatsApp Flow</span>
                                 </div>
                                 <span className="px-2 py-0.5 rounded bg-emerald-950 text-[#00E785] border border-[#00E785]/40 text-[10px] font-mono font-bold uppercase">
                                   {formatLocalizedPrice(35, currentCurrency)} Plan Included
@@ -1744,7 +1726,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                           </div>
                         )}
 
-                        {/* Floating Popup for WATI ($150 Agency - 3rd price box) displayed BELOW with BIGGER WORDS & ANIMATED APPROACH */}
+                        {/* Floating Popup for WhatsApp Flow ($150 Agency - 3rd price box) displayed BELOW with BIGGER WORDS & ANIMATED APPROACH */}
                         {isAgency && hoveredAgencyWati && (
                           <div
                             onMouseEnter={() => setHoveredAgencyWati(true)}
@@ -1754,12 +1736,12 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                             {/* Upward pointing triangle/arrow */}
                             <div className="absolute bottom-full left-1/2 -translate-x-1/2 w-0 h-0 border-x-8 border-x-transparent border-b-8 border-b-[#00E785]" />
 
-                            {/* Header with WATI badge and package indication */}
+                            {/* Header with WhatsApp Flow badge and package indication */}
                             <div className="flex items-center justify-between pb-3 mb-3.5 border-b border-slate-800">
                               <div className="flex items-center gap-2">
                                 <div className="flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#00E785] text-slate-950 font-black text-xs uppercase shadow-xs">
                                   <span>💬</span>
-                                  <span>WATi</span>
+                                  <span>WhatsApp Flow</span>
                                 </div>
                                 <span className="px-2 py-0.5 rounded bg-emerald-950 text-[#00E785] border border-[#00E785]/40 text-[10px] font-mono font-bold uppercase">
                                   {formatLocalizedPrice(150, currentCurrency)} Plan Included
@@ -1850,9 +1832,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                       >
                         <div className="flex items-center gap-2 mb-1.5">
                           <div className="px-3.5 py-1 rounded-md bg-slate-900 border border-slate-700 shadow-xs">
-                            <span className="font-black tracking-tight text-sm text-[#EE6123] font-mono">
-                              bitly
-                            </span>
+                            <span className="font-black tracking-tight text-sm text-[#EE6123] font-mono">Smart Link</span>
                           </div>
                           <span className="w-2 h-2 rounded-full bg-cyan-400" />
                           {isStarter && (
@@ -1875,7 +1855,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                           {tier.toolAllowances.bitly}
                         </span>
 
-                        {/* Floating Popup for Bitly ($15 Starter) displayed BELOW the box with BIGGER WORDS & ANIMATED APPROACH */}
+                        {/* Floating Popup for Smart Link ($15 Starter) displayed BELOW the box with BIGGER WORDS & ANIMATED APPROACH */}
                         {isStarter && hoveredBitly && (
                           <div
                             onMouseEnter={() => setHoveredBitly(true)}
@@ -1885,11 +1865,11 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                             {/* Upward pointing triangle/arrow */}
                             <div className="absolute bottom-full left-1/2 -translate-x-1/2 w-0 h-0 border-x-8 border-x-transparent border-b-8 border-b-[#EE6123]" />
 
-                            {/* Header with Bitly badge and package indication */}
+                            {/* Header with Smart Link badge and package indication */}
                             <div className="flex items-center justify-between pb-3 mb-3.5 border-b border-slate-800">
                               <div className="flex items-center gap-2">
                                 <div className="px-2.5 py-1 rounded bg-[#EE6123] text-white font-black text-xs font-mono uppercase shadow-xs">
-                                  <span>bitly</span>
+                                  <span>Smart Link</span>
                                 </div>
                                 <span className="px-2 py-0.5 rounded bg-orange-950 text-orange-300 border border-orange-500/40 text-[10px] font-mono font-bold uppercase">
                                   {formatLocalizedPrice(15, currentCurrency)} Plan Included
@@ -1936,7 +1916,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                           </div>
                         )}
 
-                        {/* Floating Popup for Bitly ($35 Growth - 2nd price box) displayed BELOW with BIGGER WORDS & ANIMATED APPROACH */}
+                        {/* Floating Popup for Smart Link ($35 Growth - 2nd price box) displayed BELOW with BIGGER WORDS & ANIMATED APPROACH */}
                         {isCenter && hoveredGrowthBitly && (
                           <div
                             onMouseEnter={() => setHoveredGrowthBitly(true)}
@@ -1946,11 +1926,11 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                             {/* Upward pointing triangle/arrow */}
                             <div className="absolute bottom-full left-1/2 -translate-x-1/2 w-0 h-0 border-x-8 border-x-transparent border-b-8 border-b-[#EE6123]" />
 
-                            {/* Header with Bitly badge and package indication */}
+                            {/* Header with Smart Link badge and package indication */}
                             <div className="flex items-center justify-between pb-3 mb-3.5 border-b border-slate-800">
                               <div className="flex items-center gap-2">
                                 <div className="px-2.5 py-1 rounded bg-[#EE6123] text-white font-black text-xs font-mono uppercase shadow-xs">
-                                  <span>bitly</span>
+                                  <span>Smart Link</span>
                                 </div>
                                 <span className="px-2 py-0.5 rounded bg-orange-950 text-orange-300 border border-orange-500/40 text-[10px] font-mono font-bold uppercase">
                                   {formatLocalizedPrice(35, currentCurrency)} Plan Included
@@ -2001,7 +1981,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                           </div>
                         )}
 
-                        {/* Floating Popup for Bitly ($150 Agency - 3rd price box) displayed BELOW with BIGGER WORDS & ANIMATED APPROACH */}
+                        {/* Floating Popup for Smart Link ($150 Agency - 3rd price box) displayed BELOW with BIGGER WORDS & ANIMATED APPROACH */}
                         {isAgency && hoveredAgencyBitly && (
                           <div
                             onMouseEnter={() => setHoveredAgencyBitly(true)}
@@ -2011,11 +1991,11 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                             {/* Upward pointing triangle/arrow */}
                             <div className="absolute bottom-full left-1/2 -translate-x-1/2 w-0 h-0 border-x-8 border-x-transparent border-b-8 border-b-[#EE6123]" />
 
-                            {/* Header with Bitly badge and package indication */}
+                            {/* Header with Smart Link badge and package indication */}
                             <div className="flex items-center justify-between pb-3 mb-3.5 border-b border-slate-800">
                               <div className="flex items-center gap-2">
                                 <div className="px-2.5 py-1 rounded bg-[#EE6123] text-white font-black text-xs font-mono uppercase shadow-xs">
-                                  <span>bitly</span>
+                                  <span>Smart Link</span>
                                 </div>
                                 <span className="px-2 py-0.5 rounded bg-orange-950 text-orange-300 border border-orange-500/40 text-[10px] font-mono font-bold uppercase">
                                   {formatLocalizedPrice(150, currentCurrency)} Plan Included
@@ -2188,7 +2168,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
               {
                 id: 'pfaq-2',
                 question: 'Does this software suite process customer payments directly, or do I use 3rd-party services (PayPal, Stripe, Wise)?',
-                answer: 'This software suite does NOT directly handle or hold your customers’ money, guaranteeing zero financial liability and 100% privacy for your business. Instead, your Hostinger website and automation funnels integrate directly with trusted third-party payment gateways such as Stripe, PayPal, Wise, Razorpay, or your local regional merchant bank. 100% of your customer payments and revenue deposit directly into your personal or corporate bank account with zero intermediate processing fees.'
+                answer: 'This software suite does NOT directly handle or hold your customers’ money, guaranteeing zero financial liability and 100% privacy for your business. Instead, your Cloud Hosting website and automation funnels integrate directly with trusted third-party payment gateways such as Stripe, PayPal, Wise, Razorpay, or your local regional merchant bank. 100% of your customer payments and revenue deposit directly into your personal or corporate bank account with zero intermediate processing fees.'
               },
               {
                 id: 'pfaq-3',

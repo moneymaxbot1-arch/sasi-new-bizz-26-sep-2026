@@ -133,7 +133,7 @@ export const TrafficGenerationIllustration: React.FC = () => {
         <g transform="translate(20, 192)">
           <rect x="0" y="0" width="300" height="20" rx="5" fill="#1E293B" fillOpacity="0.5" stroke="#334155" strokeWidth="0.8" />
           <text x="12" y="14" fill="#E2E8F0" fontSize="8" fontFamily="monospace" fontWeight="700">
-            CHANNELS: <tspan fill="#FBBF24">Bitly Links</tspan> · <tspan fill="#38BDF8">Hostinger SSD</tspan> · <tspan fill="#F43F5E">Mailchimp</tspan>
+            CHANNELS: <tspan fill="#FBBF24">Smart Links</tspan> · <tspan fill="#38BDF8">Cloud Hosting SSD</tspan> · <tspan fill="#F43F5E">E-mail Rocket</tspan>
           </text>
         </g>
       </svg>
@@ -199,7 +199,7 @@ export const EngagementIllustration: React.FC = () => {
           <rect x="0" y="0" width="150" height="22" rx="6" fill="#1E1B4B" stroke="#4C1D95" strokeWidth="1" />
           <circle cx="12" cy="11" r="3.5" fill="#EC4899" />
           <text x="22" y="15" fill="#F472B6" fontSize="8.5" fontFamily="monospace" fontWeight="800">
-            FOMO SOCIAL PROOF
+            CLICK FOMO SOCIAL PROOF
           </text>
         </g>
 
@@ -346,7 +346,7 @@ export const RetargetingIllustration: React.FC = () => {
           <rect x="0" y="0" width="140" height="22" rx="6" fill="#064E3B" stroke="#059669" strokeWidth="1" />
           <circle cx="12" cy="11" r="3.5" fill="#34D399" />
           <text x="22" y="15" fill="#6EE7B7" fontSize="8.5" fontFamily="monospace" fontWeight="800">
-            WATI AUTOMATION
+            WHATSAPP FLOW AUTOMATION
           </text>
         </g>
 

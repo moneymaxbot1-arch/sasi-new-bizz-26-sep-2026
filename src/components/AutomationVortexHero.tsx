@@ -503,95 +503,94 @@ interface ToolNode {
 
 const TOOLS: ToolNode[] = [
   {
-    id: 'mailchimp',
-    name: 'Mailchimp',
-    category: 'Email Marketing',
-    monthlyPrice: 162,
-    color: '#FFE01B',
-    glowColor: 'rgba(255, 224, 27, 0.4)',
-    bgGradient: 'from-amber-500/20 to-yellow-500/10',
-    badge: 'Email Drip Bot',
-    iconText: 'MC',
-    roleDescription: 'Automated Drip Sequences & Abandoned Cart Recovery',
-    benefit: '+310% repeat sales',
-    angle: 0
-  },
-  {
     id: 'hostinger',
-    name: 'Hostinger',
+    name: 'Cloud Hosting',
     category: 'Web Hosting',
     monthlyPrice: 9,
     color: '#8B5CF6',
-    glowColor: 'rgba(139, 92, 246, 0.4)',
+    glowColor: 'rgba(139, 92, 246, 0.6)',
     bgGradient: 'from-violet-500/20 to-indigo-500/10',
     badge: 'Fast Cloud SSD',
-    iconText: 'H',
+    iconText: 'CH',
     roleDescription: '0.8s High-Speed Cloud SSD Web Server & Free SSL',
     benefit: 'Sub-second speed',
-    angle: 60
+    angle: 270 // 12 o'clock (Top)
   },
   {
     id: 'fomo',
-    name: 'Fomo',
+    name: 'Click Fomo',
     category: 'Social Proof Marketing',
     monthlyPrice: 50,
     color: '#F97316',
-    glowColor: 'rgba(249, 115, 22, 0.4)',
+    glowColor: 'rgba(249, 115, 22, 0.6)',
     bgGradient: 'from-orange-500/20 to-amber-500/10',
     badge: 'Live Urgency Engine',
-    iconText: 'FOMO',
+    iconText: 'CF',
     roleDescription: 'Real-Time Buyer Popups & Live Visitor Urgency Triggers',
     benefit: '+34% checkout lift',
-    angle: 120
+    angle: 330 // 2 o'clock (Top-Right)
   },
   {
     id: 'wati',
-    name: 'WATi',
+    name: 'WhatsApp Flow',
     category: 'WhatsApp Marketing',
     monthlyPrice: 314,
     color: '#22C55E',
-    glowColor: 'rgba(34, 197, 94, 0.4)',
+    glowColor: 'rgba(34, 197, 94, 0.6)',
     bgGradient: 'from-emerald-500/20 to-green-500/10',
     badge: 'WhatsApp CRM Bot',
-    iconText: 'WATi',
+    iconText: 'WF',
     roleDescription: 'WhatsApp Broadcasts & 24/7 Automated Sales Chatbot',
     benefit: '98% open rates',
-    angle: 180
+    angle: 30 // 4 o'clock (Bottom-Right)
   },
   {
     id: 'uptimerobot',
-    name: 'UptimeRobot',
+    name: 'Site Shield',
     category: 'Website Monitoring',
     monthlyPrice: 80,
     color: '#06B6D4',
-    glowColor: 'rgba(6, 182, 212, 0.4)',
+    glowColor: 'rgba(6, 182, 212, 0.6)',
     bgGradient: 'from-cyan-500/20 to-teal-500/10',
     badge: '24/7 Outage Guard',
-    iconText: 'UR',
+    iconText: 'SS',
     roleDescription: 'Real-Time 30-Sec Health Checks & Instant SMS Outage Alerts',
     benefit: 'Zero silent loss',
-    angle: 240
+    angle: 90 // 6 o'clock (Bottom)
   },
   {
     id: 'bitly',
-    name: 'Bitly',
+    name: 'Smart Link',
     category: 'URL Shortener & QR',
     monthlyPrice: 35,
     color: '#FB923C',
-    glowColor: 'rgba(251, 146, 60, 0.4)',
+    glowColor: 'rgba(251, 146, 60, 0.6)',
     bgGradient: 'from-amber-600/20 to-orange-500/10',
     badge: 'Click Attribution',
-    iconText: 'bitly',
+    iconText: 'SL',
     roleDescription: 'Branded Short Links, Dynamic QR Codes & Conversion Tracking',
     benefit: '100% ad ROI clarity',
-    angle: 300
+    angle: 150 // 8 o'clock (Bottom-Left)
+  },
+  {
+    id: 'mailchimp',
+    name: 'E-mail Rocket',
+    category: 'Email Marketing',
+    monthlyPrice: 162,
+    color: '#FFE01B',
+    glowColor: 'rgba(255, 224, 27, 0.6)',
+    bgGradient: 'from-amber-500/20 to-yellow-500/10',
+    badge: 'Email Drip Bot',
+    iconText: 'ER',
+    roleDescription: 'Automated Drip Sequences & Abandoned Cart Recovery',
+    benefit: '+310% repeat sales',
+    angle: 210 // 10 o'clock (Top-Left)
   }
 ];
 
 export const AutomationVortexHero: React.FC<AutomationVortexHeroProps> = ({ onClaimClick }) => {
-  const [activeStep, setActiveStep] = useState<number>(0);
+  const [activeStep, setActiveStep] = useState<number>(3); // Defaults to Site Shield
   const [isAutoPlaying, setIsAutoPlaying] = useState<boolean>(true);
-  const [rotationAngle, setRotationAngle] = useState<number>(0);
   const [hoveredTool, setHoveredTool] = useState<ToolNode | null>(null);
   const [windowWidth, setWindowWidth] = useState<number>(() => 
     typeof window !== 'undefined' ? window.innerWidth : 1024
@@ -603,30 +602,12 @@ export const AutomationVortexHero: React.FC<AutomationVortexHeroProps> = ({ onCl
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Smooth continuous ambient orbit rotation
-  useEffect(() => {
-    let animFrame: number;
-    let lastTime = performance.now();
-
-    const loop = (currentTime: number) => {
-      const delta = (currentTime - lastTime) / 1000;
-      lastTime = currentTime;
-      if (isAutoPlaying) {
-        setRotationAngle(prev => (prev + delta * 14) % 360);
-      }
-      animFrame = requestAnimationFrame(loop);
-    };
-
-    animFrame = requestAnimationFrame(loop);
-    return () => cancelAnimationFrame(animFrame);
-  }, [isAutoPlaying]);
-
-  // Cycle through active tool highlights every 3.5 seconds
+  // Clockwise blinking sequence through each software (fixed frame, no circling/moving)
   useEffect(() => {
     if (!isAutoPlaying) return;
     const interval = setInterval(() => {
       setActiveStep(prev => (prev + 1) % TOOLS.length);
-    }, 3500);
+    }, 1800);
     return () => clearInterval(interval);
   }, [isAutoPlaying]);
 
@@ -690,9 +671,9 @@ export const AutomationVortexHero: React.FC<AutomationVortexHeroProps> = ({ onCl
             {/* Circular Orbit Canvas */}
             <div className="relative w-[280px] h-[280px] min-[360px]:w-[320px] min-[360px]:h-[320px] sm:w-[480px] sm:h-[480px] flex items-center justify-center">
               
-              {/* Outer decorative orbit rings */}
+              {/* Outer decorative orbit rings (stationary freeze frame) */}
               <div className="absolute inset-0 rounded-full border border-slate-800/80 pointer-events-none" />
-              <div className="absolute inset-6 sm:inset-8 rounded-full border border-dashed border-emerald-500/20 pointer-events-none animate-[spin_60s_linear_infinite]" />
+              <div className="absolute inset-6 sm:inset-8 rounded-full border border-dashed border-emerald-500/20 pointer-events-none" />
               <div className="absolute inset-14 sm:inset-20 rounded-full border border-slate-800/60 pointer-events-none" />
 
               {/* Pulsing energy waves flowing toward center */}
@@ -706,8 +687,8 @@ export const AutomationVortexHero: React.FC<AutomationVortexHeroProps> = ({ onCl
                     <stop offset="100%" stopColor="#06B6D4" stopOpacity="0.2" />
                   </linearGradient>
                 </defs>
-                {TOOLS.map((tool, i) => {
-                  const rad = ((tool.angle + rotationAngle) * Math.PI) / 180;
+                {TOOLS.map((tool) => {
+                  const rad = (tool.angle * Math.PI) / 180;
                   const radius = 185; // scaled via viewBox
                   const cx = 240 + Math.cos(rad) * radius;
                   const cy = 240 + Math.sin(rad) * radius;
@@ -721,11 +702,20 @@ export const AutomationVortexHero: React.FC<AutomationVortexHeroProps> = ({ onCl
                         y1={cy}
                         x2="240"
                         y2="240"
-                        stroke={isActive ? tool.color : 'rgba(52, 211, 153, 0.25)'}
+                        stroke={isActive ? tool.color : 'rgba(51, 65, 85, 0.4)'}
                         strokeWidth={isActive ? '2.5' : '1'}
                         strokeDasharray={isActive ? '4 3' : '2 4'}
                         className={isActive ? 'animate-[dash_1s_linear_infinite]' : ''}
                       />
+                      {isActive && (
+                        <circle
+                          cx={(cx + 240) / 2}
+                          cy={(cy + 240) / 2}
+                          r="3"
+                          fill={tool.color}
+                          className="animate-ping"
+                        />
+                      )}
                     </g>
                   );
                 })}
@@ -999,9 +989,9 @@ export const AutomationVortexHero: React.FC<AutomationVortexHeroProps> = ({ onCl
 
               </div>
 
-              {/* 6 ORBITING SATELLITE SOFTWARE CIRCLES (The 6 Software from the Pitcher) */}
+              {/* 6 FROZEN STILL SATELLITE SOFTWARE CIRCLES (Clockwise Blinking Sequence) */}
               {TOOLS.map((tool, index) => {
-                const rad = ((tool.angle + rotationAngle) * Math.PI) / 180;
+                const rad = (tool.angle * Math.PI) / 180;
                 // Responsive orbit radius calculated from windowWidth
                 const radius = windowWidth < 360 ? 104 : windowWidth < 640 ? 120 : 185; 
 
@@ -1027,16 +1017,20 @@ export const AutomationVortexHero: React.FC<AutomationVortexHeroProps> = ({ onCl
                     style={{
                       transform: `translate(${x}px, ${y}px)`,
                       borderColor: isSelected ? tool.color : 'rgba(51, 65, 85, 0.8)',
-                      boxShadow: isSelected ? `0 0 25px ${tool.glowColor}` : '0 10px 20px rgba(0,0,0,0.5)',
+                      boxShadow: isSelected 
+                        ? `0 0 35px ${tool.glowColor}, inset 0 0 15px ${tool.glowColor}` 
+                        : '0 10px 20px rgba(0,0,0,0.5)',
                     }}
-                    className={`absolute z-30 w-13 h-13 min-[360px]:w-15 min-[360px]:h-15 sm:w-20 sm:h-20 rounded-full bg-slate-900/95 backdrop-blur-md border-2 cursor-pointer flex flex-col items-center justify-center p-0.5 sm:p-1 transition-all duration-200 hover:scale-115 active:scale-95 group ${
-                      isSelected ? 'scale-110 z-40' : 'opacity-85 hover:opacity-100'
+                    className={`absolute z-30 w-13 h-13 min-[360px]:w-15 min-[360px]:h-15 sm:w-20 sm:h-20 rounded-full bg-slate-900/95 backdrop-blur-md border-2 cursor-pointer flex flex-col items-center justify-center p-0.5 sm:p-1 transition-all duration-300 hover:scale-115 active:scale-95 group ${
+                      isSelected ? 'scale-110 z-40 ring-2 ring-white/30' : 'opacity-85 hover:opacity-100'
                     }`}
                   >
                     {/* Tool Brand Avatar / Monogram */}
                     <div 
                       style={{ color: tool.color }}
-                      className="text-[10px] min-[360px]:text-xs sm:text-sm font-black tracking-tight"
+                      className={`text-[10px] min-[360px]:text-xs sm:text-sm font-black tracking-tight ${
+                        isSelected ? 'animate-pulse' : ''
+                      }`}
                     >
                       {tool.iconText}
                     </div>
@@ -1054,12 +1048,18 @@ export const AutomationVortexHero: React.FC<AutomationVortexHeroProps> = ({ onCl
                       ${tool.monthlyPrice}/mo
                     </span>
 
-                    {/* Mini pulse ring on active */}
+                    {/* Clockwise Blinking Pulse Rings on active */}
                     {isSelected && (
-                      <span 
-                        style={{ borderColor: tool.color }}
-                        className="absolute -inset-1.5 rounded-full border-2 animate-ping pointer-events-none opacity-50"
-                      />
+                      <>
+                        <span 
+                          style={{ borderColor: tool.color }}
+                          className="absolute -inset-2 rounded-full border-2 animate-ping pointer-events-none opacity-60"
+                        />
+                        <span 
+                          style={{ backgroundColor: `${tool.color}25` }}
+                          className="absolute -inset-1 rounded-full animate-pulse pointer-events-none"
+                        />
+                      </>
                     )}
                   </div>
                 );
@@ -1067,12 +1067,12 @@ export const AutomationVortexHero: React.FC<AutomationVortexHeroProps> = ({ onCl
 
             </div>
 
-            {/* Orbit Controls (Play/Pause & Direct Click Selectors) */}
+            {/* Sequence Controls (Play/Pause Clockwise Blink & Direct Click Selectors) */}
             <div className="mt-4 flex items-center gap-3">
               <button
                 onClick={() => setIsAutoPlaying(!isAutoPlaying)}
                 className="p-2 rounded-lg bg-slate-800/80 border border-slate-700 text-slate-300 hover:text-white hover:bg-slate-750 transition-colors text-xs flex items-center gap-1.5 cursor-pointer"
-                title={isAutoPlaying ? 'Pause rotation' : 'Resume rotation'}
+                title={isAutoPlaying ? 'Pause clockwise blinking' : 'Resume clockwise blinking'}
               >
                 {isAutoPlaying ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5" />}
                 <span className="hidden sm:inline font-mono text-[11px]">

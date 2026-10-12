@@ -131,7 +131,7 @@
 
     <rect x="185" y="180" width="150" height="50" rx="10" fill="#1C1917" stroke="#78350F" stroke-width="1" />
     <text x="198" y="202" fill="#FFFFFF" font-size="11" font-weight="700">bit.ly/deal</text>
-    <text x="198" y="218" fill="#34D399" font-size="10" font-weight="600">&lt;280ms Hostinger</text>
+    <text x="198" y="218" fill="#34D399" font-size="10" font-weight="600">&lt;280ms Cloud Hosting</text>
 
     <!-- Key Metric Highlight -->
     <rect x="24" y="290" width="332" height="56" rx="12" fill="#1F1608" stroke="#D97706" stroke-width="1" />
@@ -146,10 +146,10 @@
 
     <!-- Tool Badges -->
     <rect x="24" y="472" width="70" height="24" rx="6" fill="#F59E0B" fill-opacity="0.15" />
-    <text x="38" y="488" fill="#FBBF24" font-size="11" font-weight="700">Bitly</text>
+    <text x="38" y="488" fill="#FBBF24" font-size="11" font-weight="700">Smart Link</text>
 
     <rect x="104" y="472" width="90" height="24" rx="6" fill="#6366F1" fill-opacity="0.15" />
-    <text x="116" y="488" fill="#818CF8" font-size="11" font-weight="700">Hostinger</text>
+    <text x="116" y="488" fill="#818CF8" font-size="11" font-weight="700">Cloud Hosting</text>
   </g>
 
   <!-- =========================================================================
@@ -179,7 +179,7 @@
     <text x="70" y="210" fill="#FFFFFF" font-size="14" font-weight="900">✓</text>
     <text x="105" y="195" fill="#FFFFFF" font-size="12" font-weight="800">Sarah from Singapore</text>
     <text x="105" y="212" fill="#FDA4AF" font-size="11" font-weight="500">Purchased Starter Bundle</text>
-    <text x="105" y="228" fill="#94A3B8" font-size="9" font-weight="600">3 minutes ago · Verified by Fomo</text>
+    <text x="105" y="228" fill="#94A3B8" font-size="9" font-weight="600">3 minutes ago · Verified by Click Fomo</text>
 
     <!-- Key Metric Highlight -->
     <rect x="24" y="290" width="332" height="56" rx="12" fill="#200611" stroke="#E11D48" stroke-width="1" />
@@ -194,10 +194,10 @@
 
     <!-- Tool Badges -->
     <rect x="24" y="472" width="70" height="24" rx="6" fill="#F43F5E" fill-opacity="0.15" />
-    <text x="42" y="488" fill="#FB7185" font-size="11" font-weight="700">Fomo</text>
+    <text x="42" y="488" fill="#FB7185" font-size="11" font-weight="700">Click Fomo</text>
 
     <rect x="104" y="472" width="90" height="24" rx="6" fill="#10B981" fill-opacity="0.15" />
-    <text x="118" y="488" fill="#34D399" font-size="11" font-weight="700">Wati Live</text>
+    <text x="118" y="488" fill="#34D399" font-size="11" font-weight="700">WhatsApp Flow Live</text>
   </g>
 
   <!-- =========================================================================
@@ -237,15 +237,15 @@
     <!-- Automation Description -->
     <text x="24" y="380" fill="#E7E5E4" font-size="13" font-weight="700">Daily Autopilot Workflow:</text>
     <text x="24" y="405" fill="#A8A29E" font-size="12" font-weight="400">· Automated abandoned cart WhatsApp ping</text>
-    <text x="24" y="427" fill="#A8A29E" font-size="12" font-weight="400">· Multi-stage Mailchimp drip follow-ups</text>
+    <text x="24" y="427" fill="#A8A29E" font-size="12" font-weight="400">· Multi-stage E-mail Rocket drip follow-ups</text>
     <text x="24" y="449" fill="#A8A29E" font-size="12" font-weight="400">· Reclaims 31.4% of lost sales on autopilot</text>
 
     <!-- Tool Badges -->
     <rect x="24" y="472" width="70" height="24" rx="6" fill="#10B981" fill-opacity="0.15" />
-    <text x="42" y="488" fill="#34D399" font-size="11" font-weight="700">WATi</text>
+    <text x="42" y="488" fill="#34D399" font-size="11" font-weight="700">WhatsApp Flow</text>
 
     <rect x="104" y="472" width="95" height="24" rx="6" fill="#F59E0B" fill-opacity="0.15" />
-    <text x="114" y="488" fill="#FBBF24" font-size="11" font-weight="700">Mailchimp</text>
+    <text x="114" y="488" fill="#FBBF24" font-size="11" font-weight="700">E-mail Rocket</text>
   </g>
 
   <!-- =========================================================================
@@ -287,7 +287,7 @@
 
     <!-- Tool Badges -->
     <rect x="24" y="472" width="110" height="24" rx="6" fill="#06B6D4" fill-opacity="0.15" />
-    <text x="32" y="488" fill="#38BDF8" font-size="11" font-weight="700">UptimeRobot</text>
+    <text x="32" y="488" fill="#38BDF8" font-size="11" font-weight="700">Site Shield</text>
 
     <rect x="144" y="472" width="85" height="24" rx="6" fill="#6366F1" fill-opacity="0.15" />
     <text x="154" y="488" fill="#818CF8" font-size="11" font-weight="700">Cloud Edge</text>
