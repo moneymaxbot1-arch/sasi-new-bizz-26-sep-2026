@@ -502,8 +502,24 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                       </div>
                     </div>
 
+                    {/* 3 Notification Badges Directly Below Price Tag */}
+                    <div className="my-3 flex flex-wrap items-center justify-center gap-1.5 text-xs">
+                      <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-slate-900/90 border border-emerald-500/40 text-[11px] font-semibold text-emerald-300 shadow-sm">
+                        <RotateCcw className="w-3 h-3 text-emerald-400 shrink-0" />
+                        <span>Cancel Anytime</span>
+                      </span>
+                      <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-slate-900/90 border border-sky-500/40 text-[11px] font-semibold text-sky-300 shadow-sm">
+                        <Lock className="w-3 h-3 text-sky-400 shrink-0" />
+                        <span>100% Private & Encrypted Data</span>
+                      </span>
+                      <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-slate-900/90 border border-amber-500/40 text-[11px] font-semibold text-amber-300 shadow-sm">
+                        <Sparkles className="w-3 h-3 text-amber-400 shrink-0" />
+                        <span>100% Official direct vendor license verification</span>
+                      </span>
+                    </div>
+
                     {/* Buy Now CTA Button - Dedicated Distinct Color Per Pack */}
-                    <div className="my-6">
+                    <div className="mb-6 mt-3">
                       <a
                         href={getGatewayUrl(tier.id, is2Year)}
                         target="_blank"
@@ -527,24 +543,6 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                         </span>
                         <ExternalLink className="w-4 h-4 stroke-[2.5]" />
                       </a>
-
-                      {/* 3 Core Trust Guarantees */}
-                      <div className="mt-3 flex flex-col gap-1 text-[11px] text-slate-300 text-center">
-                        <div className="flex items-center justify-center gap-1.5 font-medium">
-                          <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                          <span className="text-white font-semibold">Cancel Anytime</span>
-                          <span className="text-slate-500">·</span>
-                          <span>No Contracts</span>
-                        </div>
-                        <div className="flex items-center justify-center gap-1.5 text-slate-300">
-                          <Lock className="w-3.5 h-3.5 text-sky-400 shrink-0" />
-                          <span>100% Private & Encrypted Data</span>
-                        </div>
-                        <div className="flex items-center justify-center gap-1.5 text-slate-300">
-                          <Sparkles className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                          <span>100% Official direct vendor license verification</span>
-                        </div>
-                      </div>
                     </div>
 
                     {/* 6 Software Allowances List: MODERATE BIG SIZE & BEAUTIFULLY MINGLED */}

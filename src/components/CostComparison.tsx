@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { SOFTWARE_TOOLS, TOTAL_MONTHLY_RETAIL, TOTAL_ANNUAL_RETAIL } from '../data/bundleData';
 import { getActiveCurrency, formatLocalizedPrice, CurrencyConfig } from '../utils/currencyUtils';
-import { Check, X, ArrowRight, Sparkles, TrendingDown, ShieldCheck, Zap, AlertTriangle, Layers, Lock } from 'lucide-react';
+import { Check, X, ArrowRight, Sparkles, TrendingDown, ShieldCheck, Zap, AlertTriangle, Layers, Lock, RotateCcw } from 'lucide-react';
 
 interface CostComparisonProps {
   onClaimClick: () => void;
@@ -479,29 +479,28 @@ export const CostComparison: React.FC<CostComparisonProps> = ({ onClaimClick, is
                     {timeframe === 'monthly' ? '/month subscription' : `total for ${multiplier} months (just ${formatLocalizedPrice(15, currentCurrency)}/mo)`}
                   </div>
                 </div>
-                <div className="mt-2 text-sm text-emerald-200/90 flex items-center justify-between border-t border-emerald-900/60 pt-2">
+
+                {/* 3 Notification Trust Badges Directly Below $15 Price Tag */}
+                <div className="mt-3 pt-3 border-t border-emerald-900/60 flex flex-wrap items-center gap-2">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-900/90 border border-emerald-500/40 text-xs font-semibold text-emerald-300 shadow-sm">
+                    <RotateCcw className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                    <span>Cancel Anytime</span>
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-900/90 border border-sky-500/40 text-xs font-semibold text-sky-300 shadow-sm">
+                    <Lock className="w-3.5 h-3.5 text-sky-400 shrink-0" />
+                    <span>100% Private & Encrypted Data</span>
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-900/90 border border-amber-500/40 text-xs font-semibold text-amber-300 shadow-sm">
+                    <Sparkles className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                    <span>100% Official direct vendor license verification</span>
+                  </span>
+                </div>
+
+                <div className="mt-3 text-sm text-emerald-200/90 flex items-center justify-between border-t border-emerald-900/60 pt-2">
                   <span className="font-semibold">Net Cash Kept In Your Pocket:</span>
                   <span className="font-black text-white font-mono text-sm bg-emerald-900/60 px-2 py-0.5 rounded">
                     +{formatLocalizedPrice(totalSavedUsd, currentCurrency)} saved
                   </span>
-                </div>
-
-                {/* 3 Core Trust Guarantees Under $15 Price Tag */}
-                <div className="mt-3 pt-3 border-t border-emerald-900/60 flex flex-col gap-1.5 text-xs text-slate-300 text-center">
-                  <div className="flex items-center justify-center gap-1.5 font-medium">
-                    <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                    <span className="text-white font-semibold">Cancel Anytime</span>
-                    <span className="text-slate-500">·</span>
-                    <span>No Contracts</span>
-                  </div>
-                  <div className="flex items-center justify-center gap-1.5 text-slate-300">
-                    <Lock className="w-3.5 h-3.5 text-sky-400 shrink-0" />
-                    <span>100% Private & Encrypted Data</span>
-                  </div>
-                  <div className="flex items-center justify-center gap-1.5 text-slate-300">
-                    <Sparkles className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                    <span>100% Official direct vendor license verification</span>
-                  </div>
                 </div>
               </div>
 
