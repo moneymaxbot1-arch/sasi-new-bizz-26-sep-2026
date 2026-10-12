@@ -116,7 +116,7 @@ export const Hero: React.FC<HeroProps> = ({ onClaimClick }) => {
                 </span>
                 <span className="flex items-center gap-1.5 text-slate-400">
                   <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                  <span>30-Day Money-Back Guarantee · 1-Day Full Refund</span>
+                  <span>30-Day Money-Back Guarantee</span>
                 </span>
               </div>
             </div>

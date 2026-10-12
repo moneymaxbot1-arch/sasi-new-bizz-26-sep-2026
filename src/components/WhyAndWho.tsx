@@ -200,8 +200,6 @@ export const WhyAndWho: React.FC<WhyAndWhoProps> = ({ onClaimClick }) => {
     };
   }, []);
 
-  const selectedPillar = PILLARS.find(p => p.id === selectedPillarId) || PILLARS[0];
-
   return (
     <section id="why-and-who" className="py-20 sm:py-28 bg-[#080C16] border-y border-slate-800/90 relative overflow-hidden">
       {/* Ambient background glow */}
@@ -319,48 +317,6 @@ export const WhyAndWho: React.FC<WhyAndWhoProps> = ({ onClaimClick }) => {
                   </div>
                 );
               })}
-            </div>
-
-            {/* In-Depth Selected Pillar Deep Dive Banner */}
-            <div className="bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 border border-slate-800 rounded-3xl p-6 sm:p-8 flex flex-col lg:flex-row items-center justify-between gap-6 shadow-2xl">
-              <div className="space-y-2 max-w-2xl">
-                <div className="flex items-center gap-2">
-                  <span className="text-xs font-bold text-emerald-400 uppercase tracking-widest font-mono">
-                    Deep Dive Solution · {selectedPillar.title}
-                  </span>
-                  <span className="text-slate-600">|</span>
-                  <span className="text-xs text-slate-300 font-mono">
-                    Included in {formatLocalizedPrice(15, currentCurrency)}/mo plan
-                  </span>
-                </div>
-                <h4 className="text-xl sm:text-2xl font-black text-white">
-                  {selectedPillar.tagline}
-                </h4>
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                  {selectedPillar.solution}
-                </p>
-                <div className="flex items-center gap-2 pt-2 text-xs font-semibold text-emerald-300">
-                  <Check className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>{selectedPillar.keyBenefit}</span>
-                </div>
-              </div>
-
-              <div className="shrink-0 flex flex-col items-center sm:items-end gap-3 w-full sm:w-auto">
-                <div className="text-center sm:text-right">
-                  <div className="text-xs text-slate-400">All 4 Pillars Consolidated:</div>
-                  <div className="text-2xl sm:text-3xl font-black text-white font-mono">
-                    {formatLocalizedPrice(15, currentCurrency)}<span className="text-xs font-normal text-emerald-400">/month</span>
-                  </div>
-                </div>
-                <button
-                  onClick={onClaimClick}
-                  className="w-full sm:w-auto px-6 py-3.5 bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-300 hover:from-emerald-300 hover:to-cyan-200 text-slate-950 font-black rounded-xl text-xs shadow-lg transition-all duration-200 cursor-pointer flex items-center justify-center gap-2"
-                >
-                  <Zap className="w-4 h-4 fill-slate-950" />
-                  <span>Activate All 4 Pillars for {formatLocalizedPrice(15, currentCurrency)}</span>
-                  <ArrowRight className="w-4 h-4" />
-                </button>
-              </div>
             </div>
           </div>
         )}

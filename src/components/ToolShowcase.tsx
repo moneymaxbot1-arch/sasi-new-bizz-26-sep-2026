@@ -90,8 +90,6 @@ export const ToolShowcase: React.FC<ToolShowcaseProps> = ({ onClaimClick }) => {
                 </span>
                 <span className="text-slate-400">·</span>
                 <span className="text-slate-300 font-medium">{activeTool.category}</span>
-                <span className="text-slate-400">·</span>
-                <span className="text-rose-400 line-through font-mono">Retail: {formatLocalizedPrice(activeTool.monthlyRetail, currentCurrency)}/month</span>
               </div>
 
               <div>

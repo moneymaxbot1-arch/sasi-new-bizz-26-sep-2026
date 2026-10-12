@@ -2131,7 +2131,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
             <span>30-Day Money-Back Guarantee & No Questions Asked Policy</span>
           </p>
           <p className="text-slate-300 leading-relaxed">
-            With our 30-day money-back guarantee & no questions asked policy, our team will <strong className="text-emerald-300">refund your money within 1 day (no questions asked)</strong>, or replace your license within 2 minutes via <a href="mailto:Bizzusupport@gmail.com" className="text-emerald-400 underline font-mono">Bizzusupport@gmail.com</a>.
+            With our 30-day money-back guarantee & no questions asked policy, our team will <strong className="text-emerald-300">refund 100% of your money (strictly no questions asked)</strong>, or replace your license within 2 minutes via <a href="mailto:Bizzusupport@gmail.com" className="text-emerald-400 underline font-mono">Bizzusupport@gmail.com</a>.
           </p>
         </div>
 

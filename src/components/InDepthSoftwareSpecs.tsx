@@ -122,9 +122,6 @@ export const InDepthSoftwareSpecs: React.FC<InDepthSoftwareSpecsProps> = ({ onCl
                 <span className="text-xs sm:text-sm font-semibold text-slate-300 bg-slate-800 px-2.5 py-1 rounded-md border border-slate-700">
                   {tool.category}
                 </span>
-                <span className="text-xs sm:text-sm text-rose-400 line-through font-mono px-2.5 py-1 bg-slate-900 rounded border border-slate-800">
-                  Standalone Retail: {formatLocalizedPrice(tool.monthlyRetail, currentCurrency)}/month
-                </span>
               </div>
               <h3 className="text-2xl sm:text-4xl font-black text-white">
                 {tool.name}

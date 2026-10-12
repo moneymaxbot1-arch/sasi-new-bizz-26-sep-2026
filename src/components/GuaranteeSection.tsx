@@ -37,7 +37,7 @@ export const GuaranteeSection: React.FC<GuaranteeSectionProps> = ({ onClaimClick
               <span className="text-sm font-mono font-black text-emerald-400 uppercase tracking-wider">
                 30-DAY GUARANTEE
               </span>
-              <span className="text-xs text-slate-300 font-semibold mt-1">1-Day Full Refund Policy</span>
+              <span className="text-xs text-slate-300 font-semibold mt-1">100% Risk-Free Policy</span>
             </div>
 
             <div className="md:col-span-9 space-y-4">
@@ -58,7 +58,7 @@ export const GuaranteeSection: React.FC<GuaranteeSectionProps> = ({ onClaimClick
                 </div>
                 
                 <p className="text-slate-300 leading-relaxed">
-                  With our <strong className="text-white">30-day money-back guarantee & no questions asked policy</strong>, our team will <strong className="text-emerald-300 underline decoration-emerald-400/60 font-semibold">refund 100% of your money within 1 day (24 hours)</strong> — strictly no questions asked.
+                  With our <strong className="text-white">30-day money-back guarantee & no questions asked policy</strong>, our team will <strong className="text-emerald-300 underline decoration-emerald-400/60 font-semibold">refund 100% of your money</strong> — strictly no questions asked.
                 </p>
 
                 <div className="pt-2 border-t border-slate-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
@@ -82,7 +82,7 @@ export const GuaranteeSection: React.FC<GuaranteeSectionProps> = ({ onClaimClick
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1 text-xs text-slate-300 font-medium">
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>100% Full refund within 1 day — no questions asked</span>
+                  <span>30-Day Money-back guarantee — no questions asked</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />

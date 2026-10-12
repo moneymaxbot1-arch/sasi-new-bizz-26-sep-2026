@@ -91,7 +91,7 @@ export const CountdownTimer: React.FC<CountdownTimerProps> = ({ onClaimClick }) 
             </button>
             <span className="text-[11px] text-slate-300 flex items-center gap-1 font-medium">
               <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-              <span>30-Day Money-Back Guarantee · 1-Day Full Refund</span>
+              <span>30-Day Money-Back Guarantee</span>
             </span>
           </div>
 

@@ -263,7 +263,7 @@ export const PRICING_TIERS: PricingTier[] = [
       'WhatsApp Flow: 2,000 WhatsApp Marketing Subscribers',
       'Smart Link: 1 Branded Project & Custom Links',
       'Complete Beginner Video Tutorial Academy',
-      '30-Day Money-Back Guarantee (Authenticity/Working) · 1-Day Full Refund'
+      '30-Day Money-Back Guarantee (Authenticity/Working)'
     ],
     ctaText: 'Buy Now',
     spotsLeft: 14
@@ -667,7 +667,7 @@ export const TESTIMONIALS: Testimonial[] = [
     countryCode: 'IN',
     flagEmoji: '🇮🇳',
     avatarText: 'RD',
-    avatarUrl: 'https://images.unsplash.com/photo-1507152832244-10d45c7eda57?auto=format&fit=crop&w=160&h=160&q=80',
+    avatarUrl: '/images/rohan_deshmukh.jpg',
     rating: 5,
     headline: 'Cut ₹32,000/mo on redundant software and automated order replies',
     content: 'We eliminated 3 expensive subscriptions right away. Automated WhatsApp order tracking answers delivery queries in seconds without our support team getting swamped.',
@@ -709,7 +709,7 @@ export const TESTIMONIALS: Testimonial[] = [
     countryCode: 'IN',
     flagEmoji: '🇮🇳',
     avatarText: 'VS',
-    avatarUrl: 'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=160&h=160&q=80',
+    avatarUrl: '/images/vikramaditya_sen.jpg',
     rating: 5,
     headline: '30-second uptime alerts detected API payment failure instantly',
     content: 'Payment gateways fail without warning. Site Shield alerted our phone in 30 seconds when an API timeout hit, letting us switch merchant routes immediately and save hours of lost orders.',
@@ -1280,7 +1280,7 @@ export const FAQS: FaqItem[] = [
   {
     id: 'f5',
     question: 'What is the 30-Day Money-Back Guarantee & "No Questions Asked" refund policy?',
-    answer: 'All 6 software licenses are 100% legitimate and authentic from official original vendor companies. With our 30-Day Money-Back Guarantee & No Questions Asked policy, our team will refund 100% of your money within 1 day (24 hours) — no questions asked. In addition, if you need an instant license replacement, we can replace it within 2 minutes. Reach our official support desk directly at Bizzusupport@gmail.com.',
+    answer: 'All 6 software licenses are 100% legitimate and authentic from official original vendor companies. With our 30-Day Money-Back Guarantee & No Questions Asked policy, our team will refund 100% of your money — strictly no questions asked. In addition, if you need an instant license replacement, we can replace it within 2 minutes. Reach our official support desk directly at Bizzusupport@gmail.com.',
     category: 'Guarantee'
   },
   {
