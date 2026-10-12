@@ -1178,7 +1178,7 @@ export const FAQS: FaqItem[] = [
   {
     id: 'f-limited-year-offer',
     question: 'Is this special $15/month promotional offer only available this year?',
-    answer: 'Yes. The ultra-discounted volume rate starting at $15/month (a 97.7% reduction from the $650/month retail cost) is an exclusive promotional package available strictly for this contractual year. Next year, we will be introducing a different enterprise CRM package with different tool configurations and adjusted pricing tiers. When you lock in your subscription this year, your grandfathered subscription rate remains secured for your active account cycle.',
+    answer: 'Yes. The ultra-discounted volume rate starting at $15/month (a 97.7% reduction from the $650/month retail cost) is an exclusive promotional package available strictly for this contractual year. Next year, we will be introducing a different enterprise CRM package with different tool configurations and adjusted pricing tiers. When you lock in your subscription this year, your guaranteed subscription rate remains secured for your active account cycle.',
     category: 'Pricing'
   },
   {
