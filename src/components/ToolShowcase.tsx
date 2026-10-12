@@ -72,9 +72,6 @@ export const ToolShowcase: React.FC<ToolShowcaseProps> = ({ onClaimClick }) => {
               >
                 <div className="mb-2">{getIcon(tool.icon)}</div>
                 <span className="text-sm sm:text-base font-bold text-white truncate max-w-full">{tool.name}</span>
-                <span className="text-xs sm:text-sm text-slate-400 font-mono mt-1 line-through">
-                  {formatLocalizedPrice(tool.monthlyRetail, currentCurrency)}/mo
-                </span>
               </button>
             );
           })}

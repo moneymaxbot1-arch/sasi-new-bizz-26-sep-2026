@@ -98,17 +98,8 @@ export const InDepthSoftwareSpecs: React.FC<InDepthSoftwareSpecsProps> = ({ onCl
                   boxShadow: isSelected ? `0 0 20px ${t.badgeColor}25` : undefined
                 }}
               >
-                <div 
-                  style={{ color: t.badgeColor }}
-                  className="text-xs sm:text-sm font-black font-mono px-2.5 py-0.5 rounded-md bg-slate-950 mb-1.5"
-                >
-                  0{idx + 1}
-                </div>
                 <span className="text-sm sm:text-base lg:text-lg font-bold text-white tracking-normal leading-snug">
                   {t.name}
-                </span>
-                <span className="text-xs sm:text-sm text-slate-400 font-mono mt-1 line-through">
-                  {formatLocalizedPrice(t.monthlyRetail, currentCurrency)}/mo
                 </span>
               </button>
             );

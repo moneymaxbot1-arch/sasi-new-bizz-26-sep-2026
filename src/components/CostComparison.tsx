@@ -224,47 +224,42 @@ export const CostComparison: React.FC<CostComparisonProps> = ({ onClaimClick, is
             <button
               type="button"
               onClick={() => setTimeframe('monthly')}
-              className={`px-3 py-2 text-xs sm:text-sm font-bold rounded-lg transition-all cursor-pointer text-center ${
+              className={`py-2.5 px-3 text-xs sm:text-sm font-bold rounded-lg transition-all cursor-pointer text-center ${
                 timeframe === 'monthly'
                   ? 'bg-emerald-500 text-slate-950 shadow-md font-extrabold'
                   : 'text-slate-400 hover:text-white'
               }`}
             >
               <span>1 Month</span>
-              <span className="hidden sm:inline block text-[11px] opacity-80">
-                ({formatLocalizedPrice(650, currentCurrency)}/mo vs {formatLocalizedPrice(15, currentCurrency)}/mo)
-              </span>
             </button>
             <button
               type="button"
               onClick={() => setTimeframe('annual')}
-              className={`px-3 py-2 text-xs sm:text-sm font-bold rounded-lg transition-all cursor-pointer text-center ${
+              className={`py-2.5 px-3 text-xs sm:text-sm font-bold rounded-lg transition-all cursor-pointer text-center ${
                 timeframe === 'annual'
                   ? 'bg-emerald-500 text-slate-950 shadow-md font-extrabold'
                   : 'text-slate-400 hover:text-white'
               }`}
             >
-              <div className="flex items-center justify-center gap-1">
+              <div className="flex items-center justify-center gap-1.5">
                 <span>1 Year</span>
-                <span className="hidden md:inline px-1.5 py-0.2 bg-slate-950/40 text-[10px] rounded uppercase font-bold">Best Value</span>
+                <span className={`px-1.5 py-0.5 text-[10px] rounded uppercase font-bold ${
+                  timeframe === 'annual' ? 'bg-slate-950/30 text-slate-950' : 'bg-emerald-500/20 text-emerald-300'
+                }`}>
+                  Best Value
+                </span>
               </div>
-              <span className="hidden sm:inline block text-[11px] opacity-80">
-                ({formatLocalizedPrice(7800, currentCurrency)} vs {formatLocalizedPrice(180, currentCurrency)}/yr)
-              </span>
             </button>
             <button
               type="button"
               onClick={() => setTimeframe('threeYear')}
-              className={`px-3 py-2 text-xs sm:text-sm font-bold rounded-lg transition-all cursor-pointer text-center ${
+              className={`py-2.5 px-3 text-xs sm:text-sm font-bold rounded-lg transition-all cursor-pointer text-center ${
                 timeframe === 'threeYear'
                   ? 'bg-emerald-500 text-slate-950 shadow-md font-extrabold'
                   : 'text-slate-400 hover:text-white'
               }`}
             >
               <span>3 Years</span>
-              <span className="hidden sm:inline block text-[11px] opacity-80">
-                ({formatLocalizedPrice(23400, currentCurrency)} vs {formatLocalizedPrice(540, currentCurrency)})
-              </span>
             </button>
           </div>
         </div>
@@ -485,7 +480,12 @@ export const CostComparison: React.FC<CostComparisonProps> = ({ onClaimClick, is
                   <th className="py-4 px-4 sm:px-6 font-bold">Feature / Requirement</th>
                   <th className="py-4 px-4 sm:px-6 font-bold text-rose-400">Competitor Individual Software</th>
                   <th className="py-4 px-4 sm:px-6 font-bold text-emerald-400">Bizz2u 6 Powerful Software Bundle</th>
-                  <th className="py-4 px-4 sm:px-6 font-bold text-slate-300 hidden md:table-cell">Your Direct Benefit</th>
+                  <th className="py-4 px-4 sm:px-6 font-bold text-sky-300 hidden md:table-cell bg-sky-950/30 border-l border-sky-500/30">
+                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-500/20 border border-sky-400/50 shadow-[0_0_15px_rgba(56,189,248,0.35)] animate-pulse">
+                      <Sparkles className="w-3.5 h-3.5 text-sky-300" />
+                      <span className="text-sky-200 tracking-wider">Your Direct Benefit</span>
+                    </div>
+                  </th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-800 text-sm sm:text-base">
@@ -509,8 +509,9 @@ export const CostComparison: React.FC<CostComparisonProps> = ({ onClaimClick, is
                         <span className="text-white">{row.bundle}</span>
                       </div>
                     </td>
-                    <td className="py-4 px-4 sm:px-6 text-slate-400 hidden md:table-cell text-xs sm:text-sm">
-                      <span className="inline-block px-2.5 py-1 rounded bg-slate-800 text-slate-300 text-xs sm:text-sm border border-slate-700/80 font-medium">
+                    <td className="py-4 px-4 sm:px-6 hidden md:table-cell text-xs sm:text-sm bg-sky-950/20 border-l border-sky-500/20">
+                      <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gradient-to-r from-sky-500/20 via-cyan-500/25 to-blue-500/20 text-sky-100 text-xs sm:text-sm border border-sky-400/50 font-bold animate-benefit-glow">
+                        <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0 shadow-[0_0_8px_#38bdf8]" />
                         {row.advantage}
                       </span>
                     </td>
