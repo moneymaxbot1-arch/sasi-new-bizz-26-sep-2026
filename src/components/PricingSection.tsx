@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { PRICING_TIERS } from '../data/bundleData';
 import { PricingTier } from '../types';
-import { Sparkles, ArrowRight, ShieldCheck, Flame, Star, Check, Info, X, Lock, ExternalLink, RotateCcw, Zap, Coins, TrendingUp, ChevronDown, HelpCircle } from 'lucide-react';
+import { Sparkles, ArrowRight, ShieldCheck, Flame, Star, Check, Info, X, Lock, ExternalLink, RotateCcw, Zap, Coins, ChevronDown, HelpCircle } from 'lucide-react';
 import { getActiveCurrency, setAppCurrency, formatLocalizedPrice, CurrencyConfig, SUPPORTED_CURRENCIES } from '../utils/currencyUtils';
 import { TrustBadgesTrio } from './TrustBadgesTrio';
 
@@ -324,21 +324,6 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
           <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-3xl mx-auto">
             All 6 software licenses provided directly from original companies. Select 1-Year or 2-Year on top of each table to lock in immediate savings.
           </p>
-
-          {/* Automatic Language-Synced Currency Note */}
-          <div className="mt-5 flex justify-center">
-            <div className="inline-flex flex-wrap items-center justify-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/90 border border-emerald-500/30 text-xs text-slate-300 font-medium shadow-md">
-              <TrendingUp className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-              <span>
-                <strong className="text-white font-bold">Auto-Localized Currency:</strong>{' '}
-                <span className="text-emerald-300 font-mono font-bold">{currentCurrency.name} ({currentCurrency.symbol.trim()})</span>
-              </span>
-              <span className="text-slate-500 hidden sm:inline">·</span>
-              <span className="text-emerald-400/90 font-mono text-[11px]">
-                {currentCurrency.exchangeNote}
-              </span>
-            </div>
-          </div>
         </div>
 
         {/* 3 Core Assurances Ribbon above Pricing */}

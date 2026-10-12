@@ -8,6 +8,94 @@ interface CostComparisonProps {
   isInsideFaq?: boolean;
 }
 
+const renderCompetitorLogo = (id: string) => {
+  switch (id) {
+    case 'hostinger':
+      return (
+        <svg viewBox="0 0 96 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-5 sm:h-6 w-auto max-w-full">
+          <rect width="96" height="32" rx="4" fill="#FFFFFF" />
+          <g fill="#673DE6">
+            <path d="M7 7.5h3.6v17H7V7.5z" />
+            <path d="M19 7.5h3.6v17H19V7.5z" />
+            <path d="M10.6 11.5l6-4.2v5.6l-6 4.2v-5.6z" />
+            <path d="M19 20.5l-6 4.2v-5.6l6-4.2v5.6z" />
+          </g>
+          <text x="27" y="20.5" fill="#1F143D" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="900" fontSize="10.5" letterSpacing="0.8">HOSTINGER</text>
+        </svg>
+      );
+    case 'wati':
+      return (
+        <svg viewBox="0 0 74 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-5 sm:h-6 w-auto max-w-full">
+          <rect width="74" height="32" rx="4" fill="#FFFFFF" />
+          <path d="M5 8.5c0-2 1.6-3.5 3.5-3.5h7.5c2 0 3.5 1.5 3.5 3.5v5c0 2-1.5 3.5-3.5 3.5h-2.5L10 20.5v-3.5H8.5c-2 0-3.5-1.5-3.5-3.5v-5z" fill="#00E785" stroke="#111827" strokeWidth="2.2" strokeLinejoin="round" />
+          <text x="24" y="20" fill="#111827" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="900" fontSize="13.5" letterSpacing="-0.2">wati</text>
+        </svg>
+      );
+    case 'mailchimp':
+      return (
+        <svg viewBox="0 0 98 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-5 sm:h-6 w-auto max-w-full">
+          <rect width="98" height="32" rx="4" fill="#FFFFFF" />
+          <g fill="#241C15">
+            <path d="M4 11.5c1.2-2.4 4-3.5 6.8-3.5s5.5 1.1 6.8 3.5c-2.3.9-4.7.9-6.8.9s-4.5 0-6.8-.9z" />
+            <circle cx="3.5" cy="15.5" r="2.8" />
+            <circle cx="3.5" cy="15.5" r="1.5" fill="#FFFFFF" />
+            <circle cx="18" cy="15.5" r="2.8" />
+            <circle cx="18" cy="15.5" r="1.5" fill="#FFFFFF" />
+            <ellipse cx="10.8" cy="16.5" rx="6.5" ry="6" />
+            <ellipse cx="10.8" cy="18.8" rx="4.5" ry="3" fill="#FFFFFF" />
+            <circle cx="9.5" cy="18" r="0.6" />
+            <circle cx="12" cy="18" r="0.6" />
+            <path d="M8.5 19.5c.8 1 3.8 1 4.5 0" stroke="#241C15" strokeWidth="1.2" strokeLinecap="round" fill="none" />
+            <ellipse cx="8" cy="14.2" rx="1.1" ry="1.3" fill="#FFFFFF" />
+            <circle cx="8.2" cy="14.2" r="0.7" />
+            <ellipse cx="13.5" cy="14.2" rx="1.1" ry="1.3" fill="#FFFFFF" />
+            <circle cx="13.3" cy="14.2" r="0.7" />
+          </g>
+          <text x="25" y="20.5" fill="#241C15" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="900" fontSize="11" letterSpacing="-0.3">mailchimp</text>
+        </svg>
+      );
+    case 'bitly':
+      return (
+        <svg viewBox="0 0 62 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-5 sm:h-6 w-auto max-w-full">
+          <rect width="62" height="32" rx="4" fill="#FFFFFF" />
+          <g fill="#EE6123">
+            <path d="M7 7c-1.2 0-2.2.8-2.2 2v9.5c0 3 2 4.8 5 4.8 3 0 5.2-2.2 5.2-5.4 0-3.2-2-5.5-5-5.5-1.4 0-2.5.6-3.2 1.5V9c0-1.2-1-2-2.2-2zm1.8 9c.4-.6 1.2-1 2.1-1 1.6 0 2.6 1.3 2.6 3.1 0 1.9-1 3.1-2.6 3.1-1.5 0-2.4-1.1-2.4-2.8v-2.4z"/>
+            <circle cx="17.5" cy="11.5" r="1.4"/>
+            <rect x="16.2" y="14" width="2.6" height="9" rx="1.2"/>
+            <path d="M22 11v3h-1.5v2.2H22v4.5c0 1.5.8 2.5 2.5 2.5.8 0 1.5-.2 1.8-.4l-.4-2c-.2.1-.5.2-.9.2-.6 0-.9-.3-.9-1v-3.8h2V14h-2v-3H22z"/>
+            <rect x="28" y="7" width="2.6" height="16" rx="1.2"/>
+            <path d="M33 14l2.5 6.5 2.5-6.5h2.8l-4 9.5c-.8 2-2 2.8-3.8 2.8-.7 0-1.4-.2-1.8-.4l.5-2.2c.3.1.7.2 1.1.2 1 0 1.6-.4 2-1.4l.2-.5-4.2-8H33z"/>
+          </g>
+        </svg>
+      );
+    case 'uptimerobot':
+      return (
+        <svg viewBox="0 0 96 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-5 sm:h-6 w-auto max-w-full">
+          <rect width="96" height="32" rx="4" fill="#FFFFFF" />
+          <circle cx="11" cy="16" r="6" fill="#00E676" />
+          <circle cx="9" cy="14.8" r="0.9" fill="#111827" />
+          <circle cx="13" cy="14.8" r="0.9" fill="#111827" />
+          <path d="M9 17.5c.8 1.2 3.2 1.2 4 0" stroke="#111827" strokeWidth="1" strokeLinecap="round" fill="none" />
+          <text x="21" y="20.5" fill="#1F2937" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="800" fontSize="10.5" letterSpacing="-0.2">UptimeRobot</text>
+        </svg>
+      );
+    case 'fomo':
+      return (
+        <svg viewBox="0 0 68 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-5 sm:h-6 w-auto max-w-full">
+          <rect width="68" height="32" rx="4" fill="#FFF2E8" />
+          <g fill="#FA6B35">
+            <path d="M6 14h3v-2.2c0-2.2 1.3-3.3 3.5-3.3 1.1 0 2 .2 2.5.5l-.6 2.2c-.4-.2-.9-.3-1.4-.3-1 0-1.8.6-1.8 1.6V14h4v2.2H11.2v7H8.8v-7H6V14z" />
+            <path d="M19 13.5c2.8 0 4.8 2 4.8 5s-2 5-4.8 5-4.8-2-4.8-5 2-5 4.8-5zm0 2.2c-1.5 0-2.5 1.3-2.5 2.8s1 2.8 2.5 2.8 2.5-1.3 2.5-2.8-1-2.8-2.5-2.8z" />
+            <path d="M26 14h2.2v1.3c.6-1 1.6-1.5 2.8-1.5 1.2 0 2.2.6 2.6 1.6.7-1 1.8-1.6 3-1.6 1.8 0 3 1.2 3 3.2v6.6h-2.2v-6c0-1.2-.7-1.8-1.7-1.8-1.1 0-1.8.7-1.8 1.8v6h-2.2v-6c0-1.2-.7-1.8-1.7-1.8-1.1 0-1.8.7-1.8 1.8v6H26V14z" />
+            <path d="M50 13.5c2.8 0 4.8 2 4.8 5s-2 5-4.8 5-4.8-2-4.8-5 2-5 4.8-5zm0 2.2c-1.5 0-2.5 1.3-2.5 2.8s1 2.8 2.5 2.8 2.5-1.3 2.5-2.8-1-2.8-2.5-2.8z" />
+          </g>
+        </svg>
+      );
+    default:
+      return null;
+  }
+};
+
 export const CostComparison: React.FC<CostComparisonProps> = ({ onClaimClick, isInsideFaq = false }) => {
   const [timeframe, setTimeframe] = useState<'monthly' | 'annual' | 'threeYear'>('annual');
   const [currentCurrency, setCurrentCurrency] = useState<CurrencyConfig>(getActiveCurrency);
@@ -316,8 +404,8 @@ export const CostComparison: React.FC<CostComparisonProps> = ({ onClaimClick, is
                   return (
                     <div key={tool.id} className="flex items-center justify-between py-2.5 px-3.5 sm:py-3 sm:px-4 rounded-lg bg-slate-850/50 border border-slate-800/80">
                       <div className="flex items-center gap-3 min-w-0">
-                        <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-slate-800 text-xs font-bold text-slate-200 flex items-center justify-center shrink-0 border border-slate-700">
-                          {tool.initials}
+                        <div className="h-8 sm:h-9 w-20 sm:w-24 px-1.5 rounded-lg bg-white flex items-center justify-center shrink-0 border border-slate-700/80 shadow-xs overflow-hidden">
+                          {renderCompetitorLogo(tool.id)}
                         </div>
                         <div className="truncate">
                           <div className="text-base sm:text-lg font-bold text-white truncate">{tool.name}</div>
