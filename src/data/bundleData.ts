@@ -434,7 +434,7 @@ export const TESTIMONIALS: Testimonial[] = [
     countryCode: 'MY',
     flagEmoji: '🇲🇾',
     avatarText: 'ML',
-    avatarUrl: '/images/michael_lim.jpg',
+    avatarUrl: '/images/michael_lim_v2.jpg',
     rating: 5,
     headline: 'Cut RM6,800/mo in software bills by bundling our 6 tools in one place',
     content: 'We used to pay separate monthly subscriptions for Mailchimp, Bitly, WATI, and web hosting for client accounts. It was eating up our margins. The BIG Agency bundle replaced all 5 subscriptions for a fraction of the cost, saving RM6,800 every month.',
