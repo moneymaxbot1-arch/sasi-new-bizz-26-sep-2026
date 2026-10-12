@@ -542,7 +542,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                         </div>
                         <div className="flex items-center justify-center gap-1.5 text-slate-300">
                           <Sparkles className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                          <span>Instant 3-Minute Workspace Setup</span>
+                          <span>100% Official direct vendor license verification</span>
                         </div>
                       </div>
                     </div>

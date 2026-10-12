@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { SOFTWARE_TOOLS, TOTAL_MONTHLY_RETAIL, TOTAL_ANNUAL_RETAIL } from '../data/bundleData';
 import { getActiveCurrency, formatLocalizedPrice, CurrencyConfig } from '../utils/currencyUtils';
-import { Check, X, ArrowRight, Sparkles, TrendingDown, ShieldCheck, Zap, AlertTriangle, Layers, Award } from 'lucide-react';
+import { Check, X, ArrowRight, Sparkles, TrendingDown, ShieldCheck, Zap, AlertTriangle, Layers, Lock } from 'lucide-react';
 
 interface CostComparisonProps {
   onClaimClick: () => void;
@@ -467,7 +467,7 @@ export const CostComparison: React.FC<CostComparisonProps> = ({ onClaimClick, is
               </div>
 
               {/* Big Bundle Price Callout */}
-              <div className="my-6 p-4 rounded-xl bg-emerald-950/40 border border-emerald-500/40">
+              <div className="my-5 p-4 rounded-xl bg-emerald-950/40 border border-emerald-500/40">
                 <div className="text-sm font-bold uppercase tracking-wider text-emerald-300 mb-1">
                   Bizz2u Complete 6-Software Bundle Rate:
                 </div>
@@ -484,6 +484,24 @@ export const CostComparison: React.FC<CostComparisonProps> = ({ onClaimClick, is
                   <span className="font-black text-white font-mono text-sm bg-emerald-900/60 px-2 py-0.5 rounded">
                     +{formatLocalizedPrice(totalSavedUsd, currentCurrency)} saved
                   </span>
+                </div>
+
+                {/* 3 Core Trust Guarantees Under $15 Price Tag */}
+                <div className="mt-3 pt-3 border-t border-emerald-900/60 flex flex-col gap-1.5 text-xs text-slate-300 text-center">
+                  <div className="flex items-center justify-center gap-1.5 font-medium">
+                    <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                    <span className="text-white font-semibold">Cancel Anytime</span>
+                    <span className="text-slate-500">·</span>
+                    <span>No Contracts</span>
+                  </div>
+                  <div className="flex items-center justify-center gap-1.5 text-slate-300">
+                    <Lock className="w-3.5 h-3.5 text-sky-400 shrink-0" />
+                    <span>100% Private & Encrypted Data</span>
+                  </div>
+                  <div className="flex items-center justify-center gap-1.5 text-slate-300">
+                    <Sparkles className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                    <span>100% Official direct vendor license verification</span>
+                  </div>
                 </div>
               </div>
 
