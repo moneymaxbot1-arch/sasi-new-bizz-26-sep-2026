@@ -970,9 +970,6 @@ export const AutomationVortexHero: React.FC<AutomationVortexHeroProps> = ({ onCl
                     <span className="text-[10px] sm:text-xs text-emerald-400 font-semibold font-mono">
                       /mo
                     </span>
-                    <span className="text-[9px] sm:text-xs text-rose-300 line-through font-mono ml-0.5 sm:ml-1">
-                      {formatLocalizedPrice(totalRetailMonthly, currentCurrency)}/mo
-                    </span>
                   </div>
 
                   <div className="text-[9px] sm:text-[10px] text-slate-300 font-semibold line-clamp-1">
@@ -1038,14 +1035,6 @@ export const AutomationVortexHero: React.FC<AutomationVortexHeroProps> = ({ onCl
                     {/* Software Name */}
                     <span className="text-[8px] min-[360px]:text-[9px] sm:text-[10px] font-bold text-white tracking-tight truncate max-w-[90%]">
                       {tool.name}
-                    </span>
-
-                    {/* Retail Monthly Price Tag matching uploaded picture */}
-                    <span 
-                      style={{ backgroundColor: `${tool.color}20`, color: tool.color }}
-                      className="text-[7px] min-[360px]:text-[8px] sm:text-[9px] font-mono font-bold px-1 sm:px-1.5 py-0.2 rounded-full mt-0.5"
-                    >
-                      ${tool.monthlyPrice}/mo
                     </span>
 
                     {/* Clockwise Blinking Pulse Rings on active */}
@@ -1127,12 +1116,6 @@ export const AutomationVortexHero: React.FC<AutomationVortexHeroProps> = ({ onCl
                   </span>
                   <span className="text-slate-400">· {currentTool.category}</span>
                 </div>
-
-                <div className="text-right">
-                  <span className="text-xs text-rose-400 line-through font-mono">
-                    ${currentTool.monthlyPrice}/mo standalone
-                  </span>
-                </div>
               </div>
 
               {/* Core Role & Output */}
@@ -1147,17 +1130,11 @@ export const AutomationVortexHero: React.FC<AutomationVortexHeroProps> = ({ onCl
                 </div>
               </div>
 
-              {/* Price Comparison Callout */}
+              {/* Introduction Price Callout */}
               <div className="mt-5 p-3.5 bg-slate-850/80 rounded-xl border border-slate-700/80 flex items-center justify-between">
                 <div>
-                  <div className="text-[11px] text-slate-400">Standalone Retail:</div>
-                  <div className="text-sm font-bold text-rose-400 font-mono line-through">
-                    ${totalRetailMonthly}/month
-                  </div>
-                </div>
-
-                <div className="text-center px-2">
-                  <span className="text-xs text-slate-400">&rarr;</span>
+                  <div className="text-[11px] text-slate-400 font-semibold uppercase tracking-wider">Introduction Price:</div>
+                  <div className="text-xs text-slate-300">Complete 6-in-1 business growth suite</div>
                 </div>
 
                 <div className="text-right">

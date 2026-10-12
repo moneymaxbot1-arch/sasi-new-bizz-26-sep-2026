@@ -402,21 +402,20 @@ export const CostComparison: React.FC<CostComparisonProps> = ({ onClaimClick, is
                   const itemMonthly = tool.monthlyRetail;
                   const itemTotal = itemMonthly * multiplier;
                   return (
-                    <div key={tool.id} className="flex items-center justify-between py-2.5 px-3.5 sm:py-3 sm:px-4 rounded-lg bg-slate-850/50 border border-slate-800/80">
-                      <div className="flex items-center gap-3 min-w-0">
-                        <div className="h-8 sm:h-9 w-20 sm:w-24 px-1.5 rounded-lg bg-white flex items-center justify-center shrink-0 border border-slate-700/80 shadow-xs overflow-hidden">
+                    <div key={tool.id} className="flex items-center justify-between py-3 px-3.5 sm:py-3.5 sm:px-4 rounded-xl bg-slate-850/50 border border-slate-800/80">
+                      <div className="flex items-center gap-3 sm:gap-3.5 min-w-0">
+                        <div className="h-9 sm:h-10 w-22 sm:w-26 px-1.5 rounded-lg bg-white flex items-center justify-center shrink-0 border border-slate-700/80 shadow-xs overflow-hidden">
                           {renderCompetitorLogo(tool.id)}
                         </div>
                         <div className="truncate">
-                          <div className="text-base sm:text-lg font-bold text-white truncate">{tool.name}</div>
-                          <div className="text-xs sm:text-sm text-slate-400 truncate">{tool.category}</div>
+                          <div className="text-lg sm:text-xl lg:text-2xl font-black text-white tracking-tight truncate">{tool.name}</div>
                         </div>
                       </div>
                       <div className="text-right shrink-0 font-mono pl-3">
-                        <div className="text-base sm:text-lg font-bold text-rose-400">
+                        <div className="text-lg sm:text-xl lg:text-2xl font-black text-rose-400">
                           {formatLocalizedPrice(itemTotal, currentCurrency)}
                         </div>
-                        <div className="text-xs text-slate-400">
+                        <div className="text-xs sm:text-sm text-slate-400">
                           {timeframe === 'monthly' ? '/mo' : `${formatLocalizedPrice(itemMonthly, currentCurrency)}/mo`}
                         </div>
                       </div>
