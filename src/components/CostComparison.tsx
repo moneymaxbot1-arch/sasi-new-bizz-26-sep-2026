@@ -577,14 +577,25 @@ export const CostComparison: React.FC<CostComparisonProps> = ({ onClaimClick, is
             </div>
           </div>
 
+          {/* Mobile Swipe Guide Banner */}
+          <div className="md:hidden px-4 py-2.5 bg-sky-950/60 border-b border-sky-500/30 text-xs text-sky-200 flex items-center justify-between">
+            <div className="flex items-center gap-2 font-medium">
+              <Sparkles className="w-3.5 h-3.5 text-sky-400 shrink-0 animate-pulse" />
+              <span>Swipe horizontally to view all 4 columns &amp; Direct Benefits</span>
+            </div>
+            <span className="text-[10px] font-black uppercase tracking-wider bg-sky-500/20 text-sky-300 px-2 py-0.5 rounded border border-sky-400/40 shrink-0">
+              4 Columns
+            </span>
+          </div>
+
           <div className="overflow-x-auto">
-            <table className="w-full text-left border-collapse">
+            <table className="w-full min-w-[720px] md:min-w-full text-left border-collapse">
               <thead>
                 <tr className="bg-slate-850/80 border-b border-slate-800 text-xs sm:text-sm uppercase tracking-wider text-slate-400">
                   <th className="py-4 px-4 sm:px-6 font-bold">Feature / Requirement</th>
                   <th className="py-4 px-4 sm:px-6 font-bold text-rose-400">Competitor Individual Software</th>
                   <th className="py-4 px-4 sm:px-6 font-bold text-emerald-400">Bizz2u 6 Powerful Software Bundle</th>
-                  <th className="py-4 px-4 sm:px-6 font-bold text-sky-300 hidden md:table-cell bg-sky-950/30 border-l border-sky-500/30">
+                  <th className="py-4 px-4 sm:px-6 font-bold text-sky-300 table-cell bg-sky-950/30 border-l border-sky-500/30 whitespace-nowrap">
                     <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-500/20 border border-sky-400/50 shadow-[0_0_15px_rgba(56,189,248,0.35)] animate-pulse">
                       <Sparkles className="w-3.5 h-3.5 text-sky-300" />
                       <span className="text-sky-200 tracking-wider">Your Direct Benefit</span>
@@ -599,7 +610,15 @@ export const CostComparison: React.FC<CostComparisonProps> = ({ onClaimClick, is
                     className={`hover:bg-slate-800/40 transition-colors ${idx % 2 === 0 ? 'bg-transparent' : 'bg-slate-900/40'}`}
                   >
                     <td className="py-4 px-4 sm:px-6 font-bold text-white text-sm sm:text-base">
-                      {row.feature}
+                      <div>{row.feature}</div>
+                      {/* Mobile inline benefit indicator so it is instantly visible in phone view without even swiping */}
+                      <div className="mt-2 md:hidden">
+                        <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-gradient-to-r from-sky-500/20 via-cyan-500/25 to-blue-500/20 text-sky-100 text-xs border border-sky-400/50 font-bold animate-benefit-glow">
+                          <Sparkles className="w-3 h-3 text-cyan-300 shrink-0" />
+                          <span className="text-[10px] text-sky-300 font-extrabold uppercase tracking-wide">Direct Benefit:</span>
+                          <span>{row.advantage}</span>
+                        </span>
+                      </div>
                     </td>
                     <td className="py-4 px-4 sm:px-6 text-slate-300 font-mono text-sm sm:text-base">
                       <div className="flex items-center gap-2.5">
@@ -613,7 +632,7 @@ export const CostComparison: React.FC<CostComparisonProps> = ({ onClaimClick, is
                         <span className="text-white">{row.bundle}</span>
                       </div>
                     </td>
-                    <td className="py-4 px-4 sm:px-6 hidden md:table-cell text-xs sm:text-sm bg-sky-950/20 border-l border-sky-500/20">
+                    <td className="py-4 px-4 sm:px-6 table-cell text-xs sm:text-sm bg-sky-950/20 border-l border-sky-500/20 whitespace-nowrap">
                       <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gradient-to-r from-sky-500/20 via-cyan-500/25 to-blue-500/20 text-sky-100 text-xs sm:text-sm border border-sky-400/50 font-bold animate-benefit-glow">
                         <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0 shadow-[0_0_8px_#38bdf8]" />
                         {row.advantage}
