@@ -975,13 +975,6 @@ export const AutomationVortexHero: React.FC<AutomationVortexHeroProps> = ({ onCl
                   <div className="text-[9px] sm:text-[10px] text-slate-300 font-semibold line-clamp-1">
                     Starting Monthly
                   </div>
-
-                  {/* Click trigger hint */}
-                  <div className="mt-1 sm:mt-1.5 inline-flex items-center gap-1 px-2 sm:px-2.5 py-0.5 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 text-[8px] sm:text-[9px] font-bold group-hover:bg-emerald-400 group-hover:text-slate-950 transition-colors">
-                    <span>From {formatLocalizedPrice(15, currentCurrency)}/mo</span>
-                    <ArrowRight className="w-2.5 h-2.5" />
-                  </div>
-
                 </div>
 
               </div>
