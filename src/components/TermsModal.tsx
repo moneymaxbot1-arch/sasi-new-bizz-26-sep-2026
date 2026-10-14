@@ -53,7 +53,7 @@ export const TermsModal: React.FC<TermsModalProps> = ({ isOpen, onClose }) => {
                 </span>
               </h3>
               <p className="text-xs text-slate-400">
-                Bizz2u Official Terms of Use & Policies
+                Bizz<span className="text-amber-400 font-bold">2u</span> Official Terms of Use & Policies
               </p>
             </div>
           </div>

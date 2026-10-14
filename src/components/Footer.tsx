@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ShieldCheck, Lock, Award, Mail } from 'lucide-react';
 import { TermsModal } from './TermsModal';
+import { Bizz2uLogo } from './Bizz2uLogo';
 import { getActiveCurrency, formatLocalizedPrice, CurrencyConfig } from '../utils/currencyUtils';
 
 interface FooterProps {
@@ -32,9 +33,12 @@ export const Footer: React.FC<FooterProps> = ({ onClaimClick }) => {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 pb-10 border-b border-slate-800">
           
           <div className="md:col-span-5 space-y-3.5">
-            <div className="text-lg font-bold text-white flex items-center gap-1.5">
-              <span>Bizz2u</span>
-              <span className="w-2 h-2 rounded-full bg-emerald-400 inline-block" />
+            <div className="flex items-center gap-2.5">
+              <Bizz2uLogo className="w-9 h-9 sm:w-10 sm:h-10 shrink-0 drop-shadow-[0_2px_12px_rgba(245,200,66,0.4)]" />
+              <div className="text-xl font-black text-white flex items-center gap-1.5">
+                <span>Bizz<span className="text-amber-400 bg-gradient-to-r from-amber-300 via-yellow-400 to-amber-500 bg-clip-text text-transparent font-black">2u</span></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 inline-block shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
+              </div>
             </div>
             <p className="text-slate-400 max-w-sm leading-relaxed">
               The premier business productivity & sales automation software suite. Giving entrepreneurs enterprise-tier tools starting at just {formatLocalizedPrice(15, currentCurrency)}/month.
@@ -129,8 +133,11 @@ export const Footer: React.FC<FooterProps> = ({ onClaimClick }) => {
         </div>
 
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
-          <div>
-            &copy; {new Date().getFullYear()} Bizz2u Inc. Founded by Dr. Sasi. All rights reserved. Trademarks are property of their respective owners.
+          <div className="flex items-center gap-2">
+            <Bizz2uLogo className="w-6 h-6 shrink-0 drop-shadow-[0_1px_6px_rgba(245,200,66,0.35)]" />
+            <span>
+              &copy; {new Date().getFullYear()} <strong className="text-white font-semibold">Bizz<span className="text-amber-400 font-bold bg-gradient-to-r from-amber-300 to-yellow-400 bg-clip-text text-transparent">2u</span></strong> Inc. Founded by Dr. Sasi. All rights reserved. Trademarks are property of their respective owners.
+            </span>
           </div>
           <div className="flex flex-wrap items-center gap-3 sm:gap-4">
             <a href="mailto:Bizzusupport@gmail.com" className="text-emerald-400 hover:text-emerald-300 font-semibold font-mono flex items-center gap-1 transition-colors">

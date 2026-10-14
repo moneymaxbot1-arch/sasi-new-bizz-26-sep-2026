@@ -457,7 +457,7 @@ export const CostComparison: React.FC<CostComparisonProps> = ({ onClaimClick, is
                     <Check className="w-6 h-6 stroke-[3]" />
                   </div>
                   <div>
-                    <h3 className="text-xl sm:text-2xl font-black text-white">Bizz2u 6 Powerful Software Bundle</h3>
+                    <h3 className="text-xl sm:text-2xl font-black text-white">Bizz<span className="text-amber-400 font-black">2u</span> 6 Powerful Software Bundle</h3>
                     <p className="text-sm text-emerald-400 font-medium">All 6 Commercial Tools Unified · Flat Rate</p>
                   </div>
                 </div>

@@ -35,19 +35,19 @@ export const GuaranteeSection: React.FC<GuaranteeSectionProps> = ({ onClaimClick
                 <Award className="w-12 h-12" />
               </div>
               <span className="text-sm font-mono font-black text-emerald-400 uppercase tracking-wider">
-                30-DAY GUARANTEE
+                100% SATISFACTION
               </span>
-              <span className="text-xs text-slate-300 font-semibold mt-1">100% Risk-Free Policy</span>
+              <span className="text-xs text-slate-300 font-semibold mt-1">2-Min Key Replacement</span>
             </div>
 
             <div className="md:col-span-9 space-y-4">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 text-xs font-mono font-bold uppercase tracking-wider">
                 <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                <span>30-DAY MONEY-BACK GUARANTEE & AUTHENTICITY ASSURANCE</span>
+                <span>100% SATISFACTION & 2-MIN KEY REPLACEMENT IF NOT WORKING</span>
               </div>
 
               <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
-                30-Day Money-Back Guarantee & No Questions Asked Policy.
+                100% Satisfaction Guarantee & 2-Minute Key Replacement If Not Working.
               </h3>
 
               {/* Explicit Policy Terms Card */}
@@ -58,13 +58,13 @@ export const GuaranteeSection: React.FC<GuaranteeSectionProps> = ({ onClaimClick
                 </div>
                 
                 <p className="text-slate-300 leading-relaxed">
-                  With our <strong className="text-white">30-day money-back guarantee & no questions asked policy</strong>, our team will <strong className="text-emerald-300 underline decoration-emerald-400/60 font-semibold">refund 100% of your money</strong> — strictly no questions asked.
+                  With our <strong className="text-white">100% Satisfaction Guarantee</strong>, your software keys are backed by our <strong className="text-emerald-300 underline decoration-emerald-400/60 font-semibold">2-minute key change policy</strong>. If any license key or software is not working, our dedicated team will change and replace your key within 2 minutes — zero downtime, 100% satisfaction guaranteed.
                 </p>
 
                 <div className="pt-2 border-t border-slate-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
                   <div className="flex items-center gap-2 text-slate-300">
                     <Clock className="w-4 h-4 text-amber-400 shrink-0" />
-                    <span>Instant replacement alternative: <strong className="text-white">2-minute replacement</strong> also available.</span>
+                    <span>Instant key replacement: <strong className="text-white">2-minute key change if not working</strong>.</span>
                   </div>
                   <div className="text-slate-300">
                     Direct Email Support:{' '}
@@ -82,7 +82,7 @@ export const GuaranteeSection: React.FC<GuaranteeSectionProps> = ({ onClaimClick
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1 text-xs text-slate-300 font-medium">
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>30-Day Money-back guarantee — no questions asked</span>
+                  <span>100% Satisfaction Guarantee — complete peace of mind</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
@@ -90,11 +90,11 @@ export const GuaranteeSection: React.FC<GuaranteeSectionProps> = ({ onClaimClick
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>No questions asked refund process</span>
+                  <span>2-minute key replacement if not working</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>Immediate 2-minute license replacement upon request</span>
+                  <span>Direct fast-response support via Bizzusupport@gmail.com</span>
                 </div>
               </div>
               
@@ -109,7 +109,7 @@ export const GuaranteeSection: React.FC<GuaranteeSectionProps> = ({ onClaimClick
                 </button>
                 <span className="text-xs text-slate-400 flex items-center gap-1.5 font-mono">
                   <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                  <span>30-Day Money-Back Guarantee · Official Licenses</span>
+                  <span>100% Satisfaction · 2-Min Key Replacement If Not Working</span>
                 </span>
               </div>
             </div>
