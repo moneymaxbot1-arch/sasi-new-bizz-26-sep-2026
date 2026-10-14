@@ -108,17 +108,18 @@
       setTimeout(function() {
         var root = document.getElementById('root');
         if (root && root.children.length === 0) {
+          var ts = Date.now();
           var link = document.createElement('link');
           link.rel = 'stylesheet';
-          link.href = './assets/bundle.css';
-          link.onerror = function() { link.href = './docs/assets/bundle.css'; };
+          link.href = './assets/bundle.css?v=' + ts;
+          link.onerror = function() { link.href = './docs/assets/bundle.css?v=' + ts; };
           document.head.appendChild(link);
 
           var script = document.createElement('script');
           script.type = 'module';
           script.crossOrigin = 'anonymous';
-          script.src = './assets/bundle.js';
-          script.onerror = function() { script.src = './docs/assets/bundle.js'; };
+          script.src = './assets/bundle.js?v=' + ts;
+          script.onerror = function() { script.src = './docs/assets/bundle.js?v=' + ts; };
           document.body.appendChild(script);
         }
       }, 350);

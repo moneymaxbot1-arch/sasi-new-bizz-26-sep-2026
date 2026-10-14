@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://bizz2u.com//sitemap.xml

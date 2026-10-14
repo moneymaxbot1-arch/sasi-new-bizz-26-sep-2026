@@ -48,15 +48,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onClaimClick }) => {
           </button>
 
           {/* Zone 1: Logo beside Bizz2u */}
-          <a href="#" className="flex items-center gap-2 sm:gap-2.5 shrink-0 group">
-            <img
-              src="https://dswjuamvbswokvrivbtn.supabase.co/storage/v1/object/public/Bizz2u/android-chrome-192x192.png"
-              alt="Bizz2u Logo"
-              className="w-8 h-8 sm:w-9 sm:h-9 object-contain shrink-0 transition-transform duration-200 group-hover:scale-105 drop-shadow-[0_2px_12px_rgba(245,200,66,0.4)]"
-              onError={(e) => {
-                e.currentTarget.src = '/bizz2u-logo.png';
-              }}
-            />
+          <a href="#" className="flex items-center gap-2 sm:gap-2.5 shrink-0 group" aria-label="Bizz2u Home">
+            <Bizz2uLogo className="w-8 h-8 sm:w-9 sm:h-9 shrink-0 transition-transform duration-200 group-hover:scale-105 drop-shadow-[0_2px_12px_rgba(245,200,66,0.4)]" />
             <div className="text-lg sm:text-xl font-extrabold tracking-tight text-white flex items-center gap-1.5">
               <span>Bizz<span className="text-amber-400 bg-gradient-to-r from-amber-300 via-yellow-400 to-amber-500 bg-clip-text text-transparent font-black">2u</span></span>
               <span className="w-2 h-2 rounded-full bg-emerald-400 inline-block shadow-[0_0_8px_rgba(52,211,153,0.8)]"></span>

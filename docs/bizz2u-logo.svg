@@ -1,0 +1,91 @@
+<svg viewBox="0 0 280 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="boldGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFEAA0" />
+      <stop offset="30%" stop-color="#F5C842" />
+      <stop offset="65%" stop-color="#DF9C16" />
+      <stop offset="90%" stop-color="#FDE184" />
+      <stop offset="100%" stop-color="#B87D0E" />
+    </linearGradient>
+
+    <linearGradient id="arrowShadeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#DF9C16" />
+      <stop offset="100%" stop-color="#9E6907" />
+    </linearGradient>
+
+    <linearGradient id="navyInnerFill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F1B2F" />
+      <stop offset="50%" stop-color="#0B1526" />
+      <stop offset="100%" stop-color="#070E1A" />
+    </linearGradient>
+
+    <filter id="goldAura" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#F5C842" flood-opacity="0.45" />
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.7" />
+    </filter>
+  </defs>
+
+  <g filter="url(#goldAura)">
+    <path
+      d="M 68 45 L 160 45 C 192 45, 208 62, 208 95 C 208 120, 192 136, 168 142 C 198 148, 218 168, 218 202 C 218 238, 192 255, 155 255 L 68 255 Z"
+      fill="url(#navyInnerFill)"
+      stroke="url(#boldGoldGrad)"
+      stroke-width="11"
+      stroke-linejoin="round"
+    />
+
+    <path
+      d="M 102 75 L 150 75 C 168 75, 178 83, 178 96 C 178 110, 168 118, 150 118 L 102 118 Z"
+      fill="#060C17"
+      stroke="url(#boldGoldGrad)"
+      stroke-width="8"
+      stroke-linejoin="round"
+    />
+
+    <path
+      d="M 102 148 L 155 148 C 174 148, 186 160, 186 178 C 186 198, 174 210, 152 210 L 102 210 Z"
+      fill="#060C17"
+      stroke="url(#boldGoldGrad)"
+      stroke-width="8"
+      stroke-linejoin="round"
+    />
+
+    <polyline
+      points="36,244 88,110 134,212 196,88"
+      fill="none"
+      stroke="#050A14"
+      stroke-width="15"
+      stroke-linecap="round"
+      stroke-linejoin="miter"
+      stroke-miterlimit="5"
+    />
+
+    <polyline
+      points="36,240 88,106 134,208 196,84"
+      fill="none"
+      stroke="url(#boldGoldGrad)"
+      stroke-width="10"
+      stroke-linecap="round"
+      stroke-linejoin="miter"
+      stroke-miterlimit="5"
+    />
+
+    <polygon
+      points="234,34 168,58 196,84"
+      fill="url(#boldGoldGrad)"
+      stroke="url(#boldGoldGrad)"
+      stroke-width="2"
+      stroke-linejoin="round"
+    />
+
+    <polygon
+      points="234,34 196,84 220,108"
+      fill="url(#arrowShadeGrad)"
+      stroke="url(#boldGoldGrad)"
+      stroke-width="2"
+      stroke-linejoin="round"
+    />
+
+    <circle cx="234" cy="34" r="3.5" fill="#FFFFFF" opacity="0.95" />
+  </g>
+</svg>
