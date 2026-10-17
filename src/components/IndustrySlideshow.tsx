@@ -269,15 +269,19 @@ export const IndustrySlideshow: React.FC<IndustrySlideshowProps> = ({
     };
   }, [isPlaying, speedMs, goToNext]);
 
-  // Auto-scroll active thumbnail into view
+  // Auto-scroll active thumbnail inside rail container ONLY (never scrolls the window/page)
   useEffect(() => {
-    if (thumbnailRailRef.current) {
-      const activeThumb = thumbnailRailRef.current.children[activeIndex] as HTMLElement;
+    const rail = thumbnailRailRef.current;
+    if (rail) {
+      const activeThumb = rail.children[activeIndex] as HTMLElement;
       if (activeThumb) {
-        activeThumb.scrollIntoView({
-          behavior: 'smooth',
-          block: 'nearest',
-          inline: 'center'
+        const thumbLeft = activeThumb.offsetLeft;
+        const thumbWidth = activeThumb.offsetWidth;
+        const railWidth = rail.clientWidth;
+        const targetScrollLeft = thumbLeft - (railWidth / 2) + (thumbWidth / 2);
+        rail.scrollTo({
+          left: Math.max(0, targetScrollLeft),
+          behavior: 'smooth'
         });
       }
     }
@@ -380,37 +384,6 @@ export const IndustrySlideshow: React.FC<IndustrySlideshowProps> = ({
               <span className="hidden sm:inline">{isDarkMode ? 'Light' : 'Dark'}</span>
             </button>
 
-            {/* Transition Mode Switcher */}
-            <div className={`flex items-center p-0.5 rounded-lg border text-xs font-medium ${
-              isDarkMode ? 'border-slate-800 bg-slate-900/80' : 'border-slate-300 bg-white shadow-sm'
-            }`}>
-              {(['slide', 'fade', 'zoom'] as const).map(mode => (
-                <button
-                  key={mode}
-                  onClick={() => setTransitionMode(mode)}
-                  className={`px-2.5 py-1.5 rounded-md capitalize transition-colors ${
-                    transitionMode === mode 
-                      ? (isDarkMode ? 'bg-emerald-500/20 text-emerald-400 font-semibold' : 'bg-emerald-50 text-emerald-700 font-semibold')
-                      : (isDarkMode ? 'text-slate-400 hover:text-slate-200' : 'text-slate-600 hover:text-slate-900')
-                  }`}
-                >
-                  {mode}
-                </button>
-              ))}
-            </div>
-
-            {/* View All 36 Slides Grid Button */}
-            <button
-              onClick={() => setIsGridModalOpen(true)}
-              className={`px-3 py-2 rounded-lg border text-xs font-medium flex items-center gap-1.5 transition-colors ${
-                isDarkMode 
-                  ? 'border-slate-800 bg-slate-900/80 hover:bg-slate-800 text-slate-300' 
-                  : 'border-slate-300 bg-white hover:bg-slate-100 text-slate-700 shadow-sm'
-              }`}
-            >
-              <Grid className="w-4 h-4 text-emerald-500" />
-              <span>All 36 Slides</span>
-            </button>
 
 
             {/* Close / Minimize Section Button if Viewers Don't Want */}
