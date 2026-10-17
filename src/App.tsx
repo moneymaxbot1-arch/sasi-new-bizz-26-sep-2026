@@ -6,6 +6,7 @@
 import React from 'react';
 import { Navbar } from './components/Navbar';
 import { AutomationVortexHero } from './components/AutomationVortexHero';
+import { IndustrySlideshow } from './components/IndustrySlideshow';
 import { CostComparison } from './components/CostComparison';
 import { WhyAndWho } from './components/WhyAndWho';
 import { CountdownTimer } from './components/CountdownTimer';
@@ -37,6 +38,9 @@ export default function App() {
 
       {/* Website Entrance: 6-Software Orbit Animation Fusing Into Business Growth Hub */}
       <AutomationVortexHero onClaimClick={() => scrollToPricing()} />
+
+      {/* Flagship: Industry Automation Visual Pitch Deck & Workflow Showcase (36 Slides, 4s Autoplay, Full Nav) */}
+      <IndustrySlideshow onClaimClick={() => scrollToPricing()} />
 
       {/* Competitor Price Comparison Section: Standalone Competitors $650/mo vs Bizz2u $15/mo */}
       <CostComparison onClaimClick={() => scrollToPricing()} />

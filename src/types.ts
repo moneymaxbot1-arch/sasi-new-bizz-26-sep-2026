@@ -80,3 +80,15 @@ export interface BuyerEvent {
   tier: string;
   timeAgo: string;
 }
+
+export interface SlideItem {
+  id: number;
+  title: string;
+  category: string;
+  description: string;
+  imageUrl: string;
+  tagline?: string;
+  stat?: string;
+  statLabel?: string;
+  accentColor?: string;
+}

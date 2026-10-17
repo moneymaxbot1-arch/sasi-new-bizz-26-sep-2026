@@ -104,25 +104,27 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     <script type="module">
-      // GitHub Pages fallback: If running statically on GitHub Pages root without Vite, load compiled bundle
-      setTimeout(function() {
-        var root = document.getElementById('root');
-        if (root && root.children.length === 0) {
-          var ts = Date.now();
-          var link = document.createElement('link');
-          link.rel = 'stylesheet';
-          link.href = './assets/bundle.css?v=' + ts;
-          link.onerror = function() { link.href = './docs/assets/bundle.css?v=' + ts; };
-          document.head.appendChild(link);
+      // GitHub Pages fallback: Only run when hosted statically without Vite (e.g. github.io or file protocol)
+      if (window.location.hostname.includes('github.io') || window.location.protocol === 'file:') {
+        setTimeout(function() {
+          var root = document.getElementById('root');
+          if (root && root.children.length === 0) {
+            var ts = Date.now();
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = './assets/bundle.css?v=' + ts;
+            link.onerror = function() { link.href = './docs/assets/bundle.css?v=' + ts; };
+            document.head.appendChild(link);
 
-          var script = document.createElement('script');
-          script.type = 'module';
-          script.crossOrigin = 'anonymous';
-          script.src = './assets/bundle.js?v=' + ts;
-          script.onerror = function() { script.src = './docs/assets/bundle.js?v=' + ts; };
-          document.body.appendChild(script);
-        }
-      }, 350);
+            var script = document.createElement('script');
+            script.type = 'module';
+            script.crossOrigin = 'anonymous';
+            script.src = './assets/bundle.js?v=' + ts;
+            script.onerror = function() { script.src = './docs/assets/bundle.js?v=' + ts; };
+            document.body.appendChild(script);
+          }
+        }, 500);
+      }
     </script>
   </body>
 </html>

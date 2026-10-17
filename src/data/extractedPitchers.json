@@ -1,0 +1,326 @@
+[
+  {
+    "id": 1,
+    "title": "B2B CORPORATE SERVICES",
+    "category": "Accounting / Legal / CoSec",
+    "tagline": "Solving: Long Proposal Cycles & Messy Onboarding",
+    "description": "Solving: Long Proposal Cycles & Messy Onboarding. Streamlines proposal tracking, educational email sequences, WhatsApp document collection, and AI-driven data extraction to eliminate long proposal cycles and chaotic onboarding.",
+    "imageUrl": "https://dswjuamvbswokvrivbtn.supabase.co/storage/v1/object/public/industry%20Automation%20pitcher%20(17%20oct%202026)/1.%20Gemini_Generated_Image_56if356if356if35.jpg",
+    "stat": "6-Tool",
+    "statLabel": "Automation Flow"
+  },
+  {
+    "id": 2,
+    "title": "SaaS & DIGITAL SUBSCRIPTION PRODUCTS",
+    "category": "Software Startups & App Platforms",
+    "tagline": "Solving: High Onboarding Churn During Free Trial P",
+    "description": "Solving: High Onboarding Churn During Free Trial Periods. To prevent high onboarding churn during free trials, this workflow pairs reliable cloud hosting and instant latency alerts with event-driven emails, real-time social proof popups, and automated AI support check-ins after 3 days of inactivity.",
+    "imageUrl": "https://dswjuamvbswokvrivbtn.supabase.co/storage/v1/object/public/industry%20Automation%20pitcher%20(17%20oct%202026)/2.%20Gemini_Generated_Image_50jcdk50jcdk50jc.jpg",
+    "stat": "99.9%",
+    "statLabel": "App Uptime Guaranteed"
+  },
+  {
+    "id": 3,
+    "title": "FREELANCERS & DIGITAL MARKETING AGENCIES",
+    "category": "Creative Agencies, SEO Consultants & Media Buyers",
+    "tagline": "Time wasted manually tracking ad conversions and m",
+    "description": "Time wasted manually tracking ad conversions and managing client inquiries.. Streamlines marketing operations by deep-linking ad conversions, displaying live social proof, qualifying leads via automated WhatsApp/email intake, and auto-provisioning ClickUp projects and Slack alerts via Zapier/n8n.",
+    "imageUrl": "https://dswjuamvbswokvrivbtn.supabase.co/storage/v1/object/public/industry%20Automation%20pitcher%20(17%20oct%202026)/3.%20Gemini_Generated_Image_kxldrzkxldrzkxld.jpg",
+    "stat": "120+",
+    "statLabel": "SME Founders"
+  },
+  {
+    "id": 4,
+    "title": "FITNESS CENTERS & PERSONAL TRAINERS",
+    "category": "Fitness Centers & Personal Trainers",
+    "tagline": "Solving: Low Trial-Pass Conversion Rates",
+    "description": "Solving: Low Trial-Pass Conversion Rates. To solve low trial-pass conversion rates, Instagram bio links track social leads into FOMO-driven free pass bookings, followed by automated workout guides and check-in reminders, culminating in gym barcode scanner webhooks that trigger motivational messages and trainer intros on WhatsApp.",
+    "imageUrl": "https://dswjuamvbswokvrivbtn.supabase.co/storage/v1/object/public/industry%20Automation%20pitcher%20(17%20oct%202026)/4.%20Gemini_Generated_Image_ksjea9ksjea9ksje.jpg",
+    "stat": "6-Tool",
+    "statLabel": "Automation Flow"
+  },
+  {
+    "id": 5,
+    "title": "E-COMMERCE & RETAIL",
+    "category": "E-Commerce & Retail",
+    "tagline": "Solving: High Cart Abandonment & Wasted Ad Spend",
+    "description": "Solving: High Cart Abandonment & Wasted Ad Spend. To solve high cart abandonment and wasted ad spend, traffic is routed through pixel-embedded UTM smart links to ultra-fast pages with FOMO popups, triggering automated 30-minute WhatsApp and email recovery discounts followed by AI-personalized product recommendations.",
+    "imageUrl": "https://dswjuamvbswokvrivbtn.supabase.co/storage/v1/object/public/industry%20Automation%20pitcher%20(17%20oct%202026)/5.%20Gemini_Generated_Image_ga6yrqga6yrqga6y.jpg",
+    "stat": "6-Tool",
+    "statLabel": "Automation Flow"
+  },
+  {
+    "id": 6,
+    "title": "PET CARE, GROOMING & VETERINARY CLINICS",
+    "category": "Pet Hotels, Vet Care & Groomers",
+    "tagline": "Solving: Pet owners missing recuring vaccinations ",
+    "description": "Solving: Pet owners missing recuring vaccinations and parasite prevention appointments.. This automation solves recurring appointment lapses by leveraging Instagram link-in-bio promos, urgency-driven FOMO booking alerts, and automated WhatsApp reminders for vaccines and parasite prevention, followed by Zapier/n8n dispatching pet care instructions upon completed booking.",
+    "imageUrl": "https://dswjuamvbswokvrivbtn.supabase.co/storage/v1/object/public/industry%20Automation%20pitcher%20(17%20oct%202026)/6.%20Gemini_Generated_Image_ae3fiuae3fiuae3f.jpg",
+    "stat": "6-Tool",
+    "statLabel": "Automation Flow"
+  },
+  {
+    "id": 7,
+    "title": "PHOTOGRAPHY & VIDEOGRAPHY STUDIOS",
+    "category": "Wedding, Corporate & Studio Shoots",
+    "tagline": "Solving: Chasing invoice payments and long gallery",
+    "description": "Solving: Chasing invoice payments and long gallery proofing delays.. Streamlines studio workflows by tracking portfolio engagement, automating shoot preparation via WhatsApp, sending milestone invoice reminders with gallery previews, and triggering automated high-res asset compression and delivery upon client approval.",
+    "imageUrl": "https://dswjuamvbswokvrivbtn.supabase.co/storage/v1/object/public/industry%20Automation%20pitcher%20(17%20oct%202026)/7.%20Gemini_Generated_Image_ps4tj5ps4tj5ps4t.jpg",
+    "stat": "6-Tool",
+    "statLabel": "Automation Flow"
+  },
+  {
+    "id": 8,
+    "title": "FINANCIAL PLANNING & INSURANCE",
+    "category": "Wealth Management & Insurance Agents",
+    "tagline": "Compliance-sensitive document gathering and passiv",
+    "description": "Compliance-sensitive document gathering and passive client review cycles.. Directs traffic from personal branding content to insurance calculators, pre-qualifies client needs and schedules calls via WhatsApp, protects landing pages against scraping, and utilizes Zapier/n8n to generate automated AI risk summaries logged directly into Salesforce.",
+    "imageUrl": "https://dswjuamvbswokvrivbtn.supabase.co/storage/v1/object/public/industry%20Automation%20pitcher%20(17%20oct%202026)/8.%20Gemini_Generated_Image_uzj97muzj97muzj9.jpg",
+    "stat": "6-Tool",
+    "statLabel": "Automation Flow"
+  },
+  {
+    "id": 9,
+    "title": "SPECIALTY BAKERIES, CUSTOM CAKES & CONFECTIONERY",
+    "category": "Food & Beverage",
+    "description": "Booking lead-time protection, order confirmation, and repeat birthday sales.. To secure lead times and drive recurring orders, tracked Instagram stories direct customers into an automated WhatsApp cake builder with scarcity alerts, while automated workflows issue order receipts and schedule anniversary reminder emails three weeks in advance.",
+    "imageUrl": "https://dswjuamvbswokvrivbtn.supabase.co/storage/v1/object/public/industry%20Automation%20pitcher%20(17%20oct%202026)/9.%20Gemini_Generated_Image_wk8yh9wk8yh9wk8y.jpg",
+    "tagline": "Booking lead-time protection, order confirmation, and repeat",
+    "stat": "3 Weeks",
+    "statLabel": "Advance Recall Notice"
+  },
+  {
+    "id": 10,
+    "title": "BEAUTY SALONS & SPAS",
+    "category": "Hair, Nails, Skincare",
+    "tagline": "Last-Minute Cancellations & Open Stylist Chairs",
+    "description": "Last-Minute Cancellations & Open Stylist Chairs. Tracks social media promo campaigns using smart links and scarcity alerts, while automated WhatsApp confirmations instantly trigger a 15% off standby broadcast via n8n/Zapier to fill open seats when clients cancel.",
+    "imageUrl": "https://dswjuamvbswokvrivbtn.supabase.co/storage/v1/object/public/industry%20Automation%20pitcher%20(17%20oct%202026)/10.%20Gemini_Generated_Image_5ar3g95ar3g95ar3(1).jpg",
+    "stat": "85%",
+    "statLabel": "Booking Slots Urgency"
+  },
+  {
+    "id": 11,
+    "title": "CONSTRUCTION MATERIALS & INDUSTRIAL HARDWARE SUPPLIERS",
+    "category": "Construction Materials & Hardware",
+    "tagline": "B2B re-ordering automation and credit account rete",
+    "description": "B2B re-ordering automation and credit account retention.. Automates B2B replenishment and credit retention by tracking physical catalog interest, verifying orders via a WhatsApp replenishment bot, securing bi-weekly price updates with AutoShield, and dispatching automated bulk discounts to active job sites.",
+    "imageUrl": "https://dswjuamvbswokvrivbtn.supabase.co/storage/v1/object/public/industry%20Automation%20pitcher%20(17%20oct%202026)/11.%20Gemini_Generated_Image_6icksm6icksm6ick.jpg",
+    "stat": "6-Tool",
+    "statLabel": "Workflow Architecture"
+  },
+  {
+    "id": 12,
+    "title": "DRIVING SCHOOLS & LICENSING ACADEMIES",
+    "category": "Driving Schools & Licensing Academies",
+    "tagline": "Stage Student lesson attendance, theory test passi",
+    "description": "Stage Student lesson attendance, theory test passing rates, and fast graduate referrals.. Leverage QR referral tracking on training cars alongside automated WhatsApp reminders and social proof, followed by automated post-graduate insurance promotions and instant next-lesson rebooking via n8n.",
+    "imageUrl": "https://dswjuamvbswokvrivbtn.supabase.co/storage/v1/object/public/industry%20Automation%20pitcher%20(17%20oct%202026)/12.%20Gemini_Generated_Image_6qg2586qg2586qg2.jpg",
+    "stat": "45+",
+    "statLabel": "First-Try Driving Test Passes"
+  },
+  {
+    "id": 13,
+    "title": "CORPORATE UNIFORMS, APPAREL PRINTING & MERCHANDISING",
+    "category": "Apparel & Merchandise Printing",
+    "description": "Annual company shirt orders, sports day kit bulk printing, and re-orders.. Physical fabric swatches use tracked short links to monitor prospective corporate clients, who then receive instant custom quotes through a WhatsApp bot. Annual recall email campaigns drive timely re-orders with 100% tool uptime while automated workflows instantly route submitted vector artwork directly into the Trello production queue.",
+    "imageUrl": "https://dswjuamvbswokvrivbtn.supabase.co/storage/v1/object/public/industry%20Automation%20pitcher%20(17%20oct%202026)/13.%20Gemini_Generated_Image_8tjtvc8tjtvc8tjt.jpg",
+    "tagline": "Annual company shirt orders, sports day kit bulk printing, a",
+    "stat": "100%",
+    "statLabel": "Mockup Generator Operational"
+  },
+  {
+    "id": 14,
+    "title": "NON-PROFIT ORGANIZATIONS & FUNDRAISERS",
+    "category": "NGOs, Charities & Community Projects",
+    "description": "Low recurring donation retention and lack of donor transparency.. Solves low recurring donation retention and transparency issues through smart campaign tracking, live social proof alerts, automated monthly impact reports, and instant automated tax receipts paired with personalized thank-you videos.",
+    "imageUrl": "https://dswjuamvbswokvrivbtn.supabase.co/storage/v1/object/public/industry%20Automation%20pitcher%20(17%20oct%202026)/14.%20Gemini_Generated_Image_9yiis59yiis59yii.jpg",
+    "tagline": "Low recurring donation retention and lack of donor transpare",
+    "stat": "6-Tool",
+    "statLabel": "Automation Flow"
+  },
+  {
+    "id": 15,
+    "title": "HOME SERVICES & CONTRACTORS",
+    "category": "Renovation, Plumbing, HVAC",
+    "description": "Solving: High Lead Churn & Slow Inquiries (The 3-Minute Rule). Captures instant local traffic via QR codes on vehicle wraps and digital ads, initiates an automated WhatsApp estimator to quote preliminary pricing, protects server uptime with Site Shield, and auto-dispatches technicians via Google Maps while drafting QuickBooks invoices.",
+    "imageUrl": "https://dswjuamvbswokvrivbtn.supabase.co/storage/v1/object/public/industry%20Automation%20pitcher%20(17%20oct%202026)/15.%20Gemini_Generated_Image_32smt932smt932sm.jpg",
+    "tagline": "Solving: High Lead Churn & Slow Inquiries (The 3-Minute Rule",
+    "stat": "100%",
+    "statLabel": "Online / Fail-Safe"
+  },
+  {
+    "id": 16,
+    "title": "CAR WASH & AUTO DETAILING STUDIOS",
+    "category": "Automotive Services",
+    "description": "Membership pass recurring revenue and ceramic coating follow-ups.. Drive membership passes and ceramic coating retention by deploying home-screen digital loyalty cards, weather-triggered WhatsApp prompts with live social proof, automated 6-month coating inspection reminders, and weather-targeted weekend voucher blasts.",
+    "imageUrl": "https://dswjuamvbswokvrivbtn.supabase.co/storage/v1/object/public/industry%20Automation%20pitcher%20(17%20oct%202026)/16.%20Gemini_Generated_Image_185tu4185tu4185t.jpg",
+    "tagline": "Membership pass recurring revenue and ceramic coating follow",
+    "stat": "6 Months",
+    "statLabel": "Coating Maintenance Inspection Cycle"
+  },
+  {
+    "id": 17,
+    "title": "SPECIALIZED TUTORING, LANGUAGE CENTERS & MUSIC SCHOOLS",
+    "category": "Education & Tutoring",
+    "description": "Student enrollment retention and term re-registration.. Tracks high-converting flyer distribution, sends automated WhatsApp progress and attendance updates to parents, launches 1-click renewal emails two weeks before term end with uptime-secured portals, and automatically compiles teacher rubric evaluations into digital progress report cards.",
+    "imageUrl": "https://dswjuamvbswokvrivbtn.supabase.co/storage/v1/object/public/industry%20Automation%20pitcher%20(17%20oct%202026)/17.%20Gemini_Generated_Image_fmt5bhfmt5bhfmt5.jpg",
+    "tagline": "Student enrollment retention and term re-registration.",
+    "stat": "2 Weeks",
+    "statLabel": "Advance Term Renewal Notice"
+  },
+  {
+    "id": 18,
+    "title": "Industry Blueprint #18",
+    "category": "Industry Automation",
+    "description": "The 6-tool integrated automation workflow.",
+    "imageUrl": "https://dswjuamvbswokvrivbtn.supabase.co/storage/v1/object/public/industry%20Automation%20pitcher%20(17%20oct%202026)/18.%20Gemini_Generated_Image_cuf6escuf6escuf6.jpg"
+  },
+  {
+    "id": 19,
+    "title": "LANGUAGE TRANSLATION, VISA & IMMIGRATION CONSULTANTS",
+    "category": "Visa & Immigration Consultants",
+    "description": "Document collection tracking, submission milestone updates, and referral capture.. Track candidate reviews of visa criteria using TrackLink, send WhatsApp document checklists and urgency nudges with FomoBoost, deliver urgent quota deadline drips via Email Rocket, and automatically route received documents to Google Drive and Asana using Zapier or n8n.",
+    "imageUrl": "https://dswjuamvbswokvrivbtn.supabase.co/storage/v1/object/public/industry%20Automation%20pitcher%20(17%20oct%202026)/19.%20Gemini_Generated_Image_q2wee7q2wee7q2we.jpg",
+    "tagline": "Document collection tracking, submission milestone updates, ",
+    "stat": "6-Tool",
+    "statLabel": "Workflow"
+  },
+  {
+    "id": 20,
+    "title": "EVENT PLANNERS & CONFERENCES",
+    "category": "Expos, Seminars & Ticketed Events",
+    "description": "High registration friction & attendees losing their entry passes.. Eliminate registration friction and lost passes with an automated flow that creates individualized dynamic QR codes, delivers countdowns and guides via E-mail Rocket, and enables instant pass retrieval via WhatsApp.",
+    "imageUrl": "https://dswjuamvbswokvrivbtn.supabase.co/storage/v1/object/public/industry%20Automation%20pitcher%20(17%20oct%202026)/Gemini_Generated_Image_4zr62k4zr62k4zr6.jpg",
+    "tagline": "High registration friction & attendees losing their entry pa",
+    "stat": "6-Tool",
+    "statLabel": "Automation Flow"
+  },
+  {
+    "id": 21,
+    "title": "AUTOMOBILE DEALERSHIPS & WORKSHOPS",
+    "category": "Automobile Dealerships & Workshops",
+    "tagline": "Solving: Missed Servicing Windows & Disconnected T",
+    "description": "Solving: Missed Servicing Windows & Disconnected Test Drive Leads. To prevent missed servicing windows and reconnect test drive leads, Facebook ads track test-drive bookings with UTM attribution, while social proof notifications drive urgency. Scheduled WhatsApp milestone alerts prompt maintenance visits, integrating directly with the Workshop DMS to enable automated chat confirmations and one-click slot booking.",
+    "imageUrl": "https://dswjuamvbswokvrivbtn.supabase.co/storage/v1/object/public/industry%20Automation%20pitcher%20(17%20oct%202026)/Gemini_Generated_Image_brix93brix93brix.jpg",
+    "stat": "6-Tool",
+    "statLabel": "Automation Flow"
+  },
+  {
+    "id": 22,
+    "title": "AIRCOND & CCTV INSTALLERS",
+    "category": "Aircond & CCTV Services",
+    "tagline": "Annual maintenance contracts (AMC), cloud storage ",
+    "description": "Annual maintenance contracts (AMC), cloud storage renewal, and hardware upgrades.. Tracks localized community inquiries and pre-qualifies leads via WhatsApp with floor plan diagrams and quotes, followed by automated renewal reminders via Email Rocket/AutoShield and 6-month automated upsell workflows for smart door locks and video doorbells.",
+    "imageUrl": "https://dswjuamvbswokvrivbtn.supabase.co/storage/v1/object/public/industry%20Automation%20pitcher%20(17%20oct%202026)/Gemini_Generated_Image_g8dr6fg8dr6fg8dr.jpg",
+    "stat": "6-Tool",
+    "statLabel": "Automation Workflow"
+  },
+  {
+    "id": 23,
+    "title": "EQUIPMENT & MACHINERY RENTAL",
+    "category": "Generators, Scaffolding, Cranes",
+    "description": "Contract extension reminders, fleet utilization, and on-time machine return.. Physical QR tags log machinery maintenance, while automated 48-hour WhatsApp notices prompt contractors to extend rentals or schedule returns. Monitored fleet dispatch systems and n8n automations instantly update ERP schedules and invoice addendums upon text confirmation.",
+    "imageUrl": "https://dswjuamvbswokvrivbtn.supabase.co/storage/v1/object/public/industry%20Automation%20pitcher%20(17%20oct%202026)/Gemini_Generated_Image_msvz7imsvz7imsvz.jpg",
+    "tagline": "Contract extension reminders, fleet utilization, and on-time",
+    "stat": "48 Hours",
+    "statLabel": "Advance Rental Expiration Notice"
+  },
+  {
+    "id": 24,
+    "title": "OPTOMETRY & EYEWEAR BOUTIQUES",
+    "category": "Optometry & Eyewear",
+    "description": "Repeat prescription updates and designer frame upsells.. Drive repeat prescription updates and designer frame upsells by tracking QR code access on lens cloths, triggering 11-month automated recall reminders with personalized catalogs, displaying live booking social proof securely, and generating digital Rx cards sent directly to WhatsApp.",
+    "imageUrl": "https://dswjuamvbswokvrivbtn.supabase.co/storage/v1/object/public/industry%20Automation%20pitcher%20(17%20oct%202026)/Gemini_Generated_Image_osmoblosmoblosmo.jpg",
+    "tagline": "Repeat prescription updates and designer frame upsells.",
+    "stat": "100%",
+    "statLabel": "Data Monitoring and Protection"
+  },
+  {
+    "id": 25,
+    "title": "Industry Blueprint #25",
+    "category": "Industry Automation",
+    "description": "The 6-tool integrated automation workflow.",
+    "imageUrl": "https://dswjuamvbswokvrivbtn.supabase.co/storage/v1/object/public/industry%20Automation%20pitcher%20(17%20oct%202026)/Gemini_Generated_Image_paafkkpaafkkpaaf.jpg"
+  },
+  {
+    "id": 26,
+    "title": "Industry Blueprint #26",
+    "category": "Industry Automation",
+    "description": "The 6-tool integrated automation workflow.",
+    "imageUrl": "https://dswjuamvbswokvrivbtn.supabase.co/storage/v1/object/public/industry%20Automation%20pitcher%20(17%20oct%202026)/Gemini_Generated_Image_rrokbhrrokbhrrok.jpg"
+  },
+  {
+    "id": 27,
+    "title": "Industry Blueprint #27",
+    "category": "Industry Automation",
+    "description": "The 6-tool integrated automation workflow.",
+    "imageUrl": "https://dswjuamvbswokvrivbtn.supabase.co/storage/v1/object/public/industry%20Automation%20pitcher%20(17%20oct%202026)/Gemini_Generated_Image_sn0ljysn0ljysn0l.jpg"
+  },
+  {
+    "id": 28,
+    "title": "Industry Blueprint #28",
+    "category": "Industry Automation",
+    "description": "The 6-tool integrated automation workflow.",
+    "imageUrl": "https://dswjuamvbswokvrivbtn.supabase.co/storage/v1/object/public/industry%20Automation%20pitcher%20(17%20oct%202026)/Gemini_Generated_Image_stvakustvakustva(1).jpg"
+  },
+  {
+    "id": 29,
+    "title": "Industry Blueprint #29",
+    "category": "Industry Automation",
+    "description": "The 6-tool integrated automation workflow.",
+    "imageUrl": "https://dswjuamvbswokvrivbtn.supabase.co/storage/v1/object/public/industry%20Automation%20pitcher%20(17%20oct%202026)/Gemini_Generated_Image_stvakustvakustva.jpg"
+  },
+  {
+    "id": 30,
+    "title": "Industry Blueprint #30",
+    "category": "Industry Automation",
+    "description": "The 6-tool integrated automation workflow.",
+    "imageUrl": "https://dswjuamvbswokvrivbtn.supabase.co/storage/v1/object/public/industry%20Automation%20pitcher%20(17%20oct%202026)/Gemini_Generated_Image_tcedyktcedyktced.jpg"
+  },
+  {
+    "id": 31,
+    "title": "Industry Blueprint #31",
+    "category": "Industry Automation",
+    "description": "The 6-tool integrated automation workflow.",
+    "imageUrl": "https://dswjuamvbswokvrivbtn.supabase.co/storage/v1/object/public/industry%20Automation%20pitcher%20(17%20oct%202026)/Gemini_Generated_Image_u5bnyiu5bnyiu5bn.jpg"
+  },
+  {
+    "id": 32,
+    "title": "HIGHER EDUCATION & ACADEMY TRAINING",
+    "category": "Academy Training",
+    "tagline": "Solving: Long Deliberation Times & Dropped Student",
+    "description": "Solving: Long Deliberation Times & Dropped Student Inquiries. Designed to eliminate long deliberation times and dropped inquiries, this flow tracks application downloads, nurtures applicants through a 7-day email mini-course, automates campus tour bookings on WhatsApp, and uses AI agents to recommend personalized course electives.",
+    "imageUrl": "https://dswjuamvbswokvrivbtn.supabase.co/storage/v1/object/public/industry%20Automation%20pitcher%20(17%20oct%202026)/Gemini_Generated_Image_ux44i8ux44i8ux44.jpg",
+    "stat": "6-Tool",
+    "statLabel": "Automation Flow"
+  },
+  {
+    "id": 33,
+    "title": "Industry Blueprint #33",
+    "category": "Industry Automation",
+    "description": "The 6-tool integrated automation workflow.",
+    "imageUrl": "https://dswjuamvbswokvrivbtn.supabase.co/storage/v1/object/public/industry%20Automation%20pitcher%20(17%20oct%202026)/Gemini_Generated_Image_v781d5v781d5v781.jpg"
+  },
+  {
+    "id": 34,
+    "title": "Industry Blueprint #34",
+    "category": "Industry Automation",
+    "description": "The 6-tool integrated automation workflow.",
+    "imageUrl": "https://dswjuamvbswokvrivbtn.supabase.co/storage/v1/object/public/industry%20Automation%20pitcher%20(17%20oct%202026)/Gemini_Generated_Image_wm2lbhwm2lbhwm2l.jpg"
+  },
+  {
+    "id": 35,
+    "title": "Industry Blueprint #35",
+    "category": "Industry Automation",
+    "description": "The 6-tool integrated automation workflow.",
+    "imageUrl": "https://dswjuamvbswokvrivbtn.supabase.co/storage/v1/object/public/industry%20Automation%20pitcher%20(17%20oct%202026)/Gemini_Generated_Image_ycscd3ycscd3ycsc.jpg"
+  },
+  {
+    "id": 36,
+    "title": "Industry Blueprint #36",
+    "category": "Industry Automation",
+    "description": "The 6-tool integrated automation workflow.",
+    "imageUrl": "https://dswjuamvbswokvrivbtn.supabase.co/storage/v1/object/public/industry%20Automation%20pitcher%20(17%20oct%202026)/Gemini_Generated_Image_z4wkc3z4wkc3z4wk.jpg"
+  }
+]
