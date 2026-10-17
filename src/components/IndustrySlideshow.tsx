@@ -30,7 +30,7 @@ import {
   ZoomIn,
   ZoomOut
 } from 'lucide-react';
-import { INDUSTRY_SLIDESHOW_ITEMS, SLIDESHOW_CATEGORIES } from '../data/slideshowData';
+import { INDUSTRY_SLIDESHOW_ITEMS, SLIDESHOW_CATEGORIES, matchSlideCategory } from '../data/slideshowData';
 import { SlideItem } from '../types';
 import { 
   LANGUAGES_32, 
@@ -87,7 +87,7 @@ export const IndustrySlideshow: React.FC<IndustrySlideshowProps> = ({
   // Filtered items
   const filteredSlides = selectedCategory === 'All 36 Blueprints'
     ? INDUSTRY_SLIDESHOW_ITEMS
-    : INDUSTRY_SLIDESHOW_ITEMS.filter(s => s.category === selectedCategory);
+    : INDUSTRY_SLIDESHOW_ITEMS.filter(s => matchSlideCategory(s, selectedCategory));
 
   const totalSlides = filteredSlides.length;
   // Guard current index within filtered bounds
@@ -468,18 +468,17 @@ export const IndustrySlideshow: React.FC<IndustrySlideshowProps> = ({
         >
           {/* Top Floating Control Pill in Viewer */}
           <div className="absolute top-4 left-4 right-4 z-30 flex items-center justify-between pointer-events-none">
-            {/* Slide Index Badge & Category */}
-            <div className="pointer-events-auto flex items-center gap-2 px-3 py-1.5 rounded-full backdrop-blur-md bg-black/60 border border-white/10 text-white text-xs font-medium shadow-lg">
-              <span className="font-mono text-emerald-400 font-bold">
+            {/* Minimal Slide Index Badge */}
+            <div 
+              className="pointer-events-auto flex items-center gap-1.5 px-2.5 py-1 rounded-full backdrop-blur-md bg-black/60 hover:bg-black/80 border border-white/10 text-white text-[11px] font-mono shadow-md transition-all"
+              title={`Blueprint #${currentSlide.id} of ${totalSlides}: ${currentSlide.category}`}
+            >
+              <span className="text-emerald-400 font-bold">
                 {String(currentSlide.id).padStart(2, '0')}
               </span>
               <span className="text-white/40">/</span>
-              <span className="font-mono text-white/70">
+              <span className="text-white/70">
                 {String(totalSlides).padStart(2, '0')}
-              </span>
-              <span className="hidden sm:inline text-white/40">·</span>
-              <span className="hidden sm:inline text-white/90 truncate max-w-[200px]">
-                {currentSlide.category}
               </span>
             </div>
 

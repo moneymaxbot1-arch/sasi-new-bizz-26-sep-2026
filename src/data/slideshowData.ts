@@ -369,13 +369,58 @@ export const INDUSTRY_SLIDESHOW_ITEMS: SlideItem[] = [
 
 export const SLIDESHOW_CATEGORIES = [
   'All 36 Blueprints',
-  'Automotive & Workshops',
-  'Healthcare & Clinics',
-  'Beauty & Wellness',
-  'Education & Licensing',
-  'Food & Beverage',
-  'Real Estate & Properties',
   'Retail & E-Commerce',
-  'Professional Services',
-  'Financial Services'
+  'B2B Companies',
+  'Real Estate Agencies',
+  'Consulting, Law & Agencies, Financial Services'
 ];
+
+/**
+ * Filter helper matching all 36 authentic businesses into the 4 target sectors
+ */
+export const matchSlideCategory = (slide: SlideItem, category: string): boolean => {
+  if (category === 'All 36 Blueprints') return true;
+
+  const id = slide.id;
+  const title = slide.title.toUpperCase();
+  const cat = slide.category.toUpperCase();
+
+  if (category === 'Retail & E-Commerce') {
+    const retailIds = [4, 5, 6, 9, 10, 13, 16, 21, 24, 25, 27, 36];
+    return retailIds.includes(id) ||
+      cat.includes('RETAIL') || cat.includes('E-COMMERCE') || cat.includes('STORE') ||
+      cat.includes('SALON') || cat.includes('BAKER') || cat.includes('FLORAL') ||
+      cat.includes('BOUTIQUE') || cat.includes('FASHION') || title.includes('RETAIL') ||
+      title.includes('E-COMMERCE') || title.includes('SALON') || title.includes('FLORIST');
+  }
+
+  if (category === 'B2B Companies') {
+    const b2bIds = [1, 2, 11, 13, 15, 20, 22, 23, 31, 33, 34];
+    return b2bIds.includes(id) ||
+      title.includes('B2B') || title.includes('SAAS') || cat.includes('B2B') ||
+      cat.includes('INDUSTRIAL') || cat.includes('SUPPL') || cat.includes('LOGISTICS') ||
+      cat.includes('EQUIPMENT') || cat.includes('FACILITY') || cat.includes('WAREHOUS') ||
+      title.includes('CONSTRUCTION') || title.includes('EQUIPMENT') || title.includes('LOGISTICS');
+  }
+
+  if (category === 'Real Estate Agencies') {
+    const realEstateIds = [15, 18, 28, 29, 31, 33];
+    return realEstateIds.includes(id) ||
+      title.includes('REAL ESTATE') || title.includes('PROPERTY') || title.includes('OFFICE') ||
+      title.includes('COWORKING') || title.includes('DESK') || cat.includes('PROPERTY') ||
+      cat.includes('SHOWROOM') || cat.includes('WORKSPACE') || cat.includes('STORAGE') ||
+      cat.includes('REAL ESTATE');
+  }
+
+  if (category === 'Consulting, Law & Agencies, Financial Services') {
+    const consultingIds = [1, 3, 7, 8, 12, 14, 17, 19, 20, 26, 30, 32, 35];
+    return consultingIds.includes(id) ||
+      title.includes('CONSULT') || title.includes('AGENC') || title.includes('LEGAL') ||
+      title.includes('FINANCIAL') || title.includes('INSURANCE') || title.includes('RECRUIT') ||
+      title.includes('IMMIGRATION') || cat.includes('LEGAL') || cat.includes('FINANCIAL') ||
+      cat.includes('AGENC') || cat.includes('CONSULT') || cat.includes('INSURANCE') ||
+      cat.includes('HR') || cat.includes('CLINIC') || cat.includes('EDUCATION');
+  }
+
+  return true;
+};
