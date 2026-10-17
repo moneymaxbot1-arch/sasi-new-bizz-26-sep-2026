@@ -72,12 +72,14 @@ export const setAppLanguage = (langCode: string) => {
       document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
       document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=.${window.location.hostname}; path=/;`;
       
-      const select = document.querySelector('.goog-te-combo') as HTMLSelectElement | null;
-      if (select) {
-        select.value = 'en';
-        select.dispatchEvent(new Event('change'));
-      } else {
-        window.location.reload();
+      try {
+        const select = document.querySelector('.goog-te-combo') as HTMLSelectElement | null;
+        if (select && select.value !== 'en') {
+          select.value = 'en';
+          select.dispatchEvent(new Event('change'));
+        }
+      } catch (e) {
+        console.warn('Error resetting translate element:', e);
       }
       return;
     }
@@ -90,8 +92,12 @@ export const setAppLanguage = (langCode: string) => {
     // Trigger select element if already loaded
     const select = document.querySelector('.goog-te-combo') as HTMLSelectElement | null;
     if (select) {
-      select.value = langCode;
-      select.dispatchEvent(new Event('change'));
+      try {
+        select.value = langCode;
+        select.dispatchEvent(new Event('change'));
+      } catch (e) {
+        console.warn('Translate select dispatch error:', e);
+      }
     } else {
       // Trigger Google Translate script initialization if not already loaded
       loadGoogleTranslateScript(langCode);
@@ -111,6 +117,10 @@ export const getSavedLanguage = (): string => {
 
 let scriptLoaded = false;
 export const loadGoogleTranslateScript = (targetLang?: string) => {
+  // Never load Google Translate if we are in default English or no language specified
+  if (!targetLang || targetLang === 'en') {
+    return;
+  }
   if (scriptLoaded) return;
   scriptLoaded = true;
 
@@ -130,10 +140,14 @@ export const loadGoogleTranslateScript = (targetLang?: string) => {
 
         if (targetLang && targetLang !== 'en') {
           setTimeout(() => {
-            const select = document.querySelector('.goog-te-combo') as HTMLSelectElement | null;
-            if (select) {
-              select.value = targetLang;
-              select.dispatchEvent(new Event('change'));
+            try {
+              const select = document.querySelector('.goog-te-combo') as HTMLSelectElement | null;
+              if (select && select.value !== targetLang) {
+                select.value = targetLang;
+                select.dispatchEvent(new Event('change'));
+              }
+            } catch (e) {
+              console.warn('Translate select dispatch error:', e);
             }
           }, 400);
         }
@@ -143,8 +157,15 @@ export const loadGoogleTranslateScript = (targetLang?: string) => {
     }
   };
 
-  const script = document.createElement('script');
-  script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-  script.async = true;
-  document.body.appendChild(script);
+  try {
+    const script = document.createElement('script');
+    script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+    script.async = true;
+    script.onerror = () => {
+      console.warn('Translate script failed to load');
+    };
+    document.body.appendChild(script);
+  } catch (e) {
+    console.warn('Script append error:', e);
+  }
 };

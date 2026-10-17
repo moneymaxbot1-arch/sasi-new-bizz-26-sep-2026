@@ -62,7 +62,7 @@ export const IndustrySlideshow: React.FC<IndustrySlideshowProps> = ({
   const [isGridModalOpen, setIsGridModalOpen] = useState<boolean>(false);
   const [isCaptionVisible, setIsCaptionVisible] = useState<boolean>(true); // Option to close/hide text overlay
   const [isSectionCollapsed, setIsSectionCollapsed] = useState<boolean>(false); // Option to close/collapse section
-  const [selectedCategory, setSelectedCategory] = useState<string>('All 36 Blueprints');
+  const [selectedCategory, setSelectedCategory] = useState<string>('All Blueprint');
   const [progress, setProgress] = useState<number>(0);
   const [failedImages, setFailedImages] = useState<Record<number, boolean>>({});
 
@@ -85,7 +85,7 @@ export const IndustrySlideshow: React.FC<IndustrySlideshowProps> = ({
   const progressIntervalRef = useRef<NodeJS.Timeout | null>(null);
 
   // Filtered items
-  const filteredSlides = selectedCategory === 'All 36 Blueprints'
+  const filteredSlides = (selectedCategory === 'All Blueprint' || selectedCategory === 'All 36 Blueprints')
     ? INDUSTRY_SLIDESHOW_ITEMS
     : INDUSTRY_SLIDESHOW_ITEMS.filter(s => matchSlideCategory(s, selectedCategory));
 
@@ -830,7 +830,7 @@ export const IndustrySlideshow: React.FC<IndustrySlideshowProps> = ({
                 className="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white text-xs font-medium transition-colors flex items-center gap-1.5 cursor-pointer"
               >
                 <Grid className="w-3.5 h-3.5" />
-                <span>All 36 Blueprints</span>
+                <span>All Blueprint</span>
               </button>
             </div>
           </div>

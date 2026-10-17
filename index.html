@@ -94,13 +94,35 @@
         background-color: transparent !important;
         box-shadow: none !important;
       }
-      font {
-        background: transparent !important;
-        box-shadow: none !important;
-      }
     </style>
+    <script>
+      // Global resilience filter: Silently catch non-fatal 3rd-party translation scripts exceptions
+      window.addEventListener('error', function(e) {
+        if (e && (
+          (e.filename && (e.filename.indexOf('translate.google') !== -1 || e.filename.indexOf('translate.googleapis.com') !== -1)) ||
+          (e.message && (e.message.indexOf('translate_http') !== -1 || e.message.indexOf('goog-te') !== -1))
+        )) {
+          if (e.preventDefault) e.preventDefault();
+          if (e.stopPropagation) e.stopPropagation();
+          return true;
+        }
+      }, true);
+
+      window.addEventListener('unhandledrejection', function(e) {
+        var reason = e ? (e.reason || '') : '';
+        var reasonStr = String(reason.stack || reason.message || reason);
+        if (reasonStr.indexOf('translate.googleapis.com') !== -1 || 
+            reasonStr.indexOf('translate.google') !== -1 || 
+            reasonStr.indexOf('translate_http') !== -1) {
+          if (e.preventDefault) e.preventDefault();
+          if (e.stopPropagation) e.stopPropagation();
+        }
+      });
+    </script>
   </head>
   <body class="bg-[#090D16] text-slate-100 antialiased font-sans selection:bg-emerald-500 selection:text-black" style="background-color: #090D16; color: #f8fafc; margin: 0; min-height: 100vh;">
+    <!-- Dedicated container for Google Translate element with valid layout -->
+    <div id="google_translate_element" style="position: absolute; top: -9999px; left: -9999px; width: 1px; height: 1px; overflow: hidden; opacity: 0; pointer-events: none;" aria-hidden="true"></div>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     <script type="module">

@@ -368,7 +368,7 @@ export const INDUSTRY_SLIDESHOW_ITEMS: SlideItem[] = [
 ];
 
 export const SLIDESHOW_CATEGORIES = [
-  'All 36 Blueprints',
+  'All Blueprint',
   'Retail & E-Commerce',
   'B2B Companies',
   'Real Estate Agencies',
@@ -379,7 +379,7 @@ export const SLIDESHOW_CATEGORIES = [
  * Filter helper matching all 36 authentic businesses into the 4 target sectors
  */
 export const matchSlideCategory = (slide: SlideItem, category: string): boolean => {
-  if (category === 'All 36 Blueprints') return true;
+  if (category === 'All Blueprint' || category === 'All 36 Blueprints') return true;
 
   const id = slide.id;
   const title = slide.title.toUpperCase();
