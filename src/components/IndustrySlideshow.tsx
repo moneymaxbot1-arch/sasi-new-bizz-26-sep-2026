@@ -13,7 +13,6 @@ import {
   Moon, 
   Layers, 
   Clock, 
-  Info,
   ExternalLink,
   Copy,
   Check,
@@ -61,7 +60,6 @@ export const IndustrySlideshow: React.FC<IndustrySlideshowProps> = ({
   const [isDarkMode, setIsDarkMode] = useState<boolean>(true);
   const [isFullscreen, setIsFullscreen] = useState<boolean>(false);
   const [isGridModalOpen, setIsGridModalOpen] = useState<boolean>(false);
-  const [isInfoDrawerOpen, setIsInfoDrawerOpen] = useState<boolean>(false);
   const [isCaptionVisible, setIsCaptionVisible] = useState<boolean>(true); // Option to close/hide text overlay
   const [isSectionCollapsed, setIsSectionCollapsed] = useState<boolean>(false); // Option to close/collapse section
   const [selectedCategory, setSelectedCategory] = useState<string>('All 36 Blueprints');
@@ -239,7 +237,6 @@ export const IndustrySlideshow: React.FC<IndustrySlideshowProps> = ({
       } else if (e.key === 'Escape') {
         if (isGridModalOpen) setIsGridModalOpen(false);
         if (isFullscreen) setIsFullscreen(false);
-        if (isInfoDrawerOpen) setIsInfoDrawerOpen(false);
       }
     };
 
@@ -325,7 +322,7 @@ export const IndustrySlideshow: React.FC<IndustrySlideshowProps> = ({
           <div className="flex items-center gap-2.5">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
             <div className="text-xs sm:text-sm">
-              <span className="font-bold text-slate-100">Industry Automation Showcase</span>
+              <span className="font-bold text-slate-100">The 6-Tool Automation Engine</span>
               <span className="text-slate-400 text-xs hidden sm:inline ml-2">• 36 Blueprints minimized</span>
             </div>
           </div>
@@ -355,15 +352,15 @@ export const IndustrySlideshow: React.FC<IndustrySlideshowProps> = ({
           <div>
             <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-emerald-500 mb-2">
               <span className="w-2 h-2 rounded-full bg-emerald-500" />
-              Interactive Operational Blueprints (17 Oct 2026 Pitcher Deck)
+              Interactive Operational Blueprints
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
-              Industry Automation Showcase
+              The 6-Tool Automation Engine Built to Run Your Entire Business
             </h2>
             <p className={`mt-2 text-sm sm:text-base max-w-2xl ${
               isDarkMode ? 'text-slate-400' : 'text-slate-600'
             }`}>
-              Explore all 36 high-resolution automation workflows, robotic cells, and industrial telemetry systems. Complete with automated 4-second autoplay, touch navigation, and modular slide inspection.
+              Explore all 36 high-resolution automation workflows. One complete ecosystem designed to automate any industry 100% autopilot.
             </p>
           </div>
 
@@ -415,20 +412,6 @@ export const IndustrySlideshow: React.FC<IndustrySlideshowProps> = ({
               <span>All 36 Slides</span>
             </button>
 
-            {/* Info Toggle */}
-            <button
-              onClick={() => setIsInfoDrawerOpen(prev => !prev)}
-              className={`p-2.5 rounded-lg border text-xs font-medium transition-colors ${
-                isInfoDrawerOpen
-                  ? 'border-emerald-500 bg-emerald-500/10 text-emerald-400'
-                  : isDarkMode 
-                    ? 'border-slate-800 bg-slate-900/80 hover:bg-slate-800 text-slate-300' 
-                    : 'border-slate-300 bg-white hover:bg-slate-100 text-slate-700 shadow-sm'
-              }`}
-              title="Slide Details & Image URL Inspector"
-            >
-              <Info className="w-4 h-4" />
-            </button>
 
             {/* Close / Minimize Section Button if Viewers Don't Want */}
             <button
@@ -917,13 +900,13 @@ export const IndustrySlideshow: React.FC<IndustrySlideshowProps> = ({
               <span className="font-semibold text-slate-300 mr-1">6-Tool Suite Flow:</span>
               <span className="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700/60 font-mono text-[11px]">1. Smart Link</span>
               <span className="text-slate-500">→</span>
-              <span className="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700/60 font-mono text-[11px]">2. WhatsApp AutoFlow</span>
+              <span className="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700/60 font-mono text-[11px]">2. WhatsApp Flow</span>
               <span className="text-slate-500">→</span>
-              <span className="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700/60 font-mono text-[11px]">3. Click FOMO</span>
+              <span className="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700/60 font-mono text-[11px]">3. Click Fomo</span>
               <span className="text-slate-500">→</span>
               <span className="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700/60 font-mono text-[11px]">4. Site Shield</span>
               <span className="text-slate-500">→</span>
-              <span className="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700/60 font-mono text-[11px]">5. E-Mail Rocket</span>
+              <span className="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700/60 font-mono text-[11px]">5. E-mail Rocket</span>
               <span className="text-slate-500">→</span>
               <span className="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700/60 font-mono text-[11px]">6. Cloud Hosting</span>
             </div>
@@ -1199,19 +1182,6 @@ export const IndustrySlideshow: React.FC<IndustrySlideshowProps> = ({
                         </h2>
                       </div>
 
-                      {/* Active Language Reading Indicator */}
-                      <div className="p-3 rounded-xl bg-slate-900/90 border border-slate-800 flex items-center justify-between text-xs">
-                        <div className="flex items-center gap-2 text-slate-300">
-                          <Globe className="w-4 h-4 text-emerald-400 shrink-0" />
-                          <span>Reading in: <strong className="text-white">{activeLangObj.name} ({activeLangObj.nativeName})</strong></span>
-                        </div>
-                        <button
-                          onClick={() => setIsReaderLangModalOpen(true)}
-                          className="text-emerald-400 hover:text-emerald-300 font-semibold underline cursor-pointer text-xs"
-                        >
-                          Change (32 Available)
-                        </button>
-                      </div>
 
                       {/* FULL DETAILED DESCRIPTION BOX */}
                       <div className="p-5 rounded-2xl bg-slate-950/90 border border-slate-800/90 text-slate-100 shadow-inner">
@@ -1241,27 +1211,27 @@ export const IndustrySlideshow: React.FC<IndustrySlideshowProps> = ({
                         </div>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
                           <div className="p-2.5 rounded-xl bg-slate-900/70 border border-slate-800">
-                            <div className="text-emerald-400 font-mono font-bold text-[11px]">1. Bitly Smart Links</div>
+                            <div className="text-emerald-400 font-mono font-bold text-[11px]">1. Smart Link</div>
                             <div className="text-slate-300 text-[11px] mt-0.5">Campaign UTM source tagging & conversion analytics.</div>
                           </div>
                           <div className="p-2.5 rounded-xl bg-slate-900/70 border border-slate-800">
-                            <div className="text-emerald-400 font-mono font-bold text-[11px]">2. WATI WhatsApp Flow</div>
+                            <div className="text-emerald-400 font-mono font-bold text-[11px]">2. WhatsApp Flow</div>
                             <div className="text-slate-300 text-[11px] mt-0.5">24/7 instant chat booking, qualification & catalog dispatch.</div>
                           </div>
                           <div className="p-2.5 rounded-xl bg-slate-900/70 border border-slate-800">
-                            <div className="text-emerald-400 font-mono font-bold text-[11px]">3. Fomo Social Proof</div>
+                            <div className="text-emerald-400 font-mono font-bold text-[11px]">3. Click Fomo</div>
                             <div className="text-slate-300 text-[11px] mt-0.5">Live order and inquiry activity nudges to accelerate conversions.</div>
                           </div>
                           <div className="p-2.5 rounded-xl bg-slate-900/70 border border-slate-800">
-                            <div className="text-emerald-400 font-mono font-bold text-[11px]">4. UptimeRobot Shield</div>
+                            <div className="text-emerald-400 font-mono font-bold text-[11px]">4. Site Shield</div>
                             <div className="text-slate-300 text-[11px] mt-0.5">60-second ping monitor protecting payment & lead capture links.</div>
                           </div>
                           <div className="p-2.5 rounded-xl bg-slate-900/70 border border-slate-800">
-                            <div className="text-emerald-400 font-mono font-bold text-[11px]">5. Mailchimp Auto-Drip</div>
+                            <div className="text-emerald-400 font-mono font-bold text-[11px]">5. E-mail Rocket</div>
                             <div className="text-slate-300 text-[11px] mt-0.5">Automated personalized invoice, reminder & re-engagement emails.</div>
                           </div>
                           <div className="p-2.5 rounded-xl bg-slate-900/70 border border-slate-800">
-                            <div className="text-emerald-400 font-mono font-bold text-[11px]">6. Hostinger Cloud</div>
+                            <div className="text-emerald-400 font-mono font-bold text-[11px]">6. Cloud Hosting</div>
                             <div className="text-slate-300 text-[11px] mt-0.5">Ultra-fast hosting and CDN ensuring sub-second response times.</div>
                           </div>
                         </div>
