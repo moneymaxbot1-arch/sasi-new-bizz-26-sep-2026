@@ -233,7 +233,11 @@ export const IndustrySlideshow: React.FC<IndustrySlideshowProps> = ({
         setIsPlaying(prev => !prev);
       } else if (e.key === 'f' || e.key === 'F') {
         e.preventDefault();
-        setIsFullscreen(prev => !prev);
+        setIsFullscreen(prev => {
+          const next = !prev;
+          if (next) setIsCaptionVisible(false);
+          return next;
+        });
       } else if (e.key === 'Escape') {
         if (isGridModalOpen) setIsGridModalOpen(false);
         if (isFullscreen) setIsFullscreen(false);
@@ -243,6 +247,18 @@ export const IndustrySlideshow: React.FC<IndustrySlideshowProps> = ({
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [goToNext, goToPrev, isFullscreen, isGridModalOpen, isReaderWindowOpen, totalSlides]);
+
+  // Lock body scroll in fullscreen mode
+  useEffect(() => {
+    if (isFullscreen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isFullscreen]);
 
   // Autoplay Timer (4000ms default)
   useEffect(() => {
@@ -428,7 +444,7 @@ export const IndustrySlideshow: React.FC<IndustrySlideshowProps> = ({
           ref={containerRef}
           className={`relative rounded-2xl overflow-hidden border transition-all duration-300 shadow-2xl ${
             isFullscreen 
-              ? 'fixed inset-0 z-50 rounded-none border-none bg-black flex flex-col justify-between' 
+              ? 'fixed inset-0 z-50 rounded-none border-none bg-[#050811] flex flex-col justify-between w-screen h-screen' 
               : isDarkMode 
                 ? 'bg-slate-950/80 border-slate-800' 
                 : 'bg-white border-slate-200'
@@ -441,51 +457,77 @@ export const IndustrySlideshow: React.FC<IndustrySlideshowProps> = ({
           <div className="absolute top-4 left-4 right-4 z-30 flex items-center justify-between pointer-events-none">
             {/* Minimal Slide Index Badge */}
             <div 
-              className="pointer-events-auto flex items-center gap-1.5 px-2.5 py-1 rounded-full backdrop-blur-md bg-black/60 hover:bg-black/80 border border-white/10 text-white text-[11px] font-mono shadow-md transition-all"
+              className="pointer-events-auto flex items-center gap-1.5 px-3 py-1.5 rounded-full backdrop-blur-md bg-black/75 hover:bg-black border border-white/15 text-white text-xs font-mono shadow-md transition-all"
               title={`Blueprint #${currentSlide.id} of ${totalSlides}: ${currentSlide.category}`}
             >
               <span className="text-emerald-400 font-bold">
-                {String(currentSlide.id).padStart(2, '0')}
+                Blueprint {String(currentSlide.id).padStart(2, '0')}
               </span>
               <span className="text-white/40">/</span>
               <span className="text-white/70">
                 {String(totalSlides).padStart(2, '0')}
               </span>
+              <span className="hidden sm:inline text-slate-400 ml-1">· {currentSlide.category}</span>
             </div>
 
-            {/* Top Right Controls: Autoplay Timer Indicator + Speed + Eye Toggle + Fullscreen */}
+            {/* Top Right Controls: Eye Toggle + Fullscreen / Exit */}
             <div className="pointer-events-auto flex items-center gap-2">
               {/* Show/Hide Text Overlay Toggle */}
               <button
                 onClick={() => setIsCaptionVisible(prev => !prev)}
-                className={`p-2 rounded-full backdrop-blur-md border border-white/10 transition-colors ${
+                className={`p-2 rounded-full backdrop-blur-md border border-white/15 transition-colors cursor-pointer ${
                   isCaptionVisible 
-                    ? 'bg-black/60 text-white hover:text-emerald-400' 
+                    ? 'bg-black/70 text-white hover:text-emerald-400' 
                     : 'bg-emerald-500 text-black hover:bg-emerald-400'
                 }`}
-                title={isCaptionVisible ? 'Close / Hide text description (Clean view)' : 'Show text description'}
+                title={isCaptionVisible ? 'Hide text description (View clean picture)' : 'Show text description'}
                 aria-label={isCaptionVisible ? 'Hide text description' : 'Show text description'}
               >
                 {isCaptionVisible ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
               </button>
 
-              {/* Fullscreen Toggle */}
+              {/* Fullscreen / Enlarge Toggle */}
               <button
-                onClick={() => setIsFullscreen(prev => !prev)}
-                className="p-2 rounded-full backdrop-blur-md bg-black/60 border border-white/10 text-white hover:bg-black/80 hover:text-emerald-400 transition-colors"
-                title={isFullscreen ? 'Exit Fullscreen' : 'Enter Fullscreen'}
+                onClick={() => {
+                  setIsFullscreen(prev => {
+                    const next = !prev;
+                    // Keep picture completely clean on enlarge; user can click bottom button to show description
+                    if (next) setIsCaptionVisible(false);
+                    return next;
+                  });
+                }}
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full backdrop-blur-md border transition-all cursor-pointer ${
+                  isFullscreen
+                    ? 'bg-emerald-500 text-black hover:bg-emerald-400 border-emerald-400 font-bold text-xs shadow-lg shadow-emerald-500/30'
+                    : 'bg-black/70 text-white hover:bg-black/90 hover:text-emerald-400 border-white/15 p-2'
+                }`}
+                title={isFullscreen ? 'Exit Fullscreen (Esc)' : 'Enlarge / Fullscreen (View Big Picture + Description)'}
+                aria-label={isFullscreen ? 'Exit Fullscreen' : 'Enlarge Slide'}
               >
-                {isFullscreen ? <Minimize2 className="w-4 h-4" /> : <Maximize2 className="w-4 h-4" />}
+                {isFullscreen ? (
+                  <>
+                    <Minimize2 className="w-4 h-4" />
+                    <span className="text-xs font-semibold">Exit Fullscreen</span>
+                  </>
+                ) : (
+                  <Maximize2 className="w-4 h-4" />
+                )}
               </button>
             </div>
           </div>
 
           {/* Carousel Slide Stage */}
-          <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] lg:aspect-[16/8] min-h-[360px] sm:min-h-[460px] lg:min-h-[540px] flex items-center justify-center overflow-hidden bg-black select-none">
+          <div className={`relative w-full flex items-center justify-center overflow-hidden bg-black select-none ${
+            isFullscreen 
+              ? 'flex-1 h-full min-h-0' 
+              : 'aspect-[16/9] sm:aspect-[21/9] lg:aspect-[16/8] min-h-[360px] sm:min-h-[460px] lg:min-h-[540px]'
+          }`}>
             {/* Active Image or Fallback */}
             <div 
               key={`${currentSlide.id}-${transitionMode}`}
               className={`w-full h-full relative transition-all duration-700 ease-out flex items-center justify-center ${
+                isFullscreen ? 'p-2 sm:p-4' : ''
+              } ${
                 transitionMode === 'fade' 
                   ? 'animate-in fade-in duration-500' 
                   : transitionMode === 'zoom'
@@ -500,7 +542,9 @@ export const IndustrySlideshow: React.FC<IndustrySlideshowProps> = ({
                   src={currentSlide.imageUrl}
                   alt={currentSlide.title}
                   referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover sm:object-contain object-center"
+                  className={`w-full h-full object-contain object-center transition-all duration-300 ${
+                    isFullscreen ? 'max-h-[92vh] max-w-full' : 'sm:object-contain object-cover'
+                  }`}
                   onError={() => handleImageError(currentSlide.id)}
                   loading="eager"
                 />
@@ -526,75 +570,80 @@ export const IndustrySlideshow: React.FC<IndustrySlideshowProps> = ({
                 </div>
               )}
 
-              {/* Gradient Bottom Scrim for Title Legibility - only show if caption is visible */}
-              {isCaptionVisible && (
+              {/* Gradient Bottom Scrim for Title Legibility - only show if caption is visible and not fullscreen */}
+              {isCaptionVisible && !isFullscreen && (
                 <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-black/90 via-black/50 to-transparent pointer-events-none transition-opacity duration-300" />
               )}
 
-              {/* Slide Caption Card inside the Viewport - with Close Button */}
               {/* Slide Caption Card inside the Viewport - with Close Button & Read Full Window Trigger */}
               {isCaptionVisible ? (
-                <div className="absolute bottom-4 left-4 right-4 sm:left-6 sm:right-auto z-20 max-w-xl text-left pointer-events-auto bg-black/80 sm:bg-black/70 backdrop-blur-md p-3.5 sm:p-4 rounded-xl border border-white/15 shadow-2xl animate-in fade-in slide-in-from-bottom-2 duration-200">
-                  <div className="flex items-center justify-between gap-3 mb-1.5">
-                    <div className="inline-flex items-center gap-2 text-xs font-mono text-emerald-400">
+                <div className={`pointer-events-auto backdrop-blur-md rounded-xl border shadow-2xl animate-in fade-in duration-200 z-20 transition-all ${
+                  isFullscreen
+                    ? 'absolute bottom-4 left-4 right-4 sm:left-6 sm:right-auto max-w-sm sm:max-w-md p-3 border-emerald-500/40 bg-black/90 shadow-[0_4px_24px_rgba(0,0,0,0.85)] max-h-[35vh] overflow-y-auto'
+                    : 'absolute bottom-4 left-4 right-4 sm:left-6 sm:right-auto max-w-xl p-3.5 sm:p-4 border-white/15 bg-black/80 sm:bg-black/70'
+                }`}>
+                  <div className="flex items-center justify-between gap-2 mb-1">
+                    <div className="inline-flex items-center gap-1.5 text-[11px] font-mono text-emerald-400 font-semibold truncate">
                       <span>{currentSlide.tagline || `Slot #${currentSlide.id}`}</span>
                       {currentSlide.stat && (
                         <>
                           <span>·</span>
                           <span className="text-white font-bold">{currentSlide.stat}</span>
-                          <span className="text-slate-300 text-[11px]">{currentSlide.statLabel}</span>
                         </>
                       )}
                     </div>
-                    {/* CLOSE BUTTON FOR VIEWERS WHO DON'T WANT CAPTION BLOCKING DIAGRAM */}
+                    {/* CLOSE / HIDE BUTTON */}
                     <button
                       onClick={() => setIsCaptionVisible(false)}
-                      className="p-1 rounded-md bg-white/10 hover:bg-white/25 text-slate-300 hover:text-white transition-colors flex items-center gap-1 text-[11px] font-medium cursor-pointer"
-                      title="Close text description (View clean slide)"
-                      aria-label="Close text description"
+                      className="p-1 rounded bg-white/10 hover:bg-white/25 text-slate-300 hover:text-white transition-colors flex items-center gap-1 text-[10px] font-medium cursor-pointer shrink-0"
+                      title="Hide text description (View clean diagram)"
+                      aria-label="Hide text description"
                     >
-                      <span className="hidden sm:inline">Close</span>
-                      <X className="w-3.5 h-3.5" />
+                      <span>Hide</span>
+                      <X className="w-3 h-3" />
                     </button>
                   </div>
-                  <h3 className="text-base sm:text-xl font-bold text-white tracking-tight drop-shadow-md pr-2">
+
+                  <h3 className={`font-bold text-white tracking-tight drop-shadow-md pr-2 mb-1 truncate ${
+                    isFullscreen ? 'text-xs sm:text-sm' : 'text-base sm:text-xl'
+                  }`}>
                     {currentSlide.title}
                   </h3>
                   
-                  {/* Clickable Small Description Box to open full description in new window */}
+                  {/* Compact Description Box */}
                   <p 
                     onClick={() => openReaderWindow(activeIndex)}
-                    className="mt-1 text-xs sm:text-sm text-slate-200 line-clamp-2 drop-shadow-sm max-w-lg cursor-pointer hover:text-white transition-colors"
+                    className="text-slate-200 text-xs line-clamp-2 sm:line-clamp-3 drop-shadow-sm cursor-pointer hover:text-white transition-colors leading-relaxed"
                     title="Click to open full description & pitcher in new window"
                   >
                     {currentSlide.description}
                   </p>
 
                   {/* Read Full Description in New Window Action Button */}
-                  <div className="mt-2.5 pt-2 border-t border-white/10 flex items-center justify-between gap-2">
+                  <div className="mt-2 pt-1.5 border-t border-white/10 flex items-center justify-between gap-2">
                     <button
                       onClick={() => openReaderWindow(activeIndex)}
-                      className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-emerald-500/20 hover:bg-emerald-500/35 border border-emerald-500/40 text-emerald-300 hover:text-white text-xs font-semibold transition-all cursor-pointer group active:scale-95"
+                      className="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-emerald-500/20 hover:bg-emerald-500/35 border border-emerald-500/40 text-emerald-300 hover:text-white text-[10px] font-semibold transition-all cursor-pointer group active:scale-95"
                       title="Open full description & pitcher diagram in new window"
                     >
-                      <BookOpen className="w-3.5 h-3.5 text-emerald-400 group-hover:scale-110 transition-transform" />
-                      <span>Read full description in new window</span>
-                      <ExternalLink className="w-3 h-3 ml-0.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                      <BookOpen className="w-3 h-3 text-emerald-400 group-hover:scale-110 transition-transform" />
+                      <span>Read full description</span>
+                      <ExternalLink className="w-2.5 h-2.5 ml-0.5" />
                     </button>
-                    <span className="text-[10px] text-slate-400 font-mono hidden sm:inline">
-                      Selected Language: <span className="uppercase text-emerald-400 font-bold">{currentAppLang}</span>
+                    <span className="text-[10px] text-slate-400 font-mono">
+                      #{currentSlide.id}/36
                     </span>
                   </div>
                 </div>
               ) : (
-                /* Re-open button if user wants to see caption again */
+                /* Small bottom button so viewer can click to see description */
                 <button
                   onClick={() => setIsCaptionVisible(true)}
-                  className="absolute bottom-4 left-4 z-20 flex items-center gap-1.5 px-3 py-1.5 rounded-full backdrop-blur-md bg-black/75 hover:bg-black text-white text-xs border border-white/15 hover:border-emerald-500/50 shadow-lg transition-all active:scale-95 group pointer-events-auto cursor-pointer"
-                  title="Show Title & Details"
+                  className="absolute bottom-3 left-3 sm:left-4 z-20 flex items-center gap-1.5 px-3 py-1.5 rounded-full backdrop-blur-md bg-black/80 hover:bg-black text-white text-xs border border-white/20 hover:border-emerald-500/50 shadow-lg transition-all active:scale-95 group pointer-events-auto cursor-pointer"
+                  title="Show Title & Description"
                 >
                   <Eye className="w-3.5 h-3.5 text-emerald-400 group-hover:scale-110 transition-transform" />
-                  <span className="font-medium">Show Description</span>
+                  <span className="font-medium text-xs">Show Description</span>
                 </button>
               )}
             </div>
@@ -603,18 +652,18 @@ export const IndustrySlideshow: React.FC<IndustrySlideshowProps> = ({
             <button
               onClick={goToPrev}
               aria-label="Previous slide"
-              className="absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 z-30 p-3 sm:p-4 rounded-full backdrop-blur-md bg-black/40 hover:bg-black/80 text-white hover:text-emerald-400 border border-white/10 hover:border-emerald-500/50 shadow-xl transition-all duration-200 active:scale-95"
+              className="absolute left-1.5 sm:left-5 top-1/2 -translate-y-1/2 z-30 p-1.5 sm:p-4 rounded-full backdrop-blur-md bg-black/50 hover:bg-black/80 text-white hover:text-emerald-400 border border-white/15 hover:border-emerald-500/50 shadow-lg sm:shadow-xl transition-all duration-200 active:scale-90 cursor-pointer"
             >
-              <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+              <ChevronLeft className="w-3.5 h-3.5 sm:w-6 sm:h-6" />
             </button>
 
             {/* Right Manual Navigation Arrow */}
             <button
               onClick={goToNext}
               aria-label="Next slide"
-              className="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 z-30 p-3 sm:p-4 rounded-full backdrop-blur-md bg-black/40 hover:bg-black/80 text-white hover:text-emerald-400 border border-white/10 hover:border-emerald-500/50 shadow-xl transition-all duration-200 active:scale-95"
+              className="absolute right-1.5 sm:right-5 top-1/2 -translate-y-1/2 z-30 p-1.5 sm:p-4 rounded-full backdrop-blur-md bg-black/50 hover:bg-black/80 text-white hover:text-emerald-400 border border-white/15 hover:border-emerald-500/50 shadow-lg sm:shadow-xl transition-all duration-200 active:scale-90 cursor-pointer"
             >
-              <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
+              <ChevronRight className="w-3.5 h-3.5 sm:w-6 sm:h-6" />
             </button>
           </div>
 
@@ -697,65 +746,67 @@ export const IndustrySlideshow: React.FC<IndustrySlideshowProps> = ({
             </div>
           </div>
 
-          {/* HORIZONTAL INTERACTIVE THUMBNAIL RAIL (All 36 Slides) */}
-          <div className={`px-4 py-3 border-t overflow-hidden ${
-            isDarkMode ? 'bg-slate-900/40 border-slate-800/80' : 'bg-slate-50 border-slate-200'
-          }`}>
-            <div className="text-[11px] font-semibold uppercase tracking-wider text-slate-400 mb-2 flex items-center justify-between">
-              <span>Thumbnail Strip (Click to Jump)</span>
-              <span className="text-slate-500 font-mono">Use arrow keys or touch swipe</span>
-            </div>
-            
-            <div 
-              ref={thumbnailRailRef}
-              className="flex items-center gap-2 overflow-x-auto pb-2 scroll-smooth no-scrollbar"
-            >
-              {filteredSlides.map((slide, idx) => {
-                const isActive = idx === activeIndex;
-                const isBroken = failedImages[slide.id];
+          {/* HORIZONTAL INTERACTIVE THUMBNAIL RAIL (All 36 Slides) - Hidden in Fullscreen so picture fills the screen */}
+          {!isFullscreen && (
+            <div className={`px-4 py-3 border-t overflow-hidden ${
+              isDarkMode ? 'bg-slate-900/40 border-slate-800/80' : 'bg-slate-50 border-slate-200'
+            }`}>
+              <div className="text-[11px] font-semibold uppercase tracking-wider text-slate-400 mb-2 flex items-center justify-between">
+                <span>Thumbnail Strip (Click to Jump)</span>
+                <span className="text-slate-500 font-mono">Use arrow keys or touch swipe</span>
+              </div>
+              
+              <div 
+                ref={thumbnailRailRef}
+                className="flex items-center gap-2 overflow-x-auto pb-2 scroll-smooth no-scrollbar"
+              >
+                {filteredSlides.map((slide, idx) => {
+                  const isActive = idx === activeIndex;
+                  const isBroken = failedImages[slide.id];
 
-                return (
-                  <button
-                    key={slide.id}
-                    onClick={() => goToIndex(idx)}
-                    className={`shrink-0 relative group rounded-lg overflow-hidden border-2 transition-all duration-200 text-left ${
-                      isActive 
-                        ? 'border-emerald-500 scale-105 shadow-md shadow-emerald-500/20' 
-                        : isDarkMode
-                          ? 'border-slate-800 hover:border-slate-600 opacity-60 hover:opacity-100'
-                          : 'border-slate-200 hover:border-slate-400 opacity-70 hover:opacity-100'
-                    }`}
-                    style={{ width: '92px', height: '62px' }}
-                  >
-                    {!isBroken ? (
-                      <img
-                        src={slide.imageUrl}
-                        alt={`Thumbnail ${slide.id}`}
-                        referrerPolicy="no-referrer"
-                        className="w-full h-full object-cover"
-                        loading="lazy"
-                        onError={() => handleImageError(slide.id)}
-                      />
-                    ) : (
-                      <div className="w-full h-full bg-slate-800 flex items-center justify-center text-emerald-400 p-1 text-center">
-                        <Cpu className="w-4 h-4" />
+                  return (
+                    <button
+                      key={slide.id}
+                      onClick={() => goToIndex(idx)}
+                      className={`shrink-0 relative group rounded-lg overflow-hidden border-2 transition-all duration-200 text-left ${
+                        isActive 
+                          ? 'border-emerald-500 scale-105 shadow-md shadow-emerald-500/20' 
+                          : isDarkMode
+                            ? 'border-slate-800 hover:border-slate-600 opacity-60 hover:opacity-100'
+                            : 'border-slate-200 hover:border-slate-400 opacity-70 hover:opacity-100'
+                      }`}
+                      style={{ width: '92px', height: '62px' }}
+                    >
+                      {!isBroken ? (
+                        <img
+                          src={slide.imageUrl}
+                          alt={`Thumbnail ${slide.id}`}
+                          referrerPolicy="no-referrer"
+                          className="w-full h-full object-cover"
+                          loading="lazy"
+                          onError={() => handleImageError(slide.id)}
+                        />
+                      ) : (
+                        <div className="w-full h-full bg-slate-800 flex items-center justify-center text-emerald-400 p-1 text-center">
+                          <Cpu className="w-4 h-4" />
+                        </div>
+                      )}
+
+                      {/* Thumbnail Number Overlay */}
+                      <div className="absolute top-1 left-1 px-1.5 py-0.5 rounded bg-black/70 text-white font-mono text-[9px] font-bold">
+                        {String(slide.id).padStart(2, '0')}
                       </div>
-                    )}
 
-                    {/* Thumbnail Number Overlay */}
-                    <div className="absolute top-1 left-1 px-1.5 py-0.5 rounded bg-black/70 text-white font-mono text-[9px] font-bold">
-                      {String(slide.id).padStart(2, '0')}
-                    </div>
-
-                    {/* Active Glow Ring */}
-                    {isActive && (
-                      <div className="absolute inset-0 bg-emerald-500/10 pointer-events-none" />
-                    )}
-                  </button>
-                );
-              })}
+                      {/* Active Glow Ring */}
+                      {isActive && (
+                        <div className="absolute inset-0 bg-emerald-500/10 pointer-events-none" />
+                      )}
+                    </button>
+                  );
+                })}
+              </div>
             </div>
-          </div>
+          )}
         </div>
 
 
