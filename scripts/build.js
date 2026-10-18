@@ -15,10 +15,32 @@ const docsDir = path.join(rootDir, 'docs');
 const assetsDir = path.join(rootDir, 'assets');
 const distAssetsDir = path.join(distDir, 'assets');
 
-// 1. Ensure CNAME exists in public, dist, and docs
+// 1. Ensure CNAME and .htaccess exist in public, dist, and docs
 const cnamePath = path.join(rootDir, 'public', 'CNAME');
 fs.writeFileSync(cnamePath, 'bizz2u.com\n');
 fs.writeFileSync(path.join(distDir, 'CNAME'), 'bizz2u.com\n');
+
+const htaccessContent = `<IfModule mod_mime.c>
+  AddType application/javascript .js .mjs
+  AddType text/css .css
+  AddType image/svg+xml .svg
+  AddType application/json .json
+  AddType font/woff .woff
+  AddType font/woff2 .woff2
+</IfModule>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>
+`;
+fs.writeFileSync(path.join(rootDir, '.htaccess'), htaccessContent);
+fs.writeFileSync(path.join(rootDir, 'public', '.htaccess'), htaccessContent);
+fs.writeFileSync(path.join(distDir, '.htaccess'), htaccessContent);
 
 // 2. Refresh docs directory cleanly
 console.log('📦 Syncing dist to docs...');
@@ -48,6 +70,7 @@ if (fs.existsSync(distAssetsDir)) {
     const mainJs = jsFiles[0];
     fs.copyFileSync(path.join(distAssetsDir, mainJs), path.join(assetsDir, 'bundle.js'));
     fs.copyFileSync(path.join(distAssetsDir, mainJs), path.join(docsDir, 'assets', 'bundle.js'));
+    fs.copyFileSync(path.join(distAssetsDir, mainJs), path.join(distAssetsDir, 'bundle.js'));
     console.log(`✅ bundle.js generated from ${mainJs}`);
   }
 
@@ -55,6 +78,7 @@ if (fs.existsSync(distAssetsDir)) {
     const mainCss = cssFiles[0];
     fs.copyFileSync(path.join(distAssetsDir, mainCss), path.join(assetsDir, 'bundle.css'));
     fs.copyFileSync(path.join(distAssetsDir, mainCss), path.join(docsDir, 'assets', 'bundle.css'));
+    fs.copyFileSync(path.join(distAssetsDir, mainCss), path.join(distAssetsDir, 'bundle.css'));
     console.log(`✅ bundle.css generated from ${mainCss}`);
   }
 }

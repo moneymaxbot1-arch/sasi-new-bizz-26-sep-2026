@@ -126,27 +126,66 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     <script type="module">
-      // GitHub Pages fallback: Only run when hosted statically without Vite (e.g. github.io or file protocol)
-      if (window.location.hostname.includes('github.io') || window.location.protocol === 'file:') {
-        setTimeout(function() {
+      // Universal static hosting bootloader: Detects when hosted statically (Hostverge, cPanel, Apache, GitHub Pages, bizz2u.com)
+      (function() {
+        function bootProductionBundle() {
           var root = document.getElementById('root');
           if (root && root.children.length === 0) {
             var ts = Date.now();
-            var link = document.createElement('link');
-            link.rel = 'stylesheet';
-            link.href = './assets/bundle.css?v=' + ts;
-            link.onerror = function() { link.href = './docs/assets/bundle.css?v=' + ts; };
-            document.head.appendChild(link);
+            
+            // Inject compiled bundle.css if styles not yet loaded
+            if (!document.querySelector('link[data-bizz2u-css="true"]')) {
+              var cssCandidates = [
+                './assets/bundle.css',
+                './docs/assets/bundle.css',
+                './dist/assets/bundle.css',
+                '/assets/bundle.css',
+                '/docs/assets/bundle.css'
+              ];
+              var cssIdx = 0;
+              var link = document.createElement('link');
+              link.rel = 'stylesheet';
+              link.setAttribute('data-bizz2u-css', 'true');
+              link.href = cssCandidates[0] + '?v=' + ts;
+              link.onerror = function() {
+                cssIdx++;
+                if (cssIdx < cssCandidates.length) {
+                  link.href = cssCandidates[cssIdx] + '?v=' + ts;
+                }
+              };
+              document.head.appendChild(link);
+            }
 
-            var script = document.createElement('script');
-            script.type = 'module';
-            script.crossOrigin = 'anonymous';
-            script.src = './assets/bundle.js?v=' + ts;
-            script.onerror = function() { script.src = './docs/assets/bundle.js?v=' + ts; };
-            document.body.appendChild(script);
+            // Inject compiled bundle.js
+            var jsCandidates = [
+              './assets/bundle.js',
+              './docs/assets/bundle.js',
+              './dist/assets/bundle.js',
+              '/assets/bundle.js',
+              '/docs/assets/bundle.js'
+            ];
+            var jsIdx = 0;
+            function tryLoadScript() {
+              if (jsIdx >= jsCandidates.length) return;
+              var script = document.createElement('script');
+              script.type = 'module';
+              script.crossOrigin = 'anonymous';
+              script.setAttribute('data-bizz2u-js', 'true');
+              script.src = jsCandidates[jsIdx] + '?v=' + ts;
+              script.onerror = function() {
+                jsIdx++;
+                tryLoadScript();
+              };
+              document.body.appendChild(script);
+            }
+            tryLoadScript();
           }
-        }, 500);
-      }
+        }
+
+        // Check if root rendered; if not (no Vite server), boot the compiled production bundles
+        setTimeout(bootProductionBundle, 350);
+        setTimeout(bootProductionBundle, 1200);
+      })();
     </script>
   </body>
 </html>
