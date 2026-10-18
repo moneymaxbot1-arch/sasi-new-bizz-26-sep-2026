@@ -368,36 +368,34 @@ export const IndustrySlideshow: React.FC<IndustrySlideshowProps> = ({
             </p>
           </div>
 
-          {/* Quick Action Bar: Dark/Light, Fullscreen, Grid Modal */}
-          <div className="flex items-center gap-2 flex-wrap">
+          {/* Quick Action Bar: Dark/Light and Close Section Buttons Side-by-Side */}
+          <div className="flex flex-row items-center gap-2.5 flex-nowrap shrink-0">
             {/* Dark / Light Toggle */}
             <button
               onClick={() => setIsDarkMode(prev => !prev)}
               title={isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-              className={`p-2.5 rounded-lg border text-xs font-medium flex items-center gap-1.5 transition-colors ${
+              className={`px-3 py-2 sm:p-2.5 rounded-lg border text-xs font-medium inline-flex items-center gap-1.5 whitespace-nowrap shrink-0 cursor-pointer transition-colors ${
                 isDarkMode 
                   ? 'border-slate-800 bg-slate-900/80 hover:bg-slate-800 text-slate-300' 
                   : 'border-slate-300 bg-white hover:bg-slate-100 text-slate-700 shadow-sm'
               }`}
             >
-              {isDarkMode ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-slate-700" />}
-              <span className="hidden sm:inline">{isDarkMode ? 'Light' : 'Dark'}</span>
+              {isDarkMode ? <Sun className="w-4 h-4 text-amber-400 shrink-0" /> : <Moon className="w-4 h-4 text-slate-700 shrink-0" />}
+              <span>{isDarkMode ? 'Light' : 'Dark'}</span>
             </button>
-
-
 
             {/* Close / Minimize Section Button if Viewers Don't Want */}
             <button
               onClick={() => setIsSectionCollapsed(true)}
-              className={`p-2.5 rounded-lg border text-xs font-medium flex items-center gap-1.5 transition-colors ${
+              className={`px-3 py-2 sm:p-2.5 rounded-lg border text-xs font-medium inline-flex items-center gap-1.5 whitespace-nowrap shrink-0 cursor-pointer transition-colors ${
                 isDarkMode 
                   ? 'border-slate-800 bg-slate-900/80 hover:bg-rose-950/40 hover:border-rose-500/40 text-slate-400 hover:text-rose-300' 
                   : 'border-slate-300 bg-white hover:bg-rose-50 hover:border-rose-300 text-slate-600 hover:text-rose-700 shadow-sm'
               }`}
               title="Close / Hide this slideshow section"
             >
-              <X className="w-4 h-4" />
-              <span className="hidden sm:inline">Close Section</span>
+              <X className="w-4 h-4 shrink-0" />
+              <span>Close Section</span>
             </button>
           </div>
         </div>
@@ -778,121 +776,7 @@ export const IndustrySlideshow: React.FC<IndustrySlideshowProps> = ({
           </div>
         </div>
 
-        {/* ACTIVE BLUEPRINT DETAILS CARD (Below Description matching pitcher diagram) */}
-        <div className={`mt-6 p-5 sm:p-6 rounded-2xl border transition-all duration-300 shadow-lg ${
-          isDarkMode ? 'bg-slate-900/80 border-slate-800 text-slate-200' : 'bg-white border-slate-200 text-slate-800 shadow-sm'
-        }`}>
-          {/* Top metadata row */}
-          <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-800/60 mb-4">
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="px-2.5 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono text-xs font-bold">
-                Blueprint {String(currentSlide.id).padStart(2, '0')} / {String(totalSlides).padStart(2, '0')}
-              </span>
-              <span className="px-2.5 py-1 rounded-md bg-slate-800/80 border border-slate-700 text-slate-300 text-xs font-medium">
-                {currentSlide.category}
-              </span>
-              {currentSlide.stat && (
-                <span className="px-2.5 py-1 rounded-md bg-emerald-950/60 border border-emerald-600/40 text-emerald-300 text-xs font-mono font-medium flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  <span>{currentSlide.stat} {currentSlide.statLabel}</span>
-                </span>
-              )}
-            </div>
 
-            <div className="flex items-center gap-2">
-              <button
-                onClick={() => openReaderWindow(activeIndex)}
-                className="px-3 py-1.5 rounded-lg bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-500/40 text-emerald-300 hover:text-white text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer shadow-xs active:scale-95 group"
-                title="Open full description & pitcher in dedicated reader window"
-              >
-                <BookOpen className="w-3.5 h-3.5 text-emerald-400 group-hover:scale-110 transition-transform" />
-                <span>Read Full Description (New Window)</span>
-                <ExternalLink className="w-3 h-3 text-emerald-400/80 group-hover:text-emerald-300" />
-              </button>
-              <button
-                onClick={goToPrev}
-                className="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors cursor-pointer"
-                title="Previous Blueprint"
-                aria-label="Previous Blueprint"
-              >
-                <ChevronLeft className="w-4 h-4" />
-              </button>
-              <button
-                onClick={goToNext}
-                className="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors cursor-pointer"
-                title="Next Blueprint"
-                aria-label="Next Blueprint"
-              >
-                <ChevronRight className="w-4 h-4" />
-              </button>
-              <button
-                onClick={() => setIsGridModalOpen(true)}
-                className="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white text-xs font-medium transition-colors flex items-center gap-1.5 cursor-pointer"
-              >
-                <Grid className="w-3.5 h-3.5" />
-                <span>All Blueprint</span>
-              </button>
-            </div>
-          </div>
-
-          {/* Title & Tagline */}
-          <div className="mb-3">
-            <div className="text-xs uppercase font-mono tracking-wider text-emerald-400 font-semibold mb-1">
-              {currentSlide.tagline}
-            </div>
-            <h3 className="text-xl sm:text-2xl font-extrabold tracking-tight text-white">
-              {currentSlide.title}
-            </h3>
-          </div>
-
-          {/* Description - Clickable to open full description in new window */}
-          <div 
-            onClick={() => openReaderWindow(activeIndex)}
-            className="group cursor-pointer p-4 rounded-xl bg-slate-950/40 hover:bg-slate-950/80 border border-slate-800/80 hover:border-emerald-500/50 transition-all duration-200 mb-4 shadow-inner"
-            title="Click this description box to open full description + pitcher diagram in new window"
-          >
-            <div className="flex items-center justify-between gap-2 mb-2">
-              <span className="text-[11px] font-mono text-emerald-400 font-semibold flex items-center gap-1.5">
-                <BookOpen className="w-3.5 h-3.5 text-emerald-400" />
-                <span>Operational Description (Click box to read full in new window)</span>
-              </span>
-              <span className="text-[11px] text-emerald-400 group-hover:text-emerald-300 font-semibold flex items-center gap-1 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/30">
-                <span>Open in Window</span>
-                <ExternalLink className="w-3 h-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </span>
-            </div>
-            <p className="text-sm sm:text-base leading-relaxed text-slate-300 group-hover:text-white transition-colors">
-              {currentSlide.description}
-            </p>
-          </div>
-
-          {/* 6-Tool Workflow Pills */}
-          <div className="pt-3 border-t border-slate-800/60 flex flex-wrap items-center justify-between gap-3 text-xs">
-            <div className="flex flex-wrap items-center gap-1.5 text-slate-400">
-              <span className="font-semibold text-slate-300 mr-1">6-Tool Suite Flow:</span>
-              <span className="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700/60 font-mono text-[11px]">1. Smart Link</span>
-              <span className="text-slate-500">→</span>
-              <span className="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700/60 font-mono text-[11px]">2. WhatsApp Flow</span>
-              <span className="text-slate-500">→</span>
-              <span className="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700/60 font-mono text-[11px]">3. Click Fomo</span>
-              <span className="text-slate-500">→</span>
-              <span className="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700/60 font-mono text-[11px]">4. Site Shield</span>
-              <span className="text-slate-500">→</span>
-              <span className="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700/60 font-mono text-[11px]">5. E-mail Rocket</span>
-              <span className="text-slate-500">→</span>
-              <span className="px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700/60 font-mono text-[11px]">6. Cloud Hosting</span>
-            </div>
-
-            {onClaimClick && (
-              <button
-                onClick={onClaimClick}
-                className="px-4 py-2 rounded-xl bg-emerald-500 text-black hover:bg-emerald-400 font-bold transition-all shadow-md shadow-emerald-500/20 active:scale-95 text-xs cursor-pointer"
-              >
-                Claim Suite Automation
-              </button>
-            )}
-          </div>
-        </div>
 
         {/* FULL DESCRIPTION & PITCHER DEDICATED READER WINDOW MODAL */}
         {isReaderWindowOpen && (() => {
