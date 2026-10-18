@@ -13,7 +13,6 @@ import { CountdownTimer } from './components/CountdownTimer';
 import { ToolShowcase } from './components/ToolShowcase';
 import { InDepthSoftwareSpecs } from './components/InDepthSoftwareSpecs';
 import { AutomationPlaybook } from './components/AutomationPlaybook';
-import { RoiCalculator } from './components/RoiCalculator';
 import { PricingSection } from './components/PricingSection';
 import { Testimonials } from './components/Testimonials';
 import { GuaranteeSection } from './components/GuaranteeSection';
@@ -66,9 +65,6 @@ export default function App() {
 
         {/* Verifiable Customer Testimonials & Metrics (45+ in-depth regional and global customer stories) */}
         <Testimonials onClaimClick={() => scrollToPricing()} />
-
-        {/* Dynamic ROI and Savings Calculator */}
-        <RoiCalculator onClaimClick={() => scrollToPricing()} />
 
         {/* High-Converting 3-Tier Pricing (Starting at $15/mo) */}
         <PricingSection />

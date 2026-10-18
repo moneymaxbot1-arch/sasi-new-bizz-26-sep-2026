@@ -359,7 +359,7 @@ export const IndustrySlideshow: React.FC<IndustrySlideshowProps> = ({
               Interactive Operational Blueprints
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
-              The 6-Tool Automation Engine Built to Run Your Entire Business
+              Learn How This 6-Automation Engine Built to Run Your Entire Business
             </h2>
             <p className={`mt-2 text-sm sm:text-base max-w-2xl ${
               isDarkMode ? 'text-slate-400' : 'text-slate-600'
