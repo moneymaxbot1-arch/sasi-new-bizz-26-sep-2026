@@ -652,18 +652,18 @@ export const IndustrySlideshow: React.FC<IndustrySlideshowProps> = ({
             <button
               onClick={goToPrev}
               aria-label="Previous slide"
-              className="absolute left-1.5 sm:left-5 top-1/2 -translate-y-1/2 z-30 p-1.5 sm:p-4 rounded-full backdrop-blur-md bg-black/50 hover:bg-black/80 text-white hover:text-emerald-400 border border-white/15 hover:border-emerald-500/50 shadow-lg sm:shadow-xl transition-all duration-200 active:scale-90 cursor-pointer"
+              className="absolute left-1.5 sm:left-3 top-1/2 -translate-y-1/2 z-30 w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center rounded-full bg-black/15 hover:bg-black/40 text-white/75 hover:text-white border border-white/15 hover:border-emerald-500/50 backdrop-blur-[2px] shadow-sm transition-all duration-200 active:scale-90 cursor-pointer"
             >
-              <ChevronLeft className="w-3.5 h-3.5 sm:w-6 sm:h-6" />
+              <ChevronLeft className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             </button>
 
             {/* Right Manual Navigation Arrow */}
             <button
               onClick={goToNext}
               aria-label="Next slide"
-              className="absolute right-1.5 sm:right-5 top-1/2 -translate-y-1/2 z-30 p-1.5 sm:p-4 rounded-full backdrop-blur-md bg-black/50 hover:bg-black/80 text-white hover:text-emerald-400 border border-white/15 hover:border-emerald-500/50 shadow-lg sm:shadow-xl transition-all duration-200 active:scale-90 cursor-pointer"
+              className="absolute right-1.5 sm:right-3 top-1/2 -translate-y-1/2 z-30 w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center rounded-full bg-black/15 hover:bg-black/40 text-white/75 hover:text-white border border-white/15 hover:border-emerald-500/50 backdrop-blur-[2px] shadow-sm transition-all duration-200 active:scale-90 cursor-pointer"
             >
-              <ChevronRight className="w-3.5 h-3.5 sm:w-6 sm:h-6" />
+              <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             </button>
           </div>
 
