@@ -43,7 +43,7 @@ export const AutomationPlaybook: React.FC<AutomationPlaybookProps> = ({ onClaimC
       num: '05',
       tool: 'WhatsApp Flow',
       role: 'Instant WhatsApp Conversion',
-      desc: 'Connect with leads on WhatsApp where open rates hit 98%. Automate customer support inquiries and send targeted broadcast deals.',
+      desc: 'Connect with leads on WhatsApp, Telegram, Instagram, and Facebook where open rates hit 98%. Deploy 24/7 AI chatbots, automate customer support inquiries, and send bulk messages safely with no blocking.',
       icon: <MessageSquare className="w-5 h-5 text-emerald-400" />,
       outcome: '10x higher response rate than cold email'
     },

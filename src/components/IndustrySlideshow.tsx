@@ -364,7 +364,7 @@ export const IndustrySlideshow: React.FC<IndustrySlideshowProps> = ({
             <p className={`mt-2 text-sm sm:text-base max-w-2xl ${
               isDarkMode ? 'text-slate-400' : 'text-slate-600'
             }`}>
-              Explore all 36 high-resolution automation workflows. One complete ecosystem designed to automate any industry 100% autopilot.
+              This 6 automation engines can dominate any modern business. One complete ecosystem designed to automate any industry 100% autopilot.
             </p>
           </div>
 
@@ -468,24 +468,6 @@ export const IndustrySlideshow: React.FC<IndustrySlideshowProps> = ({
               >
                 {isCaptionVisible ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
               </button>
-
-              {/* Autoplay Speed Dropdown */}
-              <div className="flex items-center backdrop-blur-md bg-black/60 border border-white/10 rounded-full px-2 py-1 text-xs text-white">
-                <Clock className="w-3.5 h-3.5 text-emerald-400 mr-1.5" />
-                <select
-                  value={speedMs}
-                  onChange={(e) => {
-                    setSpeedMs(Number(e.target.value));
-                    setProgress(0);
-                  }}
-                  className="bg-transparent text-white text-xs font-mono focus:outline-none cursor-pointer"
-                >
-                  <option value={2000} className="bg-slate-900 text-white">2.0s</option>
-                  <option value={4000} className="bg-slate-900 text-white">4.0s (Def)</option>
-                  <option value={6000} className="bg-slate-900 text-white">6.0s</option>
-                  <option value={8000} className="bg-slate-900 text-white">8.0s</option>
-                </select>
-              </div>
 
               {/* Fullscreen Toggle */}
               <button

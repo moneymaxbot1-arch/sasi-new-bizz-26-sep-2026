@@ -2126,10 +2126,10 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
         <div className="mt-14 text-center text-xs text-slate-300 max-w-3xl mx-auto space-y-2 p-6 rounded-2xl bg-slate-900/80 border border-emerald-500/30">
           <p className="font-bold text-emerald-400 flex items-center justify-center gap-1.5 text-sm">
             <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
-            <span>30-Day Money-Back Guarantee & No Questions Asked Policy</span>
+            <span>30-Day Money-Back Guarantee</span>
           </p>
           <p className="text-slate-300 leading-relaxed">
-            With our 30-day money-back guarantee & no questions asked policy, our team will <strong className="text-emerald-300">refund 100% of your money (strictly no questions asked)</strong>, or replace your license within 2 minutes via <a href="mailto:Bizzusupport@gmail.com" className="text-emerald-400 underline font-mono">Bizzusupport@gmail.com</a>.
+            With our 30-day money-back guarantee, our team will <strong className="text-emerald-300">refund 100% of your money</strong>, or replace your license within 2 minutes via <a href="mailto:Bizzusupport@gmail.com" className="text-emerald-400 underline font-mono">Bizzusupport@gmail.com</a>.
           </p>
         </div>
 

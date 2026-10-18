@@ -1279,8 +1279,8 @@ export const FAQS: FaqItem[] = [
   },
   {
     id: 'f5',
-    question: 'What is the 30-Day Money-Back Guarantee & "No Questions Asked" refund policy?',
-    answer: 'All 6 software licenses are 100% legitimate and authentic from official original vendor companies. With our 30-Day Money-Back Guarantee & No Questions Asked policy, our team will refund 100% of your money — strictly no questions asked. In addition, if you need an instant license replacement, we can replace it within 2 minutes. Reach our official support desk directly at Bizzusupport@gmail.com.',
+    question: 'What is the 30-Day Money-Back Guarantee refund policy?',
+    answer: 'All 6 software licenses are 100% legitimate and authentic from official original vendor companies. With our 30-Day Money-Back Guarantee, our team will refund 100% of your money. In addition, if you need an instant license replacement, we can replace it within 2 minutes. Reach our official support desk directly at Bizzusupport@gmail.com.',
     category: 'Guarantee'
   },
   {
