@@ -45,6 +45,9 @@ export default function App() {
       {/* Competitor Price Comparison Section: Standalone Competitors $650/mo vs Bizz2u $15/mo */}
       <CostComparison onClaimClick={() => scrollToPricing()} />
 
+      {/* How the 6 tools connect into an automated sales machine (The Complete Closed-Loop Automation System) */}
+      <AutomationPlaybook onClaimClick={() => scrollToPricing()} />
+
       {/* Why & Who Will Benefit (4 Pillars: Traffic, Engagement, Retargeting, Website Reliability) */}
       <WhyAndWho onClaimClick={() => scrollToPricing()} />
 
@@ -63,9 +66,6 @@ export default function App() {
 
         {/* Verifiable Customer Testimonials & Metrics (45+ in-depth regional and global customer stories) */}
         <Testimonials onClaimClick={() => scrollToPricing()} />
-
-        {/* How the 6 tools connect into an automated sales machine (The Complete Closed-Loop Automation System) */}
-        <AutomationPlaybook onClaimClick={() => scrollToPricing()} />
 
         {/* Dynamic ROI and Savings Calculator */}
         <RoiCalculator onClaimClick={() => scrollToPricing()} />
