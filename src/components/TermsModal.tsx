@@ -108,13 +108,13 @@ export const TermsModal: React.FC<TermsModalProps> = ({ isOpen, onClose }) => {
               We bring some amazing products to our customers. We are sure you will like them and hope there won’t be any refund issues. We appreciate your understanding and cooperation.
             </p>
             <p className="text-slate-300">
-              We offer a 30-day money back guarantee. If you face any technical issues in the product you can let us know, we will try our best to resolve it or you can also drop a mail at{' '}
+              We offer a 100% satisfaction guarantee. If you face any technical issues in the product you can let us know, we will try our best to resolve it or you can also drop a mail at{' '}
               <a href="mailto:Bizzusupport@gmail.com" className="text-emerald-400 hover:underline font-mono font-medium">
                 Bizzusupport@gmail.com
               </a>.
             </p>
             <p className="text-slate-300">
-              If you are not 100% satisfied with the deal you purchased, please contact us within 30 DAYS of purchase for a full refund (unless specified on the deal itself) and the refund will be issued within a few days.
+              If you are not 100% satisfied with the deal you purchased, please contact our support team for full resolution, instant key replacement, or a refund.
             </p>
             <p className="text-slate-300">
               If a product is discontinued within 12 months of purchase date then prime members get 100% wallet credits and non prime members get 50% wallet credits.
@@ -185,11 +185,11 @@ export const TermsModal: React.FC<TermsModalProps> = ({ isOpen, onClose }) => {
             </div>
           </div>
 
-          {/* Limited 30-Day Conditional Guarantee */}
+          {/* Satisfaction Guarantee Terms */}
           <section className="space-y-2 pt-4 border-t border-slate-800">
             <h4 className="text-sm sm:text-base font-bold text-white flex items-center gap-2">
               <span className="w-1.5 h-4 bg-emerald-400 rounded-full inline-block" />
-              Limited 30-Day Conditional Guarantee:
+              Satisfaction Guarantee Terms:
             </h4>
             <p className="text-slate-300">
               Refunds are contingent upon strict proof of full deployment. To be eligible, the Client must: (a) complete 100% of standard onboarding within seven (7) calendar days of purchase; (b) complete at least one documented onboarding review with a company technical specialist; (c) demonstrate continuous system usage by generating at least verifiable pipeline actions logged in the system audit trail; and (d) submit written notice of claim strictly between Day 28 and Day 30 post-purchase. Failure to meet any individual prerequisite constitutes a full waiver of the guarantee. Third-party licensing costs, setup fees, and custom development fees are strictly non-refundable under all circumstances.

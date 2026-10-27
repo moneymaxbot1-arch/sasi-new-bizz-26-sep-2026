@@ -161,7 +161,7 @@ export const Footer: React.FC<FooterProps> = ({ onClaimClick }) => {
               Terms of Service
             </button>
             <span>·</span>
-            <a href="#faq" className="hover:text-slate-300 transition-colors">30-Day Money-Back Guarantee</a>
+            <a href="#satisfaction-guarantee" className="hover:text-slate-300 transition-colors">Satisfaction Guarantee</a>
           </div>
         </div>
 

@@ -442,7 +442,7 @@ const TrustPillarModal: React.FC<TrustPillarModalProps> = ({ pillar, onClose, on
           <div className="p-3.5 rounded-xl bg-slate-850 border border-slate-700/80 flex items-center justify-between text-xs text-slate-300">
             <div className="flex items-center gap-2">
               <ShieldCheck className="w-4 h-4 text-emerald-400" />
-              <span>Protected by our 30-Day Money-Back Guarantee</span>
+              <span>Protected by our Satisfaction Guarantee</span>
             </div>
             <span className="font-mono text-emerald-400 font-bold">100% Risk-Free</span>
           </div>

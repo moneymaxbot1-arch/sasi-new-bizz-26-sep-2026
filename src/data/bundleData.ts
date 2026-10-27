@@ -239,7 +239,7 @@ export const PRICING_TIERS: PricingTier[] = [
   {
     id: 'starter',
     name: 'Starter Pack',
-    subtitle: 'solo business',
+    subtitle: 'Solo Business',
     price2Year: 15,
     price1Year: 20,
     price: 15,
@@ -263,7 +263,7 @@ export const PRICING_TIERS: PricingTier[] = [
       'WhatsApp Flow: 2,000 WhatsApp Marketing Subscribers',
       'Smart Link: 1 Branded Project & Custom Links',
       'Complete Beginner Video Tutorial Academy',
-      '30-Day Money-Back Guarantee (Authenticity/Working)'
+      '100% Satisfaction Guarantee (Authenticity/Working)'
     ],
     ctaText: 'Buy Now',
     spotsLeft: 14
@@ -1279,8 +1279,8 @@ export const FAQS: FaqItem[] = [
   },
   {
     id: 'f5',
-    question: 'What is the 30-Day Money-Back Guarantee refund policy?',
-    answer: 'All 6 software licenses are 100% legitimate and authentic from official original vendor companies. With our 30-Day Money-Back Guarantee, our team will refund 100% of your money. In addition, if you need an instant license replacement, we can replace it within 2 minutes. Reach our official support desk directly at Bizzusupport@gmail.com.',
+    question: 'What is the Satisfaction Guarantee & refund policy?',
+    answer: 'All 6 software licenses are 100% legitimate and authentic from official original vendor companies. With our Satisfaction Guarantee, our team ensures complete buyer satisfaction, with an instant key replacement within 2 minutes if needed, or a full refund. Reach our official support desk directly at Bizzusupport@gmail.com.',
     category: 'Guarantee'
   },
   {

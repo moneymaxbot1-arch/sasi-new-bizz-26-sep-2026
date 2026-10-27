@@ -58,18 +58,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onClaimClick }) => {
         </div>
 
         {/* Zone 2: Desktop clean text navigation links */}
-        <nav className="hidden md:flex items-center gap-4 lg:gap-6 text-sm lg:text-[15px] font-semibold text-slate-200 shrink-0">
+        <nav className="hidden md:flex items-center gap-4 lg:gap-6 text-xs lg:text-sm font-bold uppercase tracking-wider text-slate-200 shrink-0">
           <a href="#bundle-tools" className="hover:text-emerald-400 transition-colors">
-            6 Software Suite
+            6 SOFTWARE SUITE
           </a>
           <a href="#cost-comparison" className="hover:text-emerald-400 transition-colors">
-            Competitor vs Bizz2u
+            COMPETITOR VS BIZZ2U
           </a>
           <a href="#pricing" className="hover:text-emerald-300 transition-colors text-slate-200">
-            Pricing Plans
+            PRICING
           </a>
           <a href="#testimonials" className="hover:text-emerald-400 transition-colors">
-            Testimonial
+            TESTIMONIAL
           </a>
           <a href="#faq" className="hover:text-emerald-400 transition-colors">
             FAQ
@@ -80,7 +80,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onClaimClick }) => {
             title="Official Contact Email: Bizzusupport@gmail.com"
           >
             <Mail className="w-4 h-4 text-emerald-400" />
-            <span>Contact</span>
+            <span>CONTACT</span>
           </a>
         </nav>
 
@@ -105,33 +105,33 @@ export const Navbar: React.FC<NavbarProps> = ({ onClaimClick }) => {
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
         <div className="md:hidden bg-[#0B101D] border-b border-slate-800 shadow-2xl px-4 py-4 space-y-2 animate-in slide-in-from-top-2 duration-200">
-          <div className="grid grid-cols-2 gap-2 text-sm font-semibold">
+          <div className="grid grid-cols-2 gap-2 text-xs font-bold uppercase tracking-wider">
             <button
               onClick={() => handleNavClick('#bundle-tools')}
               className="p-2.5 rounded-lg bg-slate-900 border border-slate-800 text-left text-slate-200 hover:text-emerald-400 hover:border-emerald-500/40 flex items-center justify-between"
             >
-              <span>6 Software Suite</span>
+              <span>6 SOFTWARE SUITE</span>
               <ChevronRight className="w-3.5 h-3.5 text-slate-500" />
             </button>
             <button
               onClick={() => handleNavClick('#cost-comparison')}
               className="p-2.5 rounded-lg bg-slate-900 border border-slate-800 text-left text-slate-200 hover:text-emerald-400 hover:border-emerald-500/40 flex items-center justify-between"
             >
-              <span>Competitor vs Bizz2u</span>
+              <span>COMPETITOR VS BIZZ2U</span>
               <ChevronRight className="w-3.5 h-3.5 text-slate-500" />
             </button>
             <button
               onClick={() => handleNavClick('#pricing')}
               className="p-2.5 rounded-lg bg-emerald-950/40 border border-emerald-500/40 text-left text-emerald-300 hover:text-white flex items-center justify-between"
             >
-              <span>Pricing Plans</span>
+              <span>PRICING</span>
               <ChevronRight className="w-3.5 h-3.5 text-emerald-400" />
             </button>
             <button
               onClick={() => handleNavClick('#testimonials')}
               className="p-2.5 rounded-lg bg-slate-900 border border-slate-800 text-left text-slate-200 hover:text-emerald-400 hover:border-emerald-500/40 flex items-center justify-between"
             >
-              <span>Testimonial</span>
+              <span>TESTIMONIAL</span>
               <ChevronRight className="w-3.5 h-3.5 text-slate-500" />
             </button>
             <button

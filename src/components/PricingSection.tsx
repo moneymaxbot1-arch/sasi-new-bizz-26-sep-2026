@@ -9,15 +9,17 @@ interface PricingSectionProps {
   onSelectTier?: (tier: PricingTier) => void;
 }
 
-const getGatewayUrl = (tierId: string, is2Year: boolean) => {
+const getGatewayUrl = (tierId: string, is1Year: boolean) => {
   if (tierId === 'starter') {
-    return is2Year ? 'https://rzp.io/rzp/BkmVOMj' : 'https://rzp.io/rzp/bdBEfNK';
+    // 1 Year $15/mo: https://rzp.io/rzp/mMLJVEgw | 1 Month $20/mo: https://rzp.io/rzp/4YEsy9f
+    return is1Year ? 'https://rzp.io/rzp/mMLJVEgw' : 'https://rzp.io/rzp/4YEsy9f';
   }
   if (tierId === 'growth') {
-    return is2Year ? 'https://rzp.io/rzp/zQOdwg0r' : 'https://rzp.io/rzp/iUtek9K';
+    // 1 Year $35/mo: https://rzp.io/rzp/k6f3ggl | 1 Month $45/mo: https://rzp.io/rzp/1Gf9BfOs
+    return is1Year ? 'https://rzp.io/rzp/k6f3ggl' : 'https://rzp.io/rzp/1Gf9BfOs';
   }
-  // Agency
-  return is2Year ? 'https://rzp.io/rzp/QRFwZryF' : 'https://rzp.io/rzp/GO7eRrS';
+  // Agency - 1 Year $150/mo: https://rzp.io/rzp/EKl6eHK | 1 Month $250/mo: https://rzp.io/rzp/XFEF5vrn
+  return is1Year ? 'https://rzp.io/rzp/EKl6eHK' : 'https://rzp.io/rzp/XFEF5vrn';
 };
 
 const openPaymentGateway = (url: string) => {
@@ -322,7 +324,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
           </h2>
 
           <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-3xl mx-auto">
-            All 6 software licenses provided directly from original companies. Select 1-Year or 2-Year on top of each table to lock in immediate savings.
+            All 6 software licenses provided directly from original companies. Select 1-Month or 1-Year on top of each table to lock in immediate savings.
           </p>
         </div>
 
@@ -343,7 +345,12 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
             const altPriceUsd = is2Year ? tier.price1Year : tier.price2Year;
             const activePriceFormatted = formatLocalizedPrice(activePriceUsd, currentCurrency);
             const altPriceFormatted = formatLocalizedPrice(altPriceUsd, currentCurrency);
-            const altTerm = is2Year ? '1 year' : '2 years';
+            const altTerm = is2Year ? '1 month' : '1 year';
+            const primaryTermLabel = '1 Year';
+            const secondaryTermLabel = '1 Month';
+            const primaryBadgeText = '★ 1-Year (Save 40%)';
+            const secondaryBadgeText = '⚡ 1-Month (Standard)';
+            const activePlanTermName = is2Year ? '1-Year' : '1-Month';
 
             return (
               <div
@@ -376,7 +383,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                 }`}>
                   
                   <div>
-                    {/* 1 & 2 Year Option on Top of Each Pricing Table */}
+                    {/* Duration Option on Top of Each Pricing Table */}
                     <div className="mb-5">
                       <div className="flex items-center justify-between text-[11px] font-mono font-bold text-slate-400 mb-1.5 px-0.5">
                         <span>SELECT DURATION:</span>
@@ -387,33 +394,57 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                             ? 'text-emerald-400 font-extrabold flex items-center gap-1'
                             : 'text-cyan-400 font-extrabold flex items-center gap-1'
                         }>
-                          {is2Year ? '★ 2-Year (Save 40%)' : '⚡ 1-Year (Standard)'}
+                          {is2Year ? primaryBadgeText : secondaryBadgeText}
                         </span>
                       </div>
 
                       <div className="grid grid-cols-2 gap-2 p-1.5 rounded-xl bg-slate-950/90 border border-slate-800 shadow-inner">
-                        {/* 2-Year Button Option: Emerald Super-Saver Theme */}
+                        {/* Primary Button Option (1 Year) - Dedicated Distinct Color Per Section */}
                         <button
                           type="button"
                           onClick={() => handleToggleCycle(tier.id, '2year')}
                           className={`py-2 px-2.5 rounded-lg text-xs font-bold transition-all duration-200 cursor-pointer flex flex-col items-center justify-center ${
-                            is2Year
-                              ? 'bg-gradient-to-r from-emerald-400 via-emerald-300 to-teal-400 text-slate-950 shadow-lg shadow-emerald-500/50 ring-2 ring-emerald-300 font-black scale-[1.02]'
-                              : 'bg-emerald-950/40 border border-emerald-500/30 text-emerald-400/90 hover:text-emerald-200 hover:border-emerald-400/60 hover:bg-emerald-950/70'
+                            isStarter
+                              ? is2Year
+                                ? 'bg-gradient-to-r from-emerald-400 via-emerald-300 to-teal-400 text-slate-950 shadow-lg shadow-emerald-500/50 ring-2 ring-emerald-300 font-black scale-[1.02]'
+                                : 'bg-emerald-950/40 border border-emerald-500/30 text-emerald-400/90 hover:text-emerald-200 hover:border-emerald-400/60 hover:bg-emerald-950/70'
+                              : isCenter
+                              ? is2Year
+                                ? 'bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-300 text-slate-950 shadow-lg shadow-amber-500/50 ring-2 ring-amber-300 font-black scale-[1.02]'
+                                : 'bg-amber-950/40 border border-amber-500/40 text-amber-300/90 hover:text-amber-100 hover:border-amber-400/70 hover:bg-amber-950/70'
+                              : is2Year
+                              ? 'bg-gradient-to-r from-cyan-400 via-sky-300 to-teal-300 text-slate-950 shadow-lg shadow-cyan-500/50 ring-2 ring-cyan-300 font-black scale-[1.02]'
+                              : 'bg-cyan-950/40 border border-cyan-500/40 text-cyan-300/90 hover:text-cyan-100 hover:border-cyan-400/70 hover:bg-cyan-950/70'
                           }`}
                         >
                           <span className="flex items-center gap-1">
                             {is2Year && <Check className="w-3.5 h-3.5 stroke-[3] text-slate-950" />}
-                            <span className={is2Year ? 'text-slate-950 font-black' : 'text-emerald-300 font-bold'}>2 Years</span>
+                            <span className={
+                              is2Year
+                                ? 'text-slate-950 font-black'
+                                : isStarter
+                                ? 'text-emerald-300 font-bold'
+                                : isCenter
+                                ? 'text-amber-300 font-bold'
+                                : 'text-cyan-300 font-bold'
+                            }>
+                              {primaryTermLabel}
+                            </span>
                           </span>
                           <span className={`text-[10px] font-mono leading-tight ${
-                            is2Year ? 'text-slate-950 font-black' : 'text-emerald-400 font-bold'
+                            is2Year
+                              ? 'text-slate-950 font-black'
+                              : isStarter
+                              ? 'text-emerald-400 font-bold'
+                              : isCenter
+                              ? 'text-amber-400 font-bold'
+                              : 'text-cyan-400 font-bold'
                           }`}>
                             Save 40%
                           </span>
                         </button>
 
-                        {/* 1-Year Button Option: Electric Blue / Sky Theme */}
+                        {/* Secondary Button Option: Electric Blue / Sky Theme */}
                         <button
                           type="button"
                           onClick={() => handleToggleCycle(tier.id, '1year')}
@@ -425,7 +456,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                         >
                           <span className="flex items-center gap-1">
                             {!is2Year && <Check className="w-3.5 h-3.5 stroke-[3] text-slate-950" />}
-                            <span className={!is2Year ? 'text-slate-950 font-black' : 'text-sky-300 font-bold'}>1 Year</span>
+                            <span className={!is2Year ? 'text-slate-950 font-black' : 'text-sky-300 font-bold'}>{secondaryTermLabel}</span>
                           </span>
                           <span className={`text-[10px] font-mono leading-tight ${
                             !is2Year ? 'text-slate-950 font-black' : 'text-sky-400/90 font-medium'
@@ -539,7 +570,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                         }`}
                       >
                         <span>
-                          {is2Year ? `Buy 2-Year Plan · ${activePriceFormatted}/mo` : `Buy 1-Year Plan · ${activePriceFormatted}/mo`}
+                          {`Buy ${activePlanTermName} Plan · ${activePriceFormatted}/mo`}
                         </span>
                         <ExternalLink className="w-4 h-4 stroke-[2.5]" />
                       </a>
@@ -2126,10 +2157,10 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
         <div className="mt-14 text-center text-xs text-slate-300 max-w-3xl mx-auto space-y-2 p-6 rounded-2xl bg-slate-900/80 border border-emerald-500/30">
           <p className="font-bold text-emerald-400 flex items-center justify-center gap-1.5 text-sm">
             <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
-            <span>30-Day Money-Back Guarantee</span>
+            <span>100% Satisfaction Guarantee</span>
           </p>
           <p className="text-slate-300 leading-relaxed">
-            With our 30-day money-back guarantee, our team will <strong className="text-emerald-300">refund 100% of your money</strong>, or replace your license within 2 minutes via <a href="mailto:Bizzusupport@gmail.com" className="text-emerald-400 underline font-mono">Bizzusupport@gmail.com</a>.
+            With our 100% satisfaction guarantee, our team will ensure complete buyer satisfaction, <strong className="text-emerald-300">provide a full refund</strong>, or replace your license within 2 minutes via <a href="mailto:Bizzusupport@gmail.com" className="text-emerald-400 underline font-mono">Bizzusupport@gmail.com</a>.
           </p>
         </div>
 
