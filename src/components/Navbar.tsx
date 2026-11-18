@@ -59,6 +59,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onClaimClick }) => {
 
             <a
               href="https://dashboard.bizz2u.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 px-2.5 sm:px-4 py-1 sm:py-1.5 text-[11px] sm:text-sm font-bold text-slate-950 bg-white hover:bg-slate-100 rounded-lg transition-all duration-200 shadow-[0_0_16px_rgba(255,255,255,0.2)] hover:shadow-[0_0_22px_rgba(255,255,255,0.35)] cursor-pointer whitespace-nowrap active:scale-98"
             >
               <LogIn className="w-3 h-3 sm:w-4 sm:h-4 text-slate-950" />
@@ -154,6 +156,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onClaimClick }) => {
 
           <a
             href="https://dashboard.bizz2u.com"
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setMobileMenuOpen(false)}
             className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-lg text-sm font-bold uppercase tracking-wider text-slate-950 bg-white hover:bg-slate-100 transition-all duration-200 shadow-[0_0_16px_rgba(255,255,255,0.2)]"
           >
