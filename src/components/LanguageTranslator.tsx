@@ -74,31 +74,9 @@ export const LanguageTranslator: React.FC<LanguageTranslatorProps> = ({ compact 
       <div id="google_translate_element" className="hidden" />
 
       {/* Main Bar between Nav Links and CTA Button */}
-      <div className="flex items-center gap-1 sm:gap-1.5 p-1 bg-slate-900/90 border border-slate-800 rounded-xl shadow-lg backdrop-blur-md">
+      <div className="flex items-center gap-1 sm:gap-1.5 p-0.5 sm:p-1 bg-slate-900/90 border border-slate-800 rounded-xl shadow-lg backdrop-blur-md shrink-0">
         
-        {/* Mobile View (<640px): Show top quick flags */}
-        <div className="flex sm:hidden items-center gap-0.5">
-          {QUICK_LANGUAGES.map((lang) => {
-            const isActive = currentLang === lang.code;
-            return (
-              <button
-                key={lang.code}
-                onClick={() => handleSelectLanguage(lang.code)}
-                title={`${lang.name} (${lang.nativeName})`}
-                className={`px-1.5 py-1 rounded-lg text-[10px] font-semibold transition-all duration-200 cursor-pointer flex items-center gap-0.5 ${
-                  isActive
-                    ? 'bg-emerald-400 text-slate-950 font-bold shadow-xs'
-                    : 'text-slate-300 hover:text-white hover:bg-slate-800/80'
-                }`}
-              >
-                <span className="text-[11px]">{lang.flag}</span>
-                <span className="uppercase font-mono text-[9px]">{lang.code.split('-')[0]}</span>
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Desktop & Tablet View (>=640px): Show all 6 quick switchers */}
+        {/* Desktop & Tablet View (>=640px): Show quick switchers */}
         <div className="hidden sm:flex items-center gap-0.5 sm:gap-1">
           {QUICK_LANGUAGES.map((lang) => {
             const isActive = currentLang === lang.code;
@@ -121,23 +99,26 @@ export const LanguageTranslator: React.FC<LanguageTranslatorProps> = ({ compact 
           })}
         </div>
 
-        <div className="h-4 w-[1px] bg-slate-700/80 mx-0.5 sm:mx-1" />
+        <div className="hidden sm:block h-4 w-[1px] bg-slate-700/80 mx-0.5 sm:mx-1" />
 
         {/* Multi-Language Symbol Button to open 32 Languages Modal */}
         <button
           onClick={() => setIsModalOpen(!isModalOpen)}
-          className={`flex items-center gap-1 sm:gap-1.5 px-1.5 sm:px-2 py-1 rounded-lg text-xs font-bold transition-all duration-200 cursor-pointer border ${
+          className={`flex items-center gap-1 sm:gap-1.5 px-2 sm:px-2.5 py-1 rounded-lg text-xs font-bold transition-all duration-200 cursor-pointer border whitespace-nowrap ${
             isModalOpen
               ? 'bg-emerald-950/80 border-emerald-500/60 text-emerald-300 shadow-[0_0_15px_rgba(52,211,153,0.25)]'
               : 'bg-slate-800/80 border-slate-700/60 text-slate-200 hover:text-emerald-300 hover:border-emerald-500/40'
           }`}
           title="Translate website into 32 world languages"
         >
+          <span className="sm:hidden text-xs leading-none">{activeLangObj.flag}</span>
           <div className="relative flex items-center justify-center">
             <Languages className="w-3.5 h-3.5 text-emerald-400" />
             <span className="absolute -top-1 -right-1 w-1.5 h-1.5 bg-emerald-400 rounded-full animate-ping" />
           </div>
-          <span className="font-mono text-[10px] sm:text-[11px]">32 Langs</span>
+          <span className="font-mono text-[10px] sm:text-[11px]">
+            32<span className="hidden min-[380px]:inline"> Langs</span>
+          </span>
           <ChevronDown className={`w-3 h-3 text-slate-400 transition-transform duration-200 ${isModalOpen ? 'rotate-180 text-emerald-400' : ''}`} />
         </button>
 
@@ -147,7 +128,7 @@ export const LanguageTranslator: React.FC<LanguageTranslatorProps> = ({ compact 
       {isModalOpen && (
         <div 
           ref={modalRef}
-          className="fixed inset-x-3 top-24 sm:absolute sm:inset-x-auto sm:top-full sm:right-0 mt-2 sm:w-[480px] max-w-[94vw] max-h-[75vh] overflow-y-auto bg-[#0c121e] border border-slate-700/80 rounded-2xl shadow-2xl p-4 z-50 animate-in fade-in zoom-in-95 duration-150 backdrop-blur-xl"
+          className="fixed inset-x-3 top-20 sm:absolute sm:inset-x-auto sm:top-full sm:right-0 mt-2 sm:w-[480px] max-w-[calc(100vw-24px)] max-h-[75vh] overflow-y-auto bg-[#0c121e] border border-slate-700/80 rounded-2xl shadow-2xl p-4 z-50 animate-in fade-in zoom-in-95 duration-150 backdrop-blur-xl"
         >
           {/* Header */}
           <div className="flex items-center justify-between pb-3 border-b border-slate-800">

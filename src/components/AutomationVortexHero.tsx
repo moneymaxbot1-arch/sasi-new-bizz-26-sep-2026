@@ -631,32 +631,34 @@ export const AutomationVortexHero: React.FC<AutomationVortexHeroProps> = ({ onCl
   const totalRetailMonthly = TOOLS.reduce((sum, t) => sum + t.monthlyPrice, 0); // $650
 
   return (
-    <div className="relative w-full overflow-hidden bg-gradient-to-b from-[#06080F] via-[#090D16] to-[#0B101D] border-b border-slate-800/80 py-12 lg:py-16">
+    <div className="relative w-full overflow-hidden bg-gradient-to-b from-[#06080F] via-[#090D16] to-[#0B101D] border-b border-slate-800/80 py-7 sm:py-12 lg:py-16">
       
       {/* Background radial effects */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[550px] bg-emerald-500/10 rounded-full blur-[140px] pointer-events-none -z-10" />
       <div className="absolute top-1/3 right-1/4 w-[450px] h-[350px] bg-indigo-500/10 rounded-full blur-[120px] pointer-events-none -z-10" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8">
         
         {/* Top Header & Hook */}
-        <div className="text-center max-w-4xl mx-auto mb-10 space-y-4">
+        <div className="text-center max-w-4xl mx-auto mb-7 sm:mb-10 space-y-3 sm:space-y-4">
           
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-950/70 border border-emerald-500/40 text-emerald-300 text-xs font-bold tracking-wide shadow-[0_0_20px_rgba(52,211,153,0.15)]">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-            <span>INTERACTIVE AUTOMATION VORTEX ENGINE</span>
-            <span className="text-slate-500">·</span>
+          <div className="inline-flex flex-wrap items-center justify-center gap-x-2 gap-y-0.5 px-3 sm:px-3.5 py-1.5 rounded-2xl sm:rounded-full bg-emerald-950/70 border border-emerald-500/40 text-emerald-300 text-[10px] sm:text-xs font-bold tracking-wide shadow-[0_0_20px_rgba(52,211,153,0.15)] max-w-full">
+            <span className="inline-flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping shrink-0" />
+              <span>INTERACTIVE AUTOMATION VORTEX ENGINE</span>
+            </span>
+            <span className="hidden sm:inline text-slate-500">·</span>
             <span className="text-amber-300 font-mono">6 TOOLS UNIFIED INTO 1</span>
           </div>
 
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.15] text-balance">
+          <h2 className="text-[28px] min-[375px]:text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.15] text-balance">
             Run Your Entire Business{' '}
             <span className="block mt-1 sm:mt-2 bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">
               100% Automated
             </span>
           </h2>
 
-          <p className="text-base sm:text-lg lg:text-xl text-slate-200 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-sm min-[375px]:text-base sm:text-lg lg:text-xl text-slate-200 max-w-3xl mx-auto leading-relaxed">
             Automate your daily Business operations: CRM messaging, WhatsApp marketing, client workflows and hosting into a single dashboard seamlessly from <span className="text-emerald-400 font-bold font-mono">{formatLocalizedPrice(15, currentCurrency)}/month</span>
           </p>
 
@@ -1124,15 +1126,15 @@ export const AutomationVortexHero: React.FC<AutomationVortexHeroProps> = ({ onCl
               </div>
 
               {/* Introduction Price Callout */}
-              <div className="mt-5 p-3.5 bg-slate-850/80 rounded-xl border border-slate-700/80 flex items-center justify-between">
+              <div className="mt-5 p-3.5 bg-slate-850/80 rounded-xl border border-slate-700/80 flex items-center justify-between gap-2">
                 <div>
                   <div className="text-[11px] text-slate-400 font-semibold uppercase tracking-wider">Introduction Price:</div>
                   <div className="text-xs text-slate-300">Complete 6-in-1 business growth suite</div>
                 </div>
 
-                <div className="text-right">
+                <div className="text-right shrink-0">
                   <div className="text-[11px] text-emerald-400 font-semibold">Starter Subscription:</div>
-                  <div className="text-xl font-black text-emerald-400 font-mono">
+                  <div className="text-lg sm:text-xl font-black text-emerald-400 font-mono">
                     $15 <span className="text-[11px] font-normal text-slate-300">/month</span>
                   </div>
                 </div>
@@ -1141,11 +1143,11 @@ export const AutomationVortexHero: React.FC<AutomationVortexHeroProps> = ({ onCl
               {/* CTA Button */}
               <button
                 onClick={onClaimClick}
-                className="mt-4 w-full py-4 bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-300 hover:from-emerald-300 hover:to-cyan-200 text-slate-950 font-black rounded-xl text-sm transition-all duration-200 shadow-[0_0_25px_rgba(52,211,153,0.35)] hover:shadow-[0_0_35px_rgba(52,211,153,0.5)] cursor-pointer flex items-center justify-center gap-2 active:scale-98"
+                className="mt-4 w-full px-3 sm:px-5 py-3.5 sm:py-4 bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-300 hover:from-emerald-300 hover:to-cyan-200 text-slate-950 font-black rounded-xl text-xs sm:text-sm transition-all duration-200 shadow-[0_0_25px_rgba(52,211,153,0.35)] hover:shadow-[0_0_35px_rgba(52,211,153,0.5)] cursor-pointer flex items-center justify-center gap-2 active:scale-98"
               >
-                <Zap className="w-4 h-4 fill-slate-950" />
+                <Zap className="w-4 h-4 fill-slate-950 shrink-0" />
                 <span>Start 6-Tool Subscription ({formatLocalizedPrice(15, currentCurrency)}/mo)</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 shrink-0" />
               </button>
 
               {/* 3 Core Trust Guarantees */}

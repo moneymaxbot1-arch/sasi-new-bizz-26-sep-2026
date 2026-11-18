@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { PRICING_TIERS } from '../data/bundleData';
 import { PricingTier } from '../types';
-import { Sparkles, ArrowRight, ShieldCheck, Flame, Star, Check, Info, X, Lock, ExternalLink, RotateCcw, Zap, Coins, ChevronDown, HelpCircle } from 'lucide-react';
+import { Sparkles, ArrowRight, ShieldCheck, Flame, Star, Check, Info, X, Lock, ExternalLink, RotateCcw, Zap, Coins, ChevronDown, HelpCircle, CreditCard, KeyRound } from 'lucide-react';
 import { getActiveCurrency, setAppCurrency, formatLocalizedPrice, CurrencyConfig, SUPPORTED_CURRENCIES } from '../utils/currencyUtils';
 import { TrustBadgesTrio } from './TrustBadgesTrio';
 
@@ -2153,8 +2153,55 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
 
         </div>
 
+        {/* Secure Payment & Data Encryption Trust Badges Section */}
+        <div className="mt-12 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
+            {/* Trust Badge 1: Secure Payment */}
+            <div className="p-5 sm:p-6 rounded-2xl bg-slate-900/90 border border-emerald-500/35 hover:border-emerald-400/60 shadow-xl transition-all flex items-start gap-4">
+              <div className="w-12 h-12 rounded-xl bg-emerald-500/15 border border-emerald-500/40 flex items-center justify-center shrink-0 text-emerald-400 shadow-inner">
+                <CreditCard className="w-6 h-6" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="flex flex-wrap items-center justify-between gap-2 mb-1.5">
+                  <h4 className="text-base sm:text-lg font-extrabold text-white flex items-center gap-1.5">
+                    <span>Secure Payment</span>
+                    <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
+                  </h4>
+                  <span className="px-2.5 py-0.5 rounded-full bg-emerald-950/90 border border-emerald-500/40 text-emerald-300 text-[10px] font-mono font-bold uppercase tracking-wider">
+                    Verified SSL Checkout
+                  </span>
+                </div>
+                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                  All subscriptions are processed through encrypted, PCI-DSS compliant payment gateways supporting Visa, Mastercard, FPX, UPI, and global cards—zero card details stored on our servers.
+                </p>
+              </div>
+            </div>
+
+            {/* Trust Badge 2: Data Encryption */}
+            <div className="p-5 sm:p-6 rounded-2xl bg-slate-900/90 border border-sky-500/35 hover:border-sky-400/60 shadow-xl transition-all flex items-start gap-4">
+              <div className="w-12 h-12 rounded-xl bg-sky-500/15 border border-sky-500/40 flex items-center justify-center shrink-0 text-sky-400 shadow-inner">
+                <KeyRound className="w-6 h-6" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="flex flex-wrap items-center justify-between gap-2 mb-1.5">
+                  <h4 className="text-base sm:text-lg font-extrabold text-white flex items-center gap-1.5">
+                    <span>Data Encryption</span>
+                    <Lock className="w-4 h-4 text-sky-400 shrink-0" />
+                  </h4>
+                  <span className="px-2.5 py-0.5 rounded-full bg-sky-950/90 border border-sky-500/40 text-sky-300 text-[10px] font-mono font-bold uppercase tracking-wider">
+                    AES-256 &amp; TLS 1.3
+                  </span>
+                </div>
+                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                  Your leads, subscriber lists, API keys, and webhooks are safeguarded with bank-grade 256-bit AES encryption at rest and TLS 1.3 in transit, with strict workspace isolation.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Guarantee Banner below pricing */}
-        <div className="mt-14 text-center text-xs text-slate-300 max-w-3xl mx-auto space-y-2 p-6 rounded-2xl bg-slate-900/80 border border-emerald-500/30">
+        <div className="mt-8 text-center text-xs text-slate-300 max-w-3xl mx-auto space-y-2 p-6 rounded-2xl bg-slate-900/80 border border-emerald-500/30">
           <p className="font-bold text-emerald-400 flex items-center justify-center gap-1.5 text-sm">
             <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
             <span>100% Satisfaction Guarantee</span>

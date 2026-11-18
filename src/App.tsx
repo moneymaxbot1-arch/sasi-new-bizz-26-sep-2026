@@ -19,6 +19,7 @@ import { GuaranteeSection } from './components/GuaranteeSection';
 import { FaqSection } from './components/FaqSection';
 import { SocialProofPopup } from './components/SocialProofPopup';
 import { MobileStickyBar } from './components/MobileStickyBar';
+import { SupportChatBubble } from './components/SupportChatBubble';
 import { Footer } from './components/Footer';
 
 export default function App() {
@@ -84,6 +85,9 @@ export default function App() {
 
       {/* Live Social Proof Urgency Popup (Like Fomo) */}
       <SocialProofPopup onClaimClick={() => scrollToPricing()} />
+
+      {/* Persistent WhatsApp Support Chat Bubble */}
+      <SupportChatBubble />
     </div>
   );
 }

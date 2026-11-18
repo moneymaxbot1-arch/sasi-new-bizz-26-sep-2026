@@ -58,7 +58,7 @@ export const SocialProofPopup: React.FC<SocialProofPopupProps> = ({ onClaimClick
   if (dismissed || !visible || !currentEvent) return null;
 
   return (
-    <div className="fixed bottom-20 sm:bottom-6 left-3 right-3 sm:right-auto sm:left-4 z-40 max-w-full sm:max-w-sm transition-all duration-300">
+    <div className="fixed bottom-[136px] sm:bottom-20 lg:bottom-6 left-3 right-3 sm:right-auto sm:left-4 z-40 max-w-full sm:max-w-sm transition-all duration-300">
       <div className="p-3.5 bg-slate-900/95 backdrop-blur-md border border-slate-700/80 rounded-2xl shadow-2xl flex items-start gap-3 relative">
         <button
           onClick={() => setDismissed(true)}
@@ -80,7 +80,7 @@ export const SocialProofPopup: React.FC<SocialProofPopupProps> = ({ onClaimClick
         </div>
 
         <div className="flex-1 pr-2">
-          <div className="flex items-center gap-1.5 text-xs font-bold text-white">
+          <div className="flex items-center flex-wrap gap-x-1.5 gap-y-0.5 text-xs font-bold text-white">
             <span>{currentEvent.name}</span>
             <span className="text-[11px] font-normal text-slate-400">from {currentEvent.location}</span>
           </div>
