@@ -1,4 +1,4 @@
-name: Auto Deploy Main Site to HostVerge
+name: Deploy bizz2u.com to Hostverge
 
 on:
   push:
@@ -8,9 +8,8 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Setup Node.js
@@ -18,30 +17,21 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install dependencies
-        run: npm install --legacy-peer-deps
-
-      - name: Build main website
-        env:
-          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
-          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
-          VITE_WHATSAPP_SUPPORT_NUMBER: ${{ secrets.VITE_WHATSAPP_SUPPORT_NUMBER }}
-        run: npm run build
-
-      - name: Upload to HostVerge public_html via LFTP
-        env:
-          FTP_SERVER: ${{ secrets.FTP_SERVER }}
-          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
-          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+      - name: Install dependencies and build
         run: |
-          sudo apt-get update && sudo apt-get install -y lftp
-          lftp -e "
-            set ssl:verify-certificate no;
-            set ftp:ssl-allow yes;
-            set ftp:passive-mode on;
-            set net:max-retries 3;
-            set net:timeout 20;
-            open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER;
-            mirror -R --delete --exclude ^dashboard/ --exclude ^\.well-known/ --verbose ./dist/ ./;
-            bye
-          "
+          npm install --legacy-peer-deps
+          npm run build
+
+      - name: Deploy dist to Hostverge public_html
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./dist/
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            .htaccess
+            dashboard/**
