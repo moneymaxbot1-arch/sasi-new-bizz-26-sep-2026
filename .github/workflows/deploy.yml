@@ -29,12 +29,11 @@ jobs:
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
           sudo apt-get update && sudo apt-get install -y lftp
-          lftp -e "
-            set ssl:verify-certificate no;
-            set ftp:passive-mode on;
-            set net:max-retries 3;
-            set net:timeout 20;
-            open -u \"$FTP_USERNAME\",\"$FTP_PASSWORD\" $FTP_SERVER;
-            mirror -R --verbose --delete --exclude-glob .htaccess --exclude-glob dashboard/ ./dist/ /;
-            bye
-          "
+          lftp -u "$FTP_USERNAME","$FTP_PASSWORD" "$FTP_SERVER" << 'EOF'
+          set ssl:verify-certificate no
+          set ftp:passive-mode on
+          set net:max-retries 3
+          set net:timeout 20
+          mirror -R --verbose --delete --exclude-glob .htaccess --exclude-glob dashboard/ ./dist/ /
+          bye
+          EOF
